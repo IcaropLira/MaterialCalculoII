@@ -40,7 +40,7 @@
       <p class="lede">Teoria explicada com calma, exercícios comentados passo a passo e provas resolvidas por completo. Tudo no mesmo formato, para você treinar até virar automático.</p>
       <div class="hero-cta">
         <a class="btn-primary" href="#topicos">Ver tópicos</a>
-        <a class="btn-secondary" href="#provas">Ver provas resolvidas</a>
+        <a class="btn-secondary" href="#listas">Ver listas de exercícios</a>
       </div>
     </div>
     <div class="hero-formula">
@@ -67,6 +67,19 @@
       </div>
     </div>
     <div class="topic-grid" id="topics-grid"><!-- preenchido via JS --></div>
+  </section>
+
+  <!-- ============ LISTAS ============ -->
+  <!-- Cards gerados a partir de LISTAS em assets/js/site-data.js -->
+  <section class="block" id="listas" style="padding:64px 56px; border-bottom:1px solid var(--line);">
+    <div class="block-head">
+      <div>
+        <div class="kicker">prática organizada</div>
+        <h2 class="block-title">Listas de exercícios</h2>
+        <p class="block-sub">Listas completas para praticar as técnicas de integração, com resolução comentada e uma referência rápida para escolher o método.</p>
+      </div>
+    </div>
+    <div class="prova-grid" id="listas-grid"><!-- preenchido via JS --></div>
   </section>
 
   <!-- ============ PROVAS ============ -->
@@ -112,6 +125,7 @@
   renderHeader({ active: "home" });
   renderFooter({});
   renderTopicsGrid("topics-grid");
+  renderListasGrid("listas-grid");
   renderProvasGrid("provas-grid");
 
   document.getElementById("stat-topicos").textContent =

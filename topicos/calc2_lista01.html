@@ -1,0 +1,777 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="UTF-8">
+<title>Cálculo II — Lista 01 Resolvida & Tabela de Fórmulas</title>
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,400;9..144,500;9..144,600;9..144,700&family=IBM+Plex+Sans:wght@400;500;600;700&family=IBM+Plex+Mono:wght@500&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/KaTeX/0.16.9/katex.min.css">
+<script defer src="https://cdnjs.cloudflare.com/ajax/libs/KaTeX/0.16.9/katex.min.js"></script>
+<script defer src="https://cdnjs.cloudflare.com/ajax/libs/KaTeX/0.16.9/contrib/auto-render.min.js"></script>
+<link rel="stylesheet" href="../assets/css/tokens.css">
+<link rel="stylesheet" href="../assets/css/base.css">
+<link rel="stylesheet" href="../assets/css/components.css">
+<style>
+:root{
+  --bg:#fbfaf7; --panel:#ffffff; --text:#1e1c19; --muted:#5f5a52;
+  --accent:#8a3b2f; --accent2:#1f5f5b; --border:#e4ddd0; --code-bg:#f4efe4;
+  --box-bg:#fbf3e6; --box-border:#d9a441; --ans-bg:#eef3ee; --ans-border:#3f7a5a;
+}
+*{box-sizing:border-box;}
+body{
+  margin:0; background:var(--bg); color:var(--text);
+  font-family: "Georgia","Iowan Old Style", ui-serif, serif;
+  line-height:1.62; font-size:16.5px;
+}
+.legacy-list-content{max-width:880px; margin:0 auto; padding:2.2rem 1.3rem 6rem;}
+h1{font-size:1.9rem; margin:0 0 .3rem; color:var(--accent); letter-spacing:.2px;}
+.subtitle{color:var(--muted); margin:0 0 1.6rem; font-size:1rem;}
+h2{
+  font-size:1.35rem; margin:2.6rem 0 .9rem; padding-bottom:.4rem;
+  border-bottom:2px solid var(--border); color:var(--accent2);
+}
+h3{font-size:1.08rem; margin:1.6rem 0 .5rem; color:var(--accent);}
+h4{font-size:1rem; margin:1.1rem 0 .35rem; color:var(--text); font-style:italic;}
+p{margin:.55rem 0;}
+.toc{
+  background:var(--panel); border:1px solid var(--border); border-radius:10px;
+  padding:1rem 1.3rem; margin:1.4rem 0;
+}
+.toc ul{margin:.3rem 0; padding-left:1.2rem; columns:2; column-gap:1.6rem;}
+.toc li{margin:.25rem 0; break-inside:avoid;}
+.toc a{color:var(--accent2); text-decoration:none;}
+.toc a:hover{text-decoration:underline;}
+.macete{
+  background:var(--box-bg); border-left:4px solid var(--box-border);
+  border-radius:6px; padding:.85rem 1.1rem; margin:1rem 0; font-size:.96rem;
+}
+.macete b{color:var(--accent);}
+.ex{
+  background:var(--panel); border:1px solid var(--border); border-radius:10px;
+  padding:1rem 1.25rem; margin:1.1rem 0;
+}
+.ex .tag{
+  display:inline-block; font-size:.72rem; letter-spacing:.5px; text-transform:uppercase;
+  color:var(--accent2); border:1px solid var(--accent2); border-radius:20px;
+  padding:.12rem .6rem; margin-bottom:.5rem;
+}
+.ex .enun{font-style:italic; color:var(--muted);}
+.steps{margin:.5rem 0 .3rem; padding-left:0; list-style:none;}
+.steps li{margin:.35rem 0; padding-left:1.1rem; position:relative;}
+.steps li::before{content:"→"; position:absolute; left:0; color:var(--accent2);}
+.math{font-family:"Cambria Math","Georgia",serif; font-style:normal;}
+.ans{
+  background:var(--ans-bg); border:1px solid var(--ans-border); border-radius:6px;
+  padding:.55rem .9rem; margin-top:.6rem; font-weight:bold;
+}
+table{border-collapse:collapse; width:100%; margin:.8rem 0 1.4rem; font-size:.93rem;}
+th,td{border:1px solid var(--border); padding:.45rem .6rem; text-align:left; vertical-align:top;}
+th{background:var(--code-bg); color:var(--accent);}
+tr:nth-child(even) td{background:rgba(128,128,128,0.04);}
+code, .fx{font-family:"Cambria Math", Consolas, monospace; background:var(--code-bg); padding:.05rem .3rem; border-radius:4px;}
+.grid2{display:grid; grid-template-columns:1fr 1fr; gap:.6rem 1.6rem;}
+@media (max-width:640px){.grid2{grid-template-columns:1fr;} .toc ul{columns:1;}}
+.formula{
+  background:var(--code-bg); border:1px solid var(--border); border-radius:6px;
+  padding:.4rem .7rem; margin:.25rem 0; font-size:.95rem;
+}
+hr{border:none; border-top:1px solid var(--border); margin:2.2rem 0;}
+.note{color:var(--muted); font-size:.9rem;}
+.backtop{font-size:.8rem;}
+sup, sub{font-size:.72em;}
+.badge{
+  display:inline-block; background:var(--accent2); color:#fff; border-radius:4px;
+  padding:0 .35rem; font-size:.72rem; margin-right:.4rem;
+}
+.shell main{ padding:0 0 100px; }
+.shell .toc{
+  position:static; height:auto; overflow:visible;
+  background:transparent; border:0; border-right:1px solid var(--line); border-radius:0;
+  padding:38px 22px 40px 32px; color:var(--ink); text-align:left;
+}
+.shell .toc ul{ margin:0; padding:0; columns:1; }
+.shell .toc li{ margin-bottom:2px; }
+.shell .toc a{ color:var(--ink-soft); text-decoration:none; }
+.shell .toc a:hover{ color:var(--ink); text-decoration:none; }
+.shell .toc .toc-title{ color:var(--muted); margin-bottom:24px; line-height:1.4; }
+.shell .toc .toc-title strong{ color:var(--ink); display:block; }
+.shell .toc-list a{ justify-content:flex-start; }
+.shell .toc-list .toc-num{ width:28px; flex-shrink:0; }
+.shell .toc .toc-foot{ color:var(--muted); }
+.shell .hero h1{ color:var(--ink); font-family:'Fraunces',serif; font-size:clamp(32px,5vw,54px); line-height:1.15; }
+.shell .hero p.lede{ color:var(--ink-soft); font-family:'IBM Plex Sans',sans-serif; font-size:18px; }
+.shell .hero-formula{ color:#F2F1EC; }
+.question-actions{ display:flex; gap:12px; flex-wrap:wrap; margin-top:24px; }
+</style>
+</head>
+<body>
+
+<div id="site-header-root"></div>
+
+<div class="shell">
+<nav class="toc">
+  <a class="back-link" href="../index.html#listas">← voltar para listas</a>
+  <div class="toc-mark">∫</div>
+  <div class="toc-title"><strong>Lista 01</strong>Resolução comentada e tabela de fórmulas</div>
+  <ul class="toc-list">
+    <li><a href="#tabela"><span class="toc-num">00</span>Tabela de fórmulas</a></li>
+    <li><a href="#ibp"><span class="toc-num">01</span>Integração por partes</a></li>
+    <li><a href="#trig"><span class="toc-num">02</span>Integrais trigonométricas</a></li>
+    <li><a href="#trigsub"><span class="toc-num">03</span>Substituição trigonométrica</a></li>
+    <li><a href="#pfrac"><span class="toc-num">04</span>Frações parciais</a></li>
+    <li><a href="#improp"><span class="toc-num">05</span>Integrais impróprias</a></li>
+  </ul>
+  <div class="toc-foot">Parte da série de listas de exercícios de Cálculo II.</div>
+</nav>
+
+<main>
+
+<div class="hero">
+  <div class="hero-eyebrow">cálculo ii · lista de exercícios</div>
+  <h1>Lista 01 resolvida</h1>
+  <p class="lede">Resolução comentada, técnica por técnica, com uma tabela de fórmulas para consulta rápida.</p>
+  <div class="hero-formula"><div class="fl">referência principal</div>\[ \int u\,dv = uv - \int v\,du \]</div>
+  <div class="question-actions">
+    <a class="btn-primary" href="calc2_lista01-enunciado.html">Abrir enunciados</a>
+    <a class="btn-secondary" href="../index.html#listas">Voltar para listas</a>
+  </div>
+</div>
+
+<div class="legacy-list-content">
+
+<p class="subtitle">Resolução comentada, técnica por técnica, com a Tabela de Fórmulas incorporada como referência rápida. UFCG · Prof. Weiller F. Chaves Barboza</p>
+
+<div class="macete">
+<b>Como usar este material:</b> cada seção começa explicando <b>o macete</b> — o critério de decisão para escolher a técnica certa — antes de qualquer conta. Em seguida vêm <b>exemplos totalmente resolvidos</b> (um para cada "sabor" de problema da lista) e, por fim, uma <b>tabela de referência rápida</b> classificando os itens restantes da lista pela técnica e pela montagem inicial, para você aplicar o mesmo raciocínio. Dado o tamanho da lista (mais de 130 itens!), nem todos os itens têm dedução linha-a-linha aqui — mas todos têm o caminho indicado. Peça qualquer item específico e eu resolvo por completo.
+</div>
+
+<div class="toc">
+<b>Sumário</b>
+<ul>
+<li><a href="#tabela">0. Tabela de Integrais e Derivadas Imediatas</a></li>
+<li><a href="#ibp">1. Integração por Partes</a></li>
+<li><a href="#trig">2. Integrais Trigonométricas</a></li>
+<li><a href="#trigsub">3. Substituição Trigonométrica</a></li>
+<li><a href="#pfrac">4. Frações Parciais</a></li>
+<li><a href="#improp">5. Integrais Impróprias</a></li>
+</ul>
+</div>
+
+<!-- ================= SECTION 0: TABELA ================= -->
+<h2 id="tabela">0. Tabela de Integrais e Derivadas Imediatas</h2>
+<p>Base de tudo o que vem a seguir — memorize estas antes de tentar qualquer técnica mais avançada. Toda técnica (partes, trig, substituição trigonométrica, frações parciais) serve apenas para <i>reduzir</i> uma integral difícil a uma destas formas imediatas.</p>
+
+<h3>Derivadas imediatas</h3>
+<div class="grid2">
+<div class="formula">d/dx(x<sup>n</sup>) = n·x<sup>n−1</sup></div>
+<div class="formula">d/dx(e<sup>x</sup>) = e<sup>x</sup> &nbsp; d/dx(a<sup>x</sup>) = a<sup>x</sup>ln a</div>
+<div class="formula">d/dx(ln x) = 1/x</div>
+<div class="formula">d/dx(sen x) = cos x &nbsp; d/dx(cos x) = −sen x</div>
+<div class="formula">d/dx(tg x) = sec²x &nbsp; d/dx(cotg x) = −cossec²x</div>
+<div class="formula">d/dx(sec x) = sec x·tg x &nbsp; d/dx(cossec x) = −cossec x·cotg x</div>
+<div class="formula">d/dx(sen<sup>−1</sup>x) = 1/√(1−x²) &nbsp; d/dx(cos<sup>−1</sup>x) = −1/√(1−x²)</div>
+<div class="formula">d/dx(tg<sup>−1</sup>x) = 1/(1+x²) &nbsp; d/dx(sec<sup>−1</sup>x) = 1/(|x|√(x²−1))</div>
+<div class="formula">d/dx(senh x) = cosh x &nbsp; d/dx(cosh x) = senh x</div>
+<div class="formula">d/dx(tgh x) = sech²x</div>
+</div>
+
+<h3>Integrais imediatas — formas básicas</h3>
+<div class="grid2">
+<div class="formula">∫k dx = kx + C</div>
+<div class="formula">∫x<sup>n</sup> dx = x<sup>n+1</sup>/(n+1) + C, n≠−1</div>
+<div class="formula">∫dx/x = ln|x| + C</div>
+<div class="formula">∫e<sup>x</sup> dx = e<sup>x</sup> + C &nbsp; ∫a<sup>x</sup>dx = a<sup>x</sup>/ln a + C</div>
+<div class="formula">∫sen x dx = −cos x + C &nbsp; ∫cos x dx = sen x + C</div>
+<div class="formula">∫sec²x dx = tg x + C &nbsp; ∫cossec²x dx = −cotg x + C</div>
+<div class="formula">∫sec x·tg x dx = sec x + C &nbsp; ∫cossec x·cotg x dx = −cossec x + C</div>
+<div class="formula">∫tg x dx = ln|sec x| + C &nbsp; ∫cotg x dx = ln|sen x| + C</div>
+<div class="formula">∫sec x dx = ln|sec x + tg x| + C</div>
+<div class="formula">∫cossec x dx = −ln|cossec x + cotg x| + C</div>
+</div>
+
+<h3>Envolvendo a²±x² e x²−a² (essenciais para substituição trigonométrica)</h3>
+<div class="grid2">
+<div class="formula">∫dx/(a²+x²) = (1/a)·tg<sup>−1</sup>(x/a) + C</div>
+<div class="formula">∫dx/√(a²−x²) = sen<sup>−1</sup>(x/a) + C</div>
+<div class="formula">∫dx/√(a²+x²) = ln(x+√(a²+x²)) + C = senh<sup>−1</sup>(x/a)+C</div>
+<div class="formula">∫dx/√(x²−a²) = ln|x+√(x²−a²)| + C</div>
+<div class="formula">∫dx/(x√(x²−a²)) = (1/a)·sec<sup>−1</sup>|x/a| + C</div>
+<div class="formula">∫√(a²−x²) dx = (x/2)√(a²−x²) + (a²/2)sen<sup>−1</sup>(x/a) + C</div>
+</div>
+
+<h3>Reduções por partes (base do "macete cíclico" e "tabular")</h3>
+<div class="grid2">
+<div class="formula">∫f g' dx = fg − ∫f' g dx</div>
+<div class="formula">∫xe<sup>ax</sup>dx = e<sup>ax</sup>(ax−1)/a² + C</div>
+<div class="formula">∫e<sup>ax</sup>sen(bx)dx = e<sup>ax</sup>(a·sen bx − b·cos bx)/(a²+b²) + C</div>
+<div class="formula">∫e<sup>ax</sup>cos(bx)dx = e<sup>ax</sup>(a·cos bx + b·sen bx)/(a²+b²) + C</div>
+<div class="formula">∫ln(ax) dx = x ln(ax) − x + C</div>
+<div class="formula">∫sen<sup>−1</sup>x dx = x sen<sup>−1</sup>x + √(1−x²) + C</div>
+</div>
+
+<h3>Reduções trigonométricas (potências)</h3>
+<div class="grid2">
+<div class="formula">∫sen<sup>n</sup>ax dx = −sen<sup>n−1</sup>ax·cos ax/(na) + (n−1)/n ∫sen<sup>n−2</sup>ax dx</div>
+<div class="formula">∫cos<sup>n</sup>ax dx = cos<sup>n−1</sup>ax·sen ax/(na) + (n−1)/n ∫cos<sup>n−2</sup>ax dx</div>
+<div class="formula">∫tg<sup>n</sup>x dx = tg<sup>n−1</sup>x/(n−1) − ∫tg<sup>n−2</sup>x dx, n≠1</div>
+<div class="formula">∫sec<sup>n</sup>x dx = sec<sup>n−2</sup>x·tg x/(n−1) + (n−2)/(n−1)∫sec<sup>n−2</sup>x dx</div>
+</div>
+<p class="note">Tabela completa (integrais 1–157, formas algébricas, geométricas, limites e regras de diferenciação) está no PDF "Tabela de Fórmulas" que você enviou — aqui destacamos só o subconjunto usado na Lista 01.</p>
+
+<hr>
+
+<!-- ================= SECTION 1: IBP ================= -->
+<h2 id="ibp">1. Integração por Partes</h2>
+
+<div class="macete">
+<b>A fórmula:</b> <span class="fx">∫u dv = uv − ∫v du</span>.<br><br>
+<b>O macete (regra LIATE):</b> escolha <b>u</b> seguindo a prioridade
+<b>L</b>ogarítmica &gt; <b>I</b>nversa trigonométrica &gt; <b>A</b>lgébrica (polinômio) &gt; <b>T</b>rigonométrica &gt; <b>E</b>xponencial.
+Quem aparece primeiro nessa lista vira <i>u</i>; o resto (junto com <i>dx</i>) vira <i>dv</i>. Motivo: ln e arc-funções não têm antiderivada simples, então é melhor <i>derivá-las</i> (elas viram algo mais simples); exponenciais e trigonométricas são fáceis de integrar repetidamente, então é melhor jogá-las para <i>dv</i>.<br><br>
+<b>Método tabular (quando u é polinômio):</b> monte duas colunas — D (derivadas sucessivas de u até chegar a 0) e I (integrais sucessivas de dv) — e some os produtos diagonais com sinais alternados <span class="fx">+, −, +, −, ...</span>. Isso substitui repetir "por partes" várias vezes.<br><br>
+<b>Caso cíclico (e<sup>ax</sup>·sen/cos):</b> aplicar partes duas vezes traz a integral original de volta. Chame a integral de <i>I</i>, isole <i>I</i> algebricamente dos dois lados da equação.
+</div>
+
+<div class="ex"><span class="tag">1a</span> ∫x sen(x/2) dx <span class="enun">— u algébrico, dv trigonométrico</span>
+<ul class="steps">
+<li>u = x, dv = sen(x/2)dx → du = dx, v = −2cos(x/2)</li>
+<li>= −2x cos(x/2) + 2∫cos(x/2) dx</li>
+</ul>
+<div class="ans">= −2x·cos(x/2) + 4·sen(x/2) + C</div>
+</div>
+
+<div class="ex"><span class="tag">1c</span> ∫t²cos t dt <span class="enun">— método tabular (polinômio grau 2)</span>
+<table><tr><th>D (deriva)</th><th>I (integra)</th></tr>
+<tr><td>t² (+)</td><td>cos t</td></tr>
+<tr><td>2t (−)</td><td>sen t</td></tr>
+<tr><td>2 (+)</td><td>−cos t</td></tr>
+<tr><td>0</td><td>−sen t</td></tr>
+</table>
+<div class="ans">= t²sen t + 2t cos t − 2sen t + C</div>
+</div>
+
+<div class="ex"><span class="tag">1e</span> ∫₀¹ x eˣ dx <span class="enun">— integral definida, u=x</span>
+<ul class="steps">
+<li>u = x, dv = eˣdx → v = eˣ</li>
+<li>= [x eˣ]₀¹ − ∫₀¹ eˣ dx = (e−0) − (e−1)</li>
+</ul>
+<div class="ans">= 1</div>
+</div>
+
+<div class="ex"><span class="tag">1i</span> ∫arctg(y) dy <span class="enun">— inversa trigonométrica: u = arctg y, dv = dy</span>
+<ul class="steps">
+<li>du = dy/(1+y²), v = y</li>
+<li>= y·arctg y − ∫ y/(1+y²) dy</li>
+</ul>
+<div class="ans">= y·arctg(y) − ½ln(1+y²) + C</div>
+</div>
+
+<div class="ex"><span class="tag">1q</span> ∫e<sup>θ</sup>sen(θ) dθ <span class="enun">— caso cíclico</span>
+<ul class="steps">
+<li>I = e<sup>θ</sup>senθ − ∫e<sup>θ</sup>cosθ dθ &nbsp;(por partes, u=senθ)</li>
+<li>∫e<sup>θ</sup>cosθ dθ = e<sup>θ</sup>cosθ + I &nbsp;(por partes de novo, u=cosθ)</li>
+<li>I = e<sup>θ</sup>senθ − e<sup>θ</sup>cosθ − I &nbsp;⇒ 2I = e<sup>θ</sup>(senθ−cosθ)</li>
+</ul>
+<div class="ans">I = ½e<sup>θ</sup>(senθ − cosθ) + C</div>
+</div>
+
+<div class="ex"><span class="tag">1s</span> ∫e<sup>2x</sup>cos(3x) dx <span class="enun">— cíclico; use direto a fórmula geral</span>
+<div class="ans">= e<sup>2x</sup>(2cos3x + 3sen3x)/13 + C</div>
+</div>
+
+<div class="ex"><span class="tag">1v</span> ∫x(ln x)² dx <span class="enun">— u = (ln x)² (logarítmica manda), dv = x dx</span>
+<ul class="steps">
+<li>u=(ln x)², v=x²/2, du = 2ln x/x dx</li>
+<li>= (x²/2)(ln x)² − ∫x·ln x dx</li>
+<li>∫x ln x dx = (x²/2)ln x − x²/4 &nbsp;(partes de novo)</li>
+</ul>
+<div class="ans">= (x²/2)(ln x)² − (x²/2)ln x + x²/4 + C</div>
+</div>
+
+<div class="ex"><span class="tag">1w</span> ∫cos(√x) dx <span class="enun">— primeiro <b>substituição</b> t=√x, depois partes</span>
+<ul class="steps">
+<li>t=√x ⇒ x=t², dx=2t dt: integral vira 2∫t·cos t dt</li>
+<li>∫t cos t dt = t sen t + cos t &nbsp;(por partes simples)</li>
+</ul>
+<div class="ans">= 2√x·sen(√x) + 2cos(√x) + C</div>
+</div>
+
+<div class="ex"><span class="tag">1u, 1x</span> ∫cos(√x)/√x dx e ∫e<sup>√x</sup>/√x dx <span class="enun">— <b>pegadinha</b>: não precisam de partes! São substituição pura (t=√x, dt = dx/(2√x))</span>
+<div class="ans">∫cos(√x)/√x dx = 2sen(√x)+C &nbsp;&nbsp;&nbsp; ∫e<sup>√x</sup>/√x dx = 2e<sup>√x</sup>+C</div>
+</div>
+
+<div class="ex"><span class="tag">1y</span> ∫sen(3x)cos(x/2) dx <span class="enun">— outra pegadinha: produto sen·cos com argumentos diferentes usa <b>fórmula de produto-para-soma</b>, não partes: senA cosB = ½[sen(A−B)+sen(A+B)]</span>
+<div class="ans">= ½∫[sen(2,5x) + sen(3,5x)]dx = −cos(2,5x)/5 − cos(3,5x)/7 + C</div>
+</div>
+
+<div class="ex"><span class="tag">1z</span> ∫₀^(π/2) x³cos(2x) dx <span class="enun">— tabular, 3 rodadas</span>
+<table><tr><th>D</th><th>I</th></tr>
+<tr><td>x³ (+)</td><td>cos2x</td></tr>
+<tr><td>3x² (−)</td><td>½sen2x</td></tr>
+<tr><td>6x (+)</td><td>−¼cos2x</td></tr>
+<tr><td>6 (−)</td><td>−⅛sen2x</td></tr>
+<tr><td>0</td><td>1/16 cos2x</td></tr>
+</table>
+<p>F(x) = (x³/2)sen2x + (3x²/4)cos2x − (3x/4)sen2x − (3/8)cos2x. Em x=π/2 (sen π=0, cosπ=−1): F(π/2) = −3π²/16 + 3/8. Em x=0: F(0) = −3/8.</p>
+<div class="ans">= F(π/2) − F(0) = 3/4 − 3π²/16 ≈ −1,099</div>
+</div>
+
+<div class="ex"><span class="tag">1α</span> ∫₂^(2/√3)... (limites 2/√3 a 2) t·arcsec(t) dt <span class="enun">— inversa trig: u = arcsec t, dv = t dt</span>
+<ul class="steps">
+<li>v = t²/2, du = dt/(|t|√(t²−1))</li>
+<li>∫t·arcsec t dt = (t²/2)arcsec t − ½∫t/√(t²−1) dt = (t²/2)arcsec t − ½√(t²−1)</li>
+<li>Em t=2: 2·(π/3) − ½√3 &nbsp;&nbsp; Em t=2/√3: (2/3)·(π/6) − ½·(√3/3)</li>
+</ul>
+<div class="ans">= 5π/9 − √3/3 ≈ 1,168</div>
+</div>
+
+<div class="ex"><span class="tag">1β</span> ∫₀^(1/√2) 2y·arcsen(y²) dy <span class="enun">— substituição w=y² primeiro (dw=2y dy) reduz tudo a ∫arcsen(w)dw</span>
+<ul class="steps">
+<li>∫arcsen(w)dw = w·arcsen w + √(1−w²) &nbsp;(fórmula imediata da tabela, item 103)</li>
+<li>Limites em w: y=0→w=0; y=1/√2→w=1/2</li>
+</ul>
+<div class="ans">= [w·arcsen w + √(1−w²)]₀^(1/2) = π/12 + √3/2 − 1 ≈ 0,128</div>
+</div>
+
+<h3>Aplicações (área e volume) com integração por partes</h3>
+
+<div class="ex"><span class="tag">2a</span> Área sob y = x sen x, 0≤x≤π <span class="enun">(x sen x ≥0 nesse intervalo)</span>
+<div class="ans">A = ∫₀^π x sen x dx = [−x cos x + sen x]₀^π = π</div>
+</div>
+
+<div class="ex"><span class="tag">4</span> Volume: região do 1º quadrante sob y=eˣ, 0≤x≤ln2, girada em torno de x=ln2 <span class="enun">— método das cascas: V=2π∫(raio)(altura)dx</span>
+<ul class="steps">
+<li>V = 2π∫₀^(ln2) (ln2 − x)eˣ dx = 2π[ln2·∫eˣdx − ∫x eˣdx]</li>
+<li>∫₀^(ln2)eˣdx = 1; ∫₀^(ln2) x eˣ dx = 2ln2 − 1 (por partes)</li>
+</ul>
+<div class="ans">V = 2π(1 − ln2)</div>
+</div>
+
+<h3>Guia rápido — demais itens da questão 1</h3>
+<table>
+<tr><th>Item</th><th>Técnica</th><th>Montagem (u, dv)</th></tr>
+<tr><td>b) θcos(πθ)</td><td>Partes simples</td><td>u=θ, dv=cos(πθ)dθ</td></tr>
+<tr><td>d) x³ln x</td><td>Partes simples (log manda)</td><td>u=ln x, dv=x³dx</td></tr>
+<tr><td>f) xe³ˣ</td><td>Partes simples</td><td>u=x, dv=e³ˣdx</td></tr>
+<tr><td>g) x²e⁻ˣ</td><td>Tabular (2 rodadas)</td><td>u=x², dv=e⁻ˣdx</td></tr>
+<tr><td>h) (x²−2x+1)e²ˣ</td><td>Tabular (2 rodadas)</td><td>u=x²−2x+1</td></tr>
+<tr><td>j) x·sec²x</td><td>Partes simples</td><td>u=x, dv=sec²x dx (v=tg x)</td></tr>
+<tr><td>l) 4x·sec²(2x)</td><td>Partes simples</td><td>u=x, dv=sec²(2x)dx (v=½tg2x)</td></tr>
+<tr><td>k) x³e³</td><td>Pegadinha! e³ é <b>constante</b></td><td>∫x³e³dx = e³·x⁴/4 + C (regra da potência)</td></tr>
+<tr><td>m) p⁴e⁻ᵖ</td><td>Tabular (4 rodadas)</td><td>u=p⁴</td></tr>
+<tr><td>n) (x²−5x)eˣ</td><td>Tabular (2 rodadas)</td><td>u=x²−5x</td></tr>
+<tr><td>o) x⁵eˣ</td><td>Tabular (5 rodadas)</td><td>u=x⁵ — mecânico, só repetir</td></tr>
+<tr><td>p) t²e⁴ᵗ</td><td>Tabular (2 rodadas)</td><td>u=t²</td></tr>
+<tr><td>r) e⁻ʸcos y</td><td>Cíclico</td><td>igual ao 1q</td></tr>
+<tr><td>t) e⁻²ˣsen(2x)</td><td>Cíclico / fórmula direta</td><td>a=−2, b=2 na fórmula da tabela</td></tr>
+<tr><td>2b, 2c) área de x sen x noutros intervalos</td><td>Mesma antiderivada de 1a/2a</td><td>cuidado com o sinal de x sen x em cada intervalo</td></tr>
+<tr><td>3a,b,c) área de x cos x</td><td>Partes: u=x, dv=cos x dx</td><td>∫x cos x dx = cos x + x sen x</td></tr>
+<tr><td>5) y=e⁻ˣ girada em x=1 (a: eixo y / b: x=1)</td><td>Discos/cascas + partes</td><td>∫x e⁻ˣdx aparece nas duas</td></tr>
+<tr><td>6) y=cos x girada (a: eixo y / b: x=π/2)</td><td>Cascas + partes</td><td>∫x cos x dx aparece</td></tr>
+</table>
+
+<hr>
+
+<!-- ================= SECTION 2: TRIG ================= -->
+<h2 id="trig">2. Integrais Trigonométricas</h2>
+
+<div class="macete">
+<b>O macete central: olhe a paridade dos expoentes.</b><br><br>
+<b>∫sen<sup>m</sup>x cos<sup>n</sup>x dx —</b>
+se <u>m é ímpar</u>, separe um fator sen x, troque o resto sen<sup>par</sup>x = (1−cos²x)<sup>...</sup> e substitua u=cos x.
+Se <u>n é ímpar</u>, faça o espelho: separe cos x, use cos²x=1−sen²x, u=sen x.
+Se <u>ambos pares</u>, não há substituição direta — use as identidades de redução de potência:
+sen²x = (1−cos2x)/2, cos²x = (1+cos2x)/2.<br><br>
+<b>∫tg<sup>m</sup>x sec<sup>n</sup>x dx —</b>
+se <u>n é par</u> (≥2), separe sec²x, escreva o resto sec<sup>par</sup>x=(1+tg²x)<sup>...</sup>, substitua u=tg x.
+Se <u>m é ímpar</u>, separe sec x·tg x, escreva tg<sup>par</sup>x=(sec²x−1)<sup>...</sup>, substitua u=sec x.
+Se m par e n ímpar, use a fórmula de redução para sec<sup>n</sup>x (integração por partes escondida).
+Mesma lógica vale para cotg/cossec, trocando os papéis.<br><br>
+<b>Produtos sen(ax)cos(bx), sen(ax)sen(bx), cos(ax)cos(bx) com a≠b:</b> nunca por partes — use as fórmulas de produto-para-soma (tabela, item 69).
+</div>
+
+<div class="ex"><span class="tag">7e</span> ∫sen³x dx <span class="enun">— potência ímpar de seno</span>
+<ul class="steps">
+<li>sen³x = sen x·(1−cos²x); u=cos x, du=−sen x dx</li>
+</ul>
+<div class="ans">= −cos x + cos³x/3 + C</div>
+</div>
+
+<div class="ex"><span class="tag">7g</span> ∫sen⁵x dx <span class="enun">— mesma ideia, potência maior</span>
+<ul class="steps">
+<li>sen⁵x = sen x(1−cos²x)²; u=cos x</li>
+</ul>
+<div class="ans">= −cos x + (2/3)cos³x − (1/5)cos⁵x + C</div>
+</div>
+
+<div class="ex"><span class="tag">7j</span> ∫sen³x cos³x dx <span class="enun">— ambos ímpares: escolha qualquer um para sobrar</span>
+<ul class="steps">
+<li>sen³x = sen x(1−cos²x); u=cos x</li>
+<li>= −∫(1−u²)u³ du = −u⁴/4 + u⁶/6</li>
+</ul>
+<div class="ans">= cos⁶x/6 − cos⁴x/4 + C</div>
+</div>
+
+<div class="ex"><span class="tag">7k</span> ∫cos³(2x)sen⁵(2x) dx <span class="enun">— cos ímpar, mesmo com argumento 2x</span>
+<ul class="steps">
+<li>cos³(2x)=cos(2x)(1−sen²2x); u=sen(2x), du=2cos(2x)dx</li>
+</ul>
+<div class="ans">= sen⁶(2x)/12 − sen⁸(2x)/16 + C</div>
+</div>
+
+<div class="ex"><span class="tag">7u</span> ∫sec²x·tg x dx <span class="enun">— u=tg x direto</span>
+<div class="ans">= tg²x/2 + C</div>
+</div>
+
+<div class="ex"><span class="tag">7w</span> ∫sec³x·tg x dx <span class="enun">— m=1 ímpar: separe sec·tg, u=sec x</span>
+<div class="ans">= sec³x/3 + C</div>
+</div>
+
+<div class="ex"><span class="tag">7x</span> ∫sec⁴x·tg²x dx <span class="enun">— n=4 par: separe sec², u=tg x</span>
+<ul class="steps">
+<li>sec⁴x=(1+tg²x)sec²x; ∫(1+u²)u² du</li>
+</ul>
+<div class="ans">= tg³x/3 + tg⁵x/5 + C</div>
+</div>
+
+<div class="ex"><span class="tag">7z</span> ∫_(π/4)^(π/2) cossec⁴x dx <span class="enun">— espelho de sec par: separe cossec², u=cotg x</span>
+<ul class="steps">
+<li>cossec⁴x=(1+cotg²x)cossec²x → −∫(1+u²)du = −cotg x − cotg³x/3</li>
+<li>Em π/2: 0. Em π/4: −(1+1/3)=−4/3</li>
+</ul>
+<div class="ans">= 0−(−4/3) = 4/3</div>
+</div>
+
+<div class="ex"><span class="tag">7α</span> ∫sec⁶x dx <span class="enun">— n=6 par</span>
+<div class="ans">= tg x + (2/3)tg³x + (1/5)tg⁵x + C</div>
+</div>
+
+<div class="ex"><span class="tag">7β</span> ∫tg⁵x dx <span class="enun">— potência ímpar de tg: tg⁵x=tg³x(sec²x−1), reduz recursivamente</span>
+<ul class="steps">
+<li>∫tg³x sec²x dx = tg⁴x/4</li>
+<li>∫tg³x dx = tg²x/2 − ln|sec x|</li>
+</ul>
+<div class="ans">= tg⁴x/4 − tg²x/2 + ln|sec x| + C</div>
+</div>
+
+<div class="ex"><span class="tag">7q</span> ∫₀^(2π) √[(1−cos x)/2] dx <span class="enun">— identidade de arco-metade: (1−cosx)/2 = sen²(x/2)</span>
+<ul class="steps">
+<li>√[...] = |sen(x/2)|; em [0,2π], x/2∈[0,π] ⇒ sen(x/2)≥0</li>
+</ul>
+<div class="ans">= ∫₀^(2π) sen(x/2)dx = [−2cos(x/2)]₀^(2π) = 4</div>
+</div>
+
+<div class="ex"><span class="tag">7r</span> ∫₀^π √(1−cos2x) dx <span class="enun">— 1−cos2x = 2sen²x</span>
+<div class="ans">= √2∫₀^π|senx|dx = √2·2 = 2√2</div>
+</div>
+
+<div class="ex"><span class="tag">7s</span> ∫₀^π √(1−sen²t) dt = ∫₀^π|cos t|dt <span class="enun">— cuidado: cos t troca de sinal em π/2</span>
+<div class="ans">= ∫₀^(π/2)cos t dt − ∫_(π/2)^π cos t dt = 1+1 = 2</div>
+</div>
+
+<h3>Guia rápido — demais itens da questão 7</h3>
+<table>
+<tr><th>Item</th><th>Técnica</th></tr>
+<tr><td>a) cos2x, b) 3sen(x/3)</td><td>Imediatas (fórmulas 63/64 da tabela)</td></tr>
+<tr><td>c) cos³x senx, d) sen⁴(2x)cos2x</td><td>Regra da potência direta: u = cos x (ou sen 2x), n único fator ímpar já isolado</td></tr>
+<tr><td>f) cos³x</td><td>Espelho do 7e: u=sen x</td></tr>
+<tr><td>h) ∫₀^π sen⁵(x/2)dx, i) ∫₀^(π/6) 3cos⁵(3x)dx</td><td>Mesmo macete de 7e/7g, depois avaliar limites</td></tr>
+<tr><td>l) 7cos⁷t</td><td>Potência ímpar, u=sen t</td></tr>
+<tr><td>m) ∫₀^π 8sen⁴(2πx)dx</td><td>Potência par: reduzir com sen² =(1−cos2θ)/2 duas vezes</td></tr>
+<tr><td>n) 16sen²x cos²y dy</td><td><b>Pegadinha:</b> sen²x é constante em relação a y! Só integrar 16sen²x·∫cos²y dy</td></tr>
+<tr><td>o) ∫₀^π 8sen⁴y cos²y dy</td><td>Ambos pares: identidades de redução</td></tr>
+<tr><td>p) 8cos³(2θ)sen(2θ)dθ</td><td>u = cos(2θ) direto (regra da potência)</td></tr>
+<tr><td>t) sen²x/√(1−cosx), limites π/3 a π/2</td><td>1−cosx=2sen²(x/2); simplificar antes de integrar</td></tr>
+<tr><td>v) sec x·tg²x</td><td>tg²x=sec²x−1 → vira ∫sec³x−∫secx (usar redução de sec³)</td></tr>
+<tr><td>y) ∫_(π/6)^(π/3) cotg³x dx</td><td>Espelho de tg³: cotg³x=cotgx(cossec²x−1)</td></tr>
+</table>
+
+<hr>
+
+<!-- ================= SECTION 3: TRIG SUB ================= -->
+<h2 id="trigsub">3. Substituição Trigonométrica</h2>
+
+<div class="macete">
+<b>O macete: olhe qual expressão quadrática aparece dentro da raiz (ou no denominador) e escolha a substituição que a transforma num quadrado perfeito via identidade pitagórica.</b>
+<table style="margin-top:.6rem;">
+<tr><th>Você vê...</th><th>Substitua</th><th>Vira</th><th>Identidade</th></tr>
+<tr><td>a² − x²</td><td>x = a·senθ</td><td>a·cosθ</td><td>1−sen²θ=cos²θ</td></tr>
+<tr><td>a² + x²</td><td>x = a·tgθ</td><td>a·secθ</td><td>1+tg²θ=sec²θ</td></tr>
+<tr><td>x² − a²</td><td>x = a·secθ</td><td>a·tgθ</td><td>sec²θ−1=tg²θ</td></tr>
+</table>
+<p style="margin-top:.5rem;">Depois de resolver em θ, monte um triângulo retângulo com os lados x, a e a hipotenusa/cateto correspondente para "traduzir" a resposta de volta para x (ou use as identidades secθ=x/a etc.). <b>Antes de tudo</b>, sempre cheque se um truque algébrico mais simples resolve (como dividir polinômios, ou uma substituição u comum) — trig substitution é o último recurso quando a raiz não sai de outro jeito.</p>
+</div>
+
+<div class="ex"><span class="tag">12a</span> ∫dx/√(9+x²) <span class="enun">— forma a²+x², a=3: x=3tgθ</span>
+<ul class="steps">
+<li>dx=3sec²θdθ, √(9+x²)=3secθ</li>
+<li>= ∫secθ dθ = ln|secθ+tgθ|</li>
+</ul>
+<div class="ans">= ln|x + √(9+x²)| + C</div>
+</div>
+
+<div class="ex"><span class="tag">12e</span> ∫√(25−t²) dt <span class="enun">— forma a²−x², a=5: t=5senθ</span>
+<div class="ans">= (t/2)√(25−t²) + (25/2)sen⁻¹(t/5) + C &nbsp;(fórmula 45 da tabela)</div>
+</div>
+
+<div class="ex"><span class="tag">12g</span> ∫√(y²−25)/y³ dy, y&gt;5 <span class="enun">— forma x²−a², a=5: y=5secθ</span>
+<ul class="steps">
+<li>dy=5secθtgθdθ, √(y²−25)=5tgθ</li>
+<li>integral = (1/5)∫sen²θ dθ = θ/10 − sen2θ/20</li>
+<li>secθ=y/5 ⇒ cosθ=5/y, senθ=√(y²−25)/y</li>
+</ul>
+<div class="ans">= (1/10)sec⁻¹(y/5) − √(y²−25)/(2y²) + C</div>
+</div>
+
+<div class="ex"><span class="tag">12k</span> ∫100dx/(36+25x²) <span class="enun">— não precisa trig sub: é forma imediata a²+u² após fatorar</span>
+<ul class="steps">
+<li>36+25x² = 25(x²+(6/5)²); fórmula ∫dx/(a²+u²) direto</li>
+</ul>
+<div class="ans">= (10/3)·arctg(5x/6) + C</div>
+</div>
+
+<div class="ex"><span class="tag">12m</span> ∫dx/(x²−1)^(3/2) <span class="enun">— forma x²−a², a=1: x=secθ</span>
+<ul class="steps">
+<li>(x²−1)^(3/2)=tg³θ, dx=secθtgθdθ ⇒ integral = ∫cosθ/sen²θ dθ = −1/senθ</li>
+<li>secθ=x ⇒ senθ=√(x²−1)/x</li>
+</ul>
+<div class="ans">= −x/√(x²−1) + C</div>
+</div>
+
+<div class="ex"><span class="tag">12q</span> ∫x²/(4+x²) dx <span class="enun">— <b>pegadinha</b>: divisão algébrica é mais rápida que trig sub!</span>
+<ul class="steps">
+<li>x²/(4+x²) = 1 − 4/(4+x²)</li>
+</ul>
+<div class="ans">= x − 2·arctg(x/2) + C</div>
+</div>
+
+<div class="ex"><span class="tag">12r</span> ∫x³dx/√(x²+4) <span class="enun">— <b>pegadinha</b>: substituição algébrica u=x²+4 é mais rápida</span>
+<ul class="steps">
+<li>u=x²+4, x²=u−4, x dx = du/2</li>
+<li>∫(u−4)/√u · du/2 = ½∫(u^(1/2) − 4u^(−1/2))du</li>
+</ul>
+<div class="ans">= (1/3)(x²+4)^(3/2) − 4√(x²+4) + C</div>
+</div>
+
+<div class="ex"><span class="tag">12s</span> ∫dx/(x²√(x²+1)) <span class="enun">— forma a²+x², a=1: x=tgθ</span>
+<div class="ans">= −√(x²+1)/x + C &nbsp;(fórmula 41 da tabela, a=1)</div>
+</div>
+
+<h3>Guia rápido — demais itens da questão 12</h3>
+<table>
+<tr><th>Item</th><th>Forma</th><th>Substituição</th></tr>
+<tr><td>b) 3dx/√(1+9x²)</td><td>a²+u², u=3x</td><td>Direto: ln(3x+√(1+9x²)) — ou 3x=tgθ</td></tr>
+<tr><td>c) ∫₀² dx/(8+2x²)</td><td>Imediata após fatorar 2</td><td>= (1/4)arctg(x/2) → resposta π/16</td></tr>
+<tr><td>d) ∫2dx/√(1−4x²)</td><td>a²−u², u=2x</td><td>arcsen(2x) → resposta π/4</td></tr>
+<tr><td>f) 5dx/√(25x²−9), x&gt;3/5</td><td>x²−a²</td><td>5x = 3secθ</td></tr>
+<tr><td>h) 2dx/(x³√(x²−1))</td><td>x²−a², a=1</td><td>x=secθ</td></tr>
+<tr><td>i) 8dw/(w²√(4−w²))</td><td>a²−x², a=2</td><td>w=2senθ</td></tr>
+<tr><td>j) √(9−w²)/w²</td><td>a²−x², a=3</td><td>w=3senθ (fórmula 48 da tabela)</td></tr>
+<tr><td>l) ∫4x²dx/(1−x²)^(3/2)</td><td>a²−x², a=1</td><td>x=senθ</td></tr>
+<tr><td>n) (1−x²)^(3/2)/x⁶</td><td>a²−x², a=1</td><td>x=senθ</td></tr>
+<tr><td>o) 8dx/(4x²+1)²</td><td>(a²+u²)², a=1/2</td><td>Fórmula de redução 33 da tabela (ou x=½tgθ)</td></tr>
+<tr><td>p) (1−r²)^(5/2)/r⁸</td><td>a²−x²</td><td>r=senθ</td></tr>
+<tr><td>t) igual ao item n)</td><td>—</td><td>—</td></tr>
+</table>
+
+<hr>
+
+<!-- ================= SECTION 4: PARTIAL FRACTIONS ================= -->
+<h2 id="pfrac">4. Frações Parciais</h2>
+
+<div class="macete">
+<b>O macete: fatore o denominador e escreva um termo por fator, seguindo as 4 regras:</b>
+<table style="margin-top:.6rem;">
+<tr><th>Tipo de fator no denominador</th><th>Termo(s) na decomposição</th></tr>
+<tr><td>Fator linear simples (x−a)</td><td>A/(x−a)</td></tr>
+<tr><td>Fator linear repetido (x−a)<sup>k</sup></td><td>A₁/(x−a) + A₂/(x−a)² + ... + A<sub>k</sub>/(x−a)<sup>k</sup></td></tr>
+<tr><td>Quadrático irredutível simples (x²+bx+c)</td><td>(Ax+B)/(x²+bx+c)</td></tr>
+<tr><td>Quadrático irredutível repetido (x²+bx+c)<sup>k</sup></td><td>(A₁x+B₁)/(...) + ... + (A<sub>k</sub>x+B<sub>k</sub>)/(...)<sup>k</sup></td></tr>
+</table>
+<p style="margin-top:.5rem;"><b>Passo a passo:</b> (1) se o grau do numerador ≥ grau do denominador, faça a divisão de polinômios antes; (2) fatore o denominador completamente; (3) escreva a soma de frações com constantes A, B, C… incógnitas; (4) multiplique tudo pelo denominador comum e iguale coeficientes, ou substitua valores espertos de x (as raízes do denominador são as mais rápidas); (5) integre cada termo — os lineares viram logaritmos, os quadráticos irredutíveis viram arctg (+ eventualmente log).</p>
+</div>
+
+<div class="ex"><span class="tag">13a</span> (5x−13)/[(x−3)(x−2)] <span class="enun">— fatores lineares distintos</span>
+<ul class="steps">
+<li>5x−13 = A(x−2)+B(x−3)</li>
+<li>x=3: 2=A &nbsp;&nbsp; x=2: −3=−B ⇒ B=3</li>
+</ul>
+<div class="ans">= 2/(x−3) + 3/(x−2)</div>
+</div>
+
+<div class="ex"><span class="tag">13b</span> (z+1)/[z²(z−1)] <span class="enun">— fator repetido z² + fator simples</span>
+<ul class="steps">
+<li>z+1 = Az(z−1) + B(z−1) + Cz²</li>
+<li>z=0: B=−1 &nbsp;&nbsp; z=1: C=2 &nbsp;&nbsp; coef. z²: A+C=0 ⇒ A=−2</li>
+</ul>
+<div class="ans">= −2/z − 1/z² + 2/(z−1)</div>
+</div>
+
+<div class="ex"><span class="tag">13c</span> (5x−7)/(x²−3x+2) <span class="enun">— fatore o denominador primeiro: (x−1)(x−2)</span>
+<div class="ans">= 2/(x−1) + 3/(x−2)</div>
+</div>
+
+<div class="ex"><span class="tag">14a</span> ∫dx/(1−x²) <span class="enun">— (1−x)(1+x)</span>
+<div class="ans">= ½ln|(1+x)/(1−x)| + C</div>
+</div>
+
+<div class="ex"><span class="tag">14k</span> ∫dx/(x²−1)² <span class="enun">— (x−1)²(x+1)², fator linear repetido dos dois lados</span>
+<ul class="steps">
+<li>1/(x²−1)² = (−1/4)/(x−1) + (1/4)/(x−1)² + (1/4)/(x+1) + (1/4)/(x+1)²</li>
+</ul>
+<div class="ans">= (1/4)ln|(x+1)/(x−1)| − x/(2(x²−1)) + C</div>
+</div>
+
+<div class="ex"><span class="tag">14o</span> ∫(y²+2y+1)/(y²+1)² dy <span class="enun">— quadrático irredutível repetido; truque: separe o numerador</span>
+<ul class="steps">
+<li>y²+2y+1 = (y²+1) + 2y ⇒ fração = 1/(y²+1) + 2y/(y²+1)²</li>
+<li>∫2y/(y²+1)² dy: u=y²+1 ⇒ = −1/(y²+1)</li>
+</ul>
+<div class="ans">= arctg(y) − 1/(y²+1) + C</div>
+</div>
+
+<h3>Guia rápido — demais itens das questões 13 e 14</h3>
+<table>
+<tr><th>Item</th><th>Fatoração / técnica</th></tr>
+<tr><td>13d) (t²+8)/(t²−5t+6)</td><td>Grau numerador = grau denom.: divida primeiro (quociente 1 + resto), depois frações parciais em (t−2)(t−3)</td></tr>
+<tr><td>14b) 1/(x²+2x)</td><td>x(x+2), lineares distintos</td></tr>
+<tr><td>14c) (x+4)/(x²+5x−6)</td><td>(x−1)(x+6)</td></tr>
+<tr><td>14d) (2x+1)/(x²−7x+12)</td><td>(x−3)(x−4)</td></tr>
+<tr><td>14e,f) limites definidos y/(y²−2y−3), (y+4)/(y²+y)</td><td>Fatorar e avaliar; cuidado com domínio (assíntotas dentro do intervalo — checar convergência)</td></tr>
+<tr><td>14g) 1/(t³+t²−2t)</td><td>t(t−1)(t+2), 3 fatores lineares</td></tr>
+<tr><td>14h) (x+3)/(2x³−8x)</td><td>2x(x−2)(x+2)</td></tr>
+<tr><td>14i,j) x³/(x²+2x+1) ou x²−2x+1</td><td>Grau num&gt;denom: divida primeiro; denom = (x±1)²</td></tr>
+<tr><td>14l) x²/[(x−1)(x²+2x+1)]</td><td>Atenção: x²+2x+1=(x+1)², então é (x−1)(x+1)²</td></tr>
+<tr><td>14m) 1/[(x+1)(x²+1)]</td><td>Linear × quadrático irredutível</td></tr>
+<tr><td>14n) (3t²+t+4)/(t³+t)</td><td>t(t²+1)</td></tr>
+<tr><td>14p) (8x²+8x+2)/(4x²+1)</td><td>Grau igual: divida primeiro (quociente constante 2)</td></tr>
+<tr><td>14q) (x²+4x+1)/[(x−1)(x+1)(x+3)]</td><td>3 fatores lineares distintos</td></tr>
+<tr><td>14r) (6x+7)/(x+2)²</td><td>Fator repetido único: escreva 6x+7=6(x+2)−5</td></tr>
+<tr><td>14s) (2x³−4x²−x−3)/(x²−2x−3)</td><td>Divida primeiro (grau num&gt;denom), depois (x−3)(x+1)</td></tr>
+<tr><td>14t) 1/[x(x²−1)²]</td><td>x·(x−1)²(x+1)², combina linear simples + repetidos</td></tr>
+<tr><td>15a,b) volumes de sólidos com y racional</td><td>Frações parciais dentro da integral de V=π∫y²dx (ou 2π∫xy dy)</td></tr>
+</table>
+
+<hr>
+
+<!-- ================= SECTION 5: IMPROPER ================= -->
+<h2 id="improp">5. Integrais Impróprias</h2>
+
+<div class="macete">
+<b>Duas situações tornam uma integral "imprópria":</b><br>
+<b>(1) Limite infinito</b> — troque ∞ por um parâmetro b e calcule o limite: <span class="fx">∫ₐ^∞ f dx = lim<sub>b→∞</sub> ∫ₐ^b f dx</span>.<br>
+<b>(2) Descontinuidade no integrando</b> (dentro do intervalo ou num extremo) — isole o ponto ruim c com um parâmetro que tende a c e calcule o limite lateral: <span class="fx">∫ₐ^c f dx = lim<sub>t→c⁻</sub>∫ₐ^t f dx</span>.<br><br>
+<b>Se o limite existir (finito) ⇒ a integral converge. Se não existir (±∞ ou oscila) ⇒ diverge.</b><br><br>
+<b>Quando não dá para calcular exatamente</b>, use os testes de comparação: <b>p-teste</b> (∫₁^∞ dx/x<sup>p</sup> converge se p&gt;1, diverge se p≤1; e ∫₀¹dx/x<sup>p</sup> converge se p&lt;1) e <b>comparação direta/limite</b>: se 0≤f≤g e ∫g converge, ∫f converge; se f≥g≥0 e ∫g diverge, ∫f diverge.
+</div>
+
+<div class="ex"><span class="tag">16</span> ∫₁^∞ ln(x)/x² dx — a área é finita? <span class="enun">— limite infinito + por partes</span>
+<ul class="steps">
+<li>u=ln x, dv=dx/x² ⇒ v=−1/x</li>
+<li>= [−ln x/x]₁^∞ + ∫₁^∞ dx/x²</li>
+<li>lim<sub>b→∞</sub> (−ln b/b) = 0 (ln b cresce mais devagar que b, regra de L'Hôpital)</li>
+<li>∫₁^∞ dx/x² = 1</li>
+</ul>
+<div class="ans">Sim, é finita: valor = 1</div>
+</div>
+
+<div class="ex"><span class="tag">17a</span> ∫₀^∞ dx/(x²+1) <span class="enun">— imediata + limite</span>
+<div class="ans">= lim<sub>b→∞</sub>[arctg x]₀^b = π/2</div>
+</div>
+
+<div class="ex"><span class="tag">17c</span> ∫₀¹ dx/√x <span class="enun">— descontinuidade em x=0; p=1/2&lt;1 ⇒ converge (p-teste)</span>
+<div class="ans">= lim<sub>a→0⁺</sub>[2√x]ₐ¹ = 2</div>
+</div>
+
+<div class="ex"><span class="tag">17k</span> ∫₀^∞ 2e⁻<sup>θ</sup>sen θ dθ <span class="enun">— limite infinito, usa fórmula cíclica de e·sen (seção 1)</span>
+<ul class="steps">
+<li>∫e⁻<sup>θ</sup>senθ dθ = −e⁻<sup>θ</sup>(senθ+cosθ)/2</li>
+<li>2×isso = −e⁻<sup>θ</sup>(senθ+cosθ); em θ→∞ tende a 0 (e⁻<sup>θ</sup>→0); em θ=0 vale −1</li>
+</ul>
+<div class="ans">= 0−(−1) = 1</div>
+</div>
+
+<div class="ex"><span class="tag">18a</span> ∫₀^(π/2) tg θ dθ — testar convergência <span class="enun">— descontinuidade em π/2</span>
+<ul class="steps">
+<li>∫tgθ dθ = −ln|cosθ|; quando θ→π/2⁻, cosθ→0⁺ ⇒ −ln(cosθ)→+∞</li>
+</ul>
+<div class="ans">Diverge</div>
+</div>
+
+<div class="ex"><span class="tag">18i</span> ∫₁^∞ eˣ/x dx — testar convergência <span class="enun">— comparação direta</span>
+<ul class="steps">
+<li>Para x≥1, eˣ/x ≥ 1 (o integrando não decresce a zero, na verdade cresce)</li>
+<li>∫₁^∞ eˣ/x dx ≥ ∫₁^∞ 1 dx = ∞</li>
+</ul>
+<div class="ans">Diverge (o integrando nem tende a 0)</div>
+</div>
+
+<div class="ex"><span class="tag">19</span> Área sob y=e⁻ˣ no 1º quadrante <span class="enun">— limite infinito</span>
+<div class="ans">∫₀^∞ e⁻ˣ dx = [−e⁻ˣ]₀^∞ = 1</div>
+</div>
+
+<div class="ex"><span class="tag">20</span> Lata de tinta infinita: y=1/x, x∈[1,∞), girada em torno do eixo x <span class="enun">— o paradoxo do pintor</span>
+<ul class="steps">
+<li><b>(a) Área da superfície:</b> S=2π∫₁^∞(1/x)√(1+1/x⁴)dx ≥ 2π∫₁^∞ dx/x = 2π·lim ln(b) → diverge</li>
+<li><b>(b) Volume:</b> V=π∫₁^∞(1/x)²dx = π[−1/x]₁^∞ = π</li>
+</ul>
+<div class="ans">Superfície infinita, mas volume finito = π (o "paradoxo": a lata teria volume finito π mas não haveria tinta suficiente no universo para pintar sua superfície — na prática o paradoxo se resolve porque uma camada de tinta física tem espessura mínima).</div>
+</div>
+
+<h3>Guia rápido — demais itens das questões 17 e 18</h3>
+<table>
+<tr><th>Item</th><th>Situação</th><th>Resultado / técnica</th></tr>
+<tr><td>17b) ∫₁^∞ dx/x<sup>1,001</sup></td><td>Limite infinito</td><td>p=1,001&gt;1 ⇒ converge (p-teste); valor = 1000</td></tr>
+<tr><td>17d) ∫₀⁴ dx/√(4−x)</td><td>Descontínua em x=4</td><td>converge, valor 4</td></tr>
+<tr><td>17e) ∫₋₁¹ dy/y^(2/3)</td><td>Descontínua em y=0 (dentro do intervalo!)</td><td>quebrar em duas integrais; p=2/3&lt;1 ⇒ converge cada metade</td></tr>
+<tr><td>17f) ∫₋₈¹ dx/x^(1/3)</td><td>Descontínua em x=0 (dentro)</td><td>quebrar em duas; converge (potência ímpar amortece o polo)</td></tr>
+<tr><td>17g) ∫₀¹ dx/√(1−x²)</td><td>Descontínua em x=1</td><td>= arcsen x → π/2, converge</td></tr>
+<tr><td>17h) ∫₁^∞ dx/(x√(x²−1))</td><td>Limite infinito + descontínua em x=1</td><td>= arcsec x → π/2</td></tr>
+<tr><td>17i) ∫₀^∞ 16arctg(x)/(1+x²)dx</td><td>Limite infinito</td><td>u=arctg x → 8·(arctg x)² |₀^∞ = 8(π/2)²=2π²</td></tr>
+<tr><td>17j) ∫₋∞⁰ θe<sup>θ</sup>dθ</td><td>Limite infinito</td><td>por partes; converge, valor −1</td></tr>
+<tr><td>17l) ∫₋∞^∞ 2xe⁻ˣ²dx</td><td>Ambos limites infinitos</td><td>u=x²; função ímpar → valor 0</td></tr>
+<tr><td>17m,n) ∫₀¹ x ln x dx, ∫₀¹−ln x dx</td><td>Descontínua em x=0</td><td>por partes + limite; ambas convergem (−1/4 e 1)</td></tr>
+<tr><td>17p) ∫₋₁^∞ dθ/(θ²+5θ+6)</td><td>Descontínua em θ=−2 e θ=−3 (checar se estão no intervalo) + limite infinito</td><td>frações parciais: (θ+2)(θ+3)</td></tr>
+<tr><td>18b) ∫₀^(π/2) cotgθ dθ</td><td>Descontínua em θ=0</td><td>diverge (análogo ao 18a)</td></tr>
+<tr><td>18c,d) sin/cos perto de singularidade em potência 1/3</td><td>Comparação no limite</td><td>comparar com 1/√(π−θ) etc. — convergem (potência &lt;1)</td></tr>
+<tr><td>18e,f) x⁻²e⁻¹ᐟˣ, e⁻√x/√x perto de 0</td><td>Comparação/substituição</td><td>convergem (a exponencial domina/decai)</td></tr>
+<tr><td>18g) ∫₀² dx/(1−x²)</td><td>Descontínua em x=1 (dentro!)</td><td>diverge (comparar com 1/(1−x))</td></tr>
+<tr><td>18h) ∫₁^∞ dx/(x³+1)</td><td>Limite infinito</td><td>comparar com 1/x³ → converge</td></tr>
+<tr><td>18j) ∫ₑ^∞ ln(ln x)dx</td><td>Limite infinito</td><td>ln(ln x)→∞ (devagar) ⇒ diverge</td></tr>
+<tr><td>18k) ∫₁^∞ dx/√(eˣ−x)</td><td>Limite infinito</td><td>eˣ domina x ⇒ comparar com e⁻ˣ/² ⇒ converge</td></tr>
+<tr><td>18l) ∫₋∞^∞ dx/(eˣ+e⁻ˣ)</td><td>Ambos limites infinitos</td><td>= arctg(eˣ) → converge, valor π/2</td></tr>
+<tr><td>18m) ∫₂^∞ x dx/√(x⁴−1)</td><td>Limite infinito</td><td>comparar com 1/x ⇒ diverge</td></tr>
+<tr><td>18n,o) [2+cosx]/x, [1+senx]/x² de π a ∞</td><td>Comparação</td><td>n) diverge (comparar 1/x); o) converge (comparar 1/x²)</td></tr>
+<tr><td>18p) ∫₀^π dt/√(t+sen t)</td><td>Descontínua em t=0</td><td>perto de 0, t+sen t ≈ 2t ⇒ comparar com 1/√t ⇒ converge</td></tr>
+</table>
+
+<hr>
+<p class="note">Documento gerado a partir da Lista 02 (Cálculo II — UFCG, Prof. Weiller F. Chaves Barboza).</p>
+<p class="backtop"><a href="#tabela">↑ voltar ao topo</a></p>
+
+</div>
+</main>
+</div>
+
+<div id="site-footer-root"></div>
+
+<script src="../assets/js/site-data.js"></script>
+<script src="../assets/js/layout.js"></script>
+<script src="../assets/js/katex-init.js"></script>
+<script>
+  renderHeader({ active: "listas", base: "../" });
+  renderFooter({
+    base: "../",
+    related: {
+      title: "Nesta lista",
+      links: [
+        { label: "Tabela de fórmulas", href: "#tabela" },
+        { label: "Voltar ao topo", href: "#tabela" }
+      ]
+    }
+  });
+</script>
+</body>
+</html>

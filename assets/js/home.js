@@ -51,3 +51,30 @@ function renderProvasGrid(containerId) {
     );
   }).join("");
 }
+
+function renderListasGrid(containerId) {
+  var el = document.getElementById(containerId);
+  if (!el || !window.LISTAS) return;
+
+  el.innerHTML = LISTAS.map(function (lista) {
+    var locked = lista.status !== "available";
+    var tagsHtml = (lista.tags || []).map(function (tag) {
+      return '<span class="prova-tag">' + tag + "</span>";
+    }).join("");
+    var meta = locked ? "em breve" : (lista.itemsCount ? lista.itemsCount + " itens" : "");
+
+    return (
+      '<div class="prova-card lista-card' + (locked ? " locked" : "") + '">' +
+        '<div class="prova-top"><h3>' + lista.title + "</h3>" +
+          '<span class="prova-meta">' + meta + "</span></div>" +
+        '<div class="prova-tags">' + tagsHtml + "</div>" +
+        "<p>" + lista.summary + "</p>" +
+        (locked
+          ? '<span class="badge-soon">em breve</span>'
+          : '<div class="topic-links">' + (lista.links || [{ label: "Abrir lista", href: lista.href }]).map(function (link) {
+              return '<a href="' + link.href + '">' + link.label + '</a>';
+            }).join("") + '</div>') +
+      "</div>"
+    );
+  }).join("");
+}

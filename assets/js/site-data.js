@@ -4,6 +4,7 @@
   ÚNICA FONTE DE VERDADE do conteúdo "estrutural" do site.
 
   Para ADICIONAR um tópico novo: acrescente um objeto em TOPICS.
+  Para ADICIONAR uma lista nova: acrescente um objeto em LISTAS.
   Para ADICIONAR uma prova nova: acrescente um objeto em PROVAS.
   Para REMOVER: apague o objeto (ou mude status para "soon" para deixar
   como "em breve" sem apagar).
@@ -22,6 +23,7 @@ window.SITE = {
   nav: [
     { key: "home",    label: "Início",  href: "index.html" },
     { key: "topicos", label: "Tópicos", href: "index.html#topicos" },
+    { key: "listas",  label: "Listas",  href: "index.html#listas" },
     { key: "provas",  label: "Provas",  href: "index.html#provas" }
   ],
 
@@ -93,6 +95,29 @@ window.TOPICS = [
     title: "Coordenadas polares",
     summary: "Curvas em coordenadas polares, área entre curvas polares e conversão entre sistemas de coordenadas.",
     status: "soon"
+  }
+];
+
+/*
+  LISTAS
+  ------
+  status "available" precisa de href (para onde o botão aponta).
+  status "soon" não precisa de href — o card fica travado.
+*/
+window.LISTAS = [
+  {
+    id: "lista-01",
+    number: "01",
+    title: "Lista 01",
+    itemsCount: "130+",
+    tags: ["técnicas de integração", "fórmulas", "classificação"],
+    summary: "Resolução comentada e guia de decisão para integração por partes, integrais trigonométricas, substituição trigonométrica, frações parciais e integrais impróprias.",
+    status: "available",
+    href: "topicos/calc2_lista01-enunciado.html",
+    links: [
+      { label: "Ver questões", href: "topicos/calc2_lista01-enunciado.html" },
+      { label: "Ver resoluções", href: "topicos/calc2_lista01.html" }
+    ]
   }
 ];
 

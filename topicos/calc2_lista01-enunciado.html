@@ -1,0 +1,178 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="UTF-8">
+<title>Lista 01 — Enunciados | Cálculo II</title>
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,400;9..144,500;9..144,600;9..144,700&family=IBM+Plex+Sans:wght@400;500;600;700&family=IBM+Plex+Mono:wght@500&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/KaTeX/0.16.9/katex.min.css">
+<script defer src="https://cdnjs.cloudflare.com/ajax/libs/KaTeX/0.16.9/katex.min.js"></script>
+<script defer src="https://cdnjs.cloudflare.com/ajax/libs/KaTeX/0.16.9/contrib/auto-render.min.js"></script>
+<link rel="stylesheet" href="../assets/css/tokens.css">
+<link rel="stylesheet" href="../assets/css/base.css">
+<link rel="stylesheet" href="../assets/css/components.css">
+<style>
+.question-list{display:grid;gap:16px;list-style:none;margin:28px 0 0;padding:0;}
+.question-card{background:#fff;border:1px solid var(--line);padding:22px 24px;}
+.question-card h3{font-size:19px;margin-bottom:14px;}
+.question-card ol{margin:0;padding-left:28px;}
+.question-card li{padding:5px 0 5px 8px;}
+.question-card li::marker{font-family:'IBM Plex Mono',monospace;color:var(--gold);}
+.question-card .display-math{overflow-x:auto;padding:6px 0;}
+.question-card p:last-child{margin-bottom:0;}
+.question-actions{display:flex;gap:12px;flex-wrap:wrap;margin-top:24px;}
+.question-note{background:var(--paper-dim);border-left:3px solid var(--teal);padding:14px 18px;color:var(--ink-soft);font-size:14px;}
+.shell .toc-list a{justify-content:flex-start;}
+.shell .toc-list .toc-num{width:28px;flex-shrink:0;}
+@media (max-width:640px){.question-card{padding:18px 16px;}.question-card ol{padding-left:24px;}}
+</style>
+</head>
+<body>
+<div id="site-header-root"></div>
+
+<div class="shell">
+<nav class="toc">
+  <a class="back-link" href="../index.html#listas">← voltar para listas</a>
+  <div class="toc-mark">∫</div>
+  <div class="toc-title"><strong>Lista 01</strong>Enunciados para resolver</div>
+  <ul class="toc-list">
+    <li><a href="#por-partes"><span class="toc-num">01</span>Integração por partes</a></li>
+    <li><a href="#trigonometricas"><span class="toc-num">02</span>Integrais trigonométricas</a></li>
+    <li><a href="#substituicao"><span class="toc-num">03</span>Substituição trigonométrica</a></li>
+    <li><a href="#fracoes"><span class="toc-num">04</span>Frações parciais</a></li>
+    <li><a href="#improprias"><span class="toc-num">05</span>Integrais impróprias</a></li>
+  </ul>
+  <div class="toc-foot">Tente os exercícios antes de abrir as resoluções.</div>
+</nav>
+
+<main>
+  <div class="hero">
+    <div class="hero-eyebrow">cálculo ii · lista de exercícios</div>
+    <h1>Lista 01: enunciados</h1>
+    <p class="lede">A lista original, organizada por assunto para você resolver no seu ritmo. Quando terminar, abra as resoluções comentadas.</p>
+    <div class="question-actions">
+      <a class="btn-primary" href="calc2_lista01.html">Abrir resoluções</a>
+      <a class="btn-secondary" href="../index.html#listas">Voltar para listas</a>
+    </div>
+  </div>
+
+  <div class="legacy-list-content">
+    <div class="question-note">Material baseado na Lista 02 de Cálculo Diferencial e Integral II, de Weiller F. Chaves Barboza. As figuras da questão 15 estão no documento original; resolva os itens usando os gráficos fornecidos na folha.</div>
+
+    <section id="por-partes">
+      <div class="kicker">01 — integração por partes</div>
+      <h2 class="section-title">Integração por partes</h2>
+      <ol class="question-list">
+        <li class="question-card"><h3>1. Resolva as integrais.</h3><ol type="a">
+          <li>\(\displaystyle \int x\sin\left(\frac{x}{2}\right)\,dx\)</li>
+          <li>\(\displaystyle \int \theta\cos(\pi\theta)\,d\theta\)</li>
+          <li>\(\displaystyle \int t^2\cos(t)\,dt\)</li>
+          <li>\(\displaystyle \int x^3\ln(x)\,dx\)</li>
+          <li>\(\displaystyle \int_0^1 xe^x\,dx\)</li>
+          <li>\(\displaystyle \int xe^{3x}\,dx\)</li>
+          <li>\(\displaystyle \int x^2e^{-x}\,dx\)</li>
+          <li>\(\displaystyle \int (x^2-2x+1)e^{2x}\,dx\)</li>
+          <li>\(\displaystyle \int \operatorname{arctg}(y)\,dy\)</li>
+          <li>\(\displaystyle \int x\sec^2(x)\,dx\)</li>
+          <li>\(\displaystyle \int x^3e^3\,dx\)</li>
+          <li>\(\displaystyle \int 4x\sec^2(2x)\,dx\)</li>
+          <li>\(\displaystyle \int p^4e^{-p}\,dp\)</li>
+          <li>\(\displaystyle \int (x^2-5x)e^x\,dx\)</li>
+          <li>\(\displaystyle \int x^5e^x\,dx\)</li>
+          <li>\(\displaystyle \int t^2e^{4t}\,dt\)</li>
+          <li>\(\displaystyle \int e^\theta\sin(\theta)\,d\theta\)</li>
+          <li>\(\displaystyle \int e^{-y}\cos(y)\,dy\)</li>
+          <li>\(\displaystyle \int e^{2x}\cos(3x)\,dx\)</li>
+          <li>\(\displaystyle \int e^{-2x}\sin(2x)\,dx\)</li>
+          <li>\(\displaystyle \int \frac{\cos(\sqrt{x})}{\sqrt{x}}\,dx\)</li>
+          <li>\(\displaystyle \int x(\ln x)^2\,dx\)</li>
+          <li>\(\displaystyle \int \cos(\sqrt{x})\,dx\)</li>
+          <li>\(\displaystyle \int \frac{e^{\sqrt{x}}}{\sqrt{x}}\,dx\)</li>
+          <li>\(\displaystyle \int \sin(3x)\cos\left(\frac{x}{2}\right)\,dx\)</li>
+          <li>\(\displaystyle \int_0^{\pi/2}x^3\cos(2x)\,dx\)</li>
+          <li>\(\displaystyle \int_{2/\sqrt{3}}^2 t\operatorname{arcsec}(t)\,dt\)</li>
+          <li>\(\displaystyle \int_0^{1/\sqrt{2}}2y\arcsin(y^2)\,dy\)</li>
+        </ol></li>
+        <li class="question-card"><h3>2. Determine a área da região delimitada por \(y=x\sin(x)\) e pelo eixo das abscissas.</h3><ol type="a"><li>\(0\le x\le\pi\)</li><li>\(\pi\le x\le2\pi\)</li><li>\(2\pi\le x\le3\pi\)</li></ol></li>
+        <li class="question-card"><h3>3. Determine a área da região delimitada por \(y=x\cos(x)\) e pelo eixo das abscissas.</h3><ol type="a"><li>\(\pi/2\le x\le3\pi/2\)</li><li>\(3\pi/2\le x\le5\pi/2\)</li><li>\(5\pi/2\le x\le7\pi/2\)</li></ol></li>
+        <li class="question-card"><h3>4. Determine o volume do sólido gerado pela rotação da região do primeiro quadrante delimitada pelos eixos coordenados, pela curva \(y=e^x\) e pela reta \(x=\ln(2)\), em torno da reta \(x=\ln(2)\).</h3></li>
+        <li class="question-card"><h3>5. Determine o volume do sólido gerado pela rotação da região do primeiro quadrante delimitada pelos eixos coordenados, pela curva \(y=e^{-x}\) e pela reta \(x=1\).</h3><ol type="a"><li>Em torno do eixo das ordenadas.</li><li>Em torno da reta \(x=1\).</li></ol></li>
+        <li class="question-card"><h3>6. Determine o volume do sólido gerado pela rotação da região do primeiro quadrante delimitada pelos eixos coordenados e pela curva \(y=\cos(x)\), com \(0\le x\le\pi/2\).</h3><ol type="a"><li>Em torno do eixo das ordenadas.</li><li>Em torno da reta \(x=\pi/2\).</li></ol></li>
+      </ol>
+    </section>
+
+    <section id="trigonometricas">
+      <div class="kicker">02 — integrais trigonométricas</div>
+      <h2 class="section-title">Integrais trigonométricas</h2>
+      <ol start="7" class="question-list">
+        <li class="question-card"><h3>7. Calcule as seguintes integrais trigonométricas.</h3><ol type="a">
+          <li>\(\displaystyle\int\cos(2x)\,dx\)</li><li>\(\displaystyle\int_0^\pi3\sin(x/3)\,dx\)</li><li>\(\displaystyle\int\cos^3(x)\sin(x)\,dx\)</li><li>\(\displaystyle\int\sin^4(2x)\cos(2x)\,dx\)</li><li>\(\displaystyle\int\sin^3(x)\,dx\)</li><li>\(\displaystyle\int\cos^3(x)\,dx\)</li><li>\(\displaystyle\int\sin^5(x)\,dx\)</li><li>\(\displaystyle\int_0^\pi\sin^5(x/2)\,dx\)</li><li>\(\displaystyle\int_0^{\pi/6}3\cos^5(3x)\,dx\)</li><li>\(\displaystyle\int\sin^3(x)\cos^3(x)\,dx\)</li><li>\(\displaystyle\int\cos^3(2x)\sin^5(2x)\,dx\)</li><li>\(\displaystyle\int7\cos^7(t)\,dt\)</li><li>\(\displaystyle\int_0^\pi8\sin^4(2\pi x)\,dx\)</li><li>\(\displaystyle\int16\sin^2(x)\cos^2(y)\,dy\)</li><li>\(\displaystyle\int_0^\pi8\sin^4(y)\cos^2(y)\,dy\)</li><li>\(\displaystyle\int8\cos^3(2\theta)\sin(2\theta)\,d\theta\)</li><li>\(\displaystyle\int_0^{2\pi}\sqrt{\frac{1-\cos(x)}{2}}\,dx\)</li><li>\(\displaystyle\int_0^\pi\sqrt{1-\cos(2x)}\,dx\)</li><li>\(\displaystyle\int_0^\pi\sqrt{1-\sin^2(t)}\,dt\)</li><li>\(\displaystyle\int_{\pi/3}^{\pi/2}\frac{\sin^2(x)}{\sqrt{1-\cos(x)}}\,dx\)</li><li>\(\displaystyle\int\sec^2(x)\tan(x)\,dx\)</li><li>\(\displaystyle\int\sec(x)\tan^2(x)\,dx\)</li><li>\(\displaystyle\int\sec^3(x)\tan(x)\,dx\)</li><li>\(\displaystyle\int\sec^4(x)\tan^2(x)\,dx\)</li><li>\(\displaystyle\int_{\pi/6}^{\pi/3}\cot^3(x)\,dx\)</li><li>\(\displaystyle\int_{\pi/4}^{\pi/2}\csc^4(x)\,dx\)</li><li>\(\displaystyle\int\sec^6(x)\,dx\)</li><li>\(\displaystyle\int\tan^5(x)\,dx\)</li>
+        </ol></li>
+        <li class="question-card"><h3>8. Determine o comprimento da curva \(y=\ln(\sec x)\), com \(0\le x\le\pi/4\).</h3></li>
+        <li class="question-card"><h3>9. Determine o volume gerado pela rotação de um arco da curva \(y=\sin(x)\) em torno do eixo das abscissas.</h3></li>
+        <li class="question-card"><h3>10. Determine a área entre o eixo das abscissas e a curva \(y=\sqrt{1+\cos(4x)}\), com \(0\le x\le\pi\).</h3></li>
+        <li class="question-card"><h3>11. Calcule o volume do sólido formado pela rotação da região delimitada por \(y=\sin(x)+\sec(x)\), \(y=0\), \(x=0\) e \(x=\pi/3\), em torno do eixo \(x\).</h3></li>
+      </ol>
+    </section>
+
+    <section id="substituicao">
+      <div class="kicker">03 — substituição trigonométrica</div>
+      <h2 class="section-title">Substituição trigonométrica</h2>
+      <ol start="12" class="question-list">
+        <li class="question-card"><h3>12. Calcule as integrais usando substituições trigonométricas.</h3><ol type="a">
+          <li>\(\displaystyle\int\frac{dx}{\sqrt{9+x^2}}\)</li><li>\(\displaystyle\int\frac{3\,dx}{\sqrt{1+9x^2}}\)</li><li>\(\displaystyle\int_0^2\frac{dx}{8+2x^2}\)</li><li>\(\displaystyle\int_0^{1/2}\frac{2\,dx}{\sqrt{1-4x^2}}\)</li><li>\(\displaystyle\int\sqrt{25-t^2}\,dt\)</li><li>\(\displaystyle\int\frac{5\,dx}{\sqrt{25x^2-9}},\ x>3/5\)</li><li>\(\displaystyle\int\frac{\sqrt{y^2-25}}{y^3}\,dy,\ y>5\)</li><li>\(\displaystyle\int\frac{2\,dx}{x^3\sqrt{x^2-1}}\)</li><li>\(\displaystyle\int\frac{8\,dw}{w^2\sqrt{4-w^2}}\)</li><li>\(\displaystyle\int\frac{\sqrt{9-w^2}}{w^2}\,dw\)</li><li>\(\displaystyle\int\frac{100}{36+25x^2}\,dx\)</li><li>\(\displaystyle\int_0^{\sqrt{3}/2}\frac{4x^2}{(1-x^2)^{3/2}}\,dx\)</li><li>\(\displaystyle\int\frac{dx}{(x^2-1)^{3/2}}\)</li><li>\(\displaystyle\int\frac{(1-x^2)^{3/2}}{x^6}\,dx\)</li><li>\(\displaystyle\int\frac{8\,dx}{(4x^2+1)^2}\)</li><li>\(\displaystyle\int\frac{(1-r^2)^{5/2}}{r^8}\,dr\)</li><li>\(\displaystyle\int\frac{x^2}{4+x^2}\,dx\)</li><li>\(\displaystyle\int\frac{x^3}{\sqrt{x^2+4}}\,dx\)</li><li>\(\displaystyle\int\frac{dx}{x^2\sqrt{x^2+1}}\)</li><li>\(\displaystyle\int\frac{(1-x^2)^{3/2}}{x^6}\,dx\)</li>
+        </ol></li>
+      </ol>
+    </section>
+
+    <section id="fracoes">
+      <div class="kicker">04 — frações parciais</div>
+      <h2 class="section-title">Integração de funções racionais por frações parciais</h2>
+      <ol start="13" class="question-list">
+        <li class="question-card"><h3>13. Decomponha os quocientes abaixo em frações parciais.</h3><ol type="a"><li>\(\displaystyle\frac{5x-13}{(x-3)(x-2)}\)</li><li>\(\displaystyle\frac{z+1}{z^2(z-1)}\)</li><li>\(\displaystyle\frac{5x-7}{x^2-3x+2}\)</li><li>\(\displaystyle\frac{t^2+8}{t^2-5t+6}\)</li></ol></li>
+        <li class="question-card"><h3>14. Expresse os integrandos como soma de frações parciais e calcule as integrais.</h3><ol type="a"><li>\(\displaystyle\int\frac{dx}{1-x^2}\)</li><li>\(\displaystyle\int\frac{dx}{x^2+2x}\)</li><li>\(\displaystyle\int\frac{x+4}{x^2+5x-6}\,dx\)</li><li>\(\displaystyle\int\frac{2x+1}{x^2-7x+12}\,dx\)</li><li>\(\displaystyle\int_4^8\frac{y\,dy}{y^2-2y-3}\)</li><li>\(\displaystyle\int_{1/2}^1\frac{y+4}{y^2+y}\,dy\)</li><li>\(\displaystyle\int\frac{dt}{t^3+t^2-2t}\)</li><li>\(\displaystyle\int\frac{x+3}{2x^3-8x}\,dx\)</li><li>\(\displaystyle\int_0^1\frac{x^3}{x^2+2x+1}\,dx\)</li><li>\(\displaystyle\int\frac{x^3}{x^2-2x+1}\,dx\)</li><li>\(\displaystyle\int\frac{dx}{(x^2-1)^2}\)</li><li>\(\displaystyle\int\frac{x^2}{(x-1)(x^2+2x+1)}\,dx\)</li><li>\(\displaystyle\int_0^1\frac{dx}{(x+1)(x^2+1)}\)</li><li>\(\displaystyle\int_1^{\sqrt{3}}\frac{3t^2+t+4}{t^3+t}\,dt\)</li><li>\(\displaystyle\int\frac{y^2+2y+1}{(y^2+1)^2}\,dy\)</li><li>\(\displaystyle\int\frac{8x^2+8x+2}{4x^2+1}\,dx\)</li><li>\(\displaystyle\int\frac{x^2+4x+1}{(x-1)(x+1)(x+3)}\,dx\)</li><li>\(\displaystyle\int\frac{6x+7}{(x+2)^2}\,dx\)</li><li>\(\displaystyle\int\frac{2x^3-4x^2-x-3}{x^2-2x-3}\,dx\)</li><li>\(\displaystyle\int\frac{dx}{x(x^2-1)^2}\)</li></ol></li>
+        <li class="question-card"><h3>15. Determine o volume do sólido gerado pela rotação da região sombreada em torno do eixo indicado em cada caso.</h3><p>Consulte as duas figuras da lista original: item (a), rotação em torno do eixo \(x\); item (b), rotação em torno do eixo \(y\).</p></li>
+      </ol>
+    </section>
+
+    <section id="improprias">
+      <div class="kicker">05 — integrais impróprias</div>
+      <h2 class="section-title">Integrais impróprias</h2>
+      <ol start="16" class="question-list">
+        <li class="question-card"><h3>16. A área abaixo da curva \(y=\ln(x)/x^2\), de \(x=1\) a \(x=\infty\), é finita? Calcule o seu valor.</h3></li>
+        <li class="question-card"><h3>17. Calcule as integrais impróprias abaixo.</h3><ol type="a"><li>\(\displaystyle\int_0^\infty\frac{dx}{x^2+1}\)</li><li>\(\displaystyle\int_1^\infty\frac{dx}{x^{1.001}}\)</li><li>\(\displaystyle\int_0^1\frac{dx}{\sqrt{x}}\)</li><li>\(\displaystyle\int_0^4\frac{dx}{\sqrt{4-x}}\)</li><li>\(\displaystyle\int_{-1}^1\frac{dy}{y^{2/3}}\)</li><li>\(\displaystyle\int_{-8}^1\frac{dx}{x^{1/3}}\)</li><li>\(\displaystyle\int_0^1\frac{dx}{\sqrt{1-x^2}}\)</li><li>\(\displaystyle\int_1^\infty\frac{dx}{x\sqrt{x^2-1}}\)</li><li>\(\displaystyle\int_0^\infty\frac{16\arctan(x)}{1+x^2}\,dx\)</li><li>\(\displaystyle\int_{-\infty}^0\theta e^\theta\,d\theta\)</li><li>\(\displaystyle\int_0^\infty2e^{-\theta}\sin(\theta)\,d\theta\)</li><li>\(\displaystyle\int_{-\infty}^\infty2xe^{-x^2}\,dx\)</li><li>\(\displaystyle\int_0^1x\ln(x)\,dx\)</li><li>\(\displaystyle\int_0^1-\ln(x)\,dx\)</li><li>\(\displaystyle\int_1^2\frac{ds}{s\sqrt{s^2-1}}\)</li><li>\(\displaystyle\int_{-1}^\infty\frac{d\theta}{\theta^2+5\theta+6}\)</li><li>\(\displaystyle\int_0^\infty\frac{dx}{(1+x)\sqrt{x}}\)</li><li>\(\displaystyle\int_0^2\frac{s+1}{\sqrt{4-s^2}}\,ds\)</li><li>\(\displaystyle\int_0^1\frac{\theta+1}{\sqrt{\theta^2+2\theta}}\,d\theta\)</li><li>\(\displaystyle\int_0^\infty\frac{dx}{(x+1)(x^2+1)}\)</li></ol></li>
+        <li class="question-card"><h3>18. Utilize integração, teste da comparação direta ou comparação no limite para testar as integrais quanto à convergência.</h3><ol type="a"><li>\(\displaystyle\int_0^{\pi/2}\tan(\theta)\,d\theta\)</li><li>\(\displaystyle\int_0^{\pi/2}\cot(\theta)\,d\theta\)</li><li>\(\displaystyle\int_0^\pi\frac{\sin(\theta)}{\sqrt{\pi-\theta}}\,d\theta\)</li><li>\(\displaystyle\int_{-\pi/2}^{\pi/2}\frac{\cos(\theta)}{(\pi-2\theta)^{1/3}}\,d\theta\)</li><li>\(\displaystyle\int_0^{\ln2}x^{-2}e^{-1/x}\,dx\)</li><li>\(\displaystyle\int_0^1\frac{e^{-\sqrt{x}}}{\sqrt{x}}\,dx\)</li><li>\(\displaystyle\int_0^2\frac{dx}{1-x^2}\)</li><li>\(\displaystyle\int_1^\infty\frac{dx}{x^3+1}\)</li><li>\(\displaystyle\int_1^\infty\frac{e^x}{x}\,dx\)</li><li>\(\displaystyle\int_e^\infty\ln(\ln x)\,dx\)</li><li>\(\displaystyle\int_1^\infty\frac{dx}{\sqrt{e^x-x}}\)</li><li>\(\displaystyle\int_{-\infty}^\infty\frac{dx}{e^x+e^{-x}}\)</li><li>\(\displaystyle\int_2^\infty\frac{x\,dx}{\sqrt{x^4-1}}\)</li><li>\(\displaystyle\int_\pi^\infty\frac{2+\cos(x)}{x}\,dx\)</li><li>\(\displaystyle\int_\pi^\infty\frac{1+\sin(x)}{x^2}\,dx\)</li><li>\(\displaystyle\int_0^\pi\frac{dt}{\sqrt{t+\sin(t)}}\)</li></ol></li>
+        <li class="question-card"><h3>19. Calcule a área da região delimitada entre a curva \(y=e^{-x}\) e o eixo \(x\) no primeiro quadrante.</h3></li>
+        <li class="question-card"><h3>20. Considere o sólido de revolução gerado pela rotação da curva \(y=1/x\), com \(x\in[1,\infty)\), em torno do eixo \(x\).</h3><ol type="a"><li>Calcule a área da superfície do sólido de revolução.</li><li>Calcule o volume do sólido.</li></ol></li>
+      </ol>
+    </section>
+
+    <div class="question-actions">
+      <a class="btn-primary" href="calc2_lista01.html">Abrir resoluções comentadas</a>
+      <a class="btn-secondary" href="#top">Voltar ao topo</a>
+    </div>
+  </div>
+</main>
+</div>
+
+<div id="site-footer-root"></div>
+<script src="../assets/js/site-data.js"></script>
+<script src="../assets/js/layout.js"></script>
+<script src="../assets/js/katex-init.js"></script>
+<script>
+  renderHeader({ active: "listas", base: "../" });
+  renderFooter({
+    base: "../",
+    related: {
+      title: "Nesta lista",
+      links: [
+        { label: "Abrir resoluções", href: "calc2_lista01.html" },
+        { label: "Voltar para listas", href: "../index.html#listas" }
+      ]
+    }
+  });
+</script>
+</body>
+</html>
