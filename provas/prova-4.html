@@ -1,0 +1,203 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Prova 4 — Cálculo II</title>
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,400;9..144,500;9..144,600;9..144,700&family=IBM+Plex+Sans:wght@400;500;600;700&family=IBM+Plex+Mono:wght@500&display=swap" rel="stylesheet">
+
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/KaTeX/0.16.9/katex.min.css">
+<script defer src="https://cdnjs.cloudflare.com/ajax/libs/KaTeX/0.16.9/katex.min.js"></script>
+<script defer src="https://cdnjs.cloudflare.com/ajax/libs/KaTeX/0.16.9/contrib/auto-render.min.js"></script>
+
+<link rel="stylesheet" href="../assets/css/tokens.css">
+<link rel="stylesheet" href="../assets/css/base.css">
+<link rel="stylesheet" href="../assets/css/components.css">
+<style>
+  main{ max-width:900px; margin:0 auto; }
+</style>
+</head>
+<body>
+
+<div id="site-header-root"></div>
+
+<main>
+
+  <a class="back-link" href="../index.html#provas">← voltar para provas</a>
+
+  <div class="hero">
+    <div class="hero-eyebrow">cálculo ii · prova resolvida</div>
+    <h1>Prova 4</h1>
+    <p class="lede">Integrais por substituição, por partes, frações parciais e integrais impróprias, em uma revisão focada em técnicas e convergência.</p>
+    <div class="hero-tags">
+      <span class="htag">substituição</span>
+      <span class="htag">frações parciais</span>
+      <span class="htag">por partes</span>
+      <span class="htag">impróprias</span>
+    </div>
+    <div class="hero-meta">
+      <div><strong>3</strong>questões</div>
+      <div><strong>6</strong>itens no total</div>
+      <div><strong>médio</strong>nível</div>
+    </div>
+  </div>
+
+  <section class="block" id="enunciado">
+    <div class="block-kicker">folha de questões</div>
+    <h2 class="block-title">Enunciado</h2>
+    <p class="block-desc">Resolva com calma antes de conferir o gabarito.</p>
+
+    <div class="sheet">
+      <div class="sheet-head">
+        <span class="sh-title">Cálculo II — Prova 4</span>
+        <span class="sh-sub">6 itens · sem consulta</span>
+      </div>
+      <div class="sheet-body">
+
+        <div class="questao">
+          <div class="questao-head">
+            <span class="questao-num">1</span>
+            <span class="questao-instr">Calcule as integrais indefinidas.</span>
+          </div>
+          <ul class="item-list">
+            <li><span class="item-letter">a)</span><span class="item-body">\( \displaystyle \int \sin^2 x\cos^3 x\,dx \)</span></li>
+            <li><span class="item-letter">b)</span><span class="item-body">\( \displaystyle \int x e^{-x}\,dx \)</span></li>
+            <li><span class="item-letter">c)</span><span class="item-body">\( \displaystyle \int \frac{dx}{x^2+4x+3} \)</span></li>
+          </ul>
+        </div>
+
+        <div class="questao">
+          <div class="questao-head">
+            <span class="questao-num">2</span>
+            <span class="questao-instr">Calcule as integrais definidas.</span>
+          </div>
+          <ul class="item-list">
+            <li><span class="item-letter">a)</span><span class="item-body">\( \displaystyle \int_0^1 \frac{x}{x^2+1}\,dx \)</span></li>
+            <li><span class="item-letter">b)</span><span class="item-body">\( \displaystyle \int_1^\infty \frac{1}{x^2}\,dx \)</span></li>
+          </ul>
+        </div>
+
+        <div class="questao">
+          <div class="questao-head">
+            <span class="questao-num">3</span>
+            <span class="questao-instr">Determine se a integral imprópria converge ou diverge.</span>
+          </div>
+          <div class="item-single">\( \displaystyle \int_0^1 \frac{1}{\sqrt{x}}\,dx \)</div>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <section class="block" id="gabarito" style="border-bottom:none;">
+    <div class="block-kicker">resolução comentada</div>
+    <h2 class="block-title">Gabarito</h2>
+    <p class="block-desc">Cada item mostra a estratégia correta e o resultado final.</p>
+
+    <div class="gab-item">
+      <div class="gab-head"><span class="gab-num">1a</span><span class="gab-statement">\( \displaystyle \int \sin^2 x\cos^3 x\,dx \)</span></div>
+      <details class="gab-toggle"><summary>ver resolução</summary>
+        <div class="gab-body">
+          <div class="step"><div class="step-num">1</div><div class="step-content"><p>A potência de cosseno é ímpar, então separamos um fator \(\cos x\) e usamos \(\cos^2x=1-\sin^2x\):</p>\[ \sin^2x\cos^3x = \sin^2x\cos^2x\cos x = \sin^2x(1-\sin^2x)\cos x \]</div></div>
+          <div class="step"><div class="step-num">2</div><div class="step-content"><p>Faça \(u=\sin x\). Então \(du=\cos x\,dx\).</p>\[ \int \sin^2x\cos^3x\,dx = \int u^2(1-u^2)du = \int (u^2-u^4)du \]</div></div>
+          <div class="step"><div class="step-num">3</div><div class="step-content">\[ = \frac{u^3}{3} - \frac{u^5}{5}+C \]</div></div>
+          <div class="step"><div class="step-num">4</div><div class="step-content"><p>Voltando para x:</p></div></div>
+          <div class="result-box">\( \displaystyle \int \sin^2 x\cos^3 x\,dx = \frac{\sin^3x}{3}-\frac{\sin^5x}{5}+C \)</div>
+        </div>
+      </details>
+    </div>
+
+    <div class="gab-item">
+      <div class="gab-head"><span class="gab-num">1b</span><span class="gab-statement">\( \displaystyle \int x e^{-x}\,dx \)</span></div>
+      <details class="gab-toggle"><summary>ver resolução</summary>
+        <div class="gab-body">
+          <div class="step"><div class="step-num">1</div><div class="step-content"><p>Produto de uma função polinomial com uma exponencial: integração por partes.</p>\[ u=x, \quad dv=e^{-x}dx \]\[ du=dx, \quad v=-e^{-x} \]</div></div>
+          <div class="step"><div class="step-num">2</div><div class="step-content">\[ \int x e^{-x}dx = x(-e^{-x}) - \int (-e^{-x})dx = -x e^{-x} + \int e^{-x}dx \]</div></div>
+          <div class="step"><div class="step-num">3</div><div class="step-content">\[ = -x e^{-x} - e^{-x} + C \]</div></div>
+          <div class="result-box">\( \displaystyle \int x e^{-x}\,dx = -(x+1)e^{-x}+C \)</div>
+        </div>
+      </details>
+    </div>
+
+    <div class="gab-item">
+      <div class="gab-head"><span class="gab-num">1c</span><span class="gab-statement">\( \displaystyle \int \frac{dx}{x^2+4x+3} \)</span></div>
+      <details class="gab-toggle"><summary>ver resolução</summary>
+        <div class="gab-body">
+          <div class="step"><div class="step-num">1</div><div class="step-content"><p>Primeiro fatoramos o denominador:</p>\[ x^2+4x+3=(x+1)(x+3) \]</div></div>
+          <div class="step"><div class="step-num">2</div><div class="step-content"><p>Escrevemos em frações parciais:</p>\[ \frac{1}{(x+1)(x+3)} = \frac{A}{x+1}+\frac{B}{x+3} \]\[ 1=A(x+3)+B(x+1) \]</div></div>
+          <div class="step"><div class="step-num">3</div><div class="step-content"><p>Resolvendo, temos \(A=\frac12\) e \(B=-\frac12\). Então</p>\[ \frac{1}{(x+1)(x+3)} = \frac12\left(\frac{1}{x+1}-\frac{1}{x+3}\right) \]</div></div>
+          <div class="step"><div class="step-num">4</div><div class="step-content">\[ \int \frac{dx}{x^2+4x+3} = \frac12\int \left(\frac{1}{x+1}-\frac{1}{x+3}\right)dx \]\[ = \frac12\ln|x+1| - \frac12\ln|x+3| + C \]\[ = \frac12\ln\left|\frac{x+1}{x+3}\right|+C \]</div></div>
+          <div class="result-box">\( \displaystyle \int \frac{dx}{x^2+4x+3} = \frac12\ln\left|\frac{x+1}{x+3}\right| + C \)</div>
+        </div>
+      </details>
+    </div>
+
+    <div class="gab-item">
+      <div class="gab-head"><span class="gab-num">2a</span><span class="gab-statement">\( \displaystyle \int_0^1 \frac{x}{x^2+1}\,dx \)</span></div>
+      <details class="gab-toggle"><summary>ver resolução</summary>
+        <div class="gab-body">
+          <div class="step"><div class="step-num">1</div><div class="step-content"><p>Use a substituição \(u=x^2+1\), pois \(du=2x\,dx\).</p>\[ x\,dx = \frac12 du \]</div></div>
+          <div class="step"><div class="step-num">2</div><div class="step-content">\[ \int_0^1 \frac{x}{x^2+1}\,dx = \frac12\int_1^2 \frac{1}{u}du \]</div></div>
+          <div class="step"><div class="step-num">3</div><div class="step-content">\[ = \frac12[\ln u]_1^2 = \frac12\ln 2 \]</div></div>
+          <div class="result-box">\( \displaystyle \int_0^1 \frac{x}{x^2+1}\,dx = \frac12\ln 2 \)</div>
+        </div>
+      </details>
+    </div>
+
+    <div class="gab-item">
+      <div class="gab-head"><span class="gab-num">2b</span><span class="gab-statement">\( \displaystyle \int_1^\infty \frac{1}{x^2}\,dx \) <span class="conclusion-tag conv">convergente</span></span></div>
+      <details class="gab-toggle"><summary>ver resolução</summary>
+        <div class="gab-body">
+          <div class="step"><div class="step-num">1</div><div class="step-content"><p>Como o limite superior é infinito, escrevemos em forma de limite:</p>\[ \int_1^\infty x^{-2}dx = \lim_{t\to\infty}\int_1^t x^{-2}dx \]</div></div>
+          <div class="step"><div class="step-num">2</div><div class="step-content">\[ \int x^{-2}dx = -x^{-1} \]
+<p>Logo:</p>\[ \lim_{t\to\infty}\left[-\frac1x\right]_1^t = \lim_{t\to\infty}\left(-\frac1t + 1\right) = 1 \]</div></div>
+          <div class="result-box converg">A integral converge e vale 1.</div>
+        </div>
+      </details>
+    </div>
+
+    <div class="gab-item">
+      <div class="gab-head"><span class="gab-num">3</span><span class="gab-statement">\( \displaystyle \int_0^1 \frac{1}{\sqrt{x}}\,dx \) <span class="conclusion-tag conv">convergente</span></span></div>
+      <details class="gab-toggle"><summary>ver resolução</summary>
+        <div class="gab-body">
+          <div class="step"><div class="step-num">1</div><div class="step-content"><p>O integrando tem singularidade em \(x=0\), então tratamos como limite:</p>\[ \int_0^1 x^{-1/2}dx = \lim_{t\to0^+}\int_t^1 x^{-1/2}dx \]</div></div>
+          <div class="step"><div class="step-num">2</div><div class="step-content">\[ \int x^{-1/2}dx = 2x^{1/2} \]
+<p>Portanto:</p>\[ \lim_{t\to0^+}[2\sqrt{x}]_t^1 = \lim_{t\to0^+}(2-2\sqrt{t}) = 2 \]</div></div>
+          <div class="result-box converg">A integral converge e seu valor é 2.</div>
+        </div>
+      </details>
+    </div>
+
+    <div class="cta-more">
+      <p>Esta prova revisa os temas mais usados em avaliações: substituição, por partes, frações parciais e convergência de integrais impróprias.</p>
+      <a href="../topicos/calc2_lista01.html">Revisar a lista 01</a>
+    </div>
+
+  </section>
+
+</main>
+
+<div id="site-footer-root"></div>
+
+<script src="../assets/js/site-data.js"></script>
+<script src="../assets/js/layout.js"></script>
+<script src="../assets/js/katex-init.js"></script>
+<script>
+  renderHeader({ active: "provas", base: "../" });
+  renderFooter({
+    base: "../",
+    related: {
+      title: "Relacionado",
+      links: [
+        { label: "Lista 01 resolvida", href: "../topicos/calc2_lista01.html" },
+        { label: "Integração por partes", href: "../topicos/integracao-por-partes.html" }
+      ]
+    }
+  });
+</script>
+
+</body>
+</html>

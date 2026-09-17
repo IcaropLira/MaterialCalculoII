@@ -1,0 +1,138 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Prova 8 — Cálculo II</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,400;9..144,500;9..144,600;9..144,700&family=IBM+Plex+Sans:wght@400;500;600;700&family=IBM+Plex+Mono:wght@500&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/KaTeX/0.16.9/katex.min.css">
+<script defer src="https://cdnjs.cloudflare.com/ajax/libs/KaTeX/0.16.9/katex.min.js"></script>
+<script defer src="https://cdnjs.cloudflare.com/ajax/libs/KaTeX/0.16.9/contrib/auto-render.min.js"></script>
+<link rel="stylesheet" href="../assets/css/tokens.css">
+<link rel="stylesheet" href="../assets/css/base.css">
+<link rel="stylesheet" href="../assets/css/components.css">
+<style>main{max-width:900px;margin:0 auto;}</style>
+</head>
+<body>
+<div id="site-header-root"></div>
+<main>
+  <a class="back-link" href="../index.html#provas">← voltar para provas</a>
+  <div class="hero">
+    <div class="hero-eyebrow">cálculo ii · prova resolvida</div>
+    <h1>Prova 8</h1>
+    <p class="lede">Sequências e séries: convergência, termos gerais, séries geométricas e testes básicos.</p>
+    <div class="hero-tags">
+      <span class="htag">sequências</span>
+      <span class="htag">séries</span>
+      <span class="htag">convergência</span>
+    </div>
+    <div class="hero-meta">
+      <div><strong>3</strong>questões</div>
+      <div><strong>6</strong>itens no total</div>
+      <div><strong>médio</strong>nível</div>
+    </div>
+  </div>
+
+  <section class="block" id="enunciado">
+    <div class="block-kicker">folha de questões</div>
+    <h2 class="block-title">Enunciado</h2>
+    <p class="block-desc">Decida sobre convergência e, quando possível, encontre o valor da série.</p>
+    <div class="sheet">
+      <div class="sheet-head">
+        <span class="sh-title">Cálculo II — Prova 8</span>
+        <span class="sh-sub">6 itens · sem consulta</span>
+      </div>
+      <div class="sheet-body">
+        <div class="questao">
+          <div class="questao-head"><span class="questao-num">1</span><span class="questao-instr">Estude a sequência.</span></div>
+          <ul class="item-list">
+            <li><span class="item-letter">a)</span><span class="item-body">\( a_n = \dfrac{n}{n+1} \)</span></li>
+            <li><span class="item-letter">b)</span><span class="item-body">\( a_n = \dfrac{(-1)^n}{n} \)</span></li>
+          </ul>
+        </div>
+        <div class="questao">
+          <div class="questao-head"><span class="questao-num">2</span><span class="questao-instr">Determine se a série converge.</span></div>
+          <div class="item-single">\( \displaystyle \sum_{n=1}^{\infty} \left(\frac{1}{3}\right)^n \)</div>
+        </div>
+        <div class="questao">
+          <div class="questao-head"><span class="questao-num">3</span><span class="questao-instr">Teste a convergência da série.</span></div>
+          <div class="item-single">\( \displaystyle \sum_{n=1}^{\infty} \frac{1}{n^2} \)</div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="block" id="gabarito" style="border-bottom:none;">
+    <div class="block-kicker">resolução comentada</div>
+    <h2 class="block-title">Gabarito</h2>
+    <p class="block-desc">Convergência de sequências e séries começa pela análise do limite e pela identificação do tipo de série.</p>
+
+    <div class="gab-item">
+      <div class="gab-head"><span class="gab-num">1a</span><span class="gab-statement">\( a_n = \dfrac{n}{n+1} \)</span></div>
+      <details class="gab-toggle"><summary>ver resolução</summary>
+        <div class="gab-body">
+          <div class="step"><div class="step-num">1</div><div class="step-content"><p>Calculamos o limite:</p>\[ \lim_{n\to\infty}\frac{n}{n+1} = \lim_{n\to\infty}\frac{1}{1+1/n}=1 \]</div></div>
+          <div class="step"><div class="step-num">2</div><div class="step-content"><p>Como o limite é finito, a sequência converge para 1.</p></div></div>
+          <div class="result-box converg">A sequência converge para 1.</div>
+        </div>
+      </details>
+    </div>
+
+    <div class="gab-item">
+      <div class="gab-head"><span class="gab-num">1b</span><span class="gab-statement">\( a_n = \dfrac{(-1)^n}{n} \)</span></div>
+      <details class="gab-toggle"><summary>ver resolução</summary>
+        <div class="gab-body">
+          <div class="step"><div class="step-num">1</div><div class="step-content"><p>O termo alterna de sinal, mas em módulo vale:</p>\[ \left|\frac{(-1)^n}{n}\right| = \frac{1}{n} \]</div></div>
+          <div class="step"><div class="step-num">2</div><div class="step-content"><p>Como \(1/n\to0\), temos:</p>\[ \lim_{n\to\infty}\frac{(-1)^n}{n}=0 \]
+<p>Portanto, a sequência converge para 0.</p></div></div>
+          <div class="result-box converg">A sequência converge para 0.</div>
+        </div>
+      </details>
+    </div>
+
+    <div class="gab-item">
+      <div class="gab-head"><span class="gab-num">2</span><span class="gab-statement">\( \displaystyle \sum_{n=1}^{\infty} \left(\frac{1}{3}\right)^n \)</span></div>
+      <details class="gab-toggle"><summary>ver resolução</summary>
+        <div class="gab-body">
+          <div class="step"><div class="step-num">1</div><div class="step-content"><p>Essa é uma série geométrica com razão \(r=1/3\).</p>\[ |r|<1 \]
+<p>Logo, a série converge.</p></div></div>
+          <div class="step"><div class="step-num">2</div><div class="step-content"><p>A soma é dada por</p>\[ S=\frac{a_1}{1-r} \]
+<p>com \(a_1=1/3\):</p>\[ S=\frac{1/3}{1-1/3}=\frac{1/3}{2/3}=\frac12 \]</div></div>
+          <div class="result-box converg">A série converge e sua soma é \(\frac12\).</div>
+        </div>
+      </details>
+    </div>
+
+    <div class="gab-item">
+      <div class="gab-head"><span class="gab-num">3</span><span class="gab-statement">\( \displaystyle \sum_{n=1}^{\infty} \frac{1}{n^2} \)</span></div>
+      <details class="gab-toggle"><summary>ver resolução</summary>
+        <div class="gab-body">
+          <div class="step"><div class="step-num">1</div><div class="step-content"><p>Essa é uma série p, com \(p=2>1\).</p>\[ \sum \frac{1}{n^p} \text{ converge se } p>1 \]
+<p>Logo, ela converge.</p></div></div>
+          <div class="step"><div class="step-num">2</div><div class="step-content"><p>O valor exato é conhecido:</p>\[ \sum_{n=1}^{\infty}\frac{1}{n^2} = \frac{\pi^2}{6} \]</div></div>
+          <div class="result-box converg">A série converge, e a soma é \(\pi^2/6\).</div>
+        </div>
+      </details>
+    </div>
+
+    <div class="cta-more">
+      <p>Sequências e séries são fundamentais para entender o comportamento de aproximações e da soma infinita como limite de somas parciais.</p>
+      <a href="../topicos/calc2_lista01.html">Revisar a lista de Cálculo II</a>
+    </div>
+  </section>
+</main>
+<div id="site-footer-root"></div>
+<script src="../assets/js/site-data.js"></script>
+<script src="../assets/js/layout.js"></script>
+<script src="../assets/js/katex-init.js"></script>
+<script>
+  renderHeader({ active: "provas", base: "../" });
+  renderFooter({ base: "../", related: { title: "Relacionado", links: [
+    { label: "Lista 01 resolvida", href: "../topicos/calc2_lista01.html" },
+    { label: "Integrais impróprias", href: "../topicos/calc2_lista01.html#improp" }
+  ] } });
+</script>
+</body>
+</html>

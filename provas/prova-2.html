@@ -1,0 +1,225 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Prova 2 — Cálculo II</title>
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,400;9..144,500;9..144,600;9..144,700&family=IBM+Plex+Sans:wght@400;500;600;700&family=IBM+Plex+Mono:wght@500&display=swap" rel="stylesheet">
+
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/KaTeX/0.16.9/katex.min.css">
+<script defer src="https://cdnjs.cloudflare.com/ajax/libs/KaTeX/0.16.9/katex.min.js"></script>
+<script defer src="https://cdnjs.cloudflare.com/ajax/libs/KaTeX/0.16.9/contrib/auto-render.min.js"></script>
+
+<link rel="stylesheet" href="../assets/css/tokens.css">
+<link rel="stylesheet" href="../assets/css/base.css">
+<link rel="stylesheet" href="../assets/css/components.css">
+<style>
+  main{ max-width:900px; margin:0 auto; }
+</style>
+</head>
+<body>
+
+<div id="site-header-root"></div>
+
+<main>
+
+  <a class="back-link" href="../index.html#provas">← voltar para provas</a>
+
+  <div class="hero">
+    <div class="hero-eyebrow">cálculo ii · prova resolvida</div>
+    <h1>Prova 2</h1>
+    <p class="lede">Integrais por substituição, integração por partes, frações parciais e integrais impróprias com análise de convergência.</p>
+    <div class="hero-tags">
+      <span class="htag">substituição</span>
+      <span class="htag">por partes</span>
+      <span class="htag">frações parciais</span>
+      <span class="htag">impróprias</span>
+    </div>
+    <div class="hero-meta">
+      <div><strong>3</strong>questões</div>
+      <div><strong>7</strong>itens no total</div>
+      <div><strong>médio</strong>nível</div>
+    </div>
+  </div>
+
+  <section class="block" id="enunciado">
+    <div class="block-kicker">folha de questões</div>
+    <h2 class="block-title">Enunciado</h2>
+    <p class="block-desc">Tente resolver sozinho antes de abrir a resolução comentada.</p>
+
+    <div class="sheet">
+      <div class="sheet-head">
+        <span class="sh-title">Cálculo II — Prova 2</span>
+        <span class="sh-sub">7 itens · sem consulta</span>
+      </div>
+      <div class="sheet-body">
+
+        <div class="questao">
+          <div class="questao-head">
+            <span class="questao-num">1</span>
+            <span class="questao-instr">Resolva as integrais indefinidas abaixo.</span>
+          </div>
+          <ul class="item-list">
+            <li><span class="item-letter">a)</span><span class="item-body">\( \displaystyle \int x\sqrt{x^2+1}\,dx \)</span></li>
+            <li><span class="item-letter">b)</span><span class="item-body">\( \displaystyle \int x\ln x\,dx \)</span></li>
+            <li><span class="item-letter">c)</span><span class="item-body">\( \displaystyle \int \frac{x^2}{(x-1)^2}\,dx \)</span></li>
+            <li><span class="item-letter">d)</span><span class="item-body">\( \displaystyle \int \frac{1}{\sqrt{9-x^2}}\,dx \)</span></li>
+          </ul>
+        </div>
+
+        <div class="questao">
+          <div class="questao-head">
+            <span class="questao-num">2</span>
+            <span class="questao-instr">Calcule a integral definida.</span>
+          </div>
+          <div class="item-single">\( \displaystyle \int_0^{\pi/2} x\sin x\,dx \)</div>
+        </div>
+
+        <div class="questao">
+          <div class="questao-head">
+            <span class="questao-num">3</span>
+            <span class="questao-instr">Determine se as integrais impróprias convergem ou divergem.</span>
+          </div>
+          <ul class="item-list">
+            <li><span class="item-letter">a)</span><span class="item-body">\( \displaystyle \int_0^1 \frac{1}{\sqrt{1-x^2}}\,dx \)</span></li>
+            <li><span class="item-letter">b)</span><span class="item-body">\( \displaystyle \int_1^{\infty} \frac{1}{x^2+3x+2}\,dx \)</span></li>
+          </ul>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <section class="block" id="gabarito" style="border-bottom:none;">
+    <div class="block-kicker">resolução comentada</div>
+    <h2 class="block-title">Gabarito</h2>
+    <p class="block-desc">Cada item abre com a resolução completa, passo a passo.</p>
+
+    <div class="gab-item">
+      <div class="gab-head"><span class="gab-num">1a</span><span class="gab-statement">\( \displaystyle \int x\sqrt{x^2+1}\,dx \)</span></div>
+      <details class="gab-toggle"><summary>ver resolução</summary>
+        <div class="gab-body">
+          <div class="step"><div class="step-num">1</div><div class="step-content"><p>Observamos que a derivada de \(x^2+1\) é \(2x\), e o integrando tem exatamente \(x\,dx\). Isso sugere substituição direta.</p></div></div>
+          <div class="step"><div class="step-num">2</div><div class="step-content"><p>Faça \(u=x^2+1\). Então \(du=2x\,dx\), ou seja, \(x\,dx=\frac{1}{2}du\).</p></div></div>
+          <div class="step"><div class="step-num">3</div><div class="step-content">\[ \int x\sqrt{x^2+1}\,dx = \int \sqrt{u}\cdot \frac{1}{2}\,du = \frac{1}{2}\int u^{1/2}\,du \]\[ = \frac{1}{2}\cdot \frac{u^{3/2}}{3/2} = \frac{1}{3}u^{3/2} \]</div></div>
+          <div class="step"><div class="step-num">4</div><div class="step-content"><p>Voltando para a variável original:</p></div></div>
+          <div class="result-box">\( \displaystyle \int x\sqrt{x^2+1}\,dx = \frac{1}{3}(x^2+1)^{3/2}+C \)</div>
+        </div>
+      </details>
+    </div>
+
+    <div class="gab-item">
+      <div class="gab-head"><span class="gab-num">1b</span><span class="gab-statement">\( \displaystyle \int x\ln x\,dx \)</span></div>
+      <details class="gab-toggle"><summary>ver resolução</summary>
+        <div class="gab-body">
+          <div class="step"><div class="step-num">1</div><div class="step-content"><p>Temos um produto de funções, então a estratégia mais natural é integração por partes.</p>\[ u=\ln x, \quad dv=x\,dx \]\[ du=\frac{1}{x}dx, \quad v=\frac{x^2}{2} \]</div></div>
+          <div class="step"><div class="step-num">2</div><div class="step-content"><p>Aplicando a fórmula \(\int u\,dv = uv-\int v\,du\):</p>\[ \int x\ln x\,dx = \frac{x^2}{2}\ln x - \int \frac{x^2}{2}\cdot \frac{1}{x}\,dx \]\[ = \frac{x^2}{2}\ln x - \frac{1}{2}\int x\,dx \]</div></div>
+          <div class="step"><div class="step-num">3</div><div class="step-content">\[ = \frac{x^2}{2}\ln x - \frac{1}{2}\cdot \frac{x^2}{2} = \frac{x^2}{2}\ln x - \frac{x^2}{4} \]</div></div>
+          <div class="result-box">\( \displaystyle \int x\ln x\,dx = \frac{x^2}{2}\ln x - \frac{x^2}{4}+C \)</div>
+        </div>
+      </details>
+    </div>
+
+    <div class="gab-item">
+      <div class="gab-head"><span class="gab-num">1c</span><span class="gab-statement">\( \displaystyle \int \frac{x^2}{(x-1)^2}\,dx \)</span></div>
+      <details class="gab-toggle"><summary>ver resolução</summary>
+        <div class="gab-body">
+          <div class="step"><div class="step-num">1</div><div class="step-content"><p>Antes de integrar, fazemos a divisão polinomial para simplificar.</p>\[ \frac{x^2}{(x-1)^2} = \frac{x^2}{x^2-2x+1} \]
+<p>Como o grau do numerador e do denominador é o mesmo, fazemos a divisão:</p>\[ x^2 = (x^2-2x+1) + 2x - 1 \]
+<p>Portanto</p>\[ \frac{x^2}{(x-1)^2} = 1 + \frac{2x-1}{(x-1)^2} \]</div></div>
+          <div class="step"><div class="step-num">2</div><div class="step-content"><p>Agora escrevemos o restante em termos de \(x-1\):</p>\[ 2x-1 = 2(x-1)+1 \]
+<p>Assim,</p>\[ \frac{2x-1}{(x-1)^2} = \frac{2}{x-1} + \frac{1}{(x-1)^2} \]</div></div>
+          <div class="step"><div class="step-num">3</div><div class="step-content"><p>Então a integral fica</p>\[ \int \left(1 + \frac{2}{x-1} + \frac{1}{(x-1)^2}\right)dx \]</div></div>
+          <div class="step"><div class="step-num">4</div><div class="step-content">\[ = x + 2\ln|x-1| - \frac{1}{x-1}+C \]</div></div>
+          <div class="result-box">\( \displaystyle \int \frac{x^2}{(x-1)^2}\,dx = x + 2\ln|x-1| - \frac{1}{x-1}+C \)</div>
+        </div>
+      </details>
+    </div>
+
+    <div class="gab-item">
+      <div class="gab-head"><span class="gab-num">1d</span><span class="gab-statement">\( \displaystyle \int \frac{1}{\sqrt{9-x^2}}\,dx \)</span></div>
+      <details class="gab-toggle"><summary>ver resolução</summary>
+        <div class="gab-body">
+          <div class="step"><div class="step-num">1</div><div class="step-content"><p>Esse é o formato clássico da substituição trigonométrica com \(a=3\). Fazemos</p>\[ x=3\sin\theta, \quad dx=3\cos\theta\,d\theta, \quad \sqrt{9-x^2}=\sqrt{9-9\sin^2\theta}=3\cos\theta \]</div></div>
+          <div class="step"><div class="step-num">2</div><div class="step-content"><p>Substituindo:</p>\[ \int \frac{1}{\sqrt{9-x^2}}dx = \int \frac{3\cos\theta}{3\cos\theta}d\theta = \int d\theta \]</div></div>
+          <div class="step"><div class="step-num">3</div><div class="step-content"><p>Logo,</p>\[ \int d\theta = \theta + C \]</div></div>
+          <div class="step"><div class="step-num">4</div><div class="step-content"><p>Como \(x=3\sin\theta\), então \(\theta = \arcsin(x/3)\).</p></div></div>
+          <div class="result-box">\( \displaystyle \int \frac{1}{\sqrt{9-x^2}}\,dx = \arcsin\left(\frac{x}{3}\right)+C \)</div>
+        </div>
+      </details>
+    </div>
+
+    <div class="gab-item">
+      <div class="gab-head"><span class="gab-num">2</span><span class="gab-statement">\( \displaystyle \int_0^{\pi/2} x\sin x\,dx \)</span></div>
+      <details class="gab-toggle"><summary>ver resolução</summary>
+        <div class="gab-body">
+          <div class="step"><div class="step-num">1</div><div class="step-content"><p>Como aparecem um produto \(x\sin x\), usamos integração por partes.</p>\[ u=x, \quad dv=\sin x\,dx \]\[ du=dx, \quad v=-\cos x \]</div></div>
+          <div class="step"><div class="step-num">2</div><div class="step-content">\[ \int x\sin x\,dx = -x\cos x - \int (-\cos x)dx = -x\cos x + \int \cos x\,dx \]\[ = -x\cos x + \sin x \]</div></div>
+          <div class="step"><div class="step-num">3</div><div class="step-content"><p>Avaliaremos de \(0\) a \(\pi/2\):</p>\[ \left[-x\cos x + \sin x\right]_0^{\pi/2} \]</div></div>
+          <div class="step"><div class="step-num">4</div><div class="step-content">\[ = \left(-\frac{\pi}{2}\cos\frac{\pi}{2} + \sin\frac{\pi}{2}\right) - \left(-0\cdot\cos 0 + \sin 0\right) \]\[ = (0+1) - (0+0) = 1 \]</div></div>
+          <div class="result-box">\( \displaystyle \int_0^{\pi/2} x\sin x\,dx = 1 \)</div>
+        </div>
+      </details>
+    </div>
+
+    <div class="gab-item">
+      <div class="gab-head"><span class="gab-num">3a</span><span class="gab-statement">\( \displaystyle \int_0^1 \frac{1}{\sqrt{1-x^2}}\,dx \) <span class="conclusion-tag conv">convergente</span></span></div>
+      <details class="gab-toggle"><summary>ver resolução</summary>
+        <div class="gab-body">
+          <div class="step"><div class="step-num">1</div><div class="step-content"><p>O integrando tem singularidade em \(x=1\), porque o denominador se anula. Portanto, tratamos como limite:</p>\[ \lim_{t\to 1^-}\int_0^t \frac{1}{\sqrt{1-x^2}}\,dx \]</div></div>
+          <div class="step"><div class="step-num">2</div><div class="step-content"><p>Reconhecemos a antiderivada:</p>\[ \int \frac{1}{\sqrt{1-x^2}}dx = \arcsin x + C \]</div></div>
+          <div class="step"><div class="step-num">3</div><div class="step-content">\[ \lim_{t\to 1^-}\left[\arcsin x\right]_0^t = \lim_{t\to 1^-}(\arcsin t - \arcsin 0) \]\[ = \arcsin 1 = \frac{\pi}{2} \]</div></div>
+          <div class="result-box converg">A integral converge e o valor é \(\frac{\pi}{2}\).</div>
+        </div>
+      </details>
+    </div>
+
+    <div class="gab-item">
+      <div class="gab-head"><span class="gab-num">3b</span><span class="gab-statement">\( \displaystyle \int_1^{\infty} \frac{1}{x^2+3x+2}\,dx \) <span class="conclusion-tag conv">convergente</span></span></div>
+      <details class="gab-toggle"><summary>ver resolução</summary>
+        <div class="gab-body">
+          <div class="step"><div class="step-num">1</div><div class="step-content"><p>Fatoramos o denominador:</p>\[ x^2+3x+2 = (x+1)(x+2) \]
+<p>Então a integral fica</p>\[ \int_1^{\infty}\frac{1}{(x+1)(x+2)}dx \]</div></div>
+          <div class="step"><div class="step-num">2</div><div class="step-content"><p>Usamos frações parciais:</p>\[ \frac{1}{(x+1)(x+2)} = \frac{A}{x+1}+\frac{B}{x+2} \]\[ 1 = A(x+2)+B(x+1) \]
+<p>Igualando os coeficientes:</p>\[ A+B=0, \quad 2A+B=1 \]
+<p>Resolvendo, encontramos \(A=1\) e \(B=-1\). Logo,</p>\[ \frac{1}{(x+1)(x+2)} = \frac{1}{x+1}-\frac{1}{x+2} \]</div></div>
+          <div class="step"><div class="step-num">3</div><div class="step-content">\[ \int_1^{\infty}\left(\frac{1}{x+1}-\frac{1}{x+2}\right)dx = \lim_{t\to\infty}\left[\ln|x+1| - \ln|x+2|\right]_1^t \]\[ = \lim_{t\to\infty}\ln\left|\frac{t+1}{t+2}\right| - \ln\left(\frac{2}{3}\right) \]</div></div>
+          <div class="step"><div class="step-num">4</div><div class="step-content"><p>Como \(\frac{t+1}{t+2}\to 1\), temos \(\ln\left(\frac{t+1}{t+2}\right)\to 0\). Portanto,</p>\[ = 0 - \ln\left(\frac{2}{3}\right) = \ln\left(\frac{3}{2}\right) \]</div></div>
+          <div class="result-box converg">A integral converge e o valor é \(\ln(3/2)\).</div>
+        </div>
+      </details>
+    </div>
+
+    <div class="cta-more">
+      <p>Se quiser reforçar os métodos usados aqui, vale revisar as técnicas de substituição, por partes e frações parciais antes da próxima prova.</p>
+      <a href="../topicos/integracao-por-partes.html">Ver o tópico de integração por partes</a>
+    </div>
+
+  </section>
+
+</main>
+
+<div id="site-footer-root"></div>
+
+<script src="../assets/js/site-data.js"></script>
+<script src="../assets/js/layout.js"></script>
+<script src="../assets/js/katex-init.js"></script>
+<script>
+  renderHeader({ active: "provas", base: "../" });
+  renderFooter({
+    base: "../",
+    related: {
+      title: "Relacionado",
+      links: [
+        { label: "Integração por partes (teoria)", href: "../topicos/integracao-por-partes.html" },
+        { label: "Substituição trigonométrica", href: "../topicos/substituicao-trigonometrica.html" }
+      ]
+    }
+  });
+</script>
+
+</body>
+</html>

@@ -1,0 +1,137 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Prova 9 — Cálculo II</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,400;9..144,500;9..144,600;9..144,700&family=IBM+Plex+Sans:wght@400;500;600;700&family=IBM+Plex+Mono:wght@500&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/KaTeX/0.16.9/katex.min.css">
+<script defer src="https://cdnjs.cloudflare.com/ajax/libs/KaTeX/0.16.9/katex.min.js"></script>
+<script defer src="https://cdnjs.cloudflare.com/ajax/libs/KaTeX/0.16.9/contrib/auto-render.min.js"></script>
+<link rel="stylesheet" href="../assets/css/tokens.css">
+<link rel="stylesheet" href="../assets/css/base.css">
+<link rel="stylesheet" href="../assets/css/components.css">
+<style>main{max-width:900px;margin:0 auto;}</style>
+</head>
+<body>
+<div id="site-header-root"></div>
+<main>
+  <a class="back-link" href="../index.html#provas">← voltar para provas</a>
+  <div class="hero">
+    <div class="hero-eyebrow">cálculo ii · prova resolvida</div>
+    <h1>Prova 9</h1>
+    <p class="lede">Coordenadas polares: conversão, curvas e área em coordenadas do tipo \(r,\theta\).</p>
+    <div class="hero-tags">
+      <span class="htag">coordenadas polares</span>
+      <span class="htag">área</span>
+      <span class="htag">conversão</span>
+    </div>
+    <div class="hero-meta">
+      <div><strong>3</strong>questões</div>
+      <div><strong>6</strong>itens no total</div>
+      <div><strong>avançado</strong>nível</div>
+    </div>
+  </div>
+
+  <section class="block" id="enunciado">
+    <div class="block-kicker">folha de questões</div>
+    <h2 class="block-title">Enunciado</h2>
+    <p class="block-desc">Converta, interprete e calcule áreas em coordenadas polares.</p>
+    <div class="sheet">
+      <div class="sheet-head">
+        <span class="sh-title">Cálculo II — Prova 9</span>
+        <span class="sh-sub">6 itens · sem consulta</span>
+      </div>
+      <div class="sheet-body">
+        <div class="questao">
+          <div class="questao-head"><span class="questao-num">1</span><span class="questao-instr">Converta os pontos para coordenadas cartesianas.</span></div>
+          <ul class="item-list">
+            <li><span class="item-letter">a)</span><span class="item-body">\( (2,\pi/2) \)</span></li>
+            <li><span class="item-letter">b)</span><span class="item-body">\( (3,\pi/3) \)</span></li>
+          </ul>
+        </div>
+        <div class="questao">
+          <div class="questao-head"><span class="questao-num">2</span><span class="questao-instr">Escreva em coordenadas polares.</span></div>
+          <div class="item-single">\( (x,y)=(\sqrt{3},1) \)</div>
+        </div>
+        <div class="questao">
+          <div class="questao-head"><span class="questao-num">3</span><span class="questao-instr">Calcule a área da região limitada por \(r=2+2\cos\theta\).</span></div>
+          <div class="item-single">\( A = \dfrac12\int_0^{2\pi} r^2 d\theta \)</div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="block" id="gabarito" style="border-bottom:none;">
+    <div class="block-kicker">resolução comentada</div>
+    <h2 class="block-title">Gabarito</h2>
+    <p class="block-desc">As fórmulas de conversão e a área polar são a base da resolução.</p>
+
+    <div class="gab-item">
+      <div class="gab-head"><span class="gab-num">1a</span><span class="gab-statement">\( (2,\pi/2) \)</span></div>
+      <details class="gab-toggle"><summary>ver resolução</summary>
+        <div class="gab-body">
+          <div class="step"><div class="step-num">1</div><div class="step-content"><p>Usamos</p>\[ x=r\cos\theta,\quad y=r\sin\theta \]
+<p>Com \(r=2\) e \(\theta=\pi/2\):</p>\[ x=2\cos(\pi/2)=0,\quad y=2\sin(\pi/2)=2 \]</div></div>
+          <div class="result-box">\( (x,y)=(0,2) \)</div>
+        </div>
+      </details>
+    </div>
+
+    <div class="gab-item">
+      <div class="gab-head"><span class="gab-num">1b</span><span class="gab-statement">\( (3,\pi/3) \)</span></div>
+      <details class="gab-toggle"><summary>ver resolução</summary>
+        <div class="gab-body">
+          <div class="step"><div class="step-num">1</div><div class="step-content"><p>Aplicando as fórmulas:</p>\[ x=3\cos(\pi/3)=3\cdot\frac12=\frac32,\quad y=3\sin(\pi/3)=3\cdot\frac{\sqrt3}{2}=\frac{3\sqrt3}{2} \]</div></div>
+          <div class="result-box">\( (x,y)=\left(\frac32,\frac{3\sqrt3}{2}\right) \)</div>
+        </div>
+      </details>
+    </div>
+
+    <div class="gab-item">
+      <div class="gab-head"><span class="gab-num">2</span><span class="gab-statement">\( (x,y)=(\sqrt3,1) \)</span></div>
+      <details class="gab-toggle"><summary>ver resolução</summary>
+        <div class="gab-body">
+          <div class="step"><div class="step-num">1</div><div class="step-content"><p>Primeiro calculamos o módulo:</p>\[ r=\sqrt{x^2+y^2}=\sqrt{3+1}=2 \]
+<p>E o argumento:</p>\[ \theta = \arctan\left(\frac{y}{x}\right)=\arctan\left(\frac{1}{\sqrt3}\right)=\frac{\pi}{6} \]</div></div>
+          <div class="result-box">\( (r,\theta)=\left(2,\frac{\pi}{6}\right) \)</div>
+        </div>
+      </details>
+    </div>
+
+    <div class="gab-item">
+      <div class="gab-head"><span class="gab-num">3</span><span class="gab-statement">\( A = \dfrac12\int_0^{2\pi}(2+2\cos\theta)^2 d\theta \)</span></div>
+      <details class="gab-toggle"><summary>ver resolução</summary>
+        <div class="gab-body">
+          <div class="step"><div class="step-num">1</div><div class="step-content"><p>Expandimos o quadrado:</p>\[ (2+2\cos\theta)^2 = 4+8\cos\theta+4\cos^2\theta \]
+<p>Então:</p>\[ A=\frac12\int_0^{2\pi}(4+8\cos\theta+4\cos^2\theta)d\theta \]</div></div>
+          <div class="step"><div class="step-num">2</div><div class="step-content"><p>Usamos \(\cos^2\theta = \frac{1+\cos2\theta}{2}\):</p>\[ 4\cos^2\theta = 2+2\cos2\theta \]
+<p>Logo:</p>\[ A=\frac12\int_0^{2\pi}(6+8\cos\theta+2\cos2\theta)d\theta \]</div></div>
+          <div class="step"><div class="step-num">3</div><div class="step-content"><p>Integrando termo a termo:</p>\[ \int_0^{2\pi}6d\theta = 12\pi,\quad \int_0^{2\pi}8\cos\theta d\theta = 0,\quad \int_0^{2\pi}2\cos2\theta d\theta = 0 \]
+<p>Assim:</p>\[ A=\frac12(12\pi)=6\pi \]</div></div>
+          <div class="result-box">\( A=6\pi \)</div>
+        </div>
+      </details>
+    </div>
+
+    <div class="cta-more">
+      <p>Em coordenadas polares, o segredo é transformar a figura em uma equação em termos de \(r\) e \(\theta\), e então usar a área polar \(A=\frac12\int r^2 d\theta\).</p>
+      <a href="../topicos/substituicao-trigonometrica.html">Revisar geometria e trigonometria</a>
+    </div>
+  </section>
+</main>
+<div id="site-footer-root"></div>
+<script src="../assets/js/site-data.js"></script>
+<script src="../assets/js/layout.js"></script>
+<script src="../assets/js/katex-init.js"></script>
+<script>
+  renderHeader({ active: "provas", base: "../" });
+  renderFooter({ base: "../", related: { title: "Relacionado", links: [
+    { label: "Substituição trigonométrica", href: "../topicos/substituicao-trigonometrica.html" },
+    { label: "Lista 01 resolvida", href: "../topicos/calc2_lista01.html" }
+  ] } });
+</script>
+</body>
+</html>

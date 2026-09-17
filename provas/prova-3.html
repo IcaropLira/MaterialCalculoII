@@ -1,0 +1,209 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Prova 3 — Cálculo II</title>
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,400;9..144,500;9..144,600;9..144,700&family=IBM+Plex+Sans:wght@400;500;600;700&family=IBM+Plex+Mono:wght@500&display=swap" rel="stylesheet">
+
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/KaTeX/0.16.9/katex.min.css">
+<script defer src="https://cdnjs.cloudflare.com/ajax/libs/KaTeX/0.16.9/katex.min.js"></script>
+<script defer src="https://cdnjs.cloudflare.com/ajax/libs/KaTeX/0.16.9/contrib/auto-render.min.js"></script>
+
+<link rel="stylesheet" href="../assets/css/tokens.css">
+<link rel="stylesheet" href="../assets/css/base.css">
+<link rel="stylesheet" href="../assets/css/components.css">
+<style>
+  main{ max-width:900px; margin:0 auto; }
+</style>
+</head>
+<body>
+
+<div id="site-header-root"></div>
+
+<main>
+
+  <a class="back-link" href="../index.html#provas">← voltar para provas</a>
+
+  <div class="hero">
+    <div class="hero-eyebrow">cálculo ii · prova resolvida</div>
+    <h1>Prova 3</h1>
+    <p class="lede">Técnicas de integração em conjunto: substituição, por partes, substituição trigonométrica e análise de convergência de integrais impróprias.</p>
+    <div class="hero-tags">
+      <span class="htag">substituição</span>
+      <span class="htag">trigonométrica</span>
+      <span class="htag">por partes</span>
+      <span class="htag">impróprias</span>
+    </div>
+    <div class="hero-meta">
+      <div><strong>3</strong>questões</div>
+      <div><strong>6</strong>itens no total</div>
+      <div><strong>avançado</strong>nível</div>
+    </div>
+  </div>
+
+  <section class="block" id="enunciado">
+    <div class="block-kicker">folha de questões</div>
+    <h2 class="block-title">Enunciado</h2>
+    <p class="block-desc">Resolva com cuidado e compare depois com os comentários detalhados.</p>
+
+    <div class="sheet">
+      <div class="sheet-head">
+        <span class="sh-title">Cálculo II — Prova 3</span>
+        <span class="sh-sub">6 itens · sem consulta</span>
+      </div>
+      <div class="sheet-body">
+
+        <div class="questao">
+          <div class="questao-head">
+            <span class="questao-num">1</span>
+            <span class="questao-instr">Resolva as integrais abaixo.</span>
+          </div>
+          <ul class="item-list">
+            <li><span class="item-letter">a)</span><span class="item-body">\( \displaystyle \int \sin^3 x\cos^2 x\,dx \)</span></li>
+            <li><span class="item-letter">b)</span><span class="item-body">\( \displaystyle \int x^2 e^x\,dx \)</span></li>
+            <li><span class="item-letter">c)</span><span class="item-body">\( \displaystyle \int \frac{dx}{x^2\sqrt{x^2+4}} \)</span></li>
+          </ul>
+        </div>
+
+        <div class="questao">
+          <div class="questao-head">
+            <span class="questao-num">2</span>
+            <span class="questao-instr">Calcule as integrais impróprias.</span>
+          </div>
+          <ul class="item-list">
+            <li><span class="item-letter">a)</span><span class="item-body">\( \displaystyle \int_0^{\infty} e^{-x}\,dx \)</span></li>
+            <li><span class="item-letter">b)</span><span class="item-body">\( \displaystyle \int_{-1}^{1} \frac{1}{x^2}\,dx \)</span></li>
+          </ul>
+        </div>
+
+        <div class="questao">
+          <div class="questao-head">
+            <span class="questao-num">3</span>
+            <span class="questao-instr">Determine a antiderivada da função abaixo.</span>
+          </div>
+          <div class="item-single">\( \displaystyle \int \frac{1}{\sqrt{16-x^2}}\,dx \)</div>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <section class="block" id="gabarito" style="border-bottom:none;">
+    <div class="block-kicker">resolução comentada</div>
+    <h2 class="block-title">Gabarito</h2>
+    <p class="block-desc">Cada item é resolvido com a mesma lógica usada nos exercícios do site: identificar a técnica, simplificar e concluir.</p>
+
+    <div class="gab-item">
+      <div class="gab-head"><span class="gab-num">1a</span><span class="gab-statement">\( \displaystyle \int \sin^3 x\cos^2 x\,dx \)</span></div>
+      <details class="gab-toggle"><summary>ver resolução</summary>
+        <div class="gab-body">
+          <div class="step"><div class="step-num">1</div><div class="step-content"><p>Como a potência de seno é ímpar, separamos um fator \(\sin x\) e usamos a identidade \(\sin^2 x = 1-\cos^2 x\):</p>\[ \sin^3 x\cos^2 x = \sin x(\sin^2 x)\cos^2 x = \sin x(1-\cos^2 x)\cos^2 x \]</div></div>
+          <div class="step"><div class="step-num">2</div><div class="step-content"><p>Agora a substituição fica natural:</p>\[ u=\cos x, \quad du=-\sin x\,dx \]\[ \int \sin^3 x\cos^2 x\,dx = -\int (1-u^2)u^2\,du \]</div></div>
+          <div class="step"><div class="step-num">3</div><div class="step-content">\[ -\int (u^2-u^4)du = -\left(\frac{u^3}{3}-\frac{u^5}{5}\right) \]\[ = -\frac{u^3}{3}+\frac{u^5}{5} \]</div></div>
+          <div class="step"><div class="step-num">4</div><div class="step-content"><p>Voltando para \(x\):</p></div></div>
+          <div class="result-box">\( \displaystyle \int \sin^3 x\cos^2 x\,dx = -\frac{\cos^3 x}{3}+\frac{\cos^5 x}{5}+C \)</div>
+        </div>
+      </details>
+    </div>
+
+    <div class="gab-item">
+      <div class="gab-head"><span class="gab-num">1b</span><span class="gab-statement">\( \displaystyle \int x^2 e^x\,dx \)</span></div>
+      <details class="gab-toggle"><summary>ver resolução</summary>
+        <div class="gab-body">
+          <div class="step"><div class="step-num">1</div><div class="step-content"><p>Essa é uma integral típica de integração por partes, e como o polinômio é de grau 2, precisamos aplicar duas vezes.</p>\[ u=x^2, \quad dv=e^x dx \]\[ du=2x\,dx, \quad v=e^x \]</div></div>
+          <div class="step"><div class="step-num">2</div><div class="step-content">\[ \int x^2 e^x dx = x^2 e^x - \int 2x e^x dx \]</div></div>
+          <div class="step"><div class="step-num">3</div><div class="step-content"><p>Aplicamos integração por partes novamente em \(\int 2x e^x dx\):</p>\[ u=2x, \quad dv=e^x dx \]\[ du=2dx, \quad v=e^x \]\[ \int 2x e^x dx = 2x e^x - \int 2e^x dx = 2x e^x - 2e^x \]</div></div>
+          <div class="step"><div class="step-num">4</div><div class="step-content">\[ \int x^2 e^x dx = x^2 e^x - (2x e^x - 2e^x) = (x^2-2x+2)e^x \]</div></div>
+          <div class="result-box">\( \displaystyle \int x^2 e^x\,dx = (x^2-2x+2)e^x + C \)</div>
+        </div>
+      </details>
+    </div>
+
+    <div class="gab-item">
+      <div class="gab-head"><span class="gab-num">1c</span><span class="gab-statement">\( \displaystyle \int \frac{dx}{x^2\sqrt{x^2+4}} \)</span></div>
+      <details class="gab-toggle"><summary>ver resolução</summary>
+        <div class="gab-body">
+          <div class="step"><div class="step-num">1</div><div class="step-content"><p>Forma \(\sqrt{x^2+a^2}\), então a substituição trigonométrica correta é</p>\[ x=2\tan\theta, \quad dx=2\sec^2\theta\,d\theta, \quad \sqrt{x^2+4}=2\sec\theta \]</div></div>
+          <div class="step"><div class="step-num">2</div><div class="step-content">\[ \int \frac{dx}{x^2\sqrt{x^2+4}} = \int \frac{2\sec^2\theta}{(4\tan^2\theta)(2\sec\theta)}d\theta = \frac{1}{4}\int \frac{\sec\theta}{\tan^2\theta}d\theta \]
+<p>Como \(\sec\theta/\tan^2\theta = \frac{1}{\cos\theta}\cdot \frac{\cos^2\theta}{\sin^2\theta} = \frac{\cos\theta}{\sin^2\theta}\), obtemos</p>\[ = \frac{1}{4}\int \frac{\cos\theta}{\sin^2\theta}d\theta \]</div></div>
+          <div class="step"><div class="step-num">3</div><div class="step-content"><p>Agora faça \(u=\sin\theta\), então \(du=\cos\theta d\theta\):</p>\[ \frac{1}{4}\int u^{-2}du = -\frac{1}{4u} + C = -\frac{1}{4\sin\theta}+C \]</div></div>
+          <div class="step"><div class="step-num">4</div><div class="step-content"><p>Como \(x=2\tan\theta\), temos</p>\[ \tan\theta = \frac{x}{2}\]
+<p>Com um triângulo retângulo, obtemos</p>\[ \sin\theta = \frac{x}{\sqrt{x^2+4}} \]</div></div>
+          <div class="result-box">\( \displaystyle \int \frac{dx}{x^2\sqrt{x^2+4}} = -\frac{\sqrt{x^2+4}}{4x}+C \)</div>
+        </div>
+      </details>
+    </div>
+
+    <div class="gab-item">
+      <div class="gab-head"><span class="gab-num">2a</span><span class="gab-statement">\( \displaystyle \int_0^{\infty} e^{-x}\,dx \) <span class="conclusion-tag conv">convergente</span></span></div>
+      <details class="gab-toggle"><summary>ver resolução</summary>
+        <div class="gab-body">
+          <div class="step"><div class="step-num">1</div><div class="step-content"><p>Como o limite superior é infinito, escrevemos em forma de limite:</p>\[ \int_0^{\infty} e^{-x}dx = \lim_{t\to\infty}\int_0^t e^{-x}dx \]</div></div>
+          <div class="step"><div class="step-num">2</div><div class="step-content"><p>A antiderivada de \(e^{-x}\) é \(-e^{-x}\):</p>\[ \int e^{-x}dx = -e^{-x} \]</div></div>
+          <div class="step"><div class="step-num">3</div><div class="step-content">\[ \lim_{t\to\infty}[-e^{-x}]_0^t = \lim_{t\to\infty}(-e^{-t}+1) \]</div></div>
+          <div class="step"><div class="step-num">4</div><div class="step-content"><p>Como \(e^{-t}\to 0\), temos</p>\[ = 1 \]</div></div>
+          <div class="result-box converg">A integral converge e o valor é 1.</div>
+        </div>
+      </details>
+    </div>
+
+    <div class="gab-item">
+      <div class="gab-head"><span class="gab-num">2b</span><span class="gab-statement">\( \displaystyle \int_{-1}^{1} \frac{1}{x^2}\,dx \) <span class="conclusion-tag div">divergente</span></span></div>
+      <details class="gab-toggle"><summary>ver resolução</summary>
+        <div class="gab-body">
+          <div class="step"><div class="step-num">1</div><div class="step-content"><p>O integrando é descontínuo em \(x=0\), que está dentro do intervalo \([-1,1]\). Precisamos separar em duas integrais:</p>\[ \int_{-1}^{1}\frac{1}{x^2}dx = \int_{-1}^{0}\frac{1}{x^2}dx + \int_0^{1}\frac{1}{x^2}dx \]</div></div>
+          <div class="step"><div class="step-num">2</div><div class="step-content"><p>Vamos calcular uma delas como limite no ponto singular:</p>\[ \int_0^1 \frac{1}{x^2}dx = \lim_{t\to 0^+}\int_t^1 x^{-2}dx \]
+<p>Mas</p>\[ \int x^{-2}dx = -x^{-1} \]</div></div>
+          <div class="step"><div class="step-num">3</div><div class="step-content">\[ \lim_{t\to 0^+}\left[-\frac{1}{x}\right]_t^1 = \lim_{t\to 0^+}\left(-1 + \frac{1}{t}\right) \]
+<p>Como \(1/t\to +\infty\), a integral diverge.</p></div></div>
+          <div class="result-box diverge">A integral diverge, pois o integrando tem uma singularidade em 0 dentro do intervalo.</div>
+        </div>
+      </details>
+    </div>
+
+    <div class="gab-item">
+      <div class="gab-head"><span class="gab-num">3</span><span class="gab-statement">\( \displaystyle \int \frac{1}{\sqrt{16-x^2}}\,dx \)</span></div>
+      <details class="gab-toggle"><summary>ver resolução</summary>
+        <div class="gab-body">
+          <div class="step"><div class="step-num">1</div><div class="step-content"><p>Temos a forma clássica \(\sqrt{a^2-x^2}\), com \(a=4\). Fazemos</p>\[ x=4\sin\theta, \quad dx=4\cos\theta\,d\theta, \quad \sqrt{16-x^2}=\sqrt{16-16\sin^2\theta}=4\cos\theta \]</div></div>
+          <div class="step"><div class="step-num">2</div><div class="step-content">\[ \int \frac{1}{\sqrt{16-x^2}}dx = \int \frac{4\cos\theta}{4\cos\theta}d\theta = \int d\theta = \theta + C \]</div></div>
+          <div class="step"><div class="step-num">3</div><div class="step-content"><p>Como \(x=4\sin\theta\), temos \(\theta = \arcsin(x/4)\).</p></div></div>
+          <div class="result-box">\( \displaystyle \int \frac{1}{\sqrt{16-x^2}}\,dx = \arcsin\left(\frac{x}{4}\right)+C \)</div>
+        </div>
+      </details>
+    </div>
+
+    <div class="cta-more">
+      <p>Esse conjunto de provas cobriu os principais métodos do semestre: substituição, integração por partes, trigonométrica e integrais impróprias.</p>
+      <a href="../topicos/substituicao-trigonometrica.html">Ver o tópico de substituição trigonométrica</a>
+    </div>
+
+  </section>
+
+</main>
+
+<div id="site-footer-root"></div>
+
+<script src="../assets/js/site-data.js"></script>
+<script src="../assets/js/layout.js"></script>
+<script src="../assets/js/katex-init.js"></script>
+<script>
+  renderHeader({ active: "provas", base: "../" });
+  renderFooter({
+    base: "../",
+    related: {
+      title: "Relacionado",
+      links: [
+        { label: "Substituição trigonométrica", href: "../topicos/substituicao-trigonometrica.html" },
+        { label: "Integrais impróprias", href: "../topicos/calc2_lista01.html#improp" }
+      ]
+    }
+  });
+</script>
+
+</body>
+</html>

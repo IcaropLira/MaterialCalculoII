@@ -140,15 +140,73 @@ window.PROVAS = [
   {
     id: "prova-2",
     title: "Prova 2",
-    tags: ["a definir"],
-    summary: "Nova prova comentada chegando em breve, seguindo o mesmo formato.",
-    status: "soon"
+    itemsCount: 7,
+    tags: ["substituição", "por partes", "frações parciais", "impróprias"],
+    summary: "Integrais indefinidas, uma integral definida e duas integrais impróprias, cobrindo os principais métodos do Cálculo II.",
+    status: "available",
+    href: "provas/prova-2.html"
   },
   {
     id: "prova-3",
     title: "Prova 3",
-    tags: ["a definir"],
-    summary: "Nova prova comentada chegando em breve, seguindo o mesmo formato.",
-    status: "soon"
+    itemsCount: 6,
+    tags: ["substituição", "trigonométrica", "por partes", "impróprias"],
+    summary: "Integrais trigonométricas, integração por partes, substituição trigonométrica e convergência de integrais impróprias.",
+    status: "available",
+    href: "provas/prova-3.html"
+  },
+  {
+    id: "prova-4",
+    title: "Prova 4",
+    itemsCount: 6,
+    tags: ["substituição", "frações parciais", "por partes", "impróprias"],
+    summary: "Revisão de técnicas de integração e convergência, com foco em substituição, frações parciais e integrais impróprias.",
+    status: "available",
+    href: "provas/prova-4.html"
+  },
+  {
+    id: "prova-5",
+    title: "Prova 5",
+    itemsCount: 7,
+    tags: ["por partes", "trigonométrica", "frações parciais", "impróprias"],
+    summary: "Prova de revisão final com por partes, substituição trigonométrica, simplificação em frações parciais e análise de convergência.",
+    status: "available",
+    href: "provas/prova-5.html"
+  },
+  {
+    id: "prova-6",
+    title: "Prova 6",
+    itemsCount: 6,
+    tags: ["frações parciais", "funções racionais", "integração"],
+    summary: "Decomposição em frações parciais, integração de funções racionais e identificação dos padrões mais importantes.",
+    status: "available",
+    href: "provas/prova-6.html"
+  },
+  {
+    id: "prova-7",
+    title: "Prova 7",
+    itemsCount: 6,
+    tags: ["impróprias", "convergência", "limites"],
+    summary: "Integrais impróprias com limite no infinito e em pontos de singularidade, avaliando convergência e divergência.",
+    status: "available",
+    href: "provas/prova-7.html"
+  },
+  {
+    id: "prova-8",
+    title: "Prova 8",
+    itemsCount: 6,
+    tags: ["sequências", "séries", "convergência"],
+    summary: "Estudo de sequências e séries, com análise de convergência e soma de séries geométricas e p-séries.",
+    status: "available",
+    href: "provas/prova-8.html"
+  },
+  {
+    id: "prova-9",
+    title: "Prova 9",
+    itemsCount: 6,
+    tags: ["coordenadas polares", "área", "conversão"],
+    summary: "Conversão entre sistemas de coordenadas e cálculo de áreas em coordenadas polares.",
+    status: "available",
+    href: "provas/prova-9.html"
   }
 ];

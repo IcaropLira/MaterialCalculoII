@@ -1,0 +1,165 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Prova 6 — Cálculo II</title>
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,400;9..144,500;9..144,600;9..144,700&family=IBM+Plex+Sans:wght@400;500;600;700&family=IBM+Plex+Mono:wght@500&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/KaTeX/0.16.9/katex.min.css">
+<script defer src="https://cdnjs.cloudflare.com/ajax/libs/KaTeX/0.16.9/katex.min.js"></script>
+<script defer src="https://cdnjs.cloudflare.com/ajax/libs/KaTeX/0.16.9/contrib/auto-render.min.js"></script>
+<link rel="stylesheet" href="../assets/css/tokens.css">
+<link rel="stylesheet" href="../assets/css/base.css">
+<link rel="stylesheet" href="../assets/css/components.css">
+<style>main{max-width:900px;margin:0 auto;}</style>
+</head>
+<body>
+<div id="site-header-root"></div>
+<main>
+  <a class="back-link" href="../index.html#provas">← voltar para provas</a>
+  <div class="hero">
+    <div class="hero-eyebrow">cálculo ii · prova resolvida</div>
+    <h1>Prova 6</h1>
+    <p class="lede">Frações parciais e integrais de funções racionais: decomposição, integração e análise da estrutura do integrando.</p>
+    <div class="hero-tags">
+      <span class="htag">frações parciais</span>
+      <span class="htag">funções racionais</span>
+      <span class="htag">integração</span>
+    </div>
+    <div class="hero-meta">
+      <div><strong>3</strong>questões</div>
+      <div><strong>6</strong>itens no total</div>
+      <div><strong>médio</strong>nível</div>
+    </div>
+  </div>
+
+  <section class="block" id="enunciado">
+    <div class="block-kicker">folha de questões</div>
+    <h2 class="block-title">Enunciado</h2>
+    <p class="block-desc">Decomponha e integre com atenção antes de conferir a resolução comentada.</p>
+    <div class="sheet">
+      <div class="sheet-head">
+        <span class="sh-title">Cálculo II — Prova 6</span>
+        <span class="sh-sub">6 itens · sem consulta</span>
+      </div>
+      <div class="sheet-body">
+        <div class="questao">
+          <div class="questao-head"><span class="questao-num">1</span><span class="questao-instr">Decomponha em frações parciais.</span></div>
+          <ul class="item-list">
+            <li><span class="item-letter">a)</span><span class="item-body">\( \dfrac{5x-13}{(x-3)(x-2)} \)</span></li>
+            <li><span class="item-letter">b)</span><span class="item-body">\( \dfrac{z+1}{z^2(z-1)} \)</span></li>
+            <li><span class="item-letter">c)</span><span class="item-body">\( \dfrac{t^2+8}{t^2-5t+6} \)</span></li>
+          </ul>
+        </div>
+        <div class="questao">
+          <div class="questao-head"><span class="questao-num">2</span><span class="questao-instr">Calcule a integral.</span></div>
+          <div class="item-single">\( \displaystyle \int \frac{dx}{1-x^2} \)</div>
+        </div>
+        <div class="questao">
+          <div class="questao-head"><span class="questao-num">3</span><span class="questao-instr">Calcule a integral.</span></div>
+          <div class="item-single">\( \displaystyle \int \frac{x^2+2x+2}{x^3-x^2+x-x} \, dx \)</div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="block" id="gabarito" style="border-bottom:none;">
+    <div class="block-kicker">resolução comentada</div>
+    <h2 class="block-title">Gabarito</h2>
+    <p class="block-desc">A estratégia é sempre a mesma: fatorar, montar o sistema de frações parciais e integrar termo a termo.</p>
+
+    <div class="gab-item">
+      <div class="gab-head"><span class="gab-num">1a</span><span class="gab-statement">\( \dfrac{5x-13}{(x-3)(x-2)} \)</span></div>
+      <details class="gab-toggle"><summary>ver resolução</summary>
+        <div class="gab-body">
+          <div class="step"><div class="step-num">1</div><div class="step-content"><p>Como os fatores são lineares e distintos, escrevemos:</p>\[ \frac{5x-13}{(x-3)(x-2)}=\frac{A}{x-3}+\frac{B}{x-2} \]</div></div>
+          <div class="step"><div class="step-num">2</div><div class="step-content"><p>Multiplicando pelos denominadores:</p>\[ 5x-13=A(x-2)+B(x-3)=(A+B)x+(-2A-3B) \]</div></div>
+          <div class="step"><div class="step-num">3</div><div class="step-content"><p>Igualando coeficientes:</p>\[ A+B=5,\quad -2A-3B=-13 \]
+<p>Resolvendo, obtemos \(A=2\) e \(B=3\). Portanto:</p>\[ \frac{5x-13}{(x-3)(x-2)}=\frac{2}{x-3}+\frac{3}{x-2} \]</div></div>
+        </div>
+      </details>
+    </div>
+
+    <div class="gab-item">
+      <div class="gab-head"><span class="gab-num">1b</span><span class="gab-statement">\( \dfrac{z+1}{z^2(z-1)} \)</span></div>
+      <details class="gab-toggle"><summary>ver resolução</summary>
+        <div class="gab-body">
+          <div class="step"><div class="step-num">1</div><div class="step-content"><p>O denominador tem fator quadrático repetido e um fator linear simples:</p>\[ \frac{z+1}{z^2(z-1)}=\frac{A}{z}+\frac{B}{z^2}+\frac{C}{z-1} \]</div></div>
+          <div class="step"><div class="step-num">2</div><div class="step-content"><p>Multiplicando por \(z^2(z-1)\):</p>\[ z+1 = Az(z-1)+B(z-1)+Cz^2 \]</div></div>
+          <div class="step"><div class="step-num">3</div><div class="step-content"><p>Escolhendo valores adequados:</p>\[ z=0 \Rightarrow 1 = -B \Rightarrow B=-1 \]
+\[ z=1 \Rightarrow 2 = C \]\[ z=2 \Rightarrow 3 = 2A + (-1)(1) + 4 \Rightarrow A=-1 \]
+<p>Logo:</p>\[ \frac{z+1}{z^2(z-1)} = -\frac{1}{z} - \frac{1}{z^2} + \frac{2}{z-1} \]</div></div>
+        </div>
+      </details>
+    </div>
+
+    <div class="gab-item">
+      <div class="gab-head"><span class="gab-num">1c</span><span class="gab-statement">\( \dfrac{t^2+8}{t^2-5t+6} \)</span></div>
+      <details class="gab-toggle"><summary>ver resolução</summary>
+        <div class="gab-body">
+          <div class="step"><div class="step-num">1</div><div class="step-content"><p>Como o grau do numerador é igual ao do denominador, primeiro dividimos:</p>\[ t^2+8 = 1\cdot (t^2-5t+6) + (5t+2) \]
+<p>Então:</p>\[ \frac{t^2+8}{t^2-5t+6} = 1 + \frac{5t+2}{(t-2)(t-3)} \]</div></div>
+          <div class="step"><div class="step-num">2</div><div class="step-content"><p>Agora decompomos o resto:</p>\[ \frac{5t+2}{(t-2)(t-3)}=\frac{A}{t-2}+\frac{B}{t-3} \]
+\[ 5t+2 = A(t-3)+B(t-2) \]</div></div>
+          <div class="step"><div class="step-num">3</div><div class="step-content"><p>Resolvendo:</p>\[ A=13,\quad B=-8 \]
+<p>Portanto:</p>\[ \frac{t^2+8}{t^2-5t+6}=1+\frac{13}{t-2}-\frac{8}{t-3} \]</div></div>
+        </div>
+      </details>
+    </div>
+
+    <div class="gab-item">
+      <div class="gab-head"><span class="gab-num">2</span><span class="gab-statement">\( \displaystyle \int \frac{dx}{1-x^2} \)</span></div>
+      <details class="gab-toggle"><summary>ver resolução</summary>
+        <div class="gab-body">
+          <div class="step"><div class="step-num">1</div><div class="step-content"><p>Fatoramos o denominador:</p>\[ 1-x^2=(1-x)(1+x) \]
+<p>Então:</p>\[ \frac{1}{1-x^2} = \frac{A}{1-x} + \frac{B}{1+x} \]</div></div>
+          <div class="step"><div class="step-num">2</div><div class="step-content"><p>Multiplicando:</p>\[ 1=A(1+x)+B(1-x) \]
+<p>Escolhendo \(x=1\) e \(x=-1\):</p>\[ A=\frac12,\quad B=\frac12 \]</div></div>
+          <div class="step"><div class="step-num">3</div><div class="step-content">\[ \int \frac{dx}{1-x^2} = \frac12\int \left(\frac{1}{1-x}+\frac{1}{1+x}\right)dx \]
+\[ = -\frac12\ln|1-x| + \frac12\ln|1+x| + C \]
+\[ = \frac12\ln\left|\frac{1+x}{1-x}\right| + C \]</div></div>
+          <div class="result-box">\( \displaystyle \int \frac{dx}{1-x^2} = \frac12\ln\left|\frac{1+x}{1-x}\right| + C \)</div>
+        </div>
+      </details>
+    </div>
+
+    <div class="gab-item">
+      <div class="gab-head"><span class="gab-num">3</span><span class="gab-statement">\( \displaystyle \int \frac{x^2+2x+2}{x^3-x^2+x-x} \, dx \)</span></div>
+      <details class="gab-toggle"><summary>ver resolução</summary>
+        <div class="gab-body">
+          <div class="step"><div class="step-num">1</div><div class="step-content"><p>Primeiro simplificamos o denominador:</p>\[ x^3-x^2+x-x = x^3-x^2 = x^2(x-1) \]
+<p>Assim, a integral é</p>\[ \int \frac{x^2+2x+2}{x^2(x-1)}dx \]</div></div>
+          <div class="step"><div class="step-num">2</div><div class="step-content"><p>Decompomos em frações parciais:</p>\[ \frac{x^2+2x+2}{x^2(x-1)} = \frac{A}{x} + \frac{B}{x^2} + \frac{C}{x-1} \]
+\[ x^2+2x+2 = A x(x-1)+B(x-1)+Cx^2 \]</div></div>
+          <div class="step"><div class="step-num">3</div><div class="step-content"><p>Usando \(x=0\):</p>\[ 2=-B\Rightarrow B=-2 \]
+<p>Usando \(x=1\):</p>\[ 5=C \]
+<p>Usando \(x=-1\):</p>\[ 1 = A(-1)(-2)-2(-2)+5\Rightarrow 1=2A+4+5 \Rightarrow A=-4 \]
+<p>Logo:</p>\[ \frac{x^2+2x+2}{x^2(x-1)} = -\frac{4}{x} - \frac{2}{x^2} + \frac{5}{x-1} \]</div></div>
+          <div class="step"><div class="step-num">4</div><div class="step-content">\[ \int \left(-\frac{4}{x} - \frac{2}{x^2} + \frac{5}{x-1}\right)dx = -4\ln|x| + \frac{2}{x} + 5\ln|x-1| + C \]</div></div>
+          <div class="result-box">\( \displaystyle \int \frac{x^2+2x+2}{x^2(x-1)}dx = -4\ln|x| + \frac{2}{x} + 5\ln|x-1| + C \)</div>
+        </div>
+      </details>
+    </div>
+
+    <div class="cta-more">
+      <p>Frações parciais é o passo-chave para transformar quocientes de polinômios em somas de termos mais simples e integráveis.</p>
+      <a href="../topicos/calc2_lista01.html#pfrac">Revisar frações parciais</a>
+    </div>
+  </section>
+</main>
+<div id="site-footer-root"></div>
+<script src="../assets/js/site-data.js"></script>
+<script src="../assets/js/layout.js"></script>
+<script src="../assets/js/katex-init.js"></script>
+<script>
+  renderHeader({ active: "provas", base: "../" });
+  renderFooter({ base: "../", related: { title: "Relacionado", links: [
+    { label: "Lista 01 resolvida", href: "../topicos/calc2_lista01.html" },
+    { label: "Integração por partes", href: "../topicos/integracao-por-partes.html" }
+  ] } });
+</script>
+</body>
+</html>

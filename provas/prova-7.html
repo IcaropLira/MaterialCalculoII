@@ -1,0 +1,157 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Prova 7 — Cálculo II</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,400;9..144,500;9..144,600;9..144,700&family=IBM+Plex+Sans:wght@400;500;600;700&family=IBM+Plex+Mono:wght@500&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/KaTeX/0.16.9/katex.min.css">
+<script defer src="https://cdnjs.cloudflare.com/ajax/libs/KaTeX/0.16.9/katex.min.js"></script>
+<script defer src="https://cdnjs.cloudflare.com/ajax/libs/KaTeX/0.16.9/contrib/auto-render.min.js"></script>
+<link rel="stylesheet" href="../assets/css/tokens.css">
+<link rel="stylesheet" href="../assets/css/base.css">
+<link rel="stylesheet" href="../assets/css/components.css">
+<style>main{max-width:900px;margin:0 auto;}</style>
+</head>
+<body>
+<div id="site-header-root"></div>
+<main>
+  <a class="back-link" href="../index.html#provas">← voltar para provas</a>
+  <div class="hero">
+    <div class="hero-eyebrow">cálculo ii · prova resolvida</div>
+    <h1>Prova 7</h1>
+    <p class="lede">Integrais impróprias: limites infinitos, singularidades internas e decisão entre convergência e divergência.</p>
+    <div class="hero-tags">
+      <span class="htag">impróprias</span>
+      <span class="htag">convergência</span>
+      <span class="htag">limites</span>
+    </div>
+    <div class="hero-meta">
+      <div><strong>3</strong>questões</div>
+      <div><strong>6</strong>itens no total</div>
+      <div><strong>avançado</strong>nível</div>
+    </div>
+  </div>
+
+  <section class="block" id="enunciado">
+    <div class="block-kicker">folha de questões</div>
+    <h2 class="block-title">Enunciado</h2>
+    <p class="block-desc">Cada integral exige uma interpretação correta do ponto singular ou do limite infinito.</p>
+    <div class="sheet">
+      <div class="sheet-head">
+        <span class="sh-title">Cálculo II — Prova 7</span>
+        <span class="sh-sub">6 itens · sem consulta</span>
+      </div>
+      <div class="sheet-body">
+        <div class="questao">
+          <div class="questao-head"><span class="questao-num">1</span><span class="questao-instr">Calcule ou determine a convergência.</span></div>
+          <ul class="item-list">
+            <li><span class="item-letter">a)</span><span class="item-body">\( \displaystyle \int_0^\infty e^{-x}\,dx \)</span></li>
+            <li><span class="item-letter">b)</span><span class="item-body">\( \displaystyle \int_1^\infty \frac{1}{x^p}\,dx \) para \(p>1\)</span></li>
+          </ul>
+        </div>
+        <div class="questao">
+          <div class="questao-head"><span class="questao-num">2</span><span class="questao-instr">Determine se convergem ou divergem.</span></div>
+          <ul class="item-list">
+            <li><span class="item-letter">a)</span><span class="item-body">\( \displaystyle \int_0^1 \frac{1}{\sqrt{x}}\,dx \)</span></li>
+            <li><span class="item-letter">b)</span><span class="item-body">\( \displaystyle \int_0^1 \frac{1}{1-x}\,dx \)</span></li>
+          </ul>
+        </div>
+        <div class="questao">
+          <div class="questao-head"><span class="questao-num">3</span><span class="questao-instr">Calcule a integral imprópria.</span></div>
+          <div class="item-single">\( \displaystyle \int_2^\infty \frac{1}{x^2-1}\,dx \)</div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="block" id="gabarito" style="border-bottom:none;">
+    <div class="block-kicker">resolução comentada</div>
+    <h2 class="block-title">Gabarito</h2>
+    <p class="block-desc">A regra é transformar a integral imprópria em limite e avaliar exatamente o que acontece quando o ponto singular ou o limite infinito é alcançado.</p>
+
+    <div class="gab-item">
+      <div class="gab-head"><span class="gab-num">1a</span><span class="gab-statement">\( \displaystyle \int_0^\infty e^{-x}\,dx \)</span></div>
+      <details class="gab-toggle"><summary>ver resolução</summary>
+        <div class="gab-body">
+          <div class="step"><div class="step-num">1</div><div class="step-content"><p>Como o limite superior é infinito:</p>\[ \int_0^\infty e^{-x}dx = \lim_{t\to\infty}\int_0^t e^{-x}dx \]</div></div>
+          <div class="step"><div class="step-num">2</div><div class="step-content">\[ \int e^{-x}dx = -e^{-x} \]
+\[ \lim_{t\to\infty}[-e^{-x}]_0^t = \lim_{t\to\infty}(-e^{-t}+1)=1 \]</div></div>
+          <div class="result-box converg">A integral converge e vale 1.</div>
+        </div>
+      </details>
+    </div>
+
+    <div class="gab-item">
+      <div class="gab-head"><span class="gab-num">1b</span><span class="gab-statement">\( \displaystyle \int_1^\infty \frac{1}{x^p}\,dx,\ p>1 \)</span></div>
+      <details class="gab-toggle"><summary>ver resolução</summary>
+        <div class="gab-body">
+          <div class="step"><div class="step-num">1</div><div class="step-content"><p>Escrevemos como limite:</p>\[ \lim_{t\to\infty}\int_1^t x^{-p}dx \]</div></div>
+          <div class="step"><div class="step-num">2</div><div class="step-content">\[ \int x^{-p}dx = \frac{x^{1-p}}{1-p} \quad (p\neq1) \]
+<p>Como \(p>1\), temos \(1-p<0\), então ao levar \(t\to\infty\), o termo \(t^{1-p}\to0\):</p>\[ \lim_{t\to\infty}\left[\frac{x^{1-p}}{1-p}\right]_1^t = \frac{1}{p-1} \]</div></div>
+          <div class="result-box converg">A integral converge para \(\frac{1}{p-1}\).</div>
+        </div>
+      </details>
+    </div>
+
+    <div class="gab-item">
+      <div class="gab-head"><span class="gab-num">2a</span><span class="gab-statement">\( \displaystyle \int_0^1 \frac{1}{\sqrt{x}}\,dx \) <span class="conclusion-tag conv">convergente</span></span></div>
+      <details class="gab-toggle"><summary>ver resolução</summary>
+        <div class="gab-body">
+          <div class="step"><div class="step-num">1</div><div class="step-content"><p>Há singularidade em 0, então escrevemos como limite lateral:</p>\[ \int_0^1 x^{-1/2}dx = \lim_{t\to0^+}\int_t^1 x^{-1/2}dx \]</div></div>
+          <div class="step"><div class="step-num">2</div><div class="step-content">\[ \int x^{-1/2}dx = 2x^{1/2} \]\[ \lim_{t\to0^+}[2\sqrt{x}]_t^1 = \lim_{t\to0^+}(2-2\sqrt{t})=2 \]</div></div>
+          <div class="result-box converg">A integral converge e vale 2.</div>
+        </div>
+      </details>
+    </div>
+
+    <div class="gab-item">
+      <div class="gab-head"><span class="gab-num">2b</span><span class="gab-statement">\( \displaystyle \int_0^1 \frac{1}{1-x}\,dx \) <span class="conclusion-tag div">divergente</span></span></div>
+      <details class="gab-toggle"><summary>ver resolução</summary>
+        <div class="gab-body">
+          <div class="step"><div class="step-num">1</div><div class="step-content"><p>Temos singularidade em x=1, o extremo superior do intervalo:</p>\[ \lim_{t\to1^-}\int_0^t \frac{dx}{1-x} \]</div></div>
+          <div class="step"><div class="step-num">2</div><div class="step-content">\[ \int \frac{dx}{1-x} = -\ln|1-x| \]
+\[ \lim_{t\to1^-}[-\ln(1-x)]_0^t = \lim_{t\to1^-}(-\ln(1-t)) = +\infty \]
+<p>Logo o valor cresce sem limite.</p></div></div>
+          <div class="result-box diverge">A integral diverge.</div>
+        </div>
+      </details>
+    </div>
+
+    <div class="gab-item">
+      <div class="gab-head"><span class="gab-num">3</span><span class="gab-statement">\( \displaystyle \int_2^\infty \frac{1}{x^2-1}\,dx \)</span></div>
+      <details class="gab-toggle"><summary>ver resolução</summary>
+        <div class="gab-body">
+          <div class="step"><div class="step-num">1</div><div class="step-content"><p>Fatoramos o denominador:</p>\[ x^2-1=(x-1)(x+1) \]
+<p>Use frações parciais:</p>\[ \frac{1}{x^2-1}=\frac{A}{x-1}+\frac{B}{x+1} \]
+<p>Resolvendo, obtém \(A=\frac12\), \(B=-\frac12\). Então:</p>\[ \frac{1}{x^2-1}=\frac12\left(\frac{1}{x-1}-\frac{1}{x+1}\right) \]</div></div>
+          <div class="step"><div class="step-num">2</div><div class="step-content">\[ \int_2^\infty \frac{1}{x^2-1}dx = \frac12\lim_{t\to\infty}\int_2^t\left(\frac1{x-1}-\frac1{x+1}\right)dx \]
+\[ = \frac12\lim_{t\to\infty}\left[\ln\left|\frac{x-1}{x+1}\right|\right]_2^t \]</div></div>
+          <div class="step"><div class="step-num">3</div><div class="step-content">\[ = \frac12\lim_{t\to\infty}\left(\ln\left|\frac{t-1}{t+1}\right|-\ln\frac{1}{3}\right) = \frac12\left(0 + \ln 3\right)=\frac12\ln 3 \]
+<p>Como o limite do quociente tende a 1, obtemos um valor finito.</p></div></div>
+          <div class="result-box converg">A integral converge e vale \(\frac12\ln 3\).</div>
+        </div>
+      </details>
+    </div>
+
+    <div class="cta-more">
+      <p>Integrais impróprias são aquelas em que o limite ou o ponto singular precisa ser tratado com cuidado — o teste de convergência é parte central do curso.</p>
+      <a href="../topicos/calc2_lista01.html#improp">Revisar integrais impróprias</a>
+    </div>
+  </section>
+</main>
+<div id="site-footer-root"></div>
+<script src="../assets/js/site-data.js"></script>
+<script src="../assets/js/layout.js"></script>
+<script src="../assets/js/katex-init.js"></script>
+<script>
+  renderHeader({ active: "provas", base: "../" });
+  renderFooter({ base: "../", related: { title: "Relacionado", links: [
+    { label: "Lista 01 resolvida", href: "../topicos/calc2_lista01.html" },
+    { label: "Frações parciais", href: "../topicos/calc2_lista01.html#pfrac" }
+  ] } });
+</script>
+</body>
+</html>

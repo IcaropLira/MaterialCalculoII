@@ -1,0 +1,202 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Prova 5 — Cálculo II</title>
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,400;9..144,500;9..144,600;9..144,700&family=IBM+Plex+Sans:wght@400;500;600;700&family=IBM+Plex+Mono:wght@500&display=swap" rel="stylesheet">
+
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/KaTeX/0.16.9/katex.min.css">
+<script defer src="https://cdnjs.cloudflare.com/ajax/libs/KaTeX/0.16.9/katex.min.js"></script>
+<script defer src="https://cdnjs.cloudflare.com/ajax/libs/KaTeX/0.16.9/contrib/auto-render.min.js"></script>
+
+<link rel="stylesheet" href="../assets/css/tokens.css">
+<link rel="stylesheet" href="../assets/css/base.css">
+<link rel="stylesheet" href="../assets/css/components.css">
+<style>
+  main{ max-width:900px; margin:0 auto; }
+</style>
+</head>
+<body>
+
+<div id="site-header-root"></div>
+
+<main>
+
+  <a class="back-link" href="../index.html#provas">← voltar para provas</a>
+
+  <div class="hero">
+    <div class="hero-eyebrow">cálculo ii · prova resolvida</div>
+    <h1>Prova 5</h1>
+    <p class="lede">Revisão de integração por partes, substituição trigonométrica, frações parciais e integrais impróprias em nível de prova final.</p>
+    <div class="hero-tags">
+      <span class="htag">por partes</span>
+      <span class="htag">trigonométrica</span>
+      <span class="htag">frações parciais</span>
+      <span class="htag">impróprias</span>
+    </div>
+    <div class="hero-meta">
+      <div><strong>3</strong>questões</div>
+      <div><strong>7</strong>itens no total</div>
+      <div><strong>avançado</strong>nível</div>
+    </div>
+  </div>
+
+  <section class="block" id="enunciado">
+    <div class="block-kicker">folha de questões</div>
+    <h2 class="block-title">Enunciado</h2>
+    <p class="block-desc">Essa é uma prova de revisão final: use as técnicas certas e depois compare com a resolução comentada.</p>
+
+    <div class="sheet">
+      <div class="sheet-head">
+        <span class="sh-title">Cálculo II — Prova 5</span>
+        <span class="sh-sub">7 itens · sem consulta</span>
+      </div>
+      <div class="sheet-body">
+
+        <div class="questao">
+          <div class="questao-head">
+            <span class="questao-num">1</span>
+            <span class="questao-instr">Resolva as integrais abaixo.</span>
+          </div>
+          <ul class="item-list">
+            <li><span class="item-letter">a)</span><span class="item-body">\( \displaystyle \int \frac{x}{\sqrt{x^2+9}}\,dx \)</span></li>
+            <li><span class="item-letter">b)</span><span class="item-body">\( \displaystyle \int x^2\cos x\,dx \)</span></li>
+            <li><span class="item-letter">c)</span><span class="item-body">\( \displaystyle \int \frac{x+1}{x^2-1}\,dx \)</span></li>
+          </ul>
+        </div>
+
+        <div class="questao">
+          <div class="questao-head">
+            <span class="questao-num">2</span>
+            <span class="questao-instr">Calcule a integral indefinida.</span>
+          </div>
+          <div class="item-single">\( \displaystyle \int \frac{dx}{\sqrt{4-x^2}} \)</div>
+        </div>
+
+        <div class="questao">
+          <div class="questao-head">
+            <span class="questao-num">3</span>
+            <span class="questao-instr">Determine se as integrais convergem ou divergem.</span>
+          </div>
+          <ul class="item-list">
+            <li><span class="item-letter">a)</span><span class="item-body">\( \displaystyle \int_1^\infty \frac{1}{x}\,dx \)</span></li>
+            <li><span class="item-letter">b)</span><span class="item-body">\( \displaystyle \int_0^1 \frac{1}{1-x}\,dx \)</span></li>
+          </ul>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <section class="block" id="gabarito" style="border-bottom:none;">
+    <div class="block-kicker">resolução comentada</div>
+    <h2 class="block-title">Gabarito</h2>
+    <p class="block-desc">Cada item trata da técnica correta e do raciocínio que leva ao resultado.</p>
+
+    <div class="gab-item">
+      <div class="gab-head"><span class="gab-num">1a</span><span class="gab-statement">\( \displaystyle \int \frac{x}{\sqrt{x^2+9}}\,dx \)</span></div>
+      <details class="gab-toggle"><summary>ver resolução</summary>
+        <div class="gab-body">
+          <div class="step"><div class="step-num">1</div><div class="step-content"><p>Veja que a derivada de \(x^2+9\) é \(2x\), então a substituição direta funciona bem.</p>\[ u=x^2+9, \quad du=2x\,dx \]</div></div>
+          <div class="step"><div class="step-num">2</div><div class="step-content">\[ \int \frac{x}{\sqrt{x^2+9}}dx = \frac12\int u^{-1/2}du \]\[ = \frac12\cdot 2u^{1/2}+C = \sqrt{u}+C \]</div></div>
+          <div class="step"><div class="step-num">3</div><div class="step-content"><p>Voltando para x:</p></div></div>
+          <div class="result-box">\( \displaystyle \int \frac{x}{\sqrt{x^2+9}}\,dx = \sqrt{x^2+9}+C \)</div>
+        </div>
+      </details>
+    </div>
+
+    <div class="gab-item">
+      <div class="gab-head"><span class="gab-num">1b</span><span class="gab-statement">\( \displaystyle \int x^2\cos x\,dx \)</span></div>
+      <details class="gab-toggle"><summary>ver resolução</summary>
+        <div class="gab-body">
+          <div class="step"><div class="step-num">1</div><div class="step-content"><p>Integração por partes: como o polinômio é de grau 2, precisamos aplicar duas vezes.</p>\[ u=x^2, \quad dv=\cos x\,dx \]\[ du=2x\,dx, \quad v=\sin x \]</div></div>
+          <div class="step"><div class="step-num">2</div><div class="step-content">\[ \int x^2\cos x\,dx = x^2\sin x - \int 2x\sin x\,dx \]</div></div>
+          <div class="step"><div class="step-num">3</div><div class="step-content"><p>Aplicamos novamente em \(\int 2x\sin x\,dx\):</p>\[ u=2x, \quad dv=\sin x\,dx \]\[ du=2dx, \quad v=-\cos x \]\[ \int 2x\sin x\,dx = -2x\cos x + 2\int \cos x\,dx = -2x\cos x + 2\sin x \]</div></div>
+          <div class="step"><div class="step-num">4</div><div class="step-content">\[ \int x^2\cos x\,dx = x^2\sin x - (-2x\cos x + 2\sin x) \]\[ = x^2\sin x + 2x\cos x - 2\sin x + C \]</div></div>
+          <div class="result-box">\( \displaystyle \int x^2\cos x\,dx = (x^2-2)\sin x + 2x\cos x + C \)</div>
+        </div>
+      </details>
+    </div>
+
+    <div class="gab-item">
+      <div class="gab-head"><span class="gab-num">1c</span><span class="gab-statement">\( \displaystyle \int \frac{x+1}{x^2-1}\,dx \)</span></div>
+      <details class="gab-toggle"><summary>ver resolução</summary>
+        <div class="gab-body">
+          <div class="step"><div class="step-num">1</div><div class="step-content"><p>Fatoramos o denominador:</p>\[ x^2-1=(x-1)(x+1) \]
+<p>Agora simplificamos o integrando:</p>\[ \frac{x+1}{x^2-1} = \frac{x+1}{(x-1)(x+1)} = \frac{1}{x-1} \quad (x\neq -1) \]</div></div>
+          <div class="step"><div class="step-num">2</div><div class="step-content"><p>Assim, a integral vira</p>\[ \int \frac{1}{x-1}dx = \ln|x-1|+C \]</div></div>
+          <div class="result-box">\( \displaystyle \int \frac{x+1}{x^2-1}\,dx = \ln|x-1|+C \)</div>
+        </div>
+      </details>
+    </div>
+
+    <div class="gab-item">
+      <div class="gab-head"><span class="gab-num">2</span><span class="gab-statement">\( \displaystyle \int \frac{dx}{\sqrt{4-x^2}} \)</span></div>
+      <details class="gab-toggle"><summary>ver resolução</summary>
+        <div class="gab-body">
+          <div class="step"><div class="step-num">1</div><div class="step-content"><p>Essa é uma forma clássica de substituição trigonométrica com \(a=2\):</p>\[ x=2\sin\theta, \quad dx=2\cos\theta d\theta, \quad \sqrt{4-x^2}=2\cos\theta \]</div></div>
+          <div class="step"><div class="step-num">2</div><div class="step-content">\[ \int \frac{dx}{\sqrt{4-x^2}} = \int \frac{2\cos\theta}{2\cos\theta}d\theta = \int d\theta = \theta + C \]</div></div>
+          <div class="step"><div class="step-num">3</div><div class="step-content"><p>Como \(x=2\sin\theta\), temos \(\theta=\arcsin(x/2)\).</p></div></div>
+          <div class="result-box">\( \displaystyle \int \frac{dx}{\sqrt{4-x^2}} = \arcsin\left(\frac{x}{2}\right)+C \)</div>
+        </div>
+      </details>
+    </div>
+
+    <div class="gab-item">
+      <div class="gab-head"><span class="gab-num">3a</span><span class="gab-statement">\( \displaystyle \int_1^\infty \frac{1}{x}\,dx \) <span class="conclusion-tag div">divergente</span></span></div>
+      <details class="gab-toggle"><summary>ver resolução</summary>
+        <div class="gab-body">
+          <div class="step"><div class="step-num">1</div><div class="step-content"><p>Escrevemos como limite:</p>\[ \lim_{t\to\infty}\int_1^t \frac{1}{x}dx \]</div></div>
+          <div class="step"><div class="step-num">2</div><div class="step-content">\[ \int \frac{1}{x}dx = \ln x \]\[ \lim_{t\to\infty}(\ln t - \ln 1)=\lim_{t\to\infty}\ln t = \infty \]</div></div>
+          <div class="result-box diverge">A integral diverge.</div>
+        </div>
+      </details>
+    </div>
+
+    <div class="gab-item">
+      <div class="gab-head"><span class="gab-num">3b</span><span class="gab-statement">\( \displaystyle \int_0^1 \frac{1}{1-x}\,dx \) <span class="conclusion-tag div">divergente</span></span></div>
+      <details class="gab-toggle"><summary>ver resolução</summary>
+        <div class="gab-body">
+          <div class="step"><div class="step-num">1</div><div class="step-content"><p>O integrando tem singularidade em x=1, que é o extremo superior do intervalo. Então:</p>\[ \int_0^1 \frac{1}{1-x}dx = \lim_{t\to1^-}\int_0^t \frac{1}{1-x}dx \]</div></div>
+          <div class="step"><div class="step-num">2</div><div class="step-content">\[ \int \frac{1}{1-x}dx = -\ln|1-x| \]
+<p>Logo</p>\[ \lim_{t\to1^-}[-\ln(1-x)]_0^t = \lim_{t\to1^-}(-\ln(1-t) + \ln 1) \]
+<p>Como \(1-t\to 0^+\), temos \(-\ln(1-t)\to +\infty\).</p></div></div>
+          <div class="result-box diverge">A integral diverge.</div>
+        </div>
+      </details>
+    </div>
+
+    <div class="cta-more">
+      <p>Essa prova conecta as ideias centrais do curso: reconhecer o padrão, escolher a técnica certa e interpretar o comportamento da integral quando ela se torna imprópria.</p>
+      <a href="../topicos/substituicao-trigonometrica.html">Ver tópico de substituição trigonométrica</a>
+    </div>
+
+  </section>
+
+</main>
+
+<div id="site-footer-root"></div>
+
+<script src="../assets/js/site-data.js"></script>
+<script src="../assets/js/layout.js"></script>
+<script src="../assets/js/katex-init.js"></script>
+<script>
+  renderHeader({ active: "provas", base: "../" });
+  renderFooter({
+    base: "../",
+    related: {
+      title: "Relacionado",
+      links: [
+        { label: "Substituição trigonométrica", href: "../topicos/substituicao-trigonometrica.html" },
+        { label: "Lista 01 resolvida", href: "../topicos/calc2_lista01.html" }
+      ]
+    }
+  });
+</script>
+
+</body>
+</html>
