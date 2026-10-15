@@ -1,0 +1,467 @@
+<!--
+  TÓPICO — INTEGRAIS TRIGONOMÉTRICAS
+  ===================================
+  Mesmo padrão visual dos demais tópicos.
+-->
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Integrais trigonométricas — Cálculo II</title>
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,400;9..144,500;9..144,600;9..144,700&family=IBM+Plex+Sans:wght@400;500;600;700&family=IBM+Plex+Mono:wght@500&display=swap" rel="stylesheet">
+
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/KaTeX/0.16.9/katex.min.css">
+<script defer src="https://cdnjs.cloudflare.com/ajax/libs/KaTeX/0.16.9/katex.min.js"></script>
+<script defer src="https://cdnjs.cloudflare.com/ajax/libs/KaTeX/0.16.9/contrib/auto-render.min.js"></script>
+
+<link rel="stylesheet" href="../assets/css/tokens.css">
+<link rel="stylesheet" href="../assets/css/base.css">
+<link rel="stylesheet" href="../assets/css/components.css">
+</head>
+<body>
+
+<div id="site-header-root"></div>
+
+<div class="shell">
+
+  <!-- ================= SIDEBAR ================= -->
+  <nav class="toc">
+    <div class="toc-mark">∫</div>
+    <div class="toc-title">
+      <strong>Cálculo II</strong>
+      Guia de estudo — técnicas de integração
+    </div>
+    <ul class="toc-list">
+      <li><a href="#ideia"><span class="toc-num">01</span>A ideia e as identidades</a></li>
+      <li><a href="#seno-cosseno"><span class="toc-num">02</span>Potências de sen e cos</a></li>
+      <li><a href="#tan-sec"><span class="toc-num">03</span>Potências de tan e sec</a></li>
+      <li><a href="#produto-soma"><span class="toc-num">04</span>Ângulos diferentes</a></li>
+      <li><a href="#exemplos"><span class="toc-num">05</span>Exemplos resolvidos</a></li>
+      <li><a href="#definida"><span class="toc-num">06</span>Integral definida</a></li>
+      <li><a href="#erros"><span class="toc-num">07</span>Erros comuns</a></li>
+      <li><a href="#resumo"><span class="toc-num">08</span>Resumo rápido</a></li>
+    </ul>
+    <div class="toc-foot">Parte da série de tópicos de Cálculo II.</div>
+  </nav>
+
+  <!-- ================= MAIN ================= -->
+  <main>
+
+    <div class="hero">
+      <div class="hero-eyebrow">cálculo ii · técnicas de integração</div>
+      <h1>Integrais trigonométricas</h1>
+      <p class="lede">Como integrar produtos e potências de seno, cosseno, tangente e secante usando identidades para chegar a uma substituição simples.</p>
+      <div class="hero-formula">
+        \[ \boxed{\sin^2\theta+\cos^2\theta=1 \qquad 1+\tan^2\theta=\sec^2\theta} \]
+      </div>
+    </div>
+
+    <!-- ============ 01 IDEIA ============ -->
+    <section id="ideia">
+      <div class="kicker">01 — a ideia</div>
+      <h2 class="section-title">Usar uma identidade para sobrar uma substituição</h2>
+      <p class="lead-in">Quase toda integral deste tipo se resolve do mesmo jeito: reescrever o integrando com uma identidade trigonométrica até que apareça uma função junto com a sua derivada, e então fazer \( u \)-substituição.</p>
+
+      <div class="formula-block">
+        <span class="formula-label">Identidades que você vai usar o tempo todo</span>
+        \[
+        \begin{array}{ll}
+        \sin^2x+\cos^2x=1 &
+        1+\tan^2x=\sec^2x \\[6pt]
+        \sin^2x=\dfrac{1-\cos 2x}{2} &
+        \cos^2x=\dfrac{1+\cos 2x}{2} \\[10pt]
+        \sin x\cos x=\dfrac{\sin 2x}{2} &
+        1+\cot^2x=\csc^2x
+        \end{array}
+        \]
+      </div>
+
+      <div class="formula-block">
+        <span class="formula-label">Derivadas que viram "du"</span>
+        \[
+        \dfrac{d}{dx}\sin x=\cos x \quad
+        \dfrac{d}{dx}\cos x=-\sin x \quad
+        \dfrac{d}{dx}\tan x=\sec^2x \quad
+        \dfrac{d}{dx}\sec x=\sec x\tan x
+        \]
+      </div>
+
+      <div class="note">
+        <span class="note-label">Ideia central</span>
+        <p>Você sempre "guarda" um fator que será o \( du \) e converte todo o resto para a mesma função usando \( \sin^2+\cos^2=1 \) ou \( 1+\tan^2=\sec^2 \). A pergunta de cada caso é: <strong>qual fator eu guardo?</strong></p>
+      </div>
+    </section>
+
+    <!-- ============ 02 SENO E COSSENO ============ -->
+    <section id="seno-cosseno">
+      <div class="kicker">02 — o caso mais comum</div>
+      <h2 class="section-title">Potências de seno e cosseno</h2>
+      <p class="lead-in">Para integrais do tipo</p>
+      \[ \int \sin^m x\,\cos^n x\,dx \]
+      <p>olhe os expoentes. Existem três situações.</p>
+
+      <div class="example">
+        <div class="example-head">
+          <span class="example-num">A</span>
+          <span class="example-title">Expoente do cosseno ímpar (\( n=2k+1 \))</span>
+        </div>
+        <div class="example-body">
+          <div class="step"><div class="step-num">1</div><div class="step-content">
+            <p>Separe um fator \( \cos x \) e converta o resto com \( \cos^2x=1-\sin^2x \):</p>
+            \[ \sin^m x\,\cos^{2k}x\,\cos x = \sin^m x\,(1-\sin^2x)^k\cos x \]
+          </div></div>
+          <div class="step"><div class="step-num">2</div><div class="step-content">
+            <p>Substitua \( u=\sin x \), \( du=\cos x\,dx \). Sobra um polinômio em \( u \).</p>
+          </div></div>
+        </div>
+      </div>
+
+      <div class="example">
+        <div class="example-head">
+          <span class="example-num">B</span>
+          <span class="example-title">Expoente do seno ímpar (\( m=2k+1 \))</span>
+        </div>
+        <div class="example-body">
+          <div class="step"><div class="step-num">1</div><div class="step-content">
+            <p>Separe um fator \( \sin x \) e converta o resto com \( \sin^2x=1-\cos^2x \):</p>
+            \[ \sin^{2k}x\,\cos^n x\,\sin x = (1-\cos^2x)^k\cos^n x\,\sin x \]
+          </div></div>
+          <div class="step"><div class="step-num">2</div><div class="step-content">
+            <p>Substitua \( u=\cos x \), \( du=-\sin x\,dx \). Cuidado com o sinal de menos.</p>
+          </div></div>
+        </div>
+      </div>
+
+      <div class="example">
+        <div class="example-head">
+          <span class="example-num">C</span>
+          <span class="example-title">Os dois expoentes pares</span>
+        </div>
+        <div class="example-body">
+          <div class="step"><div class="step-num">1</div><div class="step-content">
+            <p>Não há fator para guardar. Use as fórmulas do ângulo metade para baixar os expoentes:</p>
+            \[ \sin^2x=\frac{1-\cos2x}{2} \qquad \cos^2x=\frac{1+\cos2x}{2} \]
+          </div></div>
+          <div class="step"><div class="step-num">2</div><div class="step-content">
+            <p>Se aparecer \( \cos^2 2x \) de novo, aplique a fórmula outra vez (com \( 4x \)). Repita até só restarem cossenos de expoente 1.</p>
+          </div></div>
+        </div>
+      </div>
+
+      <div class="note">
+        <span class="note-label">Se os dois forem ímpares</span>
+        <p>Escolha qualquer um dos dois; funciona. Na prática, guarde o fator da função de <strong>menor expoente</strong> para o polinômio final ficar menor.</p>
+      </div>
+    </section>
+
+    <!-- ============ 03 TAN E SEC ============ -->
+    <section id="tan-sec">
+      <div class="kicker">03 — o outro par</div>
+      <h2 class="section-title">Potências de tangente e secante</h2>
+      <p class="lead-in">Para integrais do tipo</p>
+      \[ \int \tan^m x\,\sec^n x\,dx \]
+      <p>a lógica é a mesma, mas agora as duas derivadas relevantes são \( (\tan x)'=\sec^2x \) e \( (\sec x)'=\sec x\tan x \).</p>
+
+      <table class="liate">
+        <thead>
+          <tr><th>Situação</th><th>O que guardar</th><th>Substituição</th><th>Identidade</th></tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td>\( n \) par (\( n\ge 2 \))</td>
+            <td>\( \sec^2x \)</td>
+            <td>\( u=\tan x \)</td>
+            <td>\( \sec^2x=1+\tan^2x \)</td>
+          </tr>
+          <tr>
+            <td>\( m \) ímpar e \( n\ge1 \)</td>
+            <td>\( \sec x\tan x \)</td>
+            <td>\( u=\sec x \)</td>
+            <td>\( \tan^2x=\sec^2x-1 \)</td>
+          </tr>
+          <tr>
+            <td>\( m \) par e \( n \) ímpar</td>
+            <td>— (nada para guardar)</td>
+            <td>troque \( \tan^2 \) por \( \sec^2-1 \) e use partes</td>
+            <td>reduz a \( \int\sec^k x\,dx \)</td>
+          </tr>
+        </tbody>
+      </table>
+
+      <div class="formula-block">
+        <span class="formula-label">Integrais-base para decorar</span>
+        \[
+        \begin{array}{ll}
+        \displaystyle\int\tan x\,dx=\ln|\sec x|+C &
+        \displaystyle\int\sec x\,dx=\ln|\sec x+\tan x|+C \\[10pt]
+        \displaystyle\int\tan^2x\,dx=\tan x-x+C &
+        \displaystyle\int\sec^3x\,dx=\tfrac12\sec x\tan x+\tfrac12\ln|\sec x+\tan x|+C
+        \end{array}
+        \]
+      </div>
+
+      <div class="note">
+        <span class="note-label">Cotangente e cossecante</span>
+        <p>Funcionam exatamente igual, trocando \( \tan\to\cot \), \( \sec\to\csc \) e lembrando dos sinais: \( (\cot x)'=-\csc^2x \) e \( (\csc x)'=-\csc x\cot x \), com \( 1+\cot^2x=\csc^2x \).</p>
+      </div>
+    </section>
+
+    <!-- ============ 04 PRODUTO-SOMA ============ -->
+    <section id="produto-soma">
+      <div class="kicker">04 — ângulos diferentes</div>
+      <h2 class="section-title">Produtos como \( \sin mx\cos nx \)</h2>
+      <p class="lead-in">Quando os ângulos são diferentes, as potências não ajudam. Use as identidades que transformam produto em soma:</p>
+
+      <div class="formula-block">
+        <span class="formula-label">Produto → soma</span>
+        \[
+        \begin{aligned}
+        \sin A\cos B &= \tfrac12\big[\sin(A+B)+\sin(A-B)\big] \\[4pt]
+        \sin A\sin B &= \tfrac12\big[\cos(A-B)-\cos(A+B)\big] \\[4pt]
+        \cos A\cos B &= \tfrac12\big[\cos(A-B)+\cos(A+B)\big]
+        \end{aligned}
+        \]
+      </div>
+
+      <div class="warn">
+        <span class="warn-label">Atenção</span>
+        <p>Em \( \sin A\sin B \) a ordem é \( \cos(A-B)-\cos(A+B) \). Se trocar a ordem, o sinal da resposta inteira inverte. Teste com \( A=B \): \( \sin^2A=\tfrac12(1-\cos2A) \).</p>
+      </div>
+    </section>
+
+    <!-- ============ 05 EXEMPLOS ============ -->
+    <section id="exemplos">
+      <div class="kicker">05 — prática guiada</div>
+      <h2 class="section-title">Exemplos resolvidos</h2>
+
+      <div class="example">
+        <div class="example-head">
+          <span class="example-num">1</span>
+          <span class="example-title">\( \displaystyle\int \sin^3x\cos^2x\,dx \) — seno ímpar</span>
+        </div>
+        <div class="example-body">
+          <div class="step"><div class="step-num">1</div><div class="step-content">
+            <p>Guarde um \( \sin x \) e converta \( \sin^2x=1-\cos^2x \):</p>
+            \[ \int (1-\cos^2x)\cos^2x\,\sin x\,dx \]
+          </div></div>
+          <div class="step"><div class="step-num">2</div><div class="step-content">
+            <p>\( u=\cos x \Rightarrow du=-\sin x\,dx \):</p>
+            \[ -\int (1-u^2)u^2\,du=-\int (u^2-u^4)\,du=-\frac{u^3}{3}+\frac{u^5}{5}+C \]
+          </div></div>
+          <div class="result-box">\( \displaystyle -\frac{\cos^3x}{3}+\frac{\cos^5x}{5}+C \)</div>
+        </div>
+      </div>
+
+      <div class="example">
+        <div class="example-head">
+          <span class="example-num">2</span>
+          <span class="example-title">\( \displaystyle\int \sin^2x\,dx \) — expoente par</span>
+        </div>
+        <div class="example-body">
+          <div class="step"><div class="step-num">1</div><div class="step-content">
+            \[ \int \frac{1-\cos2x}{2}\,dx=\frac12\int(1-\cos2x)\,dx=\frac12\left(x-\frac{\sin2x}{2}\right)+C \]
+          </div></div>
+          <div class="result-box">\( \displaystyle \frac{x}{2}-\frac{\sin2x}{4}+C \)</div>
+        </div>
+      </div>
+
+      <div class="example">
+        <div class="example-head">
+          <span class="example-num">3</span>
+          <span class="example-title">\( \displaystyle\int \cos^4x\,dx \) — ângulo metade duas vezes</span>
+        </div>
+        <div class="example-body">
+          <div class="step"><div class="step-num">1</div><div class="step-content">
+            <p>Escreva \( \cos^4x=(\cos^2x)^2 \):</p>
+            \[ \cos^4x=\left(\frac{1+\cos2x}{2}\right)^2=\frac14\big(1+2\cos2x+\cos^22x\big) \]
+          </div></div>
+          <div class="step"><div class="step-num">2</div><div class="step-content">
+            <p>Aplique de novo em \( \cos^22x=\frac{1+\cos4x}{2} \):</p>
+            \[ \cos^4x=\frac38+\frac12\cos2x+\frac18\cos4x \]
+          </div></div>
+          <div class="step"><div class="step-num">3</div><div class="step-content">
+            <p>Integre termo a termo:</p>
+          </div></div>
+          <div class="result-box">\( \displaystyle \frac{3x}{8}+\frac{\sin2x}{4}+\frac{\sin4x}{32}+C \)</div>
+        </div>
+      </div>
+
+      <div class="example">
+        <div class="example-head">
+          <span class="example-num">4</span>
+          <span class="example-title">\( \displaystyle\int \tan^2x\,\sec^4x\,dx \) — secante par</span>
+        </div>
+        <div class="example-body">
+          <div class="step"><div class="step-num">1</div><div class="step-content">
+            <p>Guarde \( \sec^2x \) e converta o outro \( \sec^2x=1+\tan^2x \):</p>
+            \[ \int \tan^2x\,(1+\tan^2x)\,\sec^2x\,dx \]
+          </div></div>
+          <div class="step"><div class="step-num">2</div><div class="step-content">
+            <p>\( u=\tan x \Rightarrow du=\sec^2x\,dx \):</p>
+            \[ \int (u^2+u^4)\,du=\frac{u^3}{3}+\frac{u^5}{5}+C \]
+          </div></div>
+          <div class="result-box">\( \displaystyle \frac{\tan^3x}{3}+\frac{\tan^5x}{5}+C \)</div>
+        </div>
+      </div>
+
+      <div class="example">
+        <div class="example-head">
+          <span class="example-num">5</span>
+          <span class="example-title">\( \displaystyle\int \tan^3x\,\sec x\,dx \) — tangente ímpar</span>
+        </div>
+        <div class="example-body">
+          <div class="step"><div class="step-num">1</div><div class="step-content">
+            <p>Guarde \( \sec x\tan x \) e converta \( \tan^2x=\sec^2x-1 \):</p>
+            \[ \int \tan^2x\,(\sec x\tan x)\,dx=\int(\sec^2x-1)\,\sec x\tan x\,dx \]
+          </div></div>
+          <div class="step"><div class="step-num">2</div><div class="step-content">
+            <p>\( u=\sec x \Rightarrow du=\sec x\tan x\,dx \):</p>
+            \[ \int (u^2-1)\,du=\frac{u^3}{3}-u+C \]
+          </div></div>
+          <div class="result-box">\( \displaystyle \frac{\sec^3x}{3}-\sec x+C \)</div>
+        </div>
+      </div>
+
+      <div class="example">
+        <div class="example-head">
+          <span class="example-num">6</span>
+          <span class="example-title">\( \displaystyle\int \sin3x\cos5x\,dx \) — produto em soma</span>
+        </div>
+        <div class="example-body">
+          <div class="step"><div class="step-num">1</div><div class="step-content">
+            <p>Com \( A=3x \) e \( B=5x \):</p>
+            \[ \sin3x\cos5x=\tfrac12\big[\sin8x+\sin(-2x)\big]=\tfrac12\sin8x-\tfrac12\sin2x \]
+          </div></div>
+          <div class="step"><div class="step-num">2</div><div class="step-content">
+            <p>Integre cada termo (lembre de dividir pela constante do ângulo):</p>
+          </div></div>
+          <div class="result-box">\( \displaystyle -\frac{\cos8x}{16}+\frac{\cos2x}{4}+C \)</div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ============ 06 DEFINIDA ============ -->
+    <section id="definida">
+      <div class="kicker">06 — com limites</div>
+      <h2 class="section-title">Integral definida</h2>
+
+      <div class="example">
+        <div class="example-head">
+          <span class="example-num">7</span>
+          <span class="example-title">\( \displaystyle\int_0^{\pi/2}\sin^2x\cos^2x\,dx \)</span>
+        </div>
+        <div class="example-body">
+          <div class="step"><div class="step-num">1</div><div class="step-content">
+            <p>Use \( \sin x\cos x=\frac{\sin2x}{2} \):</p>
+            \[ \sin^2x\cos^2x=\frac{\sin^22x}{4}=\frac{1-\cos4x}{8} \]
+          </div></div>
+          <div class="step"><div class="step-num">2</div><div class="step-content">
+            \[ \int_0^{\pi/2}\frac{1-\cos4x}{8}\,dx=\left[\frac{x}{8}-\frac{\sin4x}{32}\right]_0^{\pi/2}=\frac{\pi}{16}-0 \]
+          </div></div>
+          <div class="result-box">\( \displaystyle \frac{\pi}{16} \)</div>
+        </div>
+      </div>
+
+      <div class="note">
+        <span class="note-label">Dica</span>
+        <p>Se você fizer \( u \)-substituição numa definida, troque também os limites para \( u \) — ou volte para \( x \) antes de avaliar. Misturar os dois é o erro mais comum.</p>
+      </div>
+    </section>
+
+    <!-- ============ 07 ERROS ============ -->
+    <section id="erros">
+      <div class="kicker">07 — armadilhas</div>
+      <h2 class="section-title">Erros comuns</h2>
+
+      <div class="warn">
+        <span class="warn-label">Sinal de menos</span>
+        <p>Com \( u=\cos x \), \( du=-\sin x\,dx \). Esquecer o sinal inverte a resposta inteira.</p>
+      </div>
+      <div class="warn">
+        <span class="warn-label">Dividir pela constante do ângulo</span>
+        <p>\( \int\cos2x\,dx=\frac{\sin2x}{2}+C \), e não \( \sin2x \). O mesmo vale para \( 4x \), \( 8x \) etc.</p>
+      </div>
+      <div class="warn">
+        <span class="warn-label">Guardar o fator errado</span>
+        <p>Em \( \tan^m x\sec^n x \) com \( n \) par, guarde \( \sec^2x \) (e use \( u=\tan x \)). Se guardar \( \sec x\tan x \) quando \( m \) é par, você não consegue converter o resto.</p>
+      </div>
+      <div class="warn">
+        <span class="warn-label">Expoentes pares sem ângulo metade</span>
+        <p>\( \sin^2x \) e \( \cos^2x \) sozinhos não têm substituição direta. Não tente \( u=\sin x \): falta o \( \cos x\,dx \). Use \( \frac{1\mp\cos2x}{2} \).</p>
+      </div>
+      <div class="warn">
+        <span class="warn-label">Confundir com substituição trigonométrica</span>
+        <p>Aqui o integrando <em>já é</em> trigonométrico. Na <a href="substituicao-trigonometrica.html">substituição trigonométrica</a> é você quem introduz seno, tangente ou secante para eliminar uma raiz — e as integrais deste tópico aparecem no meio desse processo.</p>
+      </div>
+    </section>
+
+    <!-- ============ 08 RESUMO ============ -->
+    <section id="resumo" class="cheat wide">
+      <div class="kicker">08 — resumo rápido</div>
+      <h2 class="section-title">Qual caso é?</h2>
+
+      <div class="cheat-grid">
+        <div class="cheat-card">
+          <h4>\( \sin^m x\cos^n x \)</h4>
+          <p>\( n \) ímpar: guarde \( \cos x \), \( u=\sin x \).<br>
+             \( m \) ímpar: guarde \( \sin x \), \( u=\cos x \).<br>
+             Ambos pares: ângulo metade.</p>
+        </div>
+        <div class="cheat-card">
+          <h4>\( \tan^m x\sec^n x \)</h4>
+          <p>\( n \) par: guarde \( \sec^2x \), \( u=\tan x \).<br>
+             \( m \) ímpar: guarde \( \sec x\tan x \), \( u=\sec x \).<br>
+             Caso contrário: \( \tan^2=\sec^2-1 \) e partes.</p>
+        </div>
+        <div class="cheat-card">
+          <h4>\( \sin mx\cos nx \)</h4>
+          <p>Ângulos diferentes: produto → soma e integre cada termo.</p>
+        </div>
+        <div class="cheat-card">
+          <h4>Base</h4>
+          <p>\( \int\tan x=\ln|\sec x| \)<br>
+             \( \int\sec x=\ln|\sec x+\tan x| \)<br>
+             \( \int\tan^2x=\tan x-x \)</p>
+        </div>
+      </div>
+    </section>
+
+    <div class="next">
+      <div class="kicker">continuando a série</div>
+      <h3 class="sub-title" style="margin-top:6px;">Próximo tópico</h3>
+      <p>Agora que as integrais trigonométricas estão dominadas, o próximo passo é usá-las para eliminar raízes.</p>
+      <div class="next-list">
+        <a class="next-pill" href="substituicao-trigonometrica.html">Substituição trigonométrica →</a>
+        <span class="next-pill">Frações parciais</span>
+        <span class="next-pill">Integrais impróprias</span>
+      </div>
+    </div>
+
+  </main>
+</div>
+
+<div id="site-footer-root"></div>
+
+<script src="../assets/js/site-data.js"></script>
+<script src="../assets/js/layout.js"></script>
+<script src="../assets/js/katex-init.js"></script>
+<script>
+  renderHeader({ active: "topicos", base: "../" });
+  renderFooter({
+    base: "../",
+    related: {
+      title: "Integrais trigonométricas",
+      links: [
+        { label: "Substituição trigonométrica", href: "substituicao-trigonometrica.html" },
+        { label: "Integração por partes", href: "integracao-por-partes.html" }
+      ]
+    }
+  });
+</script>
+
+</body>
+</html>

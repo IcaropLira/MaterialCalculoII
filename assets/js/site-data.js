@@ -58,8 +58,18 @@ window.TOPICS = [
     ]
   },
   {
-    id: "substituicao-trigonometrica",
+    id: "integrais-trigonometricas",
     number: "02",
+    title: "Integrais trigonométricas",
+    summary: "Potências e produtos de seno, cosseno, tangente e secante: qual fator guardar, quando usar ângulo metade e como transformar produto em soma.",
+    status: "available",
+    links: [
+      { label: "Ver teoria", href: "topicos/integrais-trigonometricas.html" }
+    ]
+  },
+  {
+    id: "substituicao-trigonometrica",
+    number: "03",
     title: "Substituição trigonométrica",
     summary: "Como resolver integrais com √(a²−x²), √(a²+x²) e √(x²−a²) trocando x por seno, tangente ou secante.",
     status: "available",
@@ -70,28 +80,28 @@ window.TOPICS = [
   },
   {
     id: "fracoes-parciais",
-    number: "03",
+    number: "04",
     title: "Frações parciais",
     summary: "Decompondo funções racionais em frações mais simples para integrar termo a termo — casos lineares, repetidos e quadráticos.",
     status: "soon"
   },
   {
     id: "integrais-improprias",
-    number: "04",
+    number: "05",
     title: "Integrais impróprias",
     summary: "Limites de integração infinitos e descontinuidades no integrando — como calcular e como decidir convergência ou divergência.",
     status: "soon"
   },
   {
     id: "sequencias-series",
-    number: "05",
+    number: "06",
     title: "Sequências e séries",
     summary: "Convergência de sequências, séries numéricas, testes de convergência e séries de potências.",
     status: "soon"
   },
   {
     id: "coordenadas-polares",
-    number: "06",
+    number: "07",
     title: "Coordenadas polares",
     summary: "Curvas em coordenadas polares, área entre curvas polares e conversão entre sistemas de coordenadas.",
     status: "soon"

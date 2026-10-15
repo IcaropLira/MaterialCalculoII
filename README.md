@@ -69,7 +69,7 @@ assets/
 
 Se o tópico ainda não está pronto mas você já quer reservar o lugar dele
 na home, use `status: "soon"` e omita `links` — o card aparece cinza,
-travado, com a etiqueta "em breve" (é assim que os tópicos 02–06 já estão
+travado, com a etiqueta "em breve" (é assim que os tópicos 04–07 já estão
 configurados agora).
 
 ## Adicionar uma prova nova
