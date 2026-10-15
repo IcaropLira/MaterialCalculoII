@@ -64,7 +64,8 @@ window.TOPICS = [
     summary: "Potências e produtos de seno, cosseno, tangente e secante: qual fator guardar, quando usar ângulo metade e como transformar produto em soma.",
     status: "available",
     links: [
-      { label: "Ver teoria", href: "topicos/integrais-trigonometricas.html" }
+      { label: "Ver teoria", href: "topicos/integrais-trigonometricas.html" },
+      { label: "5 exercícios", href: "topicos/integrais-trigonometricas-exercicios.html" }
     ]
   },
   {
@@ -75,7 +76,7 @@ window.TOPICS = [
     status: "available",
     links: [
       { label: "Ver teoria",     href: "topicos/substituicao-trigonometrica.html" },
-      //{ label: "35 exercícios",  href: "topicos/integracao-por-partes-exercicios.html" }
+      { label: "5 exercícios", href: "topicos/substituicao-trigonometrica-exercicios.html" }
     ]
   },
   {
@@ -83,28 +84,44 @@ window.TOPICS = [
     number: "04",
     title: "Frações parciais",
     summary: "Decompondo funções racionais em frações mais simples para integrar termo a termo — casos lineares, repetidos e quadráticos.",
-    status: "soon"
+    status: "available",
+    links: [
+      { label: "Ver teoria", href: "topicos/fracoes-parciais.html" },
+      { label: "5 exercícios", href: "topicos/fracoes-parciais-exercicios.html" }
+    ]
   },
   {
     id: "integrais-improprias",
     number: "05",
     title: "Integrais impróprias",
     summary: "Limites de integração infinitos e descontinuidades no integrando — como calcular e como decidir convergência ou divergência.",
-    status: "soon"
+    status: "available",
+    links: [
+      { label: "Ver teoria", href: "topicos/integrais-improprias.html" },
+      { label: "5 exercícios", href: "topicos/integrais-improprias-exercicios.html" }
+    ]
   },
   {
     id: "sequencias-series",
     number: "06",
     title: "Sequências e séries",
     summary: "Convergência de sequências, séries numéricas, testes de convergência e séries de potências.",
-    status: "soon"
+    status: "available",
+    links: [
+      { label: "Ver teoria", href: "topicos/sequencias-series.html" },
+      { label: "5 exercícios", href: "topicos/sequencias-series-exercicios.html" }
+    ]
   },
   {
     id: "coordenadas-polares",
     number: "07",
     title: "Coordenadas polares",
     summary: "Curvas em coordenadas polares, área entre curvas polares e conversão entre sistemas de coordenadas.",
-    status: "soon"
+    status: "available",
+    links: [
+      { label: "Ver teoria", href: "topicos/coordenadas-polares.html" },
+      { label: "5 exercícios", href: "topicos/coordenadas-polares-exercicios.html" }
+    ]
   }
 ];
 

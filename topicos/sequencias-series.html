@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="pt-BR"><head>
+<meta charset="UTF-8"><meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Sequências e séries — Cálculo II</title>
+<link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,400;9..144,500;9..144,600;9..144,700&family=IBM+Plex+Sans:wght@400;500;600;700&family=IBM+Plex+Mono:wght@500&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/KaTeX/0.16.9/katex.min.css">
+<script defer src="https://cdnjs.cloudflare.com/ajax/libs/KaTeX/0.16.9/katex.min.js"></script><script defer src="https://cdnjs.cloudflare.com/ajax/libs/KaTeX/0.16.9/contrib/auto-render.min.js"></script>
+<link rel="stylesheet" href="../assets/css/tokens.css"><link rel="stylesheet" href="../assets/css/base.css"><link rel="stylesheet" href="../assets/css/components.css">
+</head><body><div id="site-header-root"></div><div class="shell">
+<nav class="toc"><div class="toc-mark">∫</div><div class="toc-title"><strong>Cálculo II</strong>Guia de estudo — sequências e séries</div><ul class="toc-list"><li><a href="#sequencias"><span class="toc-num">01</span>Sequências e limites</a></li><li><a href="#series"><span class="toc-num">02</span>Séries e somas parciais</a></li><li><a href="#geometrica"><span class="toc-num">03</span>Série geométrica e p-série</a></li><li><a href="#testes"><span class="toc-num">04</span>Testes de convergência</a></li><li><a href="#alternada"><span class="toc-num">05</span>Séries alternadas</a></li><li><a href="#erros"><span class="toc-num">06</span>Como escolher o teste</a></li></ul><div class="toc-foot">Material de estudo de Cálculo II.</div></nav>
+<main><div class="hero"><div class="hero-eyebrow">cálculo ii · técnicas e aplicações</div><h1>Sequências e séries</h1><p class="lede">Estude limites de sequências e determine se somas infinitas convergem, usando testes adequados.</p></div>
+<section id="sequencias">
+<div class="kicker">01 — estudo</div>
+<h2 class="section-title">Sequências e limites</h2>
+<p class="lead-in">Uma sequência \((a_n)\) converge para \(L\) quando \(\lim_{n\to\infty}a_n=L\). Se os termos crescem sem limite ou oscilam sem se aproximar de um valor, diverge. Para quocientes de polinômios, compare os maiores graus.</p>
+</section><section id="series">
+<div class="kicker">02 — estudo</div>
+<h2 class="section-title">Séries e somas parciais</h2>
+<p class="lead-in">A série \(\sum_{n=1}^{\infty}a_n\) converge se a sequência das somas parciais \(S_N=\sum_{n=1}^{N}a_n\) converge. Condição necessária: \(a_n\to0\). Se o termo geral não tende a zero, a série diverge.</p>
+</section><section id="geometrica">
+<div class="kicker">03 — estudo</div>
+<h2 class="section-title">Série geométrica e p-série</h2>
+<p class="lead-in">\(\sum_{n=0}^{\infty} ar^n=\frac a{1-r}\) quando \(|r|<1\); diverge se \(|r|\geq1\). A p-série \(\sum_{n=1}^{\infty}1/n^p\) converge se \(p>1\) e diverge se \(p\leq1\).</p>
+</section><section id="testes">
+<div class="kicker">04 — estudo</div>
+<h2 class="section-title">Testes de convergência</h2>
+<p class="lead-in">Comparação: compare termos positivos com uma série conhecida. Razão: calcule \(L=\lim|a_{n+1}/a_n|\); se \(L<1\), converge absolutamente; se \(L>1\), diverge; se \(L=1\), inconclusivo. Integral: para função positiva, contínua e decrescente, compare a série com a integral correspondente.</p>
+</section><section id="alternada">
+<div class="kicker">05 — estudo</div>
+<h2 class="section-title">Séries alternadas</h2>
+<p class="lead-in">Uma série \(\sum(-1)^{n}b_n\), com \(b_n\geq0\), converge se \(b_n\to0\) e \(b_n\) é decrescente a partir de algum ponto. Convergência absoluta ocorre quando \(\sum|a_n|\) converge.</p>
+</section><section id="erros">
+<div class="kicker">06 — estudo</div>
+<h2 class="section-title">Como escolher o teste</h2>
+<p class="lead-in">Primeiro teste o termo geral. Reconheça geométrica e p-série. Para fatoriais/exponenciais, tente razão; para potências semelhantes a \(1/n^p\), use comparação ou integral; para sinais alternados, teste alternado e depois absoluta.</p>
+</section>
+</main></div><div id="site-footer-root"></div>
+<script src="../assets/js/site-data.js"></script><script src="../assets/js/layout.js"></script><script src="../assets/js/katex-init.js"></script>
+<script>renderHeader({ active: "topicos", base: "../" });renderFooter({base:"../",related:{title:"Sequências e séries",links:[{label:"Exercícios",href:"sequencias-series-exercicios.html"}]}});</script>
+</body></html>

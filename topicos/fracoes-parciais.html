@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="pt-BR"><head>
+<meta charset="UTF-8"><meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Frações parciais — Cálculo II</title>
+<link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,400;9..144,500;9..144,600;9..144,700&family=IBM+Plex+Sans:wght@400;500;600;700&family=IBM+Plex+Mono:wght@500&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/KaTeX/0.16.9/katex.min.css">
+<script defer src="https://cdnjs.cloudflare.com/ajax/libs/KaTeX/0.16.9/katex.min.js"></script><script defer src="https://cdnjs.cloudflare.com/ajax/libs/KaTeX/0.16.9/contrib/auto-render.min.js"></script>
+<link rel="stylesheet" href="../assets/css/tokens.css"><link rel="stylesheet" href="../assets/css/base.css"><link rel="stylesheet" href="../assets/css/components.css">
+</head><body><div id="site-header-root"></div><div class="shell">
+<nav class="toc"><div class="toc-mark">∫</div><div class="toc-title"><strong>Cálculo II</strong>Guia de estudo — frações parciais</div><ul class="toc-list"><li><a href="#quando"><span class="toc-num">01</span>Quando usar frações parciais</a></li><li><a href="#propria"><span class="toc-num">02</span>Preparação e fatoração</a></li><li><a href="#casos"><span class="toc-num">03</span>Os quatro formatos principais</a></li><li><a href="#exemplo"><span class="toc-num">04</span>Exemplo resolvido</a></li><li><a href="#quadratico"><span class="toc-num">05</span>Quando aparece um quadrático</a></li><li><a href="#erros"><span class="toc-num">06</span>Checklist e erros comuns</a></li></ul><div class="toc-foot">Material de estudo de Cálculo II.</div></nav>
+<main><div class="hero"><div class="hero-eyebrow">cálculo ii · técnicas e aplicações</div><h1>Frações parciais</h1><p class="lede">Transforme uma função racional em uma soma de frações simples para integrar cada parcela separadamente.</p></div>
+<section id="quando">
+<div class="kicker">01 — estudo</div>
+<h2 class="section-title">Quando usar frações parciais</h2>
+<p class="lead-in">Use quando o integrando é uma função racional \(P(x)/Q(x)\), isto é, quociente de polinômios. Antes de decompor, compare os graus: se \(\deg P\geq\deg Q\), faça primeiro a divisão polinomial.</p>
+</section><section id="propria">
+<div class="kicker">02 — estudo</div>
+<h2 class="section-title">Preparação e fatoração</h2>
+<p class="lead-in">Uma fração é própria quando \(\deg P<\deg Q\). Fatore o denominador sobre os reais. Cada fator determina o formato dos termos da decomposição.</p>
+</section><section id="casos">
+<div class="kicker">03 — estudo</div>
+<h2 class="section-title">Os quatro formatos principais</h2>
+<p class="lead-in">Fator linear simples: \(\frac{A}{x-a}\). Linear repetido: \(\frac{A_1}{x-a}+\frac{A_2}{(x-a)^2}+\cdots\). Quadrático irredutível: \(\frac{Ax+B}{x^2+px+q}\). Quadrático repetido: inclua uma parcela com numerador linear para cada potência do fator.</p>
+</section><section id="exemplo">
+<div class="kicker">04 — estudo</div>
+<h2 class="section-title">Exemplo resolvido</h2>
+<p class="lead-in">Decomponha e integre \(\frac{3x+5}{(x+1)(x+2)}\). Escreva \(\frac{3x+5}{(x+1)(x+2)}=\frac A{x+1}+\frac B{x+2}\). Igualando numeradores: \(3x+5=A(x+2)+B(x+1)\). Para \(x=-1\), temos \(A=2\); para \(x=-2\), \(B=1\). Logo a integral é \(2\ln|x+1|+\ln|x+2|+C\).</p>
+</section><section id="quadratico">
+<div class="kicker">05 — estudo</div>
+<h2 class="section-title">Quando aparece um quadrático</h2>
+<p class="lead-in">Para \(x^2+px+q\) irredutível, o numerador precisa ser linear, \(Ax+B\). Separe o numerador como múltiplo da derivada \(2x+p\) mais uma constante. A primeira parcela vira logaritmo; a segunda, após completar quadrados, vira arco-tangente.</p>
+</section><section id="erros">
+<div class="kicker">06 — estudo</div>
+<h2 class="section-title">Checklist e erros comuns</h2>
+<p class="lead-in">Não esqueça a divisão polinomial quando a fração é imprópria; não omita potências de fatores repetidos; use \(Ax+B\), não apenas uma constante, sobre quadráticos irredutíveis; confira a decomposição recombinando as frações.</p>
+</section>
+</main></div><div id="site-footer-root"></div>
+<script src="../assets/js/site-data.js"></script><script src="../assets/js/layout.js"></script><script src="../assets/js/katex-init.js"></script>
+<script>renderHeader({ active: "topicos", base: "../" });renderFooter({base:"../",related:{title:"Frações parciais",links:[{label:"Exercícios",href:"fracoes-parciais-exercicios.html"}]}});</script>
+</body></html>

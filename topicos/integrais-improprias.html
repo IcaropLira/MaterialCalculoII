@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="pt-BR"><head>
+<meta charset="UTF-8"><meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Integrais impróprias — Cálculo II</title>
+<link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,400;9..144,500;9..144,600;9..144,700&family=IBM+Plex+Sans:wght@400;500;600;700&family=IBM+Plex+Mono:wght@500&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/KaTeX/0.16.9/katex.min.css">
+<script defer src="https://cdnjs.cloudflare.com/ajax/libs/KaTeX/0.16.9/katex.min.js"></script><script defer src="https://cdnjs.cloudflare.com/ajax/libs/KaTeX/0.16.9/contrib/auto-render.min.js"></script>
+<link rel="stylesheet" href="../assets/css/tokens.css"><link rel="stylesheet" href="../assets/css/base.css"><link rel="stylesheet" href="../assets/css/components.css">
+</head><body><div id="site-header-root"></div><div class="shell">
+<nav class="toc"><div class="toc-mark">∫</div><div class="toc-title"><strong>Cálculo II</strong>Guia de estudo — integrais impróprias</div><ul class="toc-list"><li><a href="#definicao"><span class="toc-num">01</span>O que torna uma integral imprópria?</a></li><li><a href="#infinito"><span class="toc-num">02</span>Intervalos infinitos</a></li><li><a href="#singularidade"><span class="toc-num">03</span>Singularidade no intervalo</a></li><li><a href="#p"><span class="toc-num">04</span>Teste p e comparação</a></li><li><a href="#exemplo"><span class="toc-num">05</span>Exemplo resolvido</a></li><li><a href="#erros"><span class="toc-num">06</span>Checklist e erros comuns</a></li></ul><div class="toc-foot">Material de estudo de Cálculo II.</div></nav>
+<main><div class="hero"><div class="hero-eyebrow">cálculo ii · técnicas e aplicações</div><h1>Integrais impróprias</h1><p class="lede">Use limites para tratar intervalos infinitos ou integrandos que explodem dentro do intervalo, e decida se a integral converge.</p></div>
+<section id="definicao">
+<div class="kicker">01 — estudo</div>
+<h2 class="section-title">O que torna uma integral imprópria?</h2>
+<p class="lead-in">Há dois casos: um limite de integração é infinito, ou a função fica ilimitada em um extremo ou ponto interno do intervalo. A integral é definida por um limite, nunca por substituição direta de infinito.</p>
+</section><section id="infinito">
+<div class="kicker">02 — estudo</div>
+<h2 class="section-title">Intervalos infinitos</h2>
+<p class="lead-in">Defina \(\int_a^{\infty} f(x)\,dx=\lim_{b\to\infty}\int_a^b f(x)\,dx\). Analogamente, para \(-\infty\), use um limite quando o extremo tende a menos infinito. Se o limite é finito, converge; se não existe ou é infinito, diverge.</p>
+</section><section id="singularidade">
+<div class="kicker">03 — estudo</div>
+<h2 class="section-title">Singularidade no intervalo</h2>
+<p class="lead-in">Se \(f\) explode em \(c\in(a,b)\), separe: \(\int_a^b f=\lim_{t\to c^-}\int_a^t f+\lim_{t\to c^+}\int_t^b f\). Os dois limites precisam convergir. Não basta que uma soma informal pareça finita.</p>
+</section><section id="p">
+<div class="kicker">04 — estudo</div>
+<h2 class="section-title">Teste p e comparação</h2>
+<p class="lead-in">\(\int_1^{\infty}\frac{1}{x^p}\,dx\) converge exatamente quando \(p>1\). Já \(\int_0^1 x^{-p}\,dx\) converge exatamente quando \(p<1\). Para funções positivas, comparação com uma integral conhecida pode provar convergência ou divergência.</p>
+</section><section id="exemplo">
+<div class="kicker">05 — estudo</div>
+<h2 class="section-title">Exemplo resolvido</h2>
+<p class="lead-in">\(\int_1^{\infty}\frac1{x^2}\,dx=\lim_{b\to\infty}[-1/x]_1^b=\lim_{b\to\infty}(1-1/b)=1\), portanto converge. Em contraste, \(\int_1^{\infty}\frac1x\,dx=\lim_{b\to\infty}\ln b=\infty\), portanto diverge.</p>
+</section><section id="erros">
+<div class="kicker">06 — estudo</div>
+<h2 class="section-title">Checklist e erros comuns</h2>
+<p class="lead-in">Escreva o limite antes de calcular; separe em cada singularidade interna; verifique os dois lados; lembre que um único limite divergente torna a integral toda divergente.</p>
+</section>
+</main></div><div id="site-footer-root"></div>
+<script src="../assets/js/site-data.js"></script><script src="../assets/js/layout.js"></script><script src="../assets/js/katex-init.js"></script>
+<script>renderHeader({ active: "topicos", base: "../" });renderFooter({base:"../",related:{title:"Integrais impróprias",links:[{label:"Exercícios",href:"integrais-improprias-exercicios.html"}]}});</script>
+</body></html>
