@@ -261,9 +261,9 @@ Logo $a_n=e^{-1}$ para todo $n\ge2$: sequência constante.
 **Converge** para $e^{-1}=\dfrac1e$.
 :::
 
-### i) $a_n=\ln\left(1+\dfrac1n\right)^n$
+### i) $a_n=\ln\left[\left(1+\dfrac1n\right)^n\right]$
 
-Pela propriedade do log, $a_n=n\ln\left(1+\frac1n\right)=\dfrac{\ln(1+1/n)}{1/n}$, uma forma $0/0$. Com $x=1/n\to0^+$ e L'Hôpital:
+Pela propriedade do logaritmo, $a_n=\ln\left[\left(1+\frac1n\right)^n\right]=n\ln\left(1+\frac1n\right)=\dfrac{\ln(1+1/n)}{1/n}$, uma forma $0/0$. Com $x=1/n\to0^+$ e L'Hôpital:
 
 $$\lim_{x\to0^+}\frac{\ln(1+x)}{x}=\lim_{x\to0^+}\frac{1/(1+x)}{1}=1.$$
 
