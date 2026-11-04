@@ -610,22 +610,257 @@ V = 2π(1 − ln2)
 :::
 ::::
 
-### Guia rápido — demais itens da questão 7
+### Questão 7 — complementos com desenvolvimento completo
 
-| Item | Técnica |
-| --- | --- |
-| a) cos2x, b) 3sen(x/3) | Imediatas (fórmulas 63/64 da tabela) |
-| c) cos³x senx, d) sen⁴(2x)cos2x | Regra da potência direta: u = cos x (ou sen 2x), n único fator ímpar já isolado |
-| f) cos³x | Espelho do 7e: u=sen x |
-| h) ∫₀^π sen⁵(x/2)dx, i) ∫₀^(π/6) 3cos⁵(3x)dx | Mesmo macete de 7e/7g, depois avaliar limites |
-| l) 7cos⁷t | Potência ímpar, u=sen t |
-| m) ∫₀^π 8sen⁴(2πx)dx | Potência par: reduzir com sen² =(1−cos2θ)/2 duas vezes |
-| n) 16sen²x cos²y dy | **Pegadinha:** sen²x é constante em relação a y! Só integrar 16sen²x·∫cos²y dy |
-| o) ∫₀^π 8sen⁴y cos²y dy | Ambos pares: identidades de redução |
-| p) 8cos³(2θ)sen(2θ)dθ | u = cos(2θ) direto (regra da potência) |
-| t) sen²x/√(1−cosx), limites π/3 a π/2 | 1−cosx=2sen²(x/2); simplificar antes de integrar |
-| v) sec x·tg²x | tg²x=sec²x−1 → vira ∫sec³x−∫secx (usar redução de sec³) |
-| y) ∫\_(π/6)^(π/3) cotg³x dx | Espelho de tg³: cotg³x=cotgx(cossec²x−1) |
+### 7a) $\displaystyle\int\cos(2x)\,dx$
+
+Faça $u=2x$, de modo que $du=2dx$ e $dx=du/2$:
+
+$$\int\cos(2x)dx=\frac12\int\cos u\,du
+=\frac12\sin u+C.$$
+
+:::result{kind="answer"}
+$\boxed{\frac12\sin(2x)+C}$
+:::
+
+### 7b) $\displaystyle\int_0^\pi3\sin(x/3)\,dx$
+
+Uma primitiva é $-9\cos(x/3)$, pois a derivada de $\cos(x/3)$ traz o fator $1/3$:
+
+$$I=\left[-9\cos\frac x3\right]_0^\pi
+=-9\cos\frac\pi3+9\cos0
+=-\frac92+9=\frac92.$$
+
+:::result{kind="answer"}
+$\boxed{9/2}$
+:::
+
+### 7c) $\displaystyle\int\cos^3x\sin x\,dx$
+
+Tome $u=\cos x$, $du=-\sin x\,dx$. Então
+
+$$I=-\int u^3du=-\frac{u^4}{4}+C.$$
+
+:::result{kind="answer"}
+$\boxed{-\frac14\cos^4x+C}$
+:::
+
+### 7d) $\displaystyle\int\sin^4(2x)\cos(2x)\,dx$
+
+Tome $u=\sin(2x)$, logo $du=2\cos(2x)dx$ e $\cos(2x)dx=du/2$:
+
+$$I=\frac12\int u^4du=\frac{u^5}{10}+C.$$
+
+:::result{kind="answer"}
+$\boxed{\frac1{10}\sin^5(2x)+C}$
+:::
+
+### 7f) $\displaystyle\int\cos^3x\,dx$
+
+Separe um fator $\cos x$ e use $\cos^2x=1-\sin^2x$:
+
+$$I=\int(1-\sin^2x)\cos x\,dx.$$
+
+Com $u=\sin x$, $du=\cos x\,dx$:
+
+$$I=\int(1-u^2)du=u-\frac{u^3}{3}+C.$$
+
+:::result{kind="answer"}
+$\boxed{\sin x-\frac13\sin^3x+C}$
+:::
+
+### 7h) $\displaystyle\int_0^\pi\sin^5(x/2)\,dx$
+
+Faça $u=x/2$, então $dx=2du$ e os limites passam de $x=0,\pi$ para $u=0,\pi/2$:
+
+$$I=2\int_0^{\pi/2}\sin^5u\,du.$$
+
+Escreva $\sin^5u=(1-\cos^2u)^2\sin u$. Com $v=\cos u$, $dv=-\sin u\,du$:
+
+$$\int_0^{\pi/2}\sin^5u\,du
+=\int_0^1(1-v^2)^2dv
+=\left[v-\frac{2v^3}{3}+\frac{v^5}{5}\right]_0^1
+=1-\frac23+\frac15=\frac8{15}.$$
+
+Logo, $I=16/15$.
+
+:::result{kind="answer"}
+$\boxed{16/15}$
+:::
+
+### 7i) $\displaystyle\int_0^{\pi/6}3\cos^5(3x)\,dx$
+
+Faça $u=3x$, $du=3dx$. Os limites tornam-se $0$ e $\pi/2$:
+
+$$I=\int_0^{\pi/2}\cos^5u\,du.$$
+
+Escreva $\cos^5u=(1-\sin^2u)^2\cos u$ e use $v=\sin u$:
+
+$$I=\int_0^1(1-v^2)^2dv
+=\left[v-\frac{2v^3}{3}+\frac{v^5}{5}\right]_0^1
+=\frac8{15}.$$
+
+:::result{kind="answer"}
+$\boxed{8/15}$
+:::
+
+### 7l) $\displaystyle\int7\cos^7t\,dt$
+
+Separe $\cos t$ e transforme a potência par restante:
+
+$$I=7\int(1-\sin^2t)^3\cos t\,dt.$$
+
+Com $u=\sin t$, $du=\cos t\,dt$:
+
+$$I=7\int(1-3u^2+3u^4-u^6)du.$$
+
+Integrando termo a termo,
+
+$$I=7u-7u^3+\frac{21}{5}u^5-u^7+C.$$
+
+:::result{kind="answer"}
+$\boxed{7\sin t-7\sin^3t+\frac{21}{5}\sin^5t-\sin^7t+C}$
+:::
+
+### 7m) $\displaystyle\int_0^\pi8\sin^4(2\pi x)\,dx$
+
+Use duas vezes a redução de potência, ou diretamente
+
+$$\sin^4u=\frac{3-4\cos(2u)+\cos(4u)}8.$$
+
+Com $u=2\pi x$, o fator $8$ cancela o denominador:
+
+$$I=\int_0^\pi\left(3-4\cos(4\pi x)+\cos(8\pi x)\right)dx.$$
+
+As integrais dos cossenos são termos de seno que valem zero nos dois extremos, pois $4\pi x$ e $8\pi x$ são múltiplos de $2\pi$ em $x=0,\pi$. Resta
+
+$$I=[3x]_0^\pi=3\pi.$$
+
+:::result{kind="answer"}
+$\boxed{3\pi}$
+:::
+
+### 7n) $\displaystyle\int16\sin^2x\cos^2y\,dy$
+
+A integração é em relação a $y$. Portanto, $\sin^2x$ é constante:
+
+$$I=16\sin^2x\int\cos^2y\,dy.$$
+
+Use $\cos^2y=(1+\cos2y)/2$:
+
+$$I=8\sin^2x\int(1+\cos2y)dy
+=8\sin^2x\left(y+\frac12\sin2y\right)+C.$$
+
+:::result{kind="answer"}
+$\boxed{8y\sin^2x+4\sin^2x\sin(2y)+C}$
+:::
+
+### 7o) $\displaystyle\int_0^\pi8\sin^4y\cos^2y\,dy$
+
+Use $\sin^4y\cos^2y=\sin^4y(1-\sin^2y)=\sin^4y-\sin^6y$:
+
+$$I=8\left(\int_0^\pi\sin^4y\,dy-\int_0^\pi\sin^6y\,dy\right).$$
+
+Pelas fórmulas de redução (ou pela expansão em múltiplos de ângulo),
+
+$$\int_0^\pi\sin^4y\,dy=\frac{3\pi}{8},
+\qquad
+\int_0^\pi\sin^6y\,dy=\frac{5\pi}{16}.$$
+
+Logo,
+
+$$I=8\left(\frac{3\pi}{8}-\frac{5\pi}{16}\right)
+=8\cdot\frac\pi{16}=\frac\pi2.$$
+
+:::result{kind="answer"}
+$\boxed{\pi/2}$
+:::
+
+### 7p) $\displaystyle\int8\cos^3(2\theta)\sin(2\theta)\,d\theta$
+
+Faça $u=\cos(2\theta)$, então $du=-2\sin(2\theta)d\theta$:
+
+$$I=-4\int u^3du=-u^4+C.$$
+
+:::result{kind="answer"}
+$\boxed{-\cos^4(2\theta)+C}$
+:::
+
+### 7t) $\displaystyle\int_{\pi/3}^{\pi/2}\frac{\sin^2x}{\sqrt{1-\cos x}}\,dx$
+
+No intervalo dado, $\sin(x/2)>0$. Pela identidade $1-\cos x=2\sin^2(x/2)$,
+
+$$\sqrt{1-\cos x}=\sqrt2\sin(x/2).$$
+
+Como $\sin x=2\sin(x/2)\cos(x/2)$, o integrando simplifica para
+
+$$\frac{4\sin^2(x/2)\cos^2(x/2)}
+{\sqrt2\sin(x/2)}
+=2\sqrt2\sin(x/2)\cos^2(x/2).$$
+
+Faça $u=\cos(x/2)$, $du=-\frac12\sin(x/2)dx$:
+
+$$I=-4\sqrt2\int_{\cos(\pi/6)}^{\cos(\pi/4)}u^2du
+=-\frac{4\sqrt2}{3}\left[
+\left(\frac{\sqrt2}{2}\right)^3-
+\left(\frac{\sqrt3}{2}\right)^3
+\right].$$
+
+Simplificando,
+
+$$I=\frac{\sqrt6}{2}-\frac23.$$
+
+:::result{kind="answer"}
+$\boxed{\frac{\sqrt6}{2}-\frac23}$
+:::
+
+### 7v) $\displaystyle\int\sec x\tan^2x\,dx$
+
+Use $\tan^2x=\sec^2x-1$:
+
+$$I=\int\sec^3x\,dx-\int\sec x\,dx.$$
+
+As primitivas conhecidas são
+
+$$\int\sec^3x\,dx
+=\frac12\left(\sec x\tan x+\ln|\sec x+\tan x|\right),$$
+
+$$\int\sec x\,dx=\ln|\sec x+\tan x|.$$
+
+Subtraindo,
+
+:::result{kind="answer"}
+$\boxed{\frac12\sec x\tan x-\frac12\ln|\sec x+\tan x|+C}$
+:::
+
+### 7y) $\displaystyle\int_{\pi/6}^{\pi/3}\cot^3x\,dx$
+
+Use $\cot^2x=\csc^2x-1$:
+
+$$I=\int_{\pi/6}^{\pi/3}\cot x(\csc^2x-1)dx.$$
+
+Uma primitiva é
+
+$$F(x)=-\frac12\csc^2x-\ln(\sin x),$$
+
+pois $d(\csc^2x)/dx=-2\csc^2x\cot x$ e $d(\ln\sin x)/dx=\cot x$.
+
+Avalie:
+
+$$F(\pi/3)=-\frac23-\ln\frac{\sqrt3}{2},$$
+
+$$F(\pi/6)=-2-\ln\frac12.$$
+
+Portanto,
+
+$$I=F(\pi/3)-F(\pi/6)
+=\frac43+\ln\frac{\sqrt3/2}{1/2}
+=\frac43+\frac12\ln3.$$
+
+:::result{kind="answer"}
+$\boxed{\frac43+\frac12\ln3}$
+:::
+
 
 ## Substituição Trigonométrica {#trigsub}
 
