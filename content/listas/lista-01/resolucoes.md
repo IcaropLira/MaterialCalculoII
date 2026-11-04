@@ -1295,32 +1295,350 @@ Pela comparação direta, a integral original converge.
 **Resposta:** converge. A singularidade é comparável a $t^{-1/2}$, e a potência $p=1/2$ é menor que $1$ no extremo zero.
 :::
 
-### Guia rápido — demais itens das questões 17 e 18
+### Questão 17 — complementos com desenvolvimento completo
 
-| Item | Situação | Resultado / técnica |
-| --- | --- | --- |
-| 17b) ∫₁^∞ dx/x<sup>1,001</sup> | Limite infinito | p=1,001&gt;1 ⇒ converge (p-teste); valor = 1000 |
-| 17d) ∫₀⁴ dx/√(4−x) | Descontínua em x=4 | converge, valor 4 |
-| 17e) ∫₋₁¹ dy/y^(2/3) | Descontínua em y=0 (dentro do intervalo!) | quebrar em duas integrais; p=2/3&lt;1 ⇒ converge cada metade |
-| 17f) ∫₋₈¹ dx/x^(1/3) | Descontínua em x=0 (dentro) | quebrar em duas; converge (potência ímpar amortece o polo) |
-| 17g) ∫₀¹ dx/√(1−x²) | Descontínua em x=1 | = arcsen x → π/2, converge |
-| 17h) ∫₁^∞ dx/(x√(x²−1)) | Limite infinito + descontínua em x=1 | = arcsec x → π/2 |
-| 17i) ∫₀^∞ 16arctg(x)/(1+x²)dx | Limite infinito | u=arctg x → 8·(arctg x)² \|₀^∞ = 8(π/2)²=2π² |
-| 17j) ∫₋∞⁰ θe<sup>θ</sup>dθ | Limite infinito | por partes; converge, valor −1 |
-| 17l) ∫₋∞^∞ 2xe⁻ˣ²dx | Ambos limites infinitos | u=x²; função ímpar → valor 0 |
-| 17m,n) ∫₀¹ x ln x dx, ∫₀¹−ln x dx | Descontínua em x=0 | por partes + limite; ambas convergem (−1/4 e 1) |
-| 17p) ∫₋₁^∞ dθ/(θ²+5θ+6) | Somente limite superior infinito; −2 e −3 ficam fora de [−1,∞) | Frações parciais: 1/(θ+2) − 1/(θ+3); converge e vale ln 2 |
-| 18b) ∫₀^(π/2) cotgθ dθ | Descontínua em θ=0 | diverge (análogo ao 18a) |
-| 18c,d) integrais com singularidade nos extremos | Comparação direta após substituições $u=\pi-\theta$ e $u=\pi-2\theta$ | Ambas convergem; em 18c o integrando fica limitado por $u^{1/2}$, e em 18d por $u^{2/3}$ |
-| 18e,f) $x^{-2}e^{-1/x}$ e $e^{-\sqrt{x}}/\sqrt{x}$ perto de 0 | Substituições $u=1/x$ e $u=\sqrt{x}$ | Ambas convergem; valores $e^{-1/\ln2}$ e $2(1-e^{-1})$ |
-| 18g) ∫₀² dx/(1−x²) | Descontínua em x=1 (dentro!) | diverge (comparar com 1/(1−x)) |
-| 18h) ∫₁^∞ dx/(x³+1) | Limite infinito | comparar com 1/x³ → converge |
-| 18j) ∫ₑ^∞ ln(ln x)dx | Limite infinito | ln(ln x)→∞ (devagar) ⇒ diverge |
-| 18k) ∫₁^∞ dx/√(eˣ−x) | Limite infinito | $e^x-x\ge e^x/2$; comparar com $\sqrt2e^{-x/2}$ ⇒ converge |
-| 18l) ∫₋∞^∞ dx/(eˣ+e⁻ˣ) | Ambos limites infinitos | = arctg(eˣ) → converge, valor π/2 |
-| 18m) ∫₂^∞ x dx/√(x⁴−1) | Limite infinito | comparar com 1/x ⇒ diverge |
-| 18n,o) \[2+cosx\]/x, \[1+senx\]/x² de π a ∞ | Comparação | n) diverge (comparar 1/x); o) converge (comparar 1/x²) |
-| 18p) ∫₀^π dt/√(t+sen t) | Descontínua em t=0 | perto de 0, t+sen t ≈ 2t ⇒ comparar com 1/√t ⇒ converge |
+Os itens abaixo exigem atenção especial à definição de integral imprópria. Quando há uma singularidade dentro do intervalo, dividimos a integral nesse ponto e calculamos **dois limites laterais separados**. Quando há infinito, substituímos o extremo por um parâmetro.
+
+### 17b) $\displaystyle\int_1^\infty\frac{dx}{x^{1.001}}$
+
+**1. Escreva como limite.**
+
+$$I=\lim_{b\to\infty}\int_1^b x^{-1.001}\,dx.$$
+
+**2. Integre usando a regra da potência.** Como $-1.001\ne-1$,
+
+$$\int x^{-1.001}dx=\frac{x^{-0.001}}{-0.001}=-1000x^{-0.001}.$$
+
+**3. Avalie o limite.**
+
+$$I=\lim_{b\to\infty}\left[-1000x^{-0.001}\right]_1^b
+=\lim_{b\to\infty}\left(1000-1000b^{-0.001}\right)=1000,$$
+
+pois $b^{-0.001}\to0$.
+
+:::result{kind="converge"}
+**Resposta:** converge e vale $\boxed{1000}$.
+:::
+
+### 17d) $\displaystyle\int_0^4\frac{dx}{\sqrt{4-x}}$
+
+**1. O denominador zera em $x=4$.** Defina
+
+$$I=\lim_{b\to4^-}\int_0^b(4-x)^{-1/2}\,dx.$$
+
+**2. Faça $u=4-x$, $du=-dx$.** Uma primitiva é $-2\sqrt{4-x}$.
+
+$$I=\lim_{b\to4^-}\left[-2\sqrt{4-x}\right]_0^b
+=\lim_{b\to4^-}\left(4-2\sqrt{4-b}\right)=4.$$
+
+:::result{kind="converge"}
+**Resposta:** converge e vale $\boxed4$.
+:::
+
+### 17e) $\displaystyle\int_{-1}^1\frac{dy}{y^{2/3}}$
+
+**1. A singularidade está no interior, em $y=0$.** Para expoentes fracionários com denominador ímpar, $y^{2/3}=(\sqrt[3]y)^2=|y|^{2/3}$. Separe:
+
+$$I=\lim_{a\to0^-}\int_{-1}^a|y|^{-2/3}dy+
+\lim_{b\to0^+}\int_b^1y^{-2/3}dy.$$
+
+**2. Calcule o lado esquerdo.** Para $y<0$, uma primitiva de $|y|^{-2/3}$ é $3y^{1/3}$:
+
+$$\lim_{a\to0^-}\left[3y^{1/3}\right]_{-1}^a
+=0-(-3)=3.$$
+
+**3. Calcule o lado direito.**
+
+$$\lim_{b\to0^+}\left[3y^{1/3}\right]_b^1
+=3-0=3.$$
+
+Somando os dois limites finitos, $I=6$.
+
+:::result{kind="converge"}
+**Resposta:** converge e vale $\boxed6$. Não se deve tratar $y=0$ como se fosse um extremo único: é necessário separar os dois lados.
+:::
+
+### 17f) $\displaystyle\int_{-8}^1\frac{dx}{x^{1/3}}$
+
+**1. Separe no ponto singular $x=0$.**
+
+$$I=\lim_{a\to0^-}\int_{-8}^a x^{-1/3}dx+
+\lim_{b\to0^+}\int_b^1 x^{-1/3}dx.$$
+
+**2. Use a primitiva válida nos dois lados.**
+
+$$\int x^{-1/3}dx=\frac32x^{2/3},$$
+
+onde $x^{2/3}=(\sqrt[3]x)^2$ também para $x<0$.
+
+**3. Avalie cada lado.**
+
+$$I_-=\lim_{a\to0^-}\frac32\left(a^{2/3}-(-8)^{2/3}\right)
+=-\frac32\cdot4=-6,$$
+
+$$I_+=\lim_{b\to0^+}\frac32(1-b^{2/3})=\frac32.$$
+
+Logo, $I=-6+\frac32=-\frac92$.
+
+:::result{kind="converge"}
+**Resposta:** converge e vale $\boxed{-9/2}$. A singularidade é integrável porque a potência $1/3$ é menor que $1$; o sinal negativo no trecho à esquerda deve ser preservado.
+:::
+
+### 17g) $\displaystyle\int_0^1\frac{dx}{\sqrt{1-x^2}}$
+
+**1. O denominador zera em $x=1$.** Escreva
+
+$$I=\lim_{b\to1^-}\int_0^b\frac{dx}{\sqrt{1-x^2}}.$$
+
+**2. Reconheça a derivada de $\arcsin x$.**
+
+$$I=\lim_{b\to1^-}\left[\arcsin x\right]_0^b
+=\lim_{b\to1^-}(\arcsin b-0)=\frac\pi2.$$
+
+:::result{kind="converge"}
+**Resposta:** converge e vale $\boxed{\pi/2}$.
+:::
+
+### 17h) $\displaystyle\int_1^\infty\frac{dx}{x\sqrt{x^2-1}}$
+
+**1. Há duas impropriedades:** o denominador zera em $x=1$ e o intervalo é ilimitado. Primeiro calcule a partir de $a>1$ até $b$:
+
+$$I=\lim_{a\to1^+}\lim_{b\to\infty}
+\int_a^b\frac{dx}{x\sqrt{x^2-1}}.$$
+
+**2. Reconheça a primitiva.** Para $x>1$,
+
+$$\frac{d}{dx}\operatorname{arcsec}x
+=\frac1{x\sqrt{x^2-1}}.$$
+
+**3. Avalie os dois extremos.**
+
+$$I=\lim_{a\to1^+}\lim_{b\to\infty}
+(\operatorname{arcsec}b-\operatorname{arcsec}a)
+=\frac\pi2-0=\frac\pi2.$$
+
+:::result{kind="converge"}
+**Resposta:** converge e vale $\boxed{\pi/2}$. Tanto o limite junto de $1$ quanto o limite no infinito são finitos.
+:::
+
+### 17i) $\displaystyle\int_0^\infty\frac{16\arctan x}{1+x^2}\,dx$
+
+**1. Escreva o limite no infinito.**
+
+$$I=\lim_{b\to\infty}\int_0^b\frac{16\arctan x}{1+x^2}\,dx.$$
+
+**2. Faça $u=\arctan x$.** Então $du=dx/(1+x^2)$:
+
+$$I=\lim_{b\to\infty}16\int_0^{\arctan b}u\,du
+=\lim_{b\to\infty}8(\arctan b)^2.$$
+
+**3. Use $\arctan b\to\pi/2$.**
+
+$$I=8\left(\frac\pi2\right)^2=2\pi^2.$$
+
+:::result{kind="converge"}
+**Resposta:** converge e vale $\boxed{2\pi^2}$.
+:::
+
+### 17j) $\displaystyle\int_{-\infty}^0\theta e^\theta\,d\theta$
+
+**1. Escreva o limite.**
+
+$$I=\lim_{a\to-\infty}\int_a^0\theta e^\theta\,d\theta.$$
+
+**2. Integre por partes.** Tome $u=\theta$, $dv=e^\theta d\theta$. Então $du=d\theta$ e $v=e^\theta$:
+
+$$\int\theta e^\theta d\theta
+=\theta e^\theta-\int e^\theta d\theta
+=e^\theta(\theta-1).$$
+
+**3. Avalie.**
+
+$$I=\lim_{a\to-\infty}\left[e^\theta(\theta-1)\right]_a^0
+=-1-\lim_{a\to-\infty}e^a(a-1)=-1,$$
+
+pois a exponencial tende a zero mais rapidamente que o fator linear cresce em módulo.
+
+:::result{kind="converge"}
+**Resposta:** converge e vale $\boxed{-1}$.
+:::
+
+### 17l) $\displaystyle\int_{-\infty}^\infty2xe^{-x^2}\,dx$
+
+**1. Separe os dois infinitos.** A integral só converge se ambos os limites laterais existirem:
+
+$$I=\lim_{a\to-\infty}\int_a^0 2xe^{-x^2}dx+
+\lim_{b\to\infty}\int_0^b2xe^{-x^2}dx.$$
+
+**2. Uma primitiva é $-e^{-x^2}$.** Isso vem de $u=-x^2$, $du=-2x\,dx$.
+
+**3. Calcule separadamente.**
+
+$$I_-=\lim_{a\to-\infty}[-e^{-x^2}]_a^0=-1-(-0)=-1,$$
+
+$$I_+=\lim_{b\to\infty}[-e^{-x^2}]_0^b=0-(-1)=1.$$
+
+Somando, $I=0$.
+
+:::result{kind="converge"}
+**Resposta:** converge e vale $\boxed0$. A função é ímpar, mas a justificativa correta também verifica separadamente as duas integrais impróprias.
+:::
+
+### 17m) $\displaystyle\int_0^1x\ln x\,dx$
+
+**1. A expressão $\ln x$ diverge em $x=0$.** Defina
+
+$$I=\lim_{a\to0^+}\int_a^1x\ln x\,dx.$$
+
+**2. Integre por partes.** Tome $u=\ln x$, $dv=x\,dx$. Assim, $du=dx/x$ e $v=x^2/2$:
+
+$$\int x\ln x\,dx
+=\frac{x^2}{2}\ln x-\frac12\int x\,dx
+=\frac{x^2}{2}\ln x-\frac{x^2}{4}.$$
+
+**3. Avalie o limite.**
+
+$$I=\left(0-\frac14\right)
+-\lim_{a\to0^+}\left(\frac{a^2}{2}\ln a-\frac{a^2}{4}\right)
+=-\frac14,$$
+
+pois $a^2\ln a\to0$ quando $a\to0^+$.
+
+:::result{kind="converge"}
+**Resposta:** converge e vale $\boxed{-1/4}$.
+:::
+
+### 17n) $\displaystyle\int_0^1-\ln x\,dx$
+
+**1. Escreva o limite impróprio.**
+
+$$I=\lim_{a\to0^+}\int_a^1-\ln x\,dx.$$
+
+**2. Integre por partes ou use uma primitiva.** Como $\int\ln x\,dx=x\ln x-x$,
+
+$$\int-\ln x\,dx=-x\ln x+x.$$
+
+**3. Avalie.**
+
+$$I=\left[-x\ln x+x\right]_0^1
+=1-\lim_{a\to0^+}(-a\ln a+a)=1,$$
+
+usando novamente $a\ln a\to0$.
+
+:::result{kind="converge"}
+**Resposta:** converge e vale $\boxed1$.
+:::
+
+### 17o) $\displaystyle\int_1^2\frac{ds}{s\sqrt{s^2-1}}$
+
+**1. A singularidade está em $s=1$.** Escreva
+
+$$I=\lim_{a\to1^+}\int_a^2\frac{ds}{s\sqrt{s^2-1}}.$$
+
+**2. Use a primitiva de arcsecante.**
+
+$$I=\lim_{a\to1^+}\left[\operatorname{arcsec}s\right]_a^2.$$
+
+**3. Avalie os extremos.** Para $s\ge1$, $\operatorname{arcsec}1=0$ e $\operatorname{arcsec}2=\pi/3$:
+
+$$I=\frac\pi3-0=\frac\pi3.$$
+
+:::result{kind="converge"}
+**Resposta:** converge e vale $\boxed{\pi/3}$.
+:::
+
+### 17q) $\displaystyle\int_0^\infty\frac{dx}{(1+x)\sqrt{x}}$
+
+**1. Há singularidade em $0$ e extremo infinito.** Faça a substituição $t=\sqrt{x}$ em um intervalo truncado. Temos $x=t^2$, $dx=2t\,dt$:
+
+$$\frac{dx}{(1+x)\sqrt{x}}
+=\frac{2t\,dt}{(1+t^2)t}=\frac{2\,dt}{1+t^2}.$$
+
+**2. Transforme também os limites.** Quando $x\to0^+$, $t\to0^+$; quando $x\to\infty$, $t\to\infty$.
+
+$$I=2\int_0^\infty\frac{dt}{1+t^2}
+=2\left[\arctan t\right]_0^\infty=\pi.$$
+
+Os dois extremos são finitos após a transformação.
+
+:::result{kind="converge"}
+**Resposta:** converge e vale $\boxed\pi$.
+:::
+
+### 17r) $\displaystyle\int_0^2\frac{s+1}{\sqrt{4-s^2}}\,ds$
+
+**1. A singularidade está no extremo $s=2$.** Separe em duas parcelas:
+
+$$I=\int_0^2\frac{s}{\sqrt{4-s^2}}\,ds+
+\int_0^2\frac{1}{\sqrt{4-s^2}}\,ds,$$
+
+ambas entendidas como limites quando o extremo superior tende a $2$ pela esquerda.
+
+**2. Calcule a primeira.** Com $u=4-s^2$, $du=-2s\,ds$:
+
+$$I_1=-\frac12\int_4^0u^{-1/2}du
+=\left[-\sqrt{4-s^2}\right]_0^2=2.$$
+
+**3. Calcule a segunda.** A primitiva é $\arcsin(s/2)$:
+
+$$I_2=\left[\arcsin\frac{s}{2}\right]_0^2=\frac\pi2.$$
+
+Portanto, $I=I_1+I_2=2+\pi/2$.
+
+:::result{kind="converge"}
+**Resposta:** converge e vale $\boxed{2+\pi/2}$.
+:::
+
+### 17s) $\displaystyle\int_0^1\frac{\theta+1}{\sqrt{\theta^2+2\theta}}\,d\theta$
+
+**1. A singularidade está em $\theta=0$.** Observe que a derivada do radicando é $2\theta+2=2(\theta+1)$. Assim,
+
+$$I=\lim_{a\to0^+}\int_a^1\frac{\theta+1}{\sqrt{\theta^2+2\theta}}\,d\theta.$$
+
+**2. Faça $u=\theta^2+2\theta$.** Então $du=2(\theta+1)d\theta$:
+
+$$I=\lim_{a\to0^+}\left[\sqrt{\theta^2+2\theta}\right]_a^1.$$
+
+**3. Avalie.**
+
+$$I=\sqrt3-\lim_{a\to0^+}\sqrt{a^2+2a}=\sqrt3.$$
+
+:::result{kind="converge"}
+**Resposta:** converge e vale $\boxed{\sqrt3}$.
+:::
+
+### 17t) $\displaystyle\int_0^\infty\frac{dx}{(x+1)(x^2+1)}$
+
+**1. Escreva a decomposição em frações parciais.** Procuramos
+
+$$\frac1{(x+1)(x^2+1)}
+=\frac A{x+1}+\frac{Bx+C}{x^2+1}.$$
+
+Multiplicando pelo denominador comum,
+
+$$1=A(x^2+1)+(Bx+C)(x+1).$$
+
+Comparando coeficientes: $A+B=0$, $B+C=0$ e $A+C=1$. Logo $A=1/2$, $B=-1/2$ e $C=1/2$.
+
+**2. Integre cada parcela.**
+
+$$I=\lim_{b\to\infty}\left[
+\frac12\ln(x+1)-\frac14\ln(x^2+1)
++\frac12\arctan x\right]_0^b.$$
+
+**3. Calcule o limite dos logaritmos juntos.**
+
+$$\frac12\ln(b+1)-\frac14\ln(b^2+1)
+=\frac12\ln\left(\frac{b+1}{\sqrt{b^2+1}}\right)\longrightarrow0,$$
+
+pois a fração dentro do logaritmo tende a $1$. Além disso, $\arctan b\to\pi/2$. No extremo inferior, as três parcelas valem zero.
+
+:::result{kind="converge"}
+**Resposta:** converge e vale $\boxed{\pi/4}$.
+:::
+
+### Questão 18 — complementos com desenvolvimento completo
+
 
 :::note
 Documento gerado a partir da Lista 02 (Cálculo II — UFCG, Prof. Weiller F. Chaves Barboza).
