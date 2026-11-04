@@ -91,14 +91,22 @@ $\displaystyle \int x^2\cos x\,dx = (x^2-2)\sin x + 2x\cos x + C$
    \frac{x+1}{x^2-1} = \frac{x+1}{(x-1)(x+1)} = \frac{1}{x-1} \quad (x\neq -1)
    $$
 
-2. Assim, a integral vira
+2. Para $x\ne-1$, podemos cancelar o fator comum $x+1$ e obter
 
-   $$
-   \int \frac{1}{x-1}dx = \ln|x-1|+C
-   $$
+   $
+   \frac{x+1}{x^2-1}=\frac1{x-1}.
+   $
+
+   O domínio da função original exclui **dois** pontos: $x=1$ e $x=-1$. O cancelamento simplifica a expressão, mas não recoloca $x=-1$ no domínio original.
+
+3. Em qualquer intervalo do domínio que não atravesse esses pontos, integramos:
+
+   $
+   \int\frac1{x-1}dx=\ln|x-1|+C.
+   $
 
 :::result
-$\displaystyle \int \frac{x+1}{x^2-1}\,dx = \ln|x-1|+C$
+$\displaystyle \int \frac{x+1}{x^2-1}\,dx = \ln|x-1|+C$, em cada intervalo do domínio $x\ne\pm1$.
 :::
 
 ## Calcule a integral indefinida.
