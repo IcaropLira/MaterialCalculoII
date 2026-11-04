@@ -15,198 +15,162 @@ cta: {"text": "Frações parciais é o passo-chave para transformar quocientes d
 
 ### a) $\dfrac{5x-13}{(x-3)(x-2)}$
 
-1. Como os fatores são lineares e distintos, escrevemos:
+**1. Identifique o formato.** O denominador já está fatorado em dois fatores lineares distintos, e a fração é própria. Portanto:
+$$
+\frac{5x-13}{(x-3)(x-2)}
+=\frac A{x-3}+\frac B{x-2}.
+$$
 
-   $$
-   \frac{5x-13}{(x-3)(x-2)}=\frac{A}{x-3}+\frac{B}{x-2}
-   $$
+**2. Elimine os denominadores.** Multiplicando por $(x-3)(x-2)$:
+$$5x-13=A(x-2)+B(x-3).$$
 
-2. Multiplicando pelos denominadores:
+**3. Determine as constantes.** Para $x=3$, o termo com $B$ zera:
+$$15-13=A(1)\implies A=2.$$
+Para $x=2$, o termo com $A$ zera:
+$$10-13=B(-1)\implies B=3.$$
 
-   $$
-   5x-13=A(x-2)+B(x-3)=(A+B)x+(-2A-3B)
-   $$
+**4. Confira.** $2(x-2)+3(x-3)=2x-4+3x-9=5x-13$.
 
-3. Igualando coeficientes:
-
-   $$
-   A+B=5,\quad -2A-3B=-13
-   $$
-
-   Resolvendo, obtemos $A=2$ e $B=3$. Portanto:
-
-   $$
-   \frac{5x-13}{(x-3)(x-2)}=\frac{2}{x-3}+\frac{3}{x-2}
-   $$
+:::result
+$$\boxed{\frac{5x-13}{(x-3)(x-2)}=\frac2{x-3}+\frac3{x-2}}$$
+:::
 
 ### b) $\dfrac{z+1}{z^2(z-1)}$
 
-1. O denominador tem fator quadrático repetido e um fator linear simples:
+**1. Observe o fator repetido.** O denominador contém $z^2$ e $(z-1)$. É obrigatório incluir uma parcela para cada potência de $z$:
+$$
+\frac{z+1}{z^2(z-1)}
+=\frac A z+\frac B{z^2}+\frac C{z-1}.
+$$
 
-   $$
-   \frac{z+1}{z^2(z-1)}=\frac{A}{z}+\frac{B}{z^2}+\frac{C}{z-1}
-   $$
+**2. Multiplique pelo denominador comum.**
+$$z+1=Az(z-1)+B(z-1)+Cz^2.$$
 
-2. Multiplicando por $z^2(z-1)$:
+**3. Encontre $B$ e $C$ com raízes convenientes.** Para $z=0$:
+$$1=-B\implies B=-1.$$
+Para $z=1$:
+$$2=C\implies C=2.$$
 
-   $$
-   z+1 = Az(z-1)+B(z-1)+Cz^2
-   $$
+**4. Determine $A$.** Use, por exemplo, $z=2$:
+$$3=2A(1)+(-1)(1)+2(2^2).$$
+Portanto,
+$$3=2A-1+8\implies 2A=-4\implies A=-2.$$
 
-3. Escolhendo valores adequados:
+**5. Escreva e confira a decomposição.**
+$$
+\frac{z+1}{z^2(z-1)}
+=-\frac2z-\frac1{z^2}+\frac2{z-1}.
+$$
+Ao multiplicar pelo denominador comum, o numerador fica $-2z(z-1)-(z-1)+2z^2=z+1$.
 
-   $$
-   z=0 \Rightarrow 1 = -B \Rightarrow B=-1
-   $$
-
-   $$
-   z=1 \Rightarrow 2 = C
-   $$
-
-   $$
-   z=2 \Rightarrow 3 = 2A + (-1)(1) + 4 \Rightarrow A=-1
-   $$
-
-   Logo:
-
-   $$
-   \frac{z+1}{z^2(z-1)} = -\frac{1}{z} - \frac{1}{z^2} + \frac{2}{z-1}
-   $$
+:::result
+$$\boxed{-\frac2z-\frac1{z^2}+\frac2{z-1}}$$
+:::
 
 ### c) $\dfrac{t^2+8}{t^2-5t+6}$
 
-1. Como o grau do numerador é igual ao do denominador, primeiro dividimos:
+**1. Verifique os graus.** Numerador e denominador têm grau $2$. A fração é imprópria, então a divisão polinomial vem antes das frações parciais.
 
-   $$
-   t^2+8 = 1\cdot (t^2-5t+6) + (5t+2)
-   $$
+**2. Faça a divisão.** Subtraindo uma vez o denominador do numerador:
+$$
+t^2+8=(t^2-5t+6)+(5t+2).
+$$
+Logo,
+$$
+\frac{t^2+8}{t^2-5t+6}
+=1+\frac{5t+2}{t^2-5t+6}.
+$$
 
-   Então:
+**3. Fatore o denominador.** Procuramos dois números cuja soma seja $-5$ e cujo produto seja $6$: $-2$ e $-3$. Assim,
+$$t^2-5t+6=(t-2)(t-3).$$
 
-   $$
-   \frac{t^2+8}{t^2-5t+6} = 1 + \frac{5t+2}{(t-2)(t-3)}
-   $$
+**4. Monte a decomposição do resto.**
+$$
+\frac{5t+2}{(t-2)(t-3)}
+=\frac A{t-2}+\frac B{t-3}.
+$$
+Multiplicando:
+$$5t+2=A(t-3)+B(t-2).$$
 
-2. Agora decompomos o resto:
+**5. Calcule as constantes.** Para $t=2$:
+$$12=A(-1)\implies A=-12.$$
+Para $t=3$:
+$$17=B(1)\implies B=17.$$
 
-   $$
-   \frac{5t+2}{(t-2)(t-3)}=\frac{A}{t-2}+\frac{B}{t-3}
-   $$
+**6. Confira.** $-12(t-3)+17(t-2)=(-12t+36)+(17t-34)=5t+2$.
 
-   $$
-   5t+2 = A(t-3)+B(t-2)
-   $$
-
-3. Resolvendo:
-
-   $$
-   A=13,\quad B=-8
-   $$
-
-   Portanto:
-
-   $$
-   \frac{t^2+8}{t^2-5t+6}=1+\frac{13}{t-2}-\frac{8}{t-3}
-   $$
+:::result
+$$\boxed{\frac{t^2+8}{t^2-5t+6}=1-\frac{12}{t-2}+\frac{17}{t-3}}$$
+:::
 
 ## Calcule a integral.
 
 ### $\displaystyle \int \frac{dx}{1-x^2}$
 
-1. Fatoramos o denominador:
+**1. Fatore a diferença de quadrados.**
+$$1-x^2=(1-x)(1+x).$$
+A decomposição é
+$$\frac1{1-x^2}=\frac A{1-x}+\frac B{1+x}.$$
 
-   $$
-   1-x^2=(1-x)(1+x)
-   $$
+**2. Elimine os denominadores.**
+$$1=A(1+x)+B(1-x).$$
+Para $x=1$, temos $1=2A$, então $A=1/2$. Para $x=-1$, temos $1=2B$, então $B=1/2$.
 
-   Então:
-
-   $$
-   \frac{1}{1-x^2} = \frac{A}{1-x} + \frac{B}{1+x}
-   $$
-
-2. Multiplicando:
-
-   $$
-   1=A(1+x)+B(1-x)
-   $$
-
-   Escolhendo $x=1$ e $x=-1$:
-
-   $$
-   A=\frac12,\quad B=\frac12
-   $$
-
-3. $$
-   \int \frac{dx}{1-x^2} = \frac12\int \left(\frac{1}{1-x}+\frac{1}{1+x}\right)dx
-   $$
-
-   $$
-   = -\frac12\ln|1-x| + \frac12\ln|1+x| + C
-   $$
-
-   $$
-   = \frac12\ln\left|\frac{1+x}{1-x}\right| + C
-   $$
+**3. Integre cada parcela.** Atenção: a derivada de $1-x$ é $-1$:
+$$
+\begin{aligned}
+\int\frac{dx}{1-x^2}
+&=\frac12\int\frac{dx}{1-x}+\frac12\int\frac{dx}{1+x}\\
+&=-\frac12\ln|1-x|+\frac12\ln|1+x|+C.
+\end{aligned}
+$$
 
 :::result
-$\displaystyle \int \frac{dx}{1-x^2} = \frac12\ln\left|\frac{1+x}{1-x}\right| + C$
+$$\boxed{\frac12\ln\left|\frac{1+x}{1-x}\right|+C}$$
 :::
 
 ## Calcule a integral.
 
-### $\displaystyle \int \frac{x^2+2x+2}{x^3-x^2+x-x} \, dx$
+### $\displaystyle \int \frac{x^2+2x+2}{x^3-x^2+x-x}\,dx$
 
-1. Primeiro simplificamos o denominador:
+**1. Simplifique o denominador com cuidado.**
+$$x^3-x^2+x-x=x^3-x^2=x^2(x-1).$$
+A integral fica
+$$\int\frac{x^2+2x+2}{x^2(x-1)}dx.$$
 
-   $$
-   x^3-x^2+x-x = x^3-x^2 = x^2(x-1)
-   $$
+**2. Monte a decomposição, incluindo o fator repetido.**
+$$
+\frac{x^2+2x+2}{x^2(x-1)}
+=\frac A x+\frac B{x^2}+\frac C{x-1}.
+$$
+Multiplicando por $x^2(x-1)$:
+$$x^2+2x+2=Ax(x-1)+B(x-1)+Cx^2.$$
 
-   Assim, a integral é
+**3. Determine os coeficientes.** Para $x=0$:
+$$2=-B\implies B=-2.$$
+Para $x=1$:
+$$1+2+2=C\implies C=5.$$
+Para obter $A$, use $x=-1$:
+$$1-2+2=2A+(-2)(-2)+5.$$
+Assim, $1=2A+4+5$, portanto $2A=-8$ e $A=-4$.
 
-   $$
-   \int \frac{x^2+2x+2}{x^2(x-1)}dx
-   $$
+**4. Confira a identidade.**
+$$
+-4x(x-1)-2(x-1)+5x^2
+=-4x^2+4x-2x+2+5x^2
+=x^2+2x+2.
+$$
 
-2. Decompomos em frações parciais:
-
-   $$
-   \frac{x^2+2x+2}{x^2(x-1)} = \frac{A}{x} + \frac{B}{x^2} + \frac{C}{x-1}
-   $$
-
-   $$
-   x^2+2x+2 = A x(x-1)+B(x-1)+Cx^2
-   $$
-
-3. Usando $x=0$:
-
-   $$
-   2=-B\Rightarrow B=-2
-   $$
-
-   Usando $x=1$:
-
-   $$
-   5=C
-   $$
-
-   Usando $x=-1$:
-
-   $$
-   1 = A(-1)(-2)-2(-2)+5\Rightarrow 1=2A+4+5 \Rightarrow A=-4
-   $$
-
-   Logo:
-
-   $$
-   \frac{x^2+2x+2}{x^2(x-1)} = -\frac{4}{x} - \frac{2}{x^2} + \frac{5}{x-1}
-   $$
-
-4. $$
-   \int \left(-\frac{4}{x} - \frac{2}{x^2} + \frac{5}{x-1}\right)dx = -4\ln|x| + \frac{2}{x} + 5\ln|x-1| + C
-   $$
+**5. Integre termo a termo.**
+$$
+\begin{aligned}
+\int\left(-\frac4x-\frac2{x^2}+\frac5{x-1}\right)dx
+&=-4\ln|x|-2\int x^{-2}dx+5\ln|x-1|+C\\
+&=-4\ln|x|+\frac2x+5\ln|x-1|+C.
+\end{aligned}
+$$
+Na segunda parcela, $\int x^{-2}dx=-x^{-1}$; por isso, $-2\int x^{-2}dx=2/x$.
 
 :::result
-$\displaystyle \int \frac{x^2+2x+2}{x^2(x-1)}dx = -4\ln|x| + \frac{2}{x} + 5\ln|x-1| + C$
+$$\boxed{-4\ln|x|+\frac2x+5\ln|x-1|+C}$$
 :::
