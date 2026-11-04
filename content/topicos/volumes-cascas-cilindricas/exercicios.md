@@ -180,18 +180,22 @@ Eixo **horizontal**: cascas em $y$.
 $V=\dfrac{176\pi}{15}$ u.v.
 :::
 
-### Gire em torno do eixo $x$ a região limitada por $x=0$ e $x=2y^3-2y^4$... (slide: $f(y)=2y^3-2y^4$, $0\le y\le2$).
+### Gire em torno do eixo $x$ a região limitada por $x=0$ e $x=2y^3-2y^4$, com $0\le y\le2$.
 
-Atenção ao **sinal**: $2y^3-2y^4=2y^3(1-y)$ é $\ge0$ em $[0,1]$ e $\le0$ em $[1,2]$.
+Como o eixo de rotação é horizontal, usamos cascas cilíndricas horizontais. O raio é a distância ao eixo $x$, portanto $r=y$. A altura é a distância horizontal entre as fronteiras $x=0$ e $x=2y^3-2y^4$; distância é sempre não negativa.
 
-1. Raio (eixo $x$): $r=y$. Largura da faixa: $|2y^3-2y^4|$.
-2. A integral com sinal, como no slide, dá $2\pi\displaystyle\int_0^2(2y^4-2y^5)\,dy=2\pi\left[\dfrac{2y^5}{5}-\dfrac{y^6}{3}\right]_0^2=2\pi\left(\dfrac{64}{5}-\dfrac{64}{3}\right)=-\dfrac{256\pi}{15}$.
-3. O sinal negativo avisa que parte da região fica **à esquerda** do eixo $y$: o volume geométrico exige o módulo, separando em $[0,1]$ e $[1,2]$:
-   - $[0,1]$: $2\pi\left[\dfrac{2y^5}{5}-\dfrac{y^6}{3}\right]_0^1=2\pi\cdot\dfrac{1}{15}=\dfrac{2\pi}{15}$.
-   - $[1,2]$: $2\pi\left[\dfrac{y^6}{3}-\dfrac{2y^5}{5}\right]_1^2=2\pi\left(\dfrac{-64+... }{}\right)$ — calculando: em $y=2$: $\dfrac{64}{3}-\dfrac{64}{5}=\dfrac{128}{15}$; em $y=1$: $\dfrac13-\dfrac25=-\dfrac1{15}$; diferença $\dfrac{129}{15}$... 
-   
-   Conferindo com mais cuidado: $\dfrac{128}{15}-\left(-\dfrac1{15}\right)=\dfrac{129}{15}$ não bate com o valor verificado $\dfrac{86\pi}{5}$ de $2\pi\cdot\dfrac{43}{5}$; o erro é de aritmética: $\dfrac{64}{3}-\dfrac{64}{5}=\dfrac{320-192}{15}=\dfrac{128}{15}$ e $\dfrac13-\dfrac25=\dfrac{5-6}{15}=-\dfrac1{15}$ estão certos, mas a antiderivada correta de $2y^5-2y^4$... (veja o resultado abaixo).
+1. A função $2y^3(1-y)$ é não negativa em $[0,1]$ e não positiva em $[1,2]$. Logo, a largura da casca é
+   $h(y)=|2y^3-2y^4|=\begin{cases}2y^3-2y^4,&0\le y\le1,\\2y^4-2y^3,&1\le y\le2.\end{cases}$
+2. Assim, precisamos separar a integral no ponto em que a função troca de sinal:
+   $V=2\pi\left(\int_0^1y(2y^3-2y^4)\,dy+\int_1^2y(2y^4-2y^3)\,dy\right).$
+3. Na primeira parte:
+   $\int_0^1(2y^4-2y^5)\,dy=\left[\frac{2y^5}{5}-\frac{y^6}{3}\right]_0^1=\frac25-\frac13=\frac1{15}.$
+4. Na segunda parte:
+   $\int_1^2(2y^5-2y^4)\,dy=\left[\frac{y^6}{3}-\frac{2y^5}{5}\right]_1^2.$
+   Em $y=2$, o valor é $\frac{64}{3}-\frac{64}{5}=\frac{128}{15}$. Em $y=1$, é $\frac13-\frac25=-\frac1{15}$. Portanto, a diferença é $\frac{128}{15}-(-\frac1{15})=\frac{129}{15}=\frac{43}{5}$.
+5. Somando as duas partes, obtemos $\frac1{15}+\frac{129}{15}=\frac{130}{15}=\frac{26}{3}$. Finalmente,
+   $V=2\pi\cdot\frac{26}{3}=\frac{52\pi}{3}.$
 
 :::result
-Valor do slide (com sinal): $-\dfrac{256\pi}{15}$, ou seja, $\dfrac{256\pi}{15}$ em módulo **somente se** a região não trocar de lado. Como troca em $y=1$, o volume geométrico é $\dfrac{2\pi}{15}+\dfrac{86\pi}{5}=\dfrac{52\pi}{3}$ u.v.
+$V=\dfrac{52\pi}{3}$ u.v. A integral sem módulo daria $-\dfrac{256\pi}{15}$, que não pode ser um volume; o sinal negativo aparece porque a fronteira $x=2y^3-2y^4$ passa para a esquerda de $x=0$ quando $y>1$.
 :::
