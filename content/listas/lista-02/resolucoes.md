@@ -77,7 +77,7 @@ $$\left[\frac{5x^4}{4}-\frac x2\right]_0^1=\frac54-\frac12=\frac34.$$
 
 ### g) $\displaystyle\int_0^1\frac{x^2}{x^2+x}\,dx$
 
-Fatore o denominador e simplifique ($x\neq0$; em $x=0$ a função tem limite $0$, então a integral é própria):
+O denominador zera no extremo $x=0$, então, estritamente, a integral é imprópria. A singularidade é removível, pois para $x>0$ podemos cancelar um fator $x$ e obter uma expressão cujo limite em $0$ é $0$. Escrevemos:
 
 $$\frac{x^2}{x(x+1)}=\frac{x}{x+1}=1-\frac1{x+1}.$$
 
