@@ -236,6 +236,207 @@ F(x) = (x³/2)sen2x + (3x²/4)cos2x − (3x/4)sen2x − (3/8)cos2x. Em x=π/2 (s
 :::
 ::::
 
+### Complemento — resoluções completas dos demais itens da questão 1
+
+Os exemplos anteriores mostram as técnicas principais. Aqui estão as contas que faltavam, mantendo a numeração da lista original.
+
+::::example{n="1b"}
+#### 1b) $\int\theta\cos(\pi\theta)\,d\theta$
+
+1. Escolha $u=\theta$ e $dv=\cos(\pi\theta)d\theta$. Então $du=d\theta$.
+2. Para integrar $dv$, use $v=\frac1\pi\sin(\pi\theta)$, pois $\frac{d}{d\theta}\sin(\pi\theta)=\pi\cos(\pi\theta)$.
+3. Por partes:
+   $\int\theta\cos(\pi\theta)d\theta=\frac{\theta\sin(\pi\theta)}\pi-\frac1\pi\int\sin(\pi\theta)d\theta.$
+4. Como $\int\sin(\pi\theta)d\theta=-\frac1\pi\cos(\pi\theta)$, obtemos:
+
+:::result
+$\displaystyle\int\theta\cos(\pi\theta)d\theta=\frac{\theta\sin(\pi\theta)}\pi+\frac{\cos(\pi\theta)}{\pi^2}+C.$
+:::
+::::
+::::example{n="1d"}
+#### 1d) $\int x^3\ln x\,dx$
+
+1. Pela regra LIATE, escolha $u=\ln x$ e $dv=x^3dx$.
+2. Então $du=\frac{dx}{x}$ e $v=\frac{x^4}{4}$.
+3. Aplicando partes:
+   $\int x^3\ln x\,dx=\frac{x^4}{4}\ln x-\frac14\int x^3dx.$
+4. A integral restante é $\frac{x^4}{4}$:
+
+:::result
+$\displaystyle\int x^3\ln x\,dx=\frac{x^4}{4}\ln x-\frac{x^4}{16}+C.$
+:::
+::::
+::::example{n="1f"}
+#### 1f) $\int xe^{3x}\,dx$
+
+1. Escolha $u=x$, $dv=e^{3x}dx$. Logo $du=dx$ e $v=\frac13e^{3x}$.
+2. Por partes:
+   $\int xe^{3x}dx=\frac{x e^{3x}}3-\frac13\int e^{3x}dx.$
+3. Como $\int e^{3x}dx=\frac13e^{3x}$:
+
+:::result
+$\displaystyle\int xe^{3x}dx=\frac{e^{3x}(3x-1)}9+C.$
+:::
+::::
+::::example{n="1g"}
+#### 1g) $\int x^2e^{-x}\,dx$
+
+1. Primeira aplicação: $u=x^2$, $dv=e^{-x}dx$. Assim, $du=2x dx$ e $v=-e^{-x}$.
+2. Portanto,
+   $I=-x^2e^{-x}+2\int xe^{-x}dx.$
+3. Na integral restante, use partes novamente: $u=x$, $dv=e^{-x}dx$, de modo que $v=-e^{-x}$:
+   $\int xe^{-x}dx=-xe^{-x}-e^{-x}.$
+4. Substituindo:
+   $I=-x^2e^{-x}-2xe^{-x}-2e^{-x}.$
+
+:::result
+$\displaystyle\int x^2e^{-x}dx=-e^{-x}(x^2+2x+2)+C.$
+:::
+::::
+::::example{n="1h"}
+#### 1h) $\int(x^2-2x+1)e^{2x}\,dx$
+
+1. Como o fator polinomial diminui de grau ao derivar, use integração por partes repetida (ou tabular). Procuramos uma primitiva na forma $e^{2x}P(x)$, em que $P$ é quadrático.
+2. Pela regra do produto, $(e^{2x}P)'=e^{2x}(2P+P')$. Queremos $2P+P'=x^2-2x+1$.
+3. Escreva $P=ax^2+bx+c$. Então $2P+P'=2ax^2+(2b+2a)x+(2c+b)$.
+4. Igualando coeficientes: $2a=1$, $2b+2a=-2$ e $2c+b=1$. Daí $a=\frac12$, $b=-\frac32$ e $c=\frac54$.
+
+:::result
+$\displaystyle\int(x^2-2x+1)e^{2x}dx=e^{2x}\left(\frac{x^2}{2}-\frac{3x}{2}+\frac54\right)+C.$
+:::
+::::
+::::example{n="1j"}
+#### 1j) $\int x\sec^2x\,dx$
+
+1. Escolha $u=x$ e $dv=\sec^2x dx$. Então $du=dx$ e $v=\tan x$.
+2. Por partes:
+   $\int x\sec^2x dx=x\tan x-\int\tan x dx.$
+3. Como $\int\tan x dx=-\ln|\cos x|$:
+
+:::result
+$\displaystyle\int x\sec^2x dx=x\tan x+\ln|\cos x|+C.$
+:::
+::::
+::::example{n="1k"}
+#### 1k) $\int x^3e^3\,dx$
+
+1. O fator $e^3$ não depende de $x$: é uma constante, não uma exponencial variável.
+2. Coloque-o para fora da integral e aplique a regra da potência:
+   $e^3\int x^3dx=e^3\frac{x^4}{4}.$
+
+:::result
+$\displaystyle\int x^3e^3dx=\frac{e^3x^4}{4}+C.$
+:::
+::::
+::::example{n="1l"}
+#### 1l) $\int4x\sec^2(2x)\,dx$
+
+1. Escolha $u=x$ e $dv=4\sec^2(2x)dx$. Como $\frac{d}{dx}\tan(2x)=2\sec^2(2x)$, temos $v=2\tan(2x)$.
+2. Por partes:
+   $I=2x\tan(2x)-2\int\tan(2x)dx.$
+3. Como $\int\tan(2x)dx=-\frac12\ln|\cos(2x)|$, segue que $-2$ vezes essa integral é $+\ln|\cos(2x)|$.
+
+:::result
+$\displaystyle\int4x\sec^2(2x)dx=2x\tan(2x)+\ln|\cos(2x)|+C.$
+:::
+::::
+::::example{n="1m"}
+#### 1m) $\int p^4e^{-p}\,dp$
+
+1. Aplique partes repetidamente, escolhendo em cada rodada o polinômio como $u$ e $e^{-p}dp$ como $dv$. Cada derivação reduz o grau de $p$ e cada integração mantém o fator $-e^{-p}$.
+2. As rodadas produzem:
+   $I=-p^4e^{-p}+4\int p^3e^{-p}dp,$
+   $=-p^4e^{-p}-4p^3e^{-p}+12\int p^2e^{-p}dp,$
+   $=-p^4e^{-p}-4p^3e^{-p}-12p^2e^{-p}+24\int pe^{-p}dp.$
+3. A última integral é $\int pe^{-p}dp=-pe^{-p}-e^{-p}$.
+
+:::result
+$\displaystyle\int p^4e^{-p}dp=-e^{-p}(p^4+4p^3+12p^2+24p+24)+C.$
+:::
+::::
+::::example{n="1n"}
+#### 1n) $\int(x^2-5x)e^x\,dx$
+
+1. Procure uma primitiva da forma $e^xP(x)$, com $P(x)=ax^2+bx+c$.
+2. Pela regra do produto, $(e^xP)'=e^x(P+P')$. Precisamos de $P+P'=x^2-5x$.
+3. Como $P+P'=ax^2+(2a+b)x+(b+c)$, igualamos coeficientes: $a=1$, $2a+b=-5$ e $b+c=0$.
+4. Logo $a=1$, $b=-7$ e $c=7$.
+
+:::result
+$\displaystyle\int(x^2-5x)e^x dx=e^x(x^2-7x+7)+C.$
+:::
+::::
+::::example{n="1o"}
+#### 1o) $\int x^5e^x\,dx$
+
+1. Use partes tabulares: derivadas de $x^5$ são $x^5,5x^4,20x^3,60x^2,120x,120,0$; integrais sucessivas de $e^x$ continuam iguais a $e^x$.
+2. Multiplique em diagonais alternando os sinais:
+   $I=e^x(x^5-5x^4+20x^3-60x^2+120x-120).$
+
+:::result
+$\displaystyle\int x^5e^x dx=e^x(x^5-5x^4+20x^3-60x^2+120x-120)+C.$
+:::
+::::
+::::example{n="1p"}
+#### 1p) $\int t^2e^{4t}\,dt$
+
+1. Primeira rodada: $u=t^2$, $dv=e^{4t}dt$, então $du=2t dt$ e $v=\frac14e^{4t}$.
+   $I=\frac{t^2e^{4t}}4-\frac12\int te^{4t}dt.$
+2. Na integral restante, use $u=t$, $dv=e^{4t}dt$: 
+   $\int te^{4t}dt=\frac{te^{4t}}4-\frac1{16}e^{4t}.$
+3. Substituindo na primeira expressão e simplificando:
+
+:::result
+$\displaystyle\int t^2e^{4t}dt=e^{4t}\left(\frac{t^2}{4}-\frac{t}{8}+\frac1{32}\right)+C.$
+:::
+::::
+::::example{n="1r"}
+#### 1r) $\int e^{-y}\cos y\,dy$
+
+1. Seja $I=\int e^{-y}\cos y\,dy$. Faça partes com $u=\cos y$ e $dv=e^{-y}dy$: $v=-e^{-y}$.
+   $I=-e^{-y}\cos y-\int e^{-y}\sin y\,dy.$
+2. Chame $J=\int e^{-y}\sin y\,dy$. Por partes, $u=\sin y$, $dv=e^{-y}dy$:
+   $J=-e^{-y}\sin y+I.$
+3. Substitua $J$ na primeira igualdade: $I=-e^{-y}\cos y+e^{-y}\sin y-I$. Portanto $2I=e^{-y}(\sin y-\cos y)$.
+
+:::result
+$\displaystyle\int e^{-y}\cos y\,dy=\frac{e^{-y}}2(\sin y-\cos y)+C.$
+:::
+::::
+::::example{n="1t"}
+#### 1t) $\int e^{-2x}\sin(2x)\,dx$
+
+Use a fórmula cíclica, que pode ser obtida aplicando partes duas vezes:
+$\int e^{ax}\sin(bx)dx=\frac{e^{ax}}{a^2+b^2}(a\sin bx-b\cos bx)+C.$
+Com $a=-2$ e $b=2$, temos $a^2+b^2=8$.
+
+:::result
+$\displaystyle\int e^{-2x}\sin(2x)dx=-\frac{e^{-2x}}4(\sin2x+\cos2x)+C.$
+:::
+::::
+::::example{n="1u"}
+#### 1u) $\int\frac{\cos(\sqrt{x})}{\sqrt{x}}\,dx$
+
+1. Substitua $t=\sqrt{x}$, de modo que $x=t^2$ e $dx=2t dt$.
+2. Como $\sqrt{x}=t$, os fatores $t$ se cancelam:
+   $\int\frac{\cos t}{t}\,2t dt=2\int\cos t dt.$
+
+:::result
+$\displaystyle\int\frac{\cos(\sqrt{x})}{\sqrt{x}}dx=2\sin(\sqrt{x})+C.$
+:::
+::::
+::::example{n="1x"}
+#### 1x) $\int\frac{e^{\sqrt{x}}}{\sqrt{x}}\,dx$
+
+1. Faça $t=\sqrt{x}$, então $x=t^2$ e $dx=2t dt$.
+2. Substituindo:
+   $\int\frac{e^t}{t}\,2t dt=2\int e^t dt.$
+
+:::result
+$\displaystyle\int\frac{e^{\sqrt{x}}}{\sqrt{x}}dx=2e^{\sqrt{x}}+C.$
+:::
+::::
+
 ### Aplicações (área e volume) com integração por partes
 
 ::::example{n="2a"}
