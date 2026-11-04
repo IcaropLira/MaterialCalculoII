@@ -921,6 +921,49 @@ Superfície infinita, mas volume finito = π (o "paradoxo": a lata teria volume 
 :::
 ::::
 
+### 17p) $\displaystyle\int_{-1}^{\infty}\frac{d\theta}{\theta^2+5\theta+6}$
+
+**1. Verifique primeiro onde o integrando não está definido.** Fatorando o denominador,
+
+$\theta^2+5\theta+6=(\theta+2)(\theta+3).$
+
+As singularidades são $\theta=-2$ e $\theta=-3$. Nenhuma pertence ao intervalo $[-1,\infty)$; portanto, não há descontinuidade dentro do intervalo nem no extremo finito. A única impropriedade vem do limite superior infinito.
+
+**2. Decomponha em frações parciais.** Procuramos constantes $A$ e $B$ tais que
+
+$\frac1{(\theta+2)(\theta+3)}=\frac A{\theta+2}+\frac B{\theta+3}.$
+
+Multiplicando pelo denominador comum,
+
+$1=A(\theta+3)+B(\theta+2).$
+
+Com $\theta=-2$, obtemos $1=A$, logo $A=1$. Com $\theta=-3$, obtemos $1=-B$, logo $B=-1$. Assim,
+
+$\frac1{(\theta+2)(\theta+3)}=\frac1{\theta+2}-\frac1{\theta+3}.$
+
+**3. Transforme a integral em limite.** Para $b>-1$,
+
+$\int_{-1}^{b}\left(\frac1{\theta+2}-\frac1{\theta+3}\right)d\theta
+=\left[\ln|\theta+2|-\ln|\theta+3|\right]_{-1}^{b}.$
+
+Juntando os logaritmos e substituindo os extremos,
+
+$=\ln\left|\frac{b+2}{b+3}\right|-\ln\left|\frac12\right|.$
+
+**4. Calcule o limite.** Dividindo numerador e denominador da fração por $b$,
+
+$\lim_{b\to\infty}\frac{b+2}{b+3}=1.$
+
+Pela continuidade do logaritmo em $1$,
+
+$\lim_{b\to\infty}\ln\left(\frac{b+2}{b+3}\right)=\ln1=0.$
+
+Portanto, o valor da integral é $0-\ln(1/2)=\ln2$.
+
+:::result{kind="converge"}
+**Resposta:** a integral converge e vale $\boxed{\ln2}$. As raízes $-2$ e $-3$ do denominador não causam impropriedade, pois estão fora do intervalo de integração.
+:::
+
 ### Guia rápido — demais itens das questões 17 e 18
 
 | Item | Situação | Resultado / técnica |
@@ -935,7 +978,7 @@ Superfície infinita, mas volume finito = π (o "paradoxo": a lata teria volume 
 | 17j) ∫₋∞⁰ θe<sup>θ</sup>dθ | Limite infinito | por partes; converge, valor −1 |
 | 17l) ∫₋∞^∞ 2xe⁻ˣ²dx | Ambos limites infinitos | u=x²; função ímpar → valor 0 |
 | 17m,n) ∫₀¹ x ln x dx, ∫₀¹−ln x dx | Descontínua em x=0 | por partes + limite; ambas convergem (−1/4 e 1) |
-| 17p) ∫₋₁^∞ dθ/(θ²+5θ+6) | Descontínua em θ=−2 e θ=−3 (checar se estão no intervalo) + limite infinito | frações parciais: (θ+2)(θ+3) |
+| 17p) ∫₋₁^∞ dθ/(θ²+5θ+6) | Somente limite superior infinito; −2 e −3 ficam fora de [−1,∞) | Frações parciais: 1/(θ+2) − 1/(θ+3); converge e vale ln 2 |
 | 18b) ∫₀^(π/2) cotgθ dθ | Descontínua em θ=0 | diverge (análogo ao 18a) |
 | 18c,d) sin/cos perto de singularidade em potência 1/3 | Comparação no limite | comparar com 1/√(π−θ) etc. — convergem (potência &lt;1) |
 | 18e,f) x⁻²e⁻¹ᐟˣ, e⁻√x/√x perto de 0 | Comparação/substituição | convergem (a exponencial domina/decai) |
