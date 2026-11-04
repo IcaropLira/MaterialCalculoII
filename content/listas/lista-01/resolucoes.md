@@ -964,6 +964,337 @@ Portanto, o valor da integral é $0-\ln(1/2)=\ln2$.
 **Resposta:** a integral converge e vale $\boxed{\ln2}$. As raízes $-2$ e $-3$ do denominador não causam impropriedade, pois estão fora do intervalo de integração.
 :::
 
+### 18b) $\displaystyle\int_0^{\pi/2}\cot\theta\,d\theta$
+
+**1. Localize a singularidade.** Como $\cot\theta=\frac{\cos\theta}{\sin\theta}$ e $\sin0=0$, o integrando não está definido no extremo $\theta=0$. A integral é imprópria:
+
+$I=\lim_{a\to0^+}\int_a^{\pi/2}\cot\theta\,d\theta.$
+
+**2. Integre e calcule o limite.** Como $\frac{d}{d\theta}\ln(\sin\theta)=\cot\theta$ para $0<\theta\le\pi/2$,
+
+$I=\lim_{a\to0^+}\left[\ln(\sin\theta)\right]_a^{\pi/2}
+=\lim_{a\to0^+}\bigl(0-\ln(\sin a)\bigr)=+\infty.$
+
+:::result{kind="diverge"}
+**Resposta:** diverge. O comportamento é o de $1/\theta$ perto de zero.
+:::
+
+### 18c) $\displaystyle\int_0^\pi\frac{\sin\theta}{\sqrt{\pi-\theta}}\,d\theta$
+
+**1. Localize o possível problema.** O denominador zera em $\theta=\pi$. A integral é imprópria nesse extremo:
+
+$I=\lim_{b\to\pi^-}\int_0^b\frac{\sin\theta}{\sqrt{\pi-\theta}}\,d\theta.$
+
+**2. Compare perto de $\pi$.** Para $0\le\theta\le\pi$, temos $\sin\theta=\sin(\pi-\theta)\le\pi-\theta$. Portanto,
+
+$0\le\frac{\sin\theta}{\sqrt{\pi-\theta}}
+\le\frac{\pi-\theta}{\sqrt{\pi-\theta}}
+=\sqrt{\pi-\theta}.$
+
+**3. Verifique a integral de comparação.**
+
+$\int_0^\pi\sqrt{\pi-\theta}\,d\theta
+=\int_0^\pi u^{1/2}\,du
+=\frac23\pi^{3/2}<\infty,$
+
+onde usamos $u=\pi-\theta$. Pelo teste da comparação, a integral original converge.
+
+:::result{kind="converge"}
+**Resposta:** converge. A singularidade é integrável porque o integrando é limitado por uma constante vezes $(\pi-\theta)^{1/2}$ perto de $\pi$.
+:::
+
+### 18d) $\displaystyle\int_{-\pi/2}^{\pi/2}\frac{\cos\theta}{(\pi-2\theta)^{1/3}}\,d\theta$
+
+**1. Localize a singularidade.** O denominador zera quando $\pi-2\theta=0$, isto é, em $\theta=\pi/2$, extremo superior do intervalo.
+
+**2. Faça uma substituição que mostre o comportamento no extremo.** Tome $u=\pi-2\theta$. Então $\theta=(\pi-u)/2$, $d\theta=-du/2$ e
+
+$\cos\theta=\cos\left(\frac\pi2-\frac u2\right)=\sin\frac u2.$
+
+Assim,
+
+$I=\frac12\int_0^{2\pi}
+\frac{\sin(u/2)}{u^{1/3}}\,du.$
+
+**3. Compare perto de zero.** Como $0\le\sin(u/2)\le u/2$ para $u\ge0$,
+
+$0\le\frac12\frac{\sin(u/2)}{u^{1/3}}
+\le\frac14u^{2/3}.$
+
+E $\int_0^1u^{2/3}du$ converge. No restante do intervalo, o integrando é contínuo. Logo, a integral toda converge.
+
+:::result{kind="converge"}
+**Resposta:** converge. A singularidade é mais fraca que $u^{-1/3}$; após usar o zero de $\sin(u/2)$, o integrando fica limitado por $u^{2/3}$.
+:::
+
+### 18e) $\displaystyle\int_0^{\ln2}x^{-2}e^{-1/x}\,dx$
+
+**1. Identifique a singularidade.** O fator $x^{-2}$ não está definido em $x=0$, então
+
+$I=\lim_{a\to0^+}\int_a^{\ln2}\frac{e^{-1/x}}{x^2}\,dx.$
+
+**2. Use a substituição sugerida pelo expoente.** Tome $u=1/x$. Então $du=-x^{-2}dx$, isto é, $x^{-2}dx=-du$. Os limites mudam: $x=a$ dá $u=1/a$; $x=\ln2$ dá $u=1/\ln2$.
+
+$I=\lim_{a\to0^+}\int_{1/\ln2}^{1/a}e^{-u}\,du.$
+
+**3. Calcule a primitiva e o limite.**
+
+$I=\lim_{a\to0^+}\left[-e^{-u}\right]_{1/\ln2}^{1/a}
+=\lim_{a\to0^+}\left(e^{-1/\ln2}-e^{-1/a}\right)
+=e^{-1/\ln2}.$
+
+Como $e^{-1/a}\to0$, o limite é finito.
+
+:::result{kind="converge"}
+**Resposta:** converge e seu valor é $\boxed{e^{-1/\ln2}}$.
+:::
+
+### 18f) $\displaystyle\int_0^1\frac{e^{-\sqrt{x}}}{\sqrt{x}}\,dx$
+
+**1. Identifique a singularidade.** Em $x=0$, o denominador zera. Escrevemos
+
+$I=\lim_{a\to0^+}\int_a^1\frac{e^{-\sqrt{x}}}{\sqrt{x}}\,dx.$
+
+**2. Faça $u=\sqrt{x}$.** Então $x=u^2$ e $dx=2u\,du$. O fator $u$ cancela o denominador:
+
+$\frac{e^{-\sqrt{x}}}{\sqrt{x}}dx
+=\frac{e^{-u}}u(2u\,du)=2e^{-u}\,du.$
+
+Os limites passam de $x=a$ e $x=1$ para $u=\sqrt a$ e $u=1$.
+
+**3. Calcule.**
+
+$I=\lim_{a\to0^+}2\int_{\sqrt a}^1e^{-u}\,du
+=\lim_{a\to0^+}2\left[-e^{-u}\right]_{\sqrt a}^1
+=2(1-e^{-1}).$
+
+:::result{kind="converge"}
+**Resposta:** converge e vale $\boxed{2(1-e^{-1})}$.
+:::
+
+### 18g) $\displaystyle\int_0^2\frac{dx}{1-x^2}$
+
+**1. Localize a singularidade interior.** Como $1-x^2=(1-x)(1+x)$, o denominador zera em $x=1$, que está dentro de $[0,2]$. É obrigatório separar:
+
+$I=\int_0^1\frac{dx}{1-x^2}+\int_1^2\frac{dx}{1-x^2},$
+
+entendendo cada parcela como limite lateral.
+
+**2. Basta examinar o lado esquerdo.** Uma primitiva, em intervalos que não atravessem $1$, é
+
+$F(x)=\frac12\ln\left|\frac{1+x}{1-x}\right|.$
+
+Logo,
+
+$\int_0^1\frac{dx}{1-x^2}
+=\lim_{b\to1^-}\left(F(b)-F(0)\right)
+=\lim_{b\to1^-}\frac12\ln\left(\frac{1+b}{1-b}\right)
+=+\infty.$
+
+**3. Conclusão.** Uma das integrais laterais já diverge; portanto, a integral imprópria original não pode convergir. No lado direito, o integrando é negativo e a integral tende a $-\infty$.
+
+:::result{kind="diverge"}
+**Resposta:** diverge. O ponto $x=1$ é uma singularidade interior; não se pode aplicar Newton–Leibniz diretamente de $0$ a $2$.
+:::
+
+### 18h) $\displaystyle\int_1^\infty\frac{dx}{x^3+1}$
+
+**1. A impropriedade está no infinito.** Escreva
+
+$I=\lim_{b\to\infty}\int_1^b\frac{dx}{x^3+1}.$
+
+**2. Compare com uma p-integral.** Para $x\ge1$, temos $x^3+1\ge x^3$, portanto
+
+$0<\frac1{x^3+1}\le\frac1{x^3}.$
+
+**3. A integral de comparação converge:**
+
+$\int_1^\infty\frac{dx}{x^3}
+=\lim_{b\to\infty}\left[-\frac1{2x^2}\right]_1^b
+=\frac12.$
+
+Pela comparação direta, a integral original converge.
+
+:::result{kind="converge"}
+**Resposta:** converge, pois é limitada por cima pela p-integral de expoente $p=3>1$.
+:::
+
+### 18i) $\displaystyle\int_1^\infty\frac{e^x}{x}\,dx$
+
+**1. A impropriedade está no infinito.** Para $x\ge1$, vale $e^x\ge x$ (por exemplo, $e^x\ge1+x\ge x$). Assim,
+
+$\frac{e^x}{x}\ge1.$
+
+**2. Compare com uma integral divergente.**
+
+$\int_1^\infty\frac{e^x}{x}\,dx
+\ge\int_1^\infty1\,dx=+\infty.$
+
+:::result{kind="diverge"}
+**Resposta:** diverge. O integrando é pelo menos $1$ em todo $[1,\infty)$ e, portanto, não pode gerar área finita.
+:::
+
+### 18j) $\displaystyle\int_e^\infty\ln(\ln x)\,dx$
+
+**1. Verifique o comportamento do integrando.** Para $x\ge e$, temos $\ln x\ge1$ e, portanto, $\ln(\ln x)\ge0$. Além disso, $\ln(\ln x)\to\infty$ quando $x\to\infty$.
+
+**2. Use uma comparação simples.** Como $\ln(\ln x)\to\infty$, existe $X$ tal que $\ln(\ln x)\ge1$ para todo $x\ge X$. Logo,
+
+$\int_e^\infty\ln(\ln x)\,dx
+\ge\int_X^\infty1\,dx=+\infty.$
+
+:::result{kind="diverge"}
+**Resposta:** diverge. O integrando sequer tende a zero; ele cresce sem limite.
+:::
+
+### 18k) $\displaystyle\int_1^\infty\frac{dx}{\sqrt{e^x-x}}$
+
+**1. A impropriedade está no infinito.** Para $x\ge1$, o denominador é positivo, pois $e^x>x$.
+
+**2. Obtenha uma estimativa inferior para o denominador.** A desigualdade $e^x\ge2x$ vale para $x\ge1$: é verdadeira em $x=1$ e a função $e^x-2x$ permanece crescente a partir daí. Portanto,
+
+$e^x-x\ge\frac{e^x}{2}.$
+
+Tomando raízes,
+
+$\sqrt{e^x-x}\ge\frac{e^{x/2}}{\sqrt2},$
+
+e, invertendo quantidades positivas,
+
+$0<\frac1{\sqrt{e^x-x}}\le\sqrt2e^{-x/2}.$
+
+**3. A integral de comparação converge:**
+
+$\int_1^\infty\sqrt2e^{-x/2}\,dx
+=\sqrt2\left[-2e^{-x/2}\right]_1^\infty
+=2\sqrt2e^{-1/2}<\infty.$
+
+Pela comparação direta, a integral original converge.
+
+:::result{kind="converge"}
+**Resposta:** converge, por comparação com uma exponencial decrescente.
+:::
+
+### 18l) $\displaystyle\int_{-\infty}^\infty\frac{dx}{e^x+e^{-x}}$
+
+**1. Separe os dois infinitos.** Por definição,
+
+$I=\lim_{a\to-\infty}\int_a^0\frac{dx}{e^x+e^{-x}}
++\lim_{b\to\infty}\int_0^b\frac{dx}{e^x+e^{-x}},$
+
+desde que ambos os limites existam.
+
+**2. Encontre uma primitiva.** Multiplicando numerador e denominador por $e^x$,
+
+$\frac1{e^x+e^{-x}}=\frac{e^x}{1+e^{2x}}.$
+
+Com $u=e^x$, $du=e^x dx$:
+
+$\int\frac{e^x}{1+e^{2x}}dx
+=\int\frac{du}{1+u^2}
+=\arctan u
+=\arctan(e^x)+C.$
+
+**3. Avalie os limites nos dois extremos.**
+
+$I=\lim_{a\to-\infty,\ b\to\infty}
+\left[\arctan(e^x)\right]_a^b
+=\arctan(\infty)-\arctan(0)=\frac\pi2.$
+
+Os dois limites laterais são finitos.
+
+:::result{kind="converge"}
+**Resposta:** converge e vale $\boxed{\pi/2}$.
+:::
+
+### 18m) $\displaystyle\int_2^\infty\frac{x\,dx}{\sqrt{x^4-1}}$
+
+**1. A impropriedade está no infinito.** O integrando é positivo para $x\ge2$.
+
+**2. Compare por baixo com $1/x$.** Para $x\ge2$,
+
+$\sqrt{x^4-1}\le\sqrt{x^4}=x^2.$
+
+Como os denominadores são positivos, inverter a desigualdade dá
+
+$\frac{x}{\sqrt{x^4-1}}\ge\frac{x}{x^2}=\frac1x.$
+
+**3. A integral de comparação diverge:**
+
+$\int_2^\infty\frac{dx}{x}
+=\lim_{b\to\infty}(\ln b-\ln2)=+\infty.$
+
+Pela comparação direta inferior, a integral original diverge.
+
+:::result{kind="diverge"}
+**Resposta:** diverge, por comparação com a integral harmônica contínua $\int_2^\infty dx/x$.
+:::
+
+### 18n) $\displaystyle\int_\pi^\infty\frac{2+\cos x}{x}\,dx$
+
+**1. Use o limite inferior do numerador.** Como $-1\le\cos x\le1$,
+
+$1\le2+\cos x\le3.$
+
+Para $x\ge\pi>0$,
+
+$\frac{2+\cos x}{x}\ge\frac1x.$
+
+**2. Compare com a integral logarítmica.**
+
+$\int_\pi^\infty\frac{dx}{x}
+=\lim_{b\to\infty}(\ln b-\ln\pi)=+\infty.$
+
+Pela comparação inferior, a integral original diverge.
+
+:::result{kind="diverge"}
+**Resposta:** diverge. O numerador nunca fica abaixo de $1$, então a oscilação do cosseno não elimina a divergência de $1/x$.
+:::
+
+### 18o) $\displaystyle\int_\pi^\infty\frac{1+\sin x}{x^2}\,dx$
+
+**1. Use os limites do seno.** Como $-1\le\sin x\le1$,
+
+$0\le1+\sin x\le2.$
+
+Assim, para $x\ge\pi$,
+
+$0\le\frac{1+\sin x}{x^2}\le\frac2{x^2}.$
+
+**2. A integral de comparação converge:**
+
+$\int_\pi^\infty\frac2{x^2}\,dx
+=2\lim_{b\to\infty}\left[-\frac1x\right]_\pi^b
+=\frac2\pi<\infty.$
+
+Pela comparação direta, a integral original converge.
+
+:::result{kind="converge"}
+**Resposta:** converge. O numerador é limitado e o denominador fornece uma p-integral com $p=2>1$.
+:::
+
+### 18p) $\displaystyle\int_0^\pi\frac{dt}{\sqrt{t+\sin t}}$
+
+**1. Localize a singularidade.** Em $t=0$, o denominador zera. Para $t>0$, temos $\sin t\ge0$, logo
+
+$t+\sin t\ge t.$
+
+**2. Compare com uma potência integrável.** Como ambos os lados são positivos,
+
+$0<\frac1{\sqrt{t+\sin t}}\le\frac1{\sqrt t}=t^{-1/2}.$
+
+**3. Verifique a integral de comparação.**
+
+$\int_0^\pi t^{-1/2}dt
+=\lim_{a\to0^+}\left[2\sqrt t\right]_a^\pi
+=2\sqrt\pi<\infty.$
+
+Pela comparação direta, a integral original converge.
+
+:::result{kind="converge"}
+**Resposta:** converge. A singularidade é comparável a $t^{-1/2}$, e a potência $p=1/2$ é menor que $1$ no extremo zero.
+:::
+
 ### Guia rápido — demais itens das questões 17 e 18
 
 | Item | Situação | Resultado / técnica |
@@ -980,12 +1311,12 @@ Portanto, o valor da integral é $0-\ln(1/2)=\ln2$.
 | 17m,n) ∫₀¹ x ln x dx, ∫₀¹−ln x dx | Descontínua em x=0 | por partes + limite; ambas convergem (−1/4 e 1) |
 | 17p) ∫₋₁^∞ dθ/(θ²+5θ+6) | Somente limite superior infinito; −2 e −3 ficam fora de [−1,∞) | Frações parciais: 1/(θ+2) − 1/(θ+3); converge e vale ln 2 |
 | 18b) ∫₀^(π/2) cotgθ dθ | Descontínua em θ=0 | diverge (análogo ao 18a) |
-| 18c,d) sin/cos perto de singularidade em potência 1/3 | Comparação no limite | comparar com 1/√(π−θ) etc. — convergem (potência &lt;1) |
-| 18e,f) x⁻²e⁻¹ᐟˣ, e⁻√x/√x perto de 0 | Comparação/substituição | convergem (a exponencial domina/decai) |
+| 18c,d) integrais com singularidade nos extremos | Comparação direta após substituições $u=\pi-\theta$ e $u=\pi-2\theta$ | Ambas convergem; em 18c o integrando fica limitado por $u^{1/2}$, e em 18d por $u^{2/3}$ |
+| 18e,f) $x^{-2}e^{-1/x}$ e $e^{-\sqrt{x}}/\sqrt{x}$ perto de 0 | Substituições $u=1/x$ e $u=\sqrt{x}$ | Ambas convergem; valores $e^{-1/\ln2}$ e $2(1-e^{-1})$ |
 | 18g) ∫₀² dx/(1−x²) | Descontínua em x=1 (dentro!) | diverge (comparar com 1/(1−x)) |
 | 18h) ∫₁^∞ dx/(x³+1) | Limite infinito | comparar com 1/x³ → converge |
 | 18j) ∫ₑ^∞ ln(ln x)dx | Limite infinito | ln(ln x)→∞ (devagar) ⇒ diverge |
-| 18k) ∫₁^∞ dx/√(eˣ−x) | Limite infinito | eˣ domina x ⇒ comparar com e⁻ˣ/² ⇒ converge |
+| 18k) ∫₁^∞ dx/√(eˣ−x) | Limite infinito | $e^x-x\ge e^x/2$; comparar com $\sqrt2e^{-x/2}$ ⇒ converge |
 | 18l) ∫₋∞^∞ dx/(eˣ+e⁻ˣ) | Ambos limites infinitos | = arctg(eˣ) → converge, valor π/2 |
 | 18m) ∫₂^∞ x dx/√(x⁴−1) | Limite infinito | comparar com 1/x ⇒ diverge |
 | 18n,o) \[2+cosx\]/x, \[1+senx\]/x² de π a ∞ | Comparação | n) diverge (comparar 1/x); o) converge (comparar 1/x²) |
