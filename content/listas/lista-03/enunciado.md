@@ -42,7 +42,7 @@ itemsCount: "170"
 6. $a_n=\dfrac{\ln(n)}{\sqrt{n}}$
 7. $a_n=\dfrac{n!}{n^n}$ (dica: compare com $1/n$)
 8. $a_n=\left(\dfrac{1}{n}\right)^{\frac{1}{\ln(n)}}$
-9. $a_n=\ln\left(1+\dfrac{1}{n}\right)^n$
+9. $a_n=\ln\left[\left(1+\dfrac{1}{n}\right)^n\right]$
 10. $a_n=\left(\dfrac{1}{3}\right)^n+\dfrac{1}{\sqrt{2^n}}$
 11. $a_n=\left(\dfrac{3}{n}\right)^{1/n}$
 
