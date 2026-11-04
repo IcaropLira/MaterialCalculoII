@@ -161,26 +161,31 @@ A integral converge e o valor é 1.
    \int_{-1}^{1}\frac{1}{x^2}dx = \int_{-1}^{0}\frac{1}{x^2}dx + \int_0^{1}\frac{1}{x^2}dx
    $$
 
-2. Vamos calcular uma delas como limite no ponto singular:
+2. Começamos pelo lado direito, usando um limite quando $t\to0^+$:
 
-   $$
-   \int_0^1 \frac{1}{x^2}dx = \lim_{t\to 0^+}\int_t^1 x^{-2}dx
-   $$
+   $
+   \int_0^1 \frac{1}{x^2}dx = \lim_{t\to 0^+}\int_t^1 x^{-2}dx.
+   $
 
-   Mas
+   Uma primitiva de $x^{-2}$ é $-x^{-1}$. Portanto:
 
-   $$
-   \int x^{-2}dx = -x^{-1}
-   $$
+   $
+   \lim_{t\to 0^+}\left[-\frac{1}{x}\right]_t^1
+   =\lim_{t\to 0^+}\left(-1+\frac1t\right)=+\infty.
+   $
 
-3. $$
-   \lim_{t\to 0^+}\left[-\frac{1}{x}\right]_t^1 = \lim_{t\to 0^+}\left(-1 + \frac{1}{t}\right)
-   $$
+3. Já basta esse limite infinito para concluir que a integral completa diverge. Para conferir o outro lado, aproximamos $0$ pela esquerda:
 
-   Como $1/t\to +\infty$, a integral diverge.
+   $
+   \int_{-1}^0\frac1{x^2}dx
+   =\lim_{t\to0^-}\int_{-1}^{t}x^{-2}dx
+   =\lim_{t\to0^-}\left(-\frac1t-1\right)=+\infty.
+   $
+
+   Assim, os dois lados divergem. A separação é obrigatória porque $x=0$ é uma singularidade interior; não podemos atravessá-la ao aplicar uma primitiva.
 
 :::result{kind="diverge"}
-A integral diverge, pois o integrando tem uma singularidade em 0 dentro do intervalo.
+A integral diverge: os limites laterais à esquerda e à direita de $0$ são infinitos.
 :::
 
 ## Determine a antiderivada da função abaixo.
