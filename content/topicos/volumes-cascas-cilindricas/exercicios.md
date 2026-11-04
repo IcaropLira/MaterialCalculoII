@@ -1,7 +1,7 @@
 ---
 title: "Exercícios — Volumes por cascas cilíndricas"
 eyebrow: "cálculo ii · aula 09 · lista de exercícios"
-lede: "17 exercícios graduados, todos resolvidos passo a passo: raio, altura, limites, conta e conferência. Esboce a região e marque o raio da casca antes de abrir cada resposta."
+lede: "15 exercícios graduados, todos resolvidos passo a passo: raio, altura, limites, conta e conferência. Esboce a região e marque o raio da casca antes de abrir cada resposta."
 kind: "exercicios"
 ---
 
