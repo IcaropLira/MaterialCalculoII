@@ -458,28 +458,198 @@ V = 2π(1 − ln2)
 :::
 ::::
 
-### Guia rápido — demais itens da questão 1
+### Questão 1 — complementos com desenvolvimento completo
 
-| Item | Técnica | Montagem (u, dv) |
-| --- | --- | --- |
-| b) θcos(πθ) | Partes simples | u=θ, dv=cos(πθ)dθ |
-| d) x³ln x | Partes simples (log manda) | u=ln x, dv=x³dx |
-| f) xe³ˣ | Partes simples | u=x, dv=e³ˣdx |
-| g) x²e⁻ˣ | Tabular (2 rodadas) | u=x², dv=e⁻ˣdx |
-| h) (x²−2x+1)e²ˣ | Tabular (2 rodadas) | u=x²−2x+1 |
-| j) x·sec²x | Partes simples | u=x, dv=sec²x dx (v=tg x) |
-| l) 4x·sec²(2x) | Partes simples | u=x, dv=sec²(2x)dx (v=½tg2x) |
-| k) x³e³ | Pegadinha! e³ é **constante** | ∫x³e³dx = e³·x⁴/4 + C (regra da potência) |
-| m) p⁴e⁻ᵖ | Tabular (4 rodadas) | u=p⁴ |
-| n) (x²−5x)eˣ | Tabular (2 rodadas) | u=x²−5x |
-| o) x⁵eˣ | Tabular (5 rodadas) | u=x⁵ — mecânico, só repetir |
-| p) t²e⁴ᵗ | Tabular (2 rodadas) | u=t² |
-| r) e⁻ʸcos y | Cíclico | igual ao 1q |
-| t) e⁻²ˣsen(2x) | Cíclico / fórmula direta | a=−2, b=2 na fórmula da tabela |
-| 2b, 2c) área de x sen x noutros intervalos | Mesma antiderivada de 1a/2a | cuidado com o sinal de x sen x em cada intervalo |
-| 3a,b,c) área de x cos x | Partes: u=x, dv=cos x dx | ∫x cos x dx = cos x + x sen x |
-| 5) y=e⁻ˣ girada em x=1 (a: eixo y / b: x=1) | Discos/cascas + partes | ∫x e⁻ˣdx aparece nas duas |
-| 6) y=cos x girada (a: eixo y / b: x=π/2) | Cascas + partes | ∫x cos x dx aparece |
+### 1b) $\displaystyle\int\theta\cos(\pi\theta)\,d\theta$
+
+Integração por partes: $u=\theta$, $dv=\cos(\pi\theta)d\theta$. Então $du=d\theta$ e $v=\sin(\pi\theta)/\pi$:
+
+$$I=\frac{\theta\sin(\pi\theta)}{\pi}
+-\frac1\pi\int\sin(\pi\theta)d\theta.$$
+
+Como $\int\sin(\pi\theta)d\theta=-\cos(\pi\theta)/\pi$,
+
+:::result{kind="answer"}
+$\boxed{\frac{\theta\sin(\pi\theta)}{\pi}+\frac{\cos(\pi\theta)}{\pi^2}+C}$
+:::
+
+### 1d) $\displaystyle\int x^3\ln x\,dx$
+
+Escolha $u=\ln x$ e $dv=x^3dx$. Assim, $du=dx/x$ e $v=x^4/4$:
+
+$$I=\frac{x^4}{4}\ln x-\frac14\int x^3dx
+=\frac{x^4}{4}\ln x-\frac{x^4}{16}+C.$$
+
+:::result{kind="answer"}
+$\boxed{\frac{x^4}{4}\ln x-\frac{x^4}{16}+C},\quad x>0$
+:::
+
+### 1f) $\displaystyle\int xe^{3x}\,dx$
+
+Tome $u=x$ e $dv=e^{3x}dx$. Então $du=dx$ e $v=e^{3x}/3$:
+
+$$I=\frac{xe^{3x}}3-\frac13\int e^{3x}dx
+=\frac{xe^{3x}}3-\frac{e^{3x}}9+C.$$
+
+:::result{kind="answer"}
+$\boxed{e^{3x}\left(\frac x3-\frac19\right)+C}$
+:::
+
+### 1g) $\displaystyle\int x^2e^{-x}\,dx$
+
+Integre por partes duas vezes. Primeiro, $u=x^2$, $dv=e^{-x}dx$, de modo que $v=-e^{-x}$:
+
+$$I=-x^2e^{-x}+2\int xe^{-x}dx.$$
+
+Na integral restante, use $u=x$, $dv=e^{-x}dx$:
+
+$$\int xe^{-x}dx=-xe^{-x}-e^{-x}.$$
+
+Substituindo,
+
+:::result{kind="answer"}
+$\boxed{-e^{-x}(x^2+2x+2)+C}$
+:::
+
+### 1h) $\displaystyle\int(x^2-2x+1)e^{2x}\,dx$
+
+Procure uma primitiva da forma $e^{2x}Q(x)$, com $Q(x)=ax^2+bx+c$. Pela regra do produto,
+
+$$\frac{d}{dx}(e^{2x}Q)=e^{2x}(Q'+2Q).$$
+
+Queremos $Q'+2Q=x^2-2x+1$. Como
+
+$$Q'+2Q=2ax^2+(2a+2b)x+(b+2c),$$
+
+igualamos coeficientes:
+
+$$2a=1,\quad 2a+2b=-2,\quad b+2c=1.$$
+
+Daí $a=1/2$, $b=-3/2$ e $c=5/4$.
+
+:::result{kind="answer"}
+$\boxed{e^{2x}\left(\frac{x^2}{2}-\frac{3x}{2}+\frac54\right)+C}$
+:::
+
+### 1j) $\displaystyle\int x\sec^2x\,dx$
+
+Use $u=x$, $dv=\sec^2x\,dx$, logo $du=dx$ e $v=\tan x$:
+
+$$I=x\tan x-\int\tan x\,dx.$$
+
+Como $\int\tan x\,dx=-\ln|\cos x|$,
+
+:::result{kind="answer"}
+$\boxed{x\tan x+\ln|\cos x|+C}$
+:::
+
+### 1k) $\displaystyle\int x^3e^3\,dx$
+
+Atenção: $e^3$ é uma constante, não uma função de $x$. Portanto,
+
+$$I=e^3\int x^3dx.$$
+
+:::result{kind="answer"}
+$\boxed{\frac{e^3x^4}{4}+C}$
+:::
+
+### 1m) $\displaystyle\int p^4e^{-p}\,dp$
+
+Aplicando integração por partes repetidamente (ou o método tabular), cada derivação reduz o grau do polinômio e cada integração de $e^{-p}$ acrescenta um sinal negativo:
+
+$$I=-p^4e^{-p}+4\int p^3e^{-p}dp,$$
+
+$$=-p^4e^{-p}-4p^3e^{-p}+12\int p^2e^{-p}dp,$$
+
+$$=-p^4e^{-p}-4p^3e^{-p}-12p^2e^{-p}
++24\int pe^{-p}dp,$$
+
+e $\int pe^{-p}dp=-pe^{-p}-e^{-p}$. Assim,
+
+:::result{kind="answer"}
+$\boxed{-e^{-p}(p^4+4p^3+12p^2+24p+24)+C}$
+:::
+
+### 1n) $\displaystyle\int(x^2-5x)e^x\,dx$
+
+Procure uma primitiva $e^xQ(x)$, com $Q=ax^2+bx+c$. Como
+
+$$\frac{d}{dx}(e^xQ)=e^x(Q+Q'),$$
+
+precisamos de $Q+Q'=x^2-5x$. Comparando coeficientes,
+
+$$a=1,\quad b+2a=-5,\quad c+b=0,$$
+
+logo $a=1$, $b=-7$, $c=7$.
+
+:::result{kind="answer"}
+$\boxed{e^x(x^2-7x+7)+C}$
+:::
+
+### 1o) $\displaystyle\int x^5e^x\,dx$
+
+Integração por partes repetida (derivando $x^5$ e integrando $e^x$):
+
+$$I=e^x x^5-5\int x^4e^xdx$$
+$$=e^x(x^5-5x^4)+20\int x^3e^xdx$$
+$$=e^x(x^5-5x^4+20x^3)-60\int x^2e^xdx$$
+$$=e^x(x^5-5x^4+20x^3-60x^2)+120\int xe^xdx.$$
+
+Como $\int xe^xdx=e^x(x-1)$,
+
+:::result{kind="answer"}
+$\boxed{e^x(x^5-5x^4+20x^3-60x^2+120x-120)+C}$
+:::
+
+### 1p) $\displaystyle\int t^2e^{4t}\,dt$
+
+Primeira integração por partes: $u=t^2$, $dv=e^{4t}dt$, então $v=e^{4t}/4$:
+
+$$I=\frac{t^2e^{4t}}4-\frac12\int te^{4t}dt.$$
+
+Na integral restante, use $u=t$, $dv=e^{4t}dt$:
+
+$$\int te^{4t}dt=\frac{te^{4t}}4-\frac{e^{4t}}{16}.$$
+
+Substituindo,
+
+:::result{kind="answer"}
+$\boxed{e^{4t}\left(\frac{t^2}{4}-\frac t8+\frac1{32}\right)+C}$
+:::
+
+### 1r) $\displaystyle\int e^{-y}\cos y\,dy$
+
+Esta é uma integral cíclica. Seja $I=\int e^{-y}\cos y\,dy$. Integrando por partes com $u=e^{-y}$ e $dv=\cos y\,dy$,
+
+$$I=e^{-y}\sin y+\int e^{-y}\sin y\,dy.$$
+
+Chame $J=\int e^{-y}\sin y\,dy$. Outra integração por partes, agora com $u=e^{-y}$ e $dv=\sin y\,dy$, dá
+
+$$J=-e^{-y}\cos y-I.$$
+
+Substitua em $I$:
+
+$$I=e^{-y}\sin y-e^{-y}\cos y-I.$$
+
+Logo, $2I=e^{-y}(\sin y-\cos y)$.
+
+:::result{kind="answer"}
+$\boxed{\frac{e^{-y}}2(\sin y-\cos y)+C}$
+:::
+
+### 1t) $\displaystyle\int e^{-2x}\sin(2x)\,dx$
+
+Use a fórmula obtida por duas integrações por partes, ou verifique por derivação:
+
+$$\int e^{ax}\sin(bx)dx
+=\frac{e^{ax}}{a^2+b^2}(a\sin bx-b\cos bx)+C.$$
+
+Com $a=-2$ e $b=2$,
+
+:::result{kind="answer"}
+$\boxed{-\frac{e^{-2x}}4(\sin2x+\cos2x)+C}$
+:::
+
 
 ## Integrais Trigonométricas {#trig}
 
