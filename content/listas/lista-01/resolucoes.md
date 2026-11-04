@@ -651,6 +651,162 @@ $\boxed{-\frac{e^{-2x}}4(\sin2x+\cos2x)+C}$
 :::
 
 
+### Questões 2 e 3 — áreas com sinal da função
+
+Para área geométrica, integramos $|f(x)|$. Primeiro determinamos o sinal da função em cada intervalo; não basta calcular a integral assinada.
+
+### 2b) Área sob $y=x\sin x$, $\pi\le x\le2\pi$
+
+Nesse intervalo, $x\ge0$ e $\sin x\le0$, então a curva fica abaixo do eixo $x$. A área é o oposto da integral:
+
+$$A=-\int_\pi^{2\pi}x\sin x\,dx.$$
+
+Por partes, uma primitiva de $x\sin x$ é $F(x)=-x\cos x+\sin x$. Assim,
+
+$$\int_\pi^{2\pi}x\sin x\,dx
+=F(2\pi)-F(\pi)=-2\pi-\pi=-3\pi.$$
+
+:::result{kind="answer"}
+$\boxed{A=3\pi}$
+:::
+
+### 2c) Área sob $y=x\sin x$, $2\pi\le x\le3\pi$
+
+Aqui $\sin x\ge0$, logo a área coincide com a integral:
+
+$$A=\int_{2\pi}^{3\pi}x\sin x\,dx
+=\left[-x\cos x+\sin x\right]_{2\pi}^{3\pi}.$$
+
+Em $3\pi$, o valor da primitiva é $3\pi$; em $2\pi$, é $-2\pi$. Portanto,
+
+:::result{kind="answer"}
+$\boxed{A=5\pi}$
+:::
+
+### 3a) Área sob $y=x\cos x$, $\pi/2\le x\le3\pi/2$
+
+Nesse intervalo, $x>0$ e $\cos x\le0$. A área é
+
+$$A=-\int_{\pi/2}^{3\pi/2}x\cos x\,dx.$$
+
+Por partes, $F(x)=x\sin x+\cos x$ é uma primitiva. Avaliando,
+
+$$\int_{\pi/2}^{3\pi/2}x\cos x\,dx
+=F(3\pi/2)-F(\pi/2)
+=-\frac{3\pi}{2}-\frac\pi2=-2\pi.$$
+
+:::result{kind="answer"}
+$\boxed{A=2\pi}$
+:::
+
+### 3b) Área sob $y=x\cos x$, $3\pi/2\le x\le5\pi/2$
+
+O cosseno é não negativo nesse intervalo; portanto,
+
+$$A=\int_{3\pi/2}^{5\pi/2}x\cos x\,dx
+=\left[x\sin x+\cos x\right]_{3\pi/2}^{5\pi/2}.$$
+
+No extremo superior, $F=5\pi/2$; no inferior, $F=-3\pi/2$. Logo,
+
+:::result{kind="answer"}
+$\boxed{A=4\pi}$
+:::
+
+### 3c) Área sob $y=x\cos x$, $5\pi/2\le x\le7\pi/2$
+
+O cosseno é não positivo nesse intervalo. Assim,
+
+$$A=-\int_{5\pi/2}^{7\pi/2}x\cos x\,dx.$$
+
+Usando a mesma primitiva $F(x)=x\sin x+\cos x$,
+
+$$\int_{5\pi/2}^{7\pi/2}x\cos x\,dx
+=-\frac{7\pi}{2}-\frac{5\pi}{2}=-6\pi.$$
+
+:::result{kind="answer"}
+$\boxed{A=6\pi}$
+:::
+
+### Questão 5 — rotação da região sob $y=e^{-x}$, $0\le x\le1$
+
+A curva está acima do eixo $x$. Pelo método das cascas cilíndricas, usando fatias verticais, o raio é a distância ao eixo de rotação e a altura é $e^{-x}$.
+
+### 5a) Rotação em torno do eixo $y$
+
+O raio da casca é $x$ e a altura é $e^{-x}$:
+
+$$V=2\pi\int_0^1xe^{-x}dx.$$
+
+Por partes, com $u=x$ e $dv=e^{-x}dx$, obtemos
+
+$$\int xe^{-x}dx=-(x+1)e^{-x}+C.$$
+
+Então,
+
+$$V=2\pi\left[-(x+1)e^{-x}\right]_0^1
+=2\pi\left(1-\frac2e\right).$$
+
+:::result{kind="answer"}
+$\boxed{V=2\pi\left(1-\frac2e\right)}$
+:::
+
+### 5b) Rotação em torno da reta $x=1$
+
+Agora o raio é a distância horizontal $1-x$. A altura continua $e^{-x}$:
+
+$$V=2\pi\int_0^1(1-x)e^{-x}dx.$$
+
+Separe as parcelas:
+
+$$\int_0^1e^{-x}dx=1-\frac1e,\qquad
+\int_0^1xe^{-x}dx=1-\frac2e.$$
+
+Subtraindo,
+
+$$V=2\pi\left[\left(1-\frac1e\right)
+-\left(1-\frac2e\right)\right].$$
+
+:::result{kind="answer"}
+$\boxed{V=\frac{2\pi}{e}}$
+:::
+
+### Questão 6 — rotação da região sob $y=\cos x$, $0\le x\le\pi/2$
+
+A altura das cascas verticais é $\cos x$. Em ambos os itens, usamos $V=2\pi\int(\text{raio})(\text{altura})dx$.
+
+### 6a) Rotação em torno do eixo $y$
+
+O raio é $x$:
+
+$$V=2\pi\int_0^{\pi/2}x\cos x\,dx.$$
+
+Uma primitiva, por partes, é $x\sin x+\cos x$. Logo,
+
+$$V=2\pi\left[x\sin x+\cos x\right]_0^{\pi/2}
+=2\pi\left(\frac\pi2-1\right).$$
+
+:::result{kind="answer"}
+$\boxed{V=\pi^2-2\pi}$
+:::
+
+### 6b) Rotação em torno da reta $x=\pi/2$
+
+O raio agora é $\pi/2-x$:
+
+$$V=2\pi\int_0^{\pi/2}\left(\frac\pi2-x\right)\cos x\,dx.$$
+
+Distribuindo,
+
+$$\int_0^{\pi/2}\left(\frac\pi2-x\right)\cos x\,dx
+=\frac\pi2\int_0^{\pi/2}\cos x\,dx
+-\int_0^{\pi/2}x\cos x\,dx.$$
+
+A primeira integral vale $1$; a segunda vale $\pi/2-1$. Portanto, a integral toda vale $1$.
+
+:::result{kind="answer"}
+$\boxed{V=2\pi}$
+:::
+
 ## Integrais Trigonométricas {#trig}
 
 :::note
