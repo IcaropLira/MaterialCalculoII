@@ -1,0 +1,185 @@
+/* components.css — widgets de conteúdo (caixinhas, exemplos, cards, folha de prova…) */
+
+/* ================= fórmula em destaque ================= */
+.hero-formula{ background:var(--board); color:#F2F1EC; padding:26px 30px; border-radius:var(--radius-card); display:inline-block; font-size:22px; margin-top:26px; max-width:100%; overflow-x:auto; border:1px solid rgba(255,141,184,.18); }
+.hero-formula .katex{ color:#FBEFF6; }
+.hero-formula .fl, .formula-label{ font-family:var(--font-mono); font-size:11px; text-transform:uppercase; letter-spacing:.08em; color:var(--brand-pink-2); margin-bottom:12px; opacity:.95; display:block; }
+
+.formula-block{ background:var(--board); color:#F2F1EC; padding:26px 30px; margin:22px 0; border-radius:var(--radius-card); overflow-x:auto; border:1px solid rgba(255,141,184,.14); }
+.formula-block .katex{ color:#FBEFF6; font-size:1.18em; }
+.formula-block .katex-display{ margin:.6em 0; }
+.formula-block p{ color:#D8DEE8; margin:0 0 8px; }
+
+/* ================= notas e avisos ================= */
+.note, .warn{ padding:16px 20px; margin:22px 0; border-radius:0 var(--radius-note) var(--radius-note) 0; max-width:70ch; }
+.note{ border-left:3px solid var(--teal); background:var(--teal-soft); }
+.warn{ border-left:3px solid var(--rose); background:var(--rose-soft); }
+.note-label, .warn-label{ font-weight:600; display:block; margin-bottom:4px; font-size:15px; font-family:var(--font-display); }
+.note-label{ color:var(--teal); }
+.warn-label{ color:var(--rose); }
+.note > :last-child, .warn > :last-child{ margin-bottom:0; }
+.note h4, .warn h4{ margin-bottom:6px; }
+
+/* ================= exemplo ================= */
+.example{ border:1px solid var(--line); margin:28px 0; background:var(--surface); border-radius:var(--radius-card); box-shadow:var(--shadow); overflow:hidden; }
+.example-head{ display:flex; align-items:baseline; gap:14px; padding:16px 22px; background:var(--paper-dim); border-bottom:1px solid var(--line); }
+.example-num{ font-family:var(--font-display); font-style:italic; font-size:24px; color:var(--gold); flex-shrink:0; min-width:1ch; }
+.example-title{ font-weight:600; font-size:15.5px; color:var(--ink); }
+.example-body{ padding:22px 22px 24px; }
+.example-body > :last-child{ margin-bottom:0; }
+.example-body p{ font-size:15.5px; color:var(--ink-soft); }
+.example-body .katex-display{ margin:.5em 0; }
+
+/* passos: uma lista numerada dentro de um exemplo vira "bolinhas" */
+.example-body ol, .gab-body ol, .ex-answer ol{ list-style:none; counter-reset:step; padding:0; margin:0 0 16px; max-width:none; }
+.example-body ol > li, .gab-body ol > li, .ex-answer ol > li{ counter-increment:step; position:relative; padding-left:42px; margin-bottom:16px; }
+.example-body ol > li::before, .gab-body ol > li::before, .ex-answer ol > li::before{
+  content:counter(step); position:absolute; left:0; top:3px; width:25px; height:25px; border-radius:50%;
+  background:var(--ink); color:var(--paper); font-family:var(--font-mono); font-size:12px; display:flex; align-items:center; justify-content:center;
+}
+.example-body ol > li > p, .gab-body ol > li > p{ margin:0 0 6px; }
+.example-body ol ol, .gab-body ol ol{ margin-top:8px; }
+
+.result-box{ margin:16px 0 0; padding:12px 18px; background:var(--gold-soft); border-radius:6px; font-weight:500; font-size:15.5px; max-width:none; }
+.result-box > :last-child{ margin-bottom:0; }
+.result-box.diverge{ background:var(--rose-soft); }
+.result-box.converg{ background:var(--teal-soft); }
+.result-box p{ color:var(--ink); }
+
+.conclusion-tag{ display:inline-block; font-family:var(--font-mono); font-size:11px; text-transform:uppercase; letter-spacing:.06em; padding:3px 10px; border-radius:20px; margin-left:8px; color:#fff; vertical-align:middle; }
+.conclusion-tag.div{ background:var(--rose); } .conclusion-tag.conv{ background:var(--teal); }
+[data-theme="dark"] .conclusion-tag{ color:#10091d; }
+
+/* ================= método tabular / grade de fórmulas ================= */
+.di-table{ border-collapse:collapse; margin:22px auto; }
+.di-table td, .di-table th{ padding:10px 24px; border-bottom:1px dashed var(--line); text-align:center; }
+.di-table td:first-child, .di-table th:first-child{ font-family:var(--font-mono); color:var(--muted); font-size:13px; }
+.di-table tr:last-child td{ border-bottom:none; }
+.di-wrap{ overflow-x:auto; }
+
+.grid2{ display:grid; grid-template-columns:repeat(auto-fill,minmax(300px,1fr)); gap:10px; margin:14px 0 22px; max-width:none; }
+.grid2 .formula{ background:var(--surface); border:1px solid var(--line); border-radius:6px; padding:10px 14px; font-family:var(--font-mono); font-size:13.5px; line-height:1.55; color:var(--ink-soft); }
+
+/* ================= cheat sheet ================= */
+section.cheat{ background:var(--board); color:#F2F1EC; padding:44px 56px; max-width:none; border-bottom:none; }
+@media (max-width:640px){ section.cheat{ padding:32px 24px; } }
+section.cheat h2, section.cheat .kicker{ color:#fff; }
+section.cheat .kicker{ color:var(--brand-pink-2); }
+.cheat-grid{ display:grid; grid-template-columns:repeat(auto-fit, minmax(240px,1fr)); gap:20px; margin-top:20px; max-width:none; }
+.cheat-card{ background:var(--board-2); padding:20px 22px; border-radius:var(--radius-card); border:1px solid rgba(255,141,184,.12); }
+.cheat-card h4{ font-size:13px; color:var(--brand-pink-2); font-family:var(--font-mono); margin-bottom:10px; font-weight:500; }
+.cheat-card .katex{ color:#FBEFF6; }
+.cheat-card p{ color:#D8DEE8; font-size:14px; margin-bottom:8px; }
+
+/* ================= chamadas ================= */
+.cta-more{ background:var(--board); color:#F2F1EC; padding:30px 34px; margin:34px 0 0; display:flex; justify-content:space-between; align-items:center; flex-wrap:wrap; gap:20px; border-radius:var(--radius-card); border:1px solid rgba(255,141,184,.14); max-width:none; }
+.cta-text{ max-width:54ch; }
+.cta-text p{ color:#D8DEE8; margin:0; font-size:15px; }
+.cta-label{ display:block; font-family:var(--font-mono); font-size:12px; text-transform:uppercase; letter-spacing:.06em; color:var(--brand-pink-2); margin-bottom:8px; }
+.cta-btn{ flex-shrink:0; background:var(--grad); color:#fff; font-weight:500; font-size:14.5px; padding:12px 22px; text-decoration:none; border-radius:var(--radius-pill); white-space:nowrap; }
+.cta-btn:hover{ filter:brightness(1.08); }
+
+.next{ margin-top:34px; }
+.next-list{ display:flex; flex-wrap:wrap; gap:12px; margin-top:18px; }
+.next-pill{ border:1px solid var(--line); padding:9px 18px; font-size:14px; color:var(--ink-soft); background:var(--surface); border-radius:var(--radius-pill); text-decoration:none; }
+a.next-pill:hover{ border-color:var(--gold); color:var(--gold); }
+
+/* ================= cards (home) ================= */
+.topic-grid{ display:grid; grid-template-columns:repeat(auto-fill, minmax(280px,1fr)); gap:20px; }
+.topic-card, .prova-card{ border:1px solid var(--line); background:var(--surface); display:flex; flex-direction:column; border-radius:var(--radius-card); box-shadow:var(--shadow); transition:transform .18s, border-color .18s; }
+.topic-card:not(.locked):hover, .prova-card:not(.locked):hover{ transform:translateY(-3px); border-color:var(--gold); }
+.topic-card{ padding:26px 26px 24px; border-top:3px solid var(--brand-pink); }
+.topic-card.locked, .prova-card.locked{ opacity:.55; }
+.topic-card.locked{ border-top-color:var(--line); }
+.topic-card .tnum{ font-family:var(--font-mono); font-size:12px; color:var(--muted); margin-bottom:10px; }
+.topic-card h3, .prova-card h3{ font-size:21px; margin:0 0 10px; }
+.topic-card p{ font-size:14.5px; color:var(--ink-soft); margin:0 0 18px; flex-grow:1; }
+.topic-links{ display:flex; gap:10px; flex-wrap:wrap; }
+.topic-links a{ text-decoration:none; font-size:13px; font-family:var(--font-mono); border:1px solid var(--line); padding:7px 14px; color:var(--ink); border-radius:var(--radius-pill); }
+.topic-links a:hover{ background:var(--grad); border-color:transparent; color:#fff; }
+.badge-soon{ display:inline-block; font-family:var(--font-mono); font-size:11px; text-transform:uppercase; letter-spacing:.05em; background:var(--paper-dim); color:var(--muted); padding:5px 10px; border-radius:20px; width:fit-content; }
+
+.prova-grid{ display:grid; grid-template-columns:repeat(auto-fill, minmax(300px,1fr)); gap:20px; }
+.prova-card{ padding:26px; gap:14px; }
+.prova-top{ display:flex; justify-content:space-between; align-items:flex-start; gap:10px; }
+.prova-card h3{ font-size:20px; margin:0; }
+.prova-meta{ font-family:var(--font-mono); font-size:12px; color:var(--muted); white-space:nowrap; }
+.prova-tags, .hero-tags{ display:flex; gap:8px; flex-wrap:wrap; }
+.prova-tag, .htag{ font-size:11.5px; font-family:var(--font-mono); background:var(--teal-soft); color:var(--teal); padding:4px 10px; border-radius:20px; }
+.prova-card p{ font-size:14px; color:var(--ink-soft); margin:0; flex-grow:1; }
+.prova-card .btn-secondary{ align-self:flex-start; margin-top:4px; padding:9px 18px; font-size:13.5px; }
+
+.how-it-works{ background:var(--board); color:#F2F1EC; padding:56px; display:grid; grid-template-columns:repeat(3,1fr); gap:24px; max-width:var(--content-max); margin:0 auto; border-radius:var(--radius-card); }
+@media (max-width:800px){ .how-it-works{ grid-template-columns:1fr; padding:36px 24px; } }
+.how-card{ background:var(--board-2); padding:22px; border-radius:var(--radius-card); border:1px solid rgba(255,141,184,.12); }
+.how-card .step-tag{ font-family:var(--font-mono); font-size:11.5px; color:var(--brand-pink-2); margin-bottom:10px; }
+.how-card h4{ font-size:19px; color:#fff; margin-bottom:8px; font-weight:500; }
+.how-card p{ color:#D8DEE8; font-size:14px; margin:0; }
+
+/* home: hero com brilho da marca */
+.hero.home{ display:grid; grid-template-columns:1.3fr 1fr; gap:40px; align-items:end; padding:88px 56px 64px; }
+@media (max-width:900px){ .hero.home{ grid-template-columns:1fr; padding:56px 24px 44px; } }
+.hero.home::before{
+  content:""; position:absolute; top:0; bottom:0; left:50%; width:100vw; transform:translateX(-50%); z-index:0; pointer-events:none;
+  background:radial-gradient(560px 380px at 18% 20%, var(--glow-a), transparent 70%), radial-gradient(520px 420px at 90% 80%, var(--glow-b), transparent 70%);
+}
+.hero.home > *{ position:relative; z-index:1; }
+.hero.home .hero-formula{ margin-top:0; }
+
+/* ================= folha de prova ================= */
+.hero-meta{ display:flex; gap:22px; margin-top:22px; flex-wrap:wrap; }
+.hero-meta div{ font-family:var(--font-mono); font-size:12.5px; color:var(--muted); }
+.hero-meta strong{ display:block; font-family:var(--font-display); font-size:21px; color:var(--ink); font-weight:600; }
+.hero-tags{ margin-top:20px; }
+
+.sheet{ background:var(--surface); border:1px solid var(--line); box-shadow:var(--shadow); margin-top:28px; border-radius:var(--radius-card); }
+.sheet-head{ padding:20px 34px; border-bottom:1px dashed var(--line); display:flex; justify-content:space-between; align-items:center; flex-wrap:wrap; gap:10px; }
+.sh-title{ font-family:var(--font-display); font-weight:600; font-size:17px; }
+.sh-sub{ font-family:var(--font-mono); font-size:11.5px; color:var(--muted); }
+.sheet-body{ padding:36px 40px 44px; }
+@media (max-width:640px){ .sheet-body{ padding:28px 22px 34px; } .sheet-head{ padding:18px 22px; } }
+.questao{ margin-bottom:34px; }
+.questao:last-child{ margin-bottom:0; }
+.questao-head{ display:flex; gap:12px; align-items:baseline; margin-bottom:14px; }
+.questao-num{ font-family:var(--font-display); font-style:italic; font-size:24px; color:var(--gold); flex-shrink:0; }
+.questao-instr{ font-size:15.5px; color:var(--ink-soft); }
+.item-list{ list-style:none; margin:0; padding:0; display:grid; gap:16px; }
+.item-list li{ display:flex; gap:12px; align-items:baseline; padding-left:4px; margin:0; }
+.item-letter{ font-family:var(--font-mono); font-size:14px; color:var(--muted); flex-shrink:0; width:18px; }
+.item-body, .item-single{ font-size:16px; overflow-x:auto; max-width:100%; }
+.item-single{ margin-top:4px; }
+
+/* ================= gabarito / exercícios ================= */
+.gab-item{ border:1px solid var(--line); background:var(--surface); margin-bottom:16px; border-radius:var(--radius-card); box-shadow:var(--shadow); overflow:hidden; }
+.gab-item:last-child{ margin-bottom:0; }
+.gab-head{ display:flex; gap:14px; align-items:baseline; padding:16px 22px; background:var(--paper-dim); border-bottom:1px solid var(--line); }
+.gab-num{ font-family:var(--font-display); font-style:italic; font-size:21px; color:var(--gold); flex-shrink:0; min-width:2ch; }
+.gab-statement{ font-size:15.5px; color:var(--ink); overflow-x:auto; }
+
+details.toggle > summary{ cursor:pointer; list-style:none; padding:12px 22px; font-size:13.5px; font-family:var(--font-mono); color:var(--teal); user-select:none; }
+details.toggle > summary::-webkit-details-marker{ display:none; }
+details.toggle > summary:before{ content:"▸ "; }
+details.toggle[open] > summary:before{ content:"▾ "; }
+details.toggle > summary:hover{ color:var(--gold); }
+.gab-body{ padding:6px 22px 24px; }
+.gab-body > :last-child{ margin-bottom:0; }
+.gab-body p{ font-size:15.5px; color:var(--ink-soft); }
+
+.ex-stmt{ padding:17px 22px; font-size:16px; }
+.ex-stmt p{ margin:0; }
+.ex-answer{ padding:6px 22px 22px; }
+.ex-answer p{ font-size:15.5px; color:var(--ink-soft); }
+.exercise-block{ margin-bottom:22px; }
+
+/* ================= lista de enunciados ================= */
+.question-list{ display:grid; gap:16px; list-style:none; margin:24px 0 0; padding:0; max-width:none; }
+.question-card{ background:var(--surface); border:1px solid var(--line); padding:22px 24px; border-radius:var(--radius-card); box-shadow:var(--shadow); margin:0; }
+.question-card h3{ font-size:19px; margin:0 0 14px; }
+.question-card ol{ margin:0; padding-left:30px; list-style:lower-alpha; max-width:none; }
+.question-card li{ padding:5px 0 5px 8px; margin:0; }
+.question-card li::marker{ font-family:var(--font-mono); color:var(--gold); }
+.question-card p:last-child{ margin-bottom:0; }
+.question-card .katex-display{ margin:.4em 0; }
+@media (max-width:640px){ .question-card{ padding:18px 16px; } .question-card ol{ padding-left:24px; } }
+
+.empty-state{ padding:80px 24px; text-align:center; color:var(--muted); }

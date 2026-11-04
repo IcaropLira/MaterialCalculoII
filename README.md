@@ -1,141 +1,160 @@
-# Cálculo II — sistema de estudo
+# Cálculo II — material de estudo
 
-Site estático (sem build, sem framework) para teoria, listas, exercícios comentados
-e provas resolvidas de Cálculo II. Pensado para você (dev) adicionar,
-editar ou remover conteúdo mexendo em pouquíssimos lugares — sem tocar em
-CSS ou duplicar HTML de header/footer em cada página nova.
+Site de teoria, listas e provas resolvidas de Cálculo II. **Todo o conteúdo mora em arquivos `.md`** na pasta `content/`:
+para escrever, corrigir ou adicionar qualquer coisa você só mexe em Markdown — nenhum HTML, CSS ou JavaScript.
 
-## Como rodar localmente
-
-Não tem build step. Duas opções:
-
-1. **Abrir direto no navegador** (`index.html`, duplo clique) — funciona,
-   porque header/footer/dados são só `<script>` normais, sem `fetch`.
-2. **Servir com um servidor local** (recomendado, mais fiel ao deploy):
-   ```bash
-   npx serve .
-   # ou
-   python3 -m http.server 8000
-   ```
-
-## Estrutura de pastas
-
-```
-index.html                                    → home (gera os cards sozinha)
-topicos/
-  integracao-por-partes.html                  → teoria
-  integracao-por-partes-exercicios.html       → lista de exercícios
-  calc2_lista02.html                          → Lista 02 resolvida
-  _template.html                              → copie para criar um tópico novo
-provas/
-  prova-1.html
-  _template.html                              → copie para criar uma prova nova
-assets/
-  css/
-    tokens.css        → cores, fontes, espaçamentos (mude a cor 1x, propaga pro site todo)
-    base.css           → reset, header, footer, layout de página, botões
-    components.css      → cards, steps, tabelas, folha de prova, gabarito etc.
-  js/
-    site-data.js        → ⭐ ÚNICO lugar que você edita pra add/remover tópico ou prova
-    layout.js            → desenha o header/footer a partir de site-data.js
-    home.js               → desenha os cards da home a partir de site-data.js
-    katex-init.js          → liga a renderização de matemática (KaTeX)
+```bash
+npm install          # uma vez
+npm run dev          # abre o site local; ao salvar um .md a página atualiza sozinha
+npm run build        # confere o conteúdo e gera a pasta dist/
 ```
 
-## Adicionar um tópico novo
+## Onde fica cada coisa
 
-1. Copie `topicos/_template.html` para `topicos/nome-do-topico.html`.
-2. Escreva o conteúdo (o template já tem exemplos de `.note`, `.warn`,
-   `.example` com `.step`, fórmula em destaque etc — reaproveite as classes).
-3. Se for ter exercícios, duplique o padrão de
-   `topicos/integracao-por-partes-exercicios.html` num novo arquivo
-   `topicos/nome-do-topico-exercicios.html`.
-4. Abra **`assets/js/site-data.js`** e acrescente um objeto no array
-   `TOPICS`:
-   ```js
-   {
-     id: "nome-do-topico",
-     number: "02",
-     title: "Nome do tópico",
-     summary: "Descrição curta de 1-2 frases.",
-     status: "available",
-     links: [
-       { label: "Ver teoria",    href: "topicos/nome-do-topico.html" },
-       { label: "X exercícios",  href: "topicos/nome-do-topico-exercicios.html" }
-     ]
-   }
-   ```
-5. Pronto — o card aparece na home sozinho, sem tocar em `index.html`.
+```
+content/
+  site.yml                          → nome, menu, textos da home, rodapé, link do repositório
+  topicos/<slug>/teoria.md          → a teoria de um tópico
+  topicos/<slug>/exercicios.md      → exercícios do tópico (opcional)
+  listas/<slug>/enunciado.md        → enunciados de uma lista
+  listas/<slug>/resolucoes.md       → resolução da lista (opcional)
+  provas/prova-N.md                 → uma prova (enunciado + gabarito no mesmo arquivo)
+src/styles/tokens.css               → cores, fontes e medidas (tema claro e escuro)
+public/                             → logo e favicon
+```
 
-Se o tópico ainda não está pronto mas você já quer reservar o lugar dele
-na home, use `status: "soon"` e omita `links` — o card aparece cinza,
-travado, com a etiqueta "em breve" (é assim que os tópicos 04–07 já estão
-configurados agora).
+As páginas, os cards da home, a barra lateral, os contadores e as rotas são **gerados a partir desses arquivos**. Criou o `.md`, o card aparece.
 
-## Adicionar uma prova nova
+## Criar algo novo (comando rápido)
 
-1. Copie `provas/_template.html` para `provas/prova-N.html`.
-2. Preencha o **Enunciado** (bloco `.sheet`) e o **Gabarito** (blocos
-   `.gab-item`, cada um com `<details>` escondendo a resolução em `.step`).
-3. Acrescente um objeto no array `PROVAS` em `assets/js/site-data.js`:
-   ```js
-   {
-     id: "prova-2",
-     title: "Prova 2",
-     itemsCount: 5,
-     tags: ["frações parciais", "impróprias"],
-     summary: "Descrição curta.",
-     status: "available",
-     href: "provas/prova-2.html"
-   }
-   ```
+```bash
+npm run novo -- topico "Séries de potências"   # cria teoria.md + exercicios.md com exemplos
+npm run novo -- lista  "Lista 02"               # cria enunciado.md + resolucoes.md
+npm run novo -- prova                           # cria o próximo prova-N.md
+```
 
-## Adicionar uma lista de exercícios
+Ou crie o arquivo na mão copiando um existente. Para **reservar um tópico "em breve"**, crie só o `teoria.md` com `status: soon`
+(o card aparece cinza e travado). Para **tirar algo do ar**, apague o arquivo ou troque para `status: soon`.
 
-1. Crie a página dentro de `topicos/`, usando `calc2_lista02.html` como
-  referência para o header, navegação lateral, conteúdo e footer compartilhados.
-2. Acrescente um objeto no array `LISTAS` em **`assets/js/site-data.js`**:
-  ```js
-  {
-    id: "lista-01",
-    number: "01",
-    title: "Lista 01",
-    itemsCount: 20,
-    tags: ["técnica 1", "técnica 2"],
-    summary: "Descrição curta da lista.",
-    status: "available",
-    href: "topicos/calc2_lista01.html"
-  }
-  ```
-3. O card aparece automaticamente na seção **Listas de exercícios** da home.
+`npm run check` (rodado também no `build`) aponta arquivo e linha de qualquer erro: caixinha `:::` aberta e não fechada, `$` sem par, campo faltando.
 
-## Mudar cor, fonte ou nome do site
+## Como escrever
 
-- Cores/raios/medidas → `assets/css/tokens.css` (é só isso, nada mais).
-- Nome da marca, texto do rodapé, autor, link do repositório, itens do
-  menu → objeto `SITE` no topo de `assets/js/site-data.js`.
+### Frontmatter (o bloco `---` no topo)
 
-## Convenções
+```yaml
+---
+title: "Integração por partes"
+number: "01"                 # ordem do card na home
+summary: "Texto curto do card."
+status: available            # ou: soon
+eyebrow: "cálculo ii · técnicas de integração"
+lede: "Frase de abertura da página."
+formula: "\\int u\\,dv = uv - \\int v\\,du"     # fórmula em destaque no topo (opcional)
+---
+```
 
-- Todo link interno é relativo. Páginas na raiz usam caminhos normais
-  (`assets/css/...`); páginas em `topicos/` e `provas/` usam `../` na
-  frente (`../assets/css/...`) porque estão uma pasta abaixo.
-- `renderHeader({ active, base })` e `renderFooter({ base, related })` são
-  chamados no fim de cada página (veja qualquer página existente como
-  referência). `active` é a chave do item de menu que deve ficar destacado
-  (`"home"`, `"topicos"` ou `"provas"`); `base` é `""` na raiz e `"../"`
-  dentro de uma subpasta.
-- Componentes visuais (caixinha de nota, aviso, passo a passo, tabela
-  LIATE, tabular/DI, folha de prova, gabarito, cards) já existem prontos
-  em `components.css` — evite criar CSS novo por página; se precisar de
-  um componente novo que vá se repetir, acrescente-o lá.
+### Seções
 
-## Deploy
+Cada `## Título` vira uma seção, e a barra lateral é montada com elas. Opcional, entre chaves: `{#id kicker="texto pequeno" toc="nome curto no menu"}`.
 
-O repositório já aponta para
-`https://github.com/Hiraku-L/MaterialCalculoII`. Sendo um site 100%
-estático, o caminho mais simples é **GitHub Pages**: em Settings → Pages,
-aponte para a branch `main` (pasta raiz) e o site fica público em
-`https://hiraku-l.github.io/MaterialCalculoII/`. Qualquer outro host
-estático (Netlify, Vercel, Cloudflare Pages) também funciona sem nenhuma
-configuração adicional — é só apontar para a raiz do repositório.
+```md
+## Como escolher u e dv {#escolha kicker="a parte mais importante" toc="Escolhendo u e dv"}
+```
+
+### Matemática
+
+`$ ... $` no meio do texto e `$$ ... $$` em destaque (KaTeX, a mesma sintaxe do LaTeX):
+
+```md
+Calcule $\int x e^x\,dx$.
+
+$$
+\int u\,dv = uv - \int v\,du
+$$
+```
+
+### Caixinhas
+
+```md
+:::note[Ideia central]
+Observação em azul-esverdeado.
+:::
+
+:::warn[Atenção]
+Erro comum, em tom terracota.
+:::
+
+:::formula[Rótulo da fórmula]
+$$
+\sin^2\theta + \cos^2\theta = 1
+$$
+:::
+
+::::example
+#### Título do exemplo
+
+1. Primeiro passo (a lista numerada vira "passos" com bolinhas).
+
+   $$
+   \int x e^x\,dx
+   $$
+
+2. Segundo passo.
+
+:::result
+$e^x(x-1) + C$
+:::
+::::
+```
+
+Detalhes: o número do exemplo é automático (`::::example{n="A"}` força outro rótulo); `:::result{kind="diverge"}` / `kind="converge"` colorem o resultado;
+`:::tabular` (método tabular), `:::grid` (grade de fórmulas), `:::cheat` (resumo em cartões com `####`), `:::cta{label="…" href="/…"}` (chamada com botão),
+`:::next` (links para os próximos temas) e, no texto, `:conv[convergente]` / `:div[divergente]`.
+Quando uma caixinha tem outra dentro, use mais `:` na de fora (`::::example` … `::::`).
+
+Links internos começam com `/`: `[exercícios](/topicos/integracao-por-partes/exercicios)`.
+
+### Exercícios, listas e provas — o enunciado é escrito uma vez só
+
+`## ` agrupa (a instrução da questão) e cada `### ` é um item; **o que vem logo abaixo é a resolução**:
+
+```md
+## Resolva as integrais indefinidas.
+
+### a) $\displaystyle \int x e^x\,dx$
+
+1. Por partes, com $u = x$ e $dv = e^x dx$.
+2. Sobra $\int e^x dx$.
+
+:::result
+$e^x(x-1) + C$
+:::
+
+### b) $\displaystyle \int \ln x\,dx$
+
+Resolução…
+```
+
+- **Prova**: a página monta sozinha a folha de enunciado (sem resolução) e o gabarito retrátil. Um `:::result{kind="diverge"}` na resolução já põe a etiqueta "divergente" no gabarito.
+- **Exercícios do tópico**: mesma ideia, cada item vira um cartão com "Ver resolução comentada".
+- **Lista (enunciado)**: `##` é o assunto, `###` é a questão e os itens a), b)… viram uma lista numerada.
+- Frontmatter de prova: `title`, `summary`, `tags: [a, b]`, `level`, `instruction` (texto sob "Enunciado"), `gabaritoIntro`, `cta: {text, label, href}`.
+
+## Tema e identidade visual
+
+- Claro e escuro: botão ☾/☀ no cabeçalho; a escolha fica salva e, na primeira visita, segue o tema do sistema.
+- Cores e fontes: **`src/styles/tokens.css`** (`:root` = claro, `[data-theme="dark"]` = escuro). Mudou ali, muda no site todo.
+- Logo: `public/logo.svg` (com fundo escuro), `public/logo-mark.svg` (sem fundo) e `public/favicon.svg`. O ∫ é gerado por `python3 scripts/make-logo.py` (ajuste espessura/curva lá).
+  Tipografia e degradê rosa→roxo vêm da marca pessoal (Playfair Display, Inter, Fira Code).
+
+## Publicar
+
+- **Vercel / Netlify / Cloudflare Pages**: build `npm run build`, saída `dist`. (O `vercel.json` já faz o rewrite das rotas.)
+- **GitHub Pages**: em Settings → Pages escolha *GitHub Actions*; o workflow `.github/workflows/deploy.yml` faz o resto a cada push na `main`.
+  Para build manual sob `/<repo>/`: `VITE_BASE=/MaterialCalculoII/ npm run build`.
+
+## Notas
+
+- `scripts/migrate-html-to-md.py` foi o conversor único que transformou o site antigo em HTML nestes `.md`. Fica só como registro; no dia a dia não é usado.
+- Os `.md` aceitam HTML pontual (`<sup>`, `<sub>`, `<br />`) quando precisar.

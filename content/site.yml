@@ -1,0 +1,37 @@
+# Configurações gerais do site. Tudo aqui é texto simples: edite e salve.
+brand:
+  word: "Cálculo II"
+  tagline: "Material de estudo de Cálculo II — teoria, exercícios comentados e provas resolvidas, tudo no mesmo formato."
+
+author: "Ícaro Lira"
+repoUrl: "https://github.com/IcaropLira/MaterialCalculoII"
+footerNote: "Cálculo II · conteúdo em construção"
+
+nav:
+  - { label: "Início",  to: "/" }
+  - { label: "Tópicos", to: "/#topicos" }
+  - { label: "Listas",  to: "/#listas" }
+  - { label: "Provas",  to: "/#provas" }
+
+home:
+  eyebrow: "cálculo ii · material de estudo"
+  title: "Cálculo II, do zero ao *domínio*."
+  lede: "Teoria explicada com calma, exercícios comentados passo a passo e provas resolvidas por completo. Tudo no mesmo formato, para você treinar até virar automático."
+  formulaLabel: "em destaque agora"
+  formula: "\\int u\\,dv = uv - \\int v\\,du"
+  topicos:
+    kicker: "biblioteca de conteúdo"
+    title: "Tópicos"
+    text: "Cada tópico traz a teoria explicada do zero e uma lista de exercícios comentados para treinar até fixar. Novos tópicos entram aqui conforme ficam prontos."
+  listas:
+    kicker: "prática organizada"
+    title: "Listas de exercícios"
+    text: "Listas completas para praticar as técnicas de integração, com resolução comentada e uma referência rápida para escolher o método."
+  provas:
+    kicker: "treino para a avaliação"
+    title: "Provas"
+    text: "Provas completas, com o enunciado limpo como numa folha real e o gabarito comentado passo a passo logo abaixo — do mesmo jeito que os exercícios dos tópicos."
+  como:
+    - { title: "Estude a teoria", text: "Cada tópico explica de onde vem cada fórmula, não só o “como usar” — assim você reconhece o método em qualquer questão." }
+    - { title: "Treine com os exercícios", text: "Listas organizadas por dificuldade, com resolução comentada passo a passo escondida até você tentar sozinho." }
+    - { title: "Simule a prova", text: "Resolva as provas como se fosse o dia da avaliação e só depois confira o gabarito comentado, item por item." }

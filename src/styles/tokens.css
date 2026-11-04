@@ -1,0 +1,92 @@
+/*
+  tokens.css — fonte única de cores, tipografia e medidas.
+  Tema claro = :root   |   Tema escuro = [data-theme="dark"]
+  Mude uma cor aqui e ela se propaga para o site inteiro.
+*/
+
+:root{
+  /* marca (iguais nos dois temas) */
+  --brand-pink:#ee0f7f;
+  --brand-pink-2:#ff8db8;
+  --brand-purple:#3b2477;
+  --grad:linear-gradient(135deg,#ee0f7f,#ff8db8 45%,#6b3fa0);
+
+  /* superfícies */
+  --paper:#FBFAF6;
+  --paper-dim:#F3F1EA;
+  --surface:#FFFFFF;
+  --header-bg:rgba(251,250,246,.88);
+
+  /* texto */
+  --ink:#16202E;
+  --ink-soft:#3C4654;
+  --muted:#6B7280;
+
+  /* "quadro-negro" (fórmulas, rodapé, destaques) — roxo-noite da marca */
+  --board:#231845;
+  --board-2:#2f2160;
+
+  /* acentos */
+  --gold:#C80F6C;          /* acento principal (rosa da marca, legível no papel) */
+  --gold-soft:#FBDCEA;
+  --on-gold:#FFFFFF;
+  --teal:#3F7C6E;
+  --teal-soft:#DCEAE5;
+  --rose:#B4553F;
+  --rose-soft:#F5E2DC;
+
+  /* linhas e sombras */
+  --line:#DCD6C7;
+  --shadow:0 1px 0 rgba(22,32,46,.04), 0 8px 24px -12px rgba(35,24,69,.18);
+  --glow-a:rgba(238,15,127,.10);
+  --glow-b:rgba(107,63,160,.10);
+
+  /* seleção / foco */
+  --focus:#C80F6C;
+
+  /* raios */
+  --radius-note:3px;
+  --radius-card:4px;
+  --radius-pill:999px;
+
+  /* layout */
+  --header-h:64px;
+  --content-max:1180px;
+
+  /* tipografia (mesma da marca principal) */
+  --font-display:'Playfair Display',Georgia,serif;
+  --font-body:'Inter',system-ui,sans-serif;
+  --font-mono:'Fira Code',ui-monospace,monospace;
+
+  color-scheme:light;
+}
+
+[data-theme="dark"]{
+  --paper:#0d0817;
+  --paper-dim:#160f26;
+  --surface:#160f26;
+  --header-bg:rgba(13,8,23,.86);
+
+  --ink:#ece6f7;
+  --ink-soft:#c9bfe0;
+  --muted:#9d90b8;
+
+  --board:#1a1230;
+  --board-2:#261b47;
+
+  --gold:#ff8db8;
+  --gold-soft:rgba(238,15,127,.20);
+  --on-gold:#1a0612;
+  --teal:#6fc9b3;
+  --teal-soft:rgba(111,201,179,.13);
+  --rose:#ff9a82;
+  --rose-soft:rgba(255,154,130,.14);
+
+  --line:#2a1f45;
+  --shadow:0 0 0 rgba(0,0,0,0);
+  --glow-a:rgba(238,15,127,.15);
+  --glow-b:rgba(107,63,160,.28);
+
+  --focus:#ff8db8;
+  color-scheme:dark;
+}
