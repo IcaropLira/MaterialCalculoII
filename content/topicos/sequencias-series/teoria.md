@@ -1,6 +1,6 @@
 ---
 title: "Sequências e séries"
-number: "06"
+number: "10"
 summary: "Convergência de sequências, séries numéricas, testes de convergência e séries de potências."
 status: "available"
 eyebrow: "cálculo ii · técnicas e aplicações"

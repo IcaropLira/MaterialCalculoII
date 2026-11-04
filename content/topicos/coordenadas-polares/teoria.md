@@ -1,6 +1,6 @@
 ---
 title: "Coordenadas polares"
-number: "07"
+number: "11"
 summary: "Curvas em coordenadas polares, área entre curvas polares e conversão entre sistemas de coordenadas."
 status: "available"
 eyebrow: "cálculo ii · técnicas e aplicações"
