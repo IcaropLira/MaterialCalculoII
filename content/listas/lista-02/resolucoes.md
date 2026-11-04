@@ -79,11 +79,18 @@ $$\left[\frac{5x^4}{4}-\frac x2\right]_0^1=\frac54-\frac12=\frac34.$$
 
 O denominador zera no extremo $x=0$, então, estritamente, a integral é imprópria. A singularidade é removível, pois para $x>0$ podemos cancelar um fator $x$ e obter uma expressão cujo limite em $0$ é $0$. Escrevemos:
 
-$$\frac{x^2}{x(x+1)}=\frac{x}{x+1}=1-\frac1{x+1}.$$
+$\frac{x^2}{x(x+1)}=\frac{x}{x+1}=1-\frac1{x+1}\qquad(x>0).$
 
-Então
+A definição imprópria exige o limite:
 
-$$\int_0^1\left(1-\frac1{x+1}\right)dx=\Big[x-\ln|x+1|\Big]_0^1=(1-\ln2)-(0-0)=1-\ln2.$$
+$I=\lim_{a\to0^+}\int_a^1\left(1-\frac1{x+1}\right)dx
+=\lim_{a\to0^+}\Big[x-\ln(x+1)\Big]_a^1.$
+
+No extremo superior obtemos $1-\ln2$. No inferior,
+
+$\lim_{a\to0^+}\big(a-\ln(1+a)\big)=0-0=0,$
+
+pela continuidade do logaritmo. Portanto $I=1-\ln2$.
 
 :::result
 **Resposta:** $1-\ln 2\approx0{,}307$
