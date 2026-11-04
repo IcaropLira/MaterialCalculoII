@@ -957,22 +957,212 @@ Depois de resolver em θ, monte um triângulo retângulo com os lados x, a e a h
 :::
 ::::
 
-### Guia rápido — demais itens da questão 12
+### Questão 12 — complementos com desenvolvimento completo
 
-| Item | Forma | Substituição |
-| --- | --- | --- |
-| b) 3dx/√(1+9x²) | a²+u², u=3x | Direto: ln(3x+√(1+9x²)) — ou 3x=tgθ |
-| c) ∫₀² dx/(8+2x²) | Imediata após fatorar 2 | = (1/4)arctg(x/2) → resposta π/16 |
-| d) ∫2dx/√(1−4x²) | a²−u², u=2x | arcsen(2x) → resposta π/4 |
-| f) 5dx/√(25x²−9), x&gt;3/5 | x²−a² | 5x = 3secθ |
-| h) 2dx/(x³√(x²−1)) | x²−a², a=1 | x=secθ |
-| i) 8dw/(w²√(4−w²)) | a²−x², a=2 | w=2senθ |
-| j) √(9−w²)/w² | a²−x², a=3 | w=3senθ (fórmula 48 da tabela) |
-| l) ∫4x²dx/(1−x²)^(3/2) | a²−x², a=1 | x=senθ |
-| n) (1−x²)^(3/2)/x⁶ | a²−x², a=1 | x=senθ |
-| o) 8dx/(4x²+1)² | (a²+u²)², a=1/2 | Fórmula de redução 33 da tabela (ou x=½tgθ) |
-| p) (1−r²)^(5/2)/r⁸ | a²−x² | r=senθ |
-| t) igual ao item n) | — | — |
+### 12b) $\displaystyle\int\frac{3\,dx}{\sqrt{1+9x^2}}$
+
+Faça $u=3x$, então $du=3dx$:
+
+$$I=\int\frac{du}{\sqrt{1+u^2}}.$$
+
+Uma primitiva é $\ln|u+\sqrt{1+u^2}|$. Voltando a $x$,
+
+:::result{kind="answer"}
+$\boxed{\ln|3x+\sqrt{1+9x^2}|+C}$
+:::
+
+### 12c) $\displaystyle\int_0^2\frac{dx}{8+2x^2}$
+
+Fatore $2$ no denominador:
+
+$$I=\frac12\int_0^2\frac{dx}{x^2+4}
+=\frac18\left[\arctan\left(\frac x2\right)\right]_0^2.$$
+
+A primitiva usa $\int dx/(x^2+a^2)=(1/a)\arctan(x/a)$, com $a=2$:
+
+$$I=\frac14\left[\arctan\left(\frac x2\right)\right]_0^2
+=\frac14\cdot\frac\pi4.$$
+
+:::result{kind="answer"}
+$\boxed{\pi/16}$
+:::
+
+### 12d) $\displaystyle\int_0^{1/2}\frac{2\,dx}{\sqrt{1-4x^2}}$
+
+Faça $u=2x$, então $du=2dx$. Os limites passam de $x=0,1/2$ para $u=0,1$:
+
+$$I=\int_0^1\frac{du}{\sqrt{1-u^2}}
+=\left[\arcsin u\right]_0^1=\frac\pi2.$$
+
+:::result{kind="answer"}
+$\boxed{\pi/2}$
+:::
+
+### 12f) $\displaystyle\int\frac{5\,dx}{\sqrt{25x^2-9}},\quad x>3/5$
+
+Escreva a raiz como $3\sqrt{(5x/3)^2-1}$. Faça $u=5x/3$, de modo que $5dx=3du$:
+
+$$I=\int\frac{3du}{3\sqrt{u^2-1}}
+=\int\frac{du}{\sqrt{u^2-1}}.$$
+
+Para $u>1$, uma primitiva é $\ln(u+\sqrt{u^2-1})$. Assim,
+
+$$I=\ln\left(\frac{5x}{3}+\sqrt{\frac{25x^2}{9}-1}\right)+C.$$
+
+Multiplicar o argumento do logaritmo por uma constante positiva só altera a constante de integração; podemos escrever a forma mais simples:
+
+:::result{kind="answer"}
+$\boxed{\ln\left(5x+\sqrt{25x^2-9}\right)+C}$
+:::
+
+### 12h) $\displaystyle\int\frac{2\,dx}{x^3\sqrt{x^2-1}}$
+
+Como aparece $\sqrt{x^2-1}$ e $x>1$, use $x=\sec\theta$. Então
+
+$$dx=\sec\theta\tan\theta\,d\theta,\qquad
+\sqrt{x^2-1}=\tan\theta.$$
+
+Substituindo,
+
+$$I=2\int\frac{\sec\theta\tan\theta}
+{\sec^3\theta\tan\theta}\,d\theta
+=2\int\cos^2\theta\,d\theta.$$
+
+Use $\cos^2\theta=(1+\cos2\theta)/2$:
+
+$$I=\theta+\frac12\sin2\theta+C
+=\theta+\sin\theta\cos\theta+C.$$
+
+Como $\sec\theta=x$, temos $\theta=\operatorname{arcsec}x$, $\cos\theta=1/x$ e $\sin\theta=\sqrt{x^2-1}/x$.
+
+:::result{kind="answer"}
+$\boxed{\operatorname{arcsec}x+\frac{\sqrt{x^2-1}}{x^2}+C}$
+:::
+
+### 12i) $\displaystyle\int\frac{8\,dw}{w^2\sqrt{4-w^2}}$
+
+Use $w=2\sin\theta$, com $dw=2\cos\theta\,d\theta$ e $\sqrt{4-w^2}=2\cos\theta$ (no intervalo principal):
+
+$$I=\int\frac{8(2\cos\theta)}
+{(4\sin^2\theta)(2\cos\theta)}d\theta
+=2\int\csc^2\theta\,d\theta.$$
+
+Como $\int\csc^2\theta\,d\theta=-\cot\theta$,
+
+$$I=-2\cot\theta+C.$$
+
+Da substituição, $\sin\theta=w/2$ e $\cos\theta=\sqrt{4-w^2}/2$, então $\cot\theta=\sqrt{4-w^2}/w$.
+
+:::result{kind="answer"}
+$\boxed{-\frac{2\sqrt{4-w^2}}w+C}$
+:::
+
+### 12j) $\displaystyle\int\frac{\sqrt{9-w^2}}{w^2}\,dw$
+
+Use $w=3\sin\theta$. Então $dw=3\cos\theta\,d\theta$ e $\sqrt{9-w^2}=3\cos\theta$:
+
+$$I=\int\frac{9\cos^2\theta}{9\sin^2\theta}d\theta
+=\int\cot^2\theta\,d\theta.$$
+
+Pela identidade $\cot^2\theta=\csc^2\theta-1$,
+
+$$I=-\cot\theta-\theta+C.$$
+
+Voltando a $w$,
+
+$$\cot\theta=\frac{\sqrt{9-w^2}}w,\qquad
+\theta=\arcsin(w/3).$$
+
+:::result{kind="answer"}
+$\boxed{-\frac{\sqrt{9-w^2}}w-\arcsin(w/3)+C}$
+:::
+
+### 12l) $\displaystyle\int_0^{\sqrt3/2}\frac{4x^2}{(1-x^2)^{3/2}}\,dx$
+
+Faça $x=\sin\theta$. Então $dx=\cos\theta\,d\theta$ e $(1-x^2)^{3/2}=\cos^3\theta$. Os limites tornam-se $0$ e $\pi/3$:
+
+$$I=4\int_0^{\pi/3}\frac{\sin^2\theta\cos\theta}{\cos^3\theta}d\theta
+=4\int_0^{\pi/3}\tan^2\theta\,d\theta.$$
+
+Como $\tan^2\theta=\sec^2\theta-1$,
+
+$$I=4[\tan\theta-\theta]_0^{\pi/3}
+=4\left(\sqrt3-\frac\pi3\right).$$
+
+:::result{kind="answer"}
+$\boxed{4\sqrt3-\frac{4\pi}{3}}$
+:::
+
+### 12n) $\displaystyle\int\frac{(1-x^2)^{3/2}}{x^6}\,dx$
+
+Use $x=\sin\theta$, de modo que $dx=\cos\theta\,d\theta$ e $(1-x^2)^{3/2}=\cos^3\theta$:
+
+$$I=\int\frac{\cos^3\theta}{\sin^6\theta}\cos\theta\,d\theta
+=\int\frac{\cos^4\theta}{\sin^6\theta}d\theta
+=\int\cot^4\theta\,\csc^2\theta\,d\theta.$$
+
+Faça $u=\cot\theta$, $du=-\csc^2\theta\,d\theta$:
+
+$$I=-\int u^4du=-\frac{u^5}{5}+C.$$
+
+Como $\cot\theta=\sqrt{1-x^2}/x$,
+
+:::result{kind="answer"}
+$\boxed{-\frac{(1-x^2)^{5/2}}{5x^5}+C}$
+:::
+
+### 12o) $\displaystyle\int\frac{8\,dx}{(4x^2+1)^2}$
+
+Aqui a substituição trigonométrica é possível, mas podemos usar diretamente a fórmula para $(1+u^2)^{-2}$. Faça $u=2x$, $dx=du/2$:
+
+$$I=4\int\frac{du}{(1+u^2)^2}.$$
+
+Uma primitiva dessa forma é
+
+$$\int\frac{du}{(1+u^2)^2}
+=\frac{u}{2(1+u^2)}+\frac12\arctan u+C.$$
+
+Logo,
+
+$$I=2\frac{u}{1+u^2}+2\arctan u+C.$$
+
+Voltando a $u=2x$,
+
+:::result{kind="answer"}
+$\boxed{\frac{4x}{1+4x^2}+2\arctan(2x)+C}$
+:::
+
+### 12p) $\displaystyle\int\frac{(1-r^2)^{5/2}}{r^8}\,dr$
+
+Use $r=\sin\theta$, então $dr=\cos\theta\,d\theta$:
+
+$$I=\int\frac{\cos^5\theta}{\sin^8\theta}\cos\theta\,d\theta
+=\int\cot^6\theta\,\csc^2\theta\,d\theta.$$
+
+Com $u=\cot\theta$, $du=-\csc^2\theta\,d\theta$:
+
+$$I=-\int u^6du=-\frac{u^7}{7}+C.$$
+
+Como $\cot\theta=\sqrt{1-r^2}/r$,
+
+:::result{kind="answer"}
+$\boxed{-\frac{(1-r^2)^{7/2}}{7r^7}+C}$
+:::
+
+### 12t) $\displaystyle\int\frac{(1-x^2)^{3/2}}{x^6}\,dx$
+
+O item é idêntico ao 12n. Repetimos a substituição para que a resolução seja independente: $x=\sin\theta$, $dx=\cos\theta\,d\theta$:
+
+$$I=\int\cot^4\theta\,\csc^2\theta\,d\theta.$$
+
+Com $u=\cot\theta$, $du=-\csc^2\theta\,d\theta$:
+
+$$I=-\frac15\cot^5\theta+C.$$
+
+:::result{kind="answer"}
+$\boxed{-\frac{(1-x^2)^{5/2}}{5x^5}+C}$
+:::
+
 
 ## Frações Parciais {#pfrac}
 
