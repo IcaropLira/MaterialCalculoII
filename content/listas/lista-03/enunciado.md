@@ -42,7 +42,7 @@ itemsCount: "170"
 6. $a_n=\dfrac{\ln(n)}{\sqrt{n}}$
 7. $a_n=\dfrac{n!}{n^n}$ (dica: compare com $1/n$)
 8. $a_n=\left(\dfrac{1}{n}\right)^{\frac{1}{\ln(n)}}$
-9. $a_n=\ln\left(1+\dfrac{1}{n}\right)^n$
+9. $a_n=\ln\left[\left(1+\dfrac{1}{n}\right)^n\right]$
 10. $a_n=\left(\dfrac{1}{3}\right)^n+\dfrac{1}{\sqrt{2^n}}$
 11. $a_n=\left(\dfrac{3}{n}\right)^{1/n}$
 
@@ -93,7 +93,7 @@ itemsCount: "170"
 3. $\displaystyle\sum_{n=1}^{\infty}\frac{n}{n^2+4}$
 4. $\displaystyle\sum_{n=1}^{\infty}\frac{1}{n+4}$
 5. $\displaystyle\sum_{n=1}^{\infty}e^{-2n}$
-6. $\displaystyle\sum_{n=1}^{\infty}\frac{n-4}{n^2-2n+1}$
+6. $\displaystyle\sum_{n=2}^{\infty}\frac{n-4}{n^2-2n+1}$
 7. $\displaystyle\sum_{n=1}^{\infty}\frac{\ln(n^2)}{n}$
 8. $\displaystyle\sum_{n=1}^{\infty}\frac{n^2}{e^{n/3}}$
 
@@ -106,7 +106,7 @@ itemsCount: "170"
 5. $\displaystyle\sum_{n=1}^{\infty}\frac{3}{\sqrt{n}}$
 6. $\displaystyle\sum_{n=1}^{\infty}\frac{2^n}{3^n}$
 7. $\displaystyle\sum_{n=1}^{\infty}\frac{e^n}{1+e^{2n}}$
-8. $\displaystyle\sum_{n=1}^{\infty}\frac{\sqrt{n}}{\ln(n)}$
+8. $\displaystyle\sum_{n=2}^{\infty}\frac{\sqrt{n}}{\ln(n)}$
 9. $\displaystyle\sum_{n=1}^{\infty}\frac{n}{n+1}$
 10. $\displaystyle\sum_{n=1}^{\infty}\frac{5}{n+1}$
 11. $\displaystyle\sum_{n=1}^{\infty}\frac{2^n}{n+1}$
@@ -116,8 +116,8 @@ itemsCount: "170"
 
 1. $\displaystyle\sum_{n=1}^{\infty}\frac{1}{n^2+27}$
 2. $\displaystyle\sum_{n=1}^{\infty}\frac{n-1}{n^4+2}$
-3. $\displaystyle\sum_{n=1}^{\infty}\frac{1}{\sqrt{n}-1}$
-4. $\displaystyle\sum_{n=1}^{\infty}\frac{n+2}{n^2-n}$
+3. $\displaystyle\sum_{n=2}^{\infty}\frac{1}{\sqrt{n}-1}$
+4. $\displaystyle\sum_{n=2}^{\infty}\frac{n+2}{n^2-n}$
 5. $\displaystyle\sum_{n=1}^{\infty}\frac{\cos^2(n)}{n^{3/2}}$
 6. $\displaystyle\sum_{n=1}^{\infty}\frac{1}{n3^n}$
 7. $\displaystyle\sum_{n=1}^{\infty}\sqrt{\frac{n+4}{n^4+4}}$
@@ -126,9 +126,9 @@ itemsCount: "170"
 ### 11. Utilize o teste da comparação no limite para determinar se as séries abaixo convergem ou divergem.
 
 1. $\displaystyle\sum_{n=1}^{\infty}\frac{n-2}{n^3-n^2+3}$ (dica: comparação no limite com $\sum 1/n^2$)
-2. $\displaystyle\sum_{n=1}^{\infty}\frac{n(n+1)}{(n^2+1)(n-1)}$
+2. $\displaystyle\sum_{n=2}^{\infty}\frac{n(n+1)}{(n^2+1)(n-1)}$
 3. $\displaystyle\sum_{n=1}^{\infty}\frac{2^n}{3+4^n}$
-4. $\displaystyle\sum_{n=1}^{\infty}\frac{1}{\ln(n)}$ (dica: comparação no limite com $\sum 1/n$)
+4. $\displaystyle\sum_{n=2}^{\infty}\frac{1}{\ln(n)}$ (dica: comparação no limite com $\sum 1/n$)
 5. $\displaystyle\sum_{n=1}^{\infty}\ln\left(1+\frac{1}{n^2}\right)$ (dica: comparação no limite com $\sum 1/n^2$)
 
 ### 12. Utilize qualquer método para determinar se a série converge ou diverge.

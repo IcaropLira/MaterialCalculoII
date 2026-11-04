@@ -1,7 +1,7 @@
 ---
 title: "Exercícios — Área de regiões planas"
 eyebrow: "cálculo ii · aula 07 · lista de exercícios"
-lede: "19 exercícios graduados (do básico ao bombeamento de água), todos com resolução passo a passo. Esboce a região antes de abrir cada resposta."
+lede: "21 exercícios graduados (do básico ao bombeamento de água), todos com resolução passo a passo. Esboce a região antes de abrir cada resposta."
 kind: "exercicios"
 ---
 

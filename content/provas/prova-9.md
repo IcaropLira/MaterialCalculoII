@@ -8,7 +8,7 @@ eyebrow: "cálculo ii · prova resolvida"
 lede: "Coordenadas polares: conversão, curvas e área em coordenadas do tipo $r,\\theta$."
 instruction: "Converta, interprete e calcule áreas em coordenadas polares."
 gabaritoIntro: "As fórmulas de conversão e a área polar são a base da resolução."
-cta: {"text": "Em coordenadas polares, o segredo é transformar a figura em uma equação em termos de $r$ e $\\theta$, e então usar a área polar $A=\\frac12\\int r^2 d\\theta$.", "label": "Revisar geometria e trigonometria", "href": "/topicos/substituicao-trigonometrica"}
+cta: {"text": "Em coordenadas polares, o segredo é transformar a figura em uma equação em termos de $r$ e $\\theta$, e então usar a área polar $A=\\frac12\\int r^2 d\\theta$.", "label": "Revisar geometria e trigonometria", "href": "/topicos/coordenadas-polares"}
 ---
 
 ## Converta os pontos para coordenadas cartesianas.
