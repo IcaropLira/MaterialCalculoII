@@ -1238,27 +1238,330 @@ $\boxed{-\frac{(1-x^2)^{5/2}}{5x^5}+C}$
 :::
 ::::
 
-### Guia rápido — demais itens das questões 13 e 14
+### Questão 13 — complementos com desenvolvimento completo
 
-| Item | Fatoração / técnica |
-| --- | --- |
-| 13d) (t²+8)/(t²−5t+6) | Grau numerador = grau denom.: divida primeiro (quociente 1 + resto), depois frações parciais em (t−2)(t−3) |
-| 14b) 1/(x²+2x) | x(x+2), lineares distintos |
-| 14c) (x+4)/(x²+5x−6) | (x−1)(x+6) |
-| 14d) (2x+1)/(x²−7x+12) | (x−3)(x−4) |
-| 14e,f) limites definidos y/(y²−2y−3), (y+4)/(y²+y) | Fatorar e avaliar; cuidado com domínio (assíntotas dentro do intervalo — checar convergência) |
-| 14g) 1/(t³+t²−2t) | t(t−1)(t+2), 3 fatores lineares |
-| 14h) (x+3)/(2x³−8x) | 2x(x−2)(x+2) |
-| 14i,j) x³/(x²+2x+1) ou x²−2x+1 | Grau num&gt;denom: divida primeiro; denom = (x±1)² |
-| 14l) x²/\[(x−1)(x²+2x+1)\] | Atenção: x²+2x+1=(x+1)², então é (x−1)(x+1)² |
-| 14m) 1/\[(x+1)(x²+1)\] | Linear × quadrático irredutível |
-| 14n) (3t²+t+4)/(t³+t) | t(t²+1) |
-| 14p) (8x²+8x+2)/(4x²+1) | Grau igual: divida primeiro (quociente constante 2) |
-| 14q) (x²+4x+1)/\[(x−1)(x+1)(x+3)\] | 3 fatores lineares distintos |
-| 14r) (6x+7)/(x+2)² | Fator repetido único: escreva 6x+7=6(x+2)−5 |
-| 14s) (2x³−4x²−x−3)/(x²−2x−3) | Divida primeiro (grau num&gt;denom), depois (x−3)(x+1) |
-| 14t) 1/\[x(x²−1)²\] | x·(x−1)²(x+1)², combina linear simples + repetidos |
-| 15a,b) volumes de sólidos com y racional | Frações parciais dentro da integral de V=π∫y²dx (ou 2π∫xy dy) |
+### 13d) $\displaystyle\frac{t^2+8}{t^2-5t+6}$
+
+**1. Fatore o denominador e compare os graus.**
+
+$$t^2-5t+6=(t-2)(t-3).$$
+
+Os graus são iguais, então começamos dividindo: o quociente é $1$ e o resto é $5t+2$, pois
+
+$$t^2+8=(t^2-5t+6)+(5t+2).$$
+
+**2. Decomponha a fração própria restante.**
+
+$$\frac{5t+2}{(t-2)(t-3)}
+=\frac A{t-2}+\frac B{t-3}.$$
+
+Multiplicando pelos fatores e escolhendo as raízes:
+
+- $t=2$: $12=-A$, então $A=-12$;
+- $t=3$: $17=B$, então $B=17$.
+
+:::result{kind="answer"}
+$\boxed{\frac{t^2+8}{t^2-5t+6}
+=1-\frac{12}{t-2}+\frac{17}{t-3}}$
+:::
+
+### Questão 14 — complementos com desenvolvimento completo
+
+### 14b) $\displaystyle\int\frac{dx}{x^2+2x}$
+
+Fatore $x^2+2x=x(x+2)$ e escreva
+
+$$\frac1{x(x+2)}=\frac A x+\frac B{x+2}.$$
+
+De $1=A(x+2)+Bx$, obtemos $2A=1$ e $A+B=0$, isto é, $A=1/2$ e $B=-1/2$.
+
+$$I=\frac12\int\frac{dx}{x}-\frac12\int\frac{dx}{x+2}.$$
+
+:::result{kind="answer"}
+$\boxed{\frac12\ln|x|-\frac12\ln|x+2|+C}$
+:::
+
+### 14c) $\displaystyle\int\frac{x+4}{x^2+5x-6}\,dx$
+
+Fatore $x^2+5x-6=(x-1)(x+6)$ e decomponha:
+
+$$\frac{x+4}{(x-1)(x+6)}
+=\frac A{x-1}+\frac B{x+6}.$$
+
+Substituindo $x=1$, $5=7A$, logo $A=5/7$. Substituindo $x=-6$, $-2=-7B$, logo $B=2/7$.
+
+Integre os dois termos:
+
+:::result{kind="answer"}
+$\boxed{\frac57\ln|x-1|+\frac27\ln|x+6|+C}$
+:::
+
+### 14d) $\displaystyle\int\frac{2x+1}{x^2-7x+12}\,dx$
+
+Fatore o denominador: $(x-3)(x-4)$. Escreva
+
+$$\frac{2x+1}{(x-3)(x-4)}
+=\frac A{x-3}+\frac B{x-4}.$$
+
+Em $x=3$, $7=-A$, então $A=-7$. Em $x=4$, $9=B$. Logo,
+
+:::result{kind="answer"}
+$\boxed{-7\ln|x-3|+9\ln|x-4|+C}$
+:::
+
+### 14e) $\displaystyle\int_4^8\frac{y}{y^2-2y-3}\,dy$
+
+Fatore $y^2-2y-3=(y-3)(y+1)$. A decomposição é
+
+$$\frac y{(y-3)(y+1)}
+=\frac A{y-3}+\frac B{y+1}.$$
+
+Em $y=3$, $3=4A$, então $A=3/4$. Em $y=-1$, $-1=-4B$, então $B=1/4$.
+
+Como os polos $-1$ e $3$ não pertencem a $[4,8]$, podemos aplicar a primitiva nos extremos:
+
+$$I=\left[\frac34\ln|y-3|+\frac14\ln|y+1|\right]_4^8.$$
+
+:::result{kind="answer"}
+$\boxed{\frac34\ln5+\frac14\ln\frac95}$
+:::
+
+### 14f) $\displaystyle\int_{1/2}^1\frac{y+4}{y^2+y}\,dy$
+
+Fatore $y^2+y=y(y+1)$ e decomponha:
+
+$$\frac{y+4}{y(y+1)}
+=\frac A y+\frac B{y+1}.$$
+
+De $y+4=A(y+1)+By$, em $y=0$ obtemos $A=4$; em $y=-1$, obtemos $B=-3$.
+
+$$I=\left[4\ln y-3\ln(y+1)\right]_{1/2}^1.$$
+
+Substituindo os extremos e juntando os logaritmos,
+
+$$I=-3\ln2+4\ln2+3\ln\frac32
+=\ln2+3\ln\frac32.$$
+
+:::result{kind="answer"}
+$\boxed{\ln\frac{27}{4}}$
+:::
+
+### 14g) $\displaystyle\int\frac{dt}{t^3+t^2-2t}$
+
+Fatore $t^3+t^2-2t=t(t-1)(t+2)$ e escreva
+
+$$\frac1{t(t-1)(t+2)}
+=\frac A t+\frac B{t-1}+\frac C{t+2}.$$
+
+Multiplicando pelo denominador e substituindo as raízes:
+
+- $t=0$: $1=-2A$, então $A=-1/2$;
+- $t=1$: $1=3B$, então $B=1/3$;
+- $t=-2$: $1=6C$, então $C=1/6$.
+
+Integre termo a termo:
+
+:::result{kind="answer"}
+$\boxed{-\frac12\ln|t|+\frac13\ln|t-1|+\frac16\ln|t+2|+C}$
+:::
+
+### 14h) $\displaystyle\int\frac{x+3}{2x^3-8x}\,dx$
+
+Fatore $2x^3-8x=2x(x-2)(x+2)$. A decomposição é
+
+$$\frac{x+3}{2x(x-2)(x+2)}
+=\frac A x+\frac B{x-2}+\frac C{x+2}.$$
+
+Substituindo as raízes após multiplicar pelo denominador:
+
+- $x=0$: $3=-8A$, então $A=-3/8$;
+- $x=2$: $5=16B$, então $B=5/16$;
+- $x=-2$: $1=16C$, então $C=1/16$.
+
+:::result{kind="answer"}
+$\boxed{-\frac38\ln|x|+\frac5{16}\ln|x-2|+\frac1{16}\ln|x+2|+C}$
+:::
+
+### 14i) $\displaystyle\int_0^1\frac{x^3}{x^2+2x+1}\,dx$
+
+O denominador é $(x+1)^2$. Como o grau do numerador é maior, dividimos:
+
+$$x^3=(x-2)(x+1)^2+(3x+2).$$
+
+Além disso,
+
+$$\frac{3x+2}{(x+1)^2}
+=\frac3{x+1}-\frac1{(x+1)^2}.$$
+
+Portanto,
+
+$$I=\int_0^1\left(x-2+\frac3{x+1}-\frac1{(x+1)^2}\right)dx.$$
+
+Uma primitiva é
+
+$$F(x)=\frac{x^2}{2}-2x+3\ln(x+1)+\frac1{x+1}.$$
+
+Avalie: $F(1)-F(0)=3\ln2-2$.
+
+:::result{kind="answer"}
+$\boxed{3\ln2-2}$
+:::
+
+### 14j) $\displaystyle\int\frac{x^3}{x^2-2x+1}\,dx$
+
+O denominador é $(x-1)^2$. Dividindo,
+
+$$x^3=(x+2)(x-1)^2+(3x-2),$$
+
+e
+
+$$\frac{3x-2}{(x-1)^2}
+=\frac3{x-1}+\frac1{(x-1)^2}.$$
+
+Assim,
+
+$$I=\int\left(x+2+\frac3{x-1}+\frac1{(x-1)^2}\right)dx.$$
+
+:::result{kind="answer"}
+$\boxed{\frac{x^2}{2}+2x+3\ln|x-1|-\frac1{x-1}+C}$
+:::
+
+### 14l) $\displaystyle\int\frac{x^2}{(x-1)(x^2+2x+1)}\,dx$
+
+Como $x^2+2x+1=(x+1)^2$, escreva
+
+$$\frac{x^2}{(x-1)(x+1)^2}
+=\frac A{x-1}+\frac B{x+1}+\frac C{(x+1)^2}.$$
+
+Multiplicando pelo denominador comum e substituindo $x=1$ e $x=-1$, obtemos $A=1/4$ e $C=1/2$. Comparando os coeficientes de $x^2$, $A+B=1$, logo $B=3/4$.
+
+$$I=\int\left(\frac1{4(x-1)}+\frac3{4(x+1)}
++\frac1{2(x+1)^2}\right)dx.$$
+
+:::result{kind="answer"}
+$\boxed{\frac14\ln|x-1|+\frac34\ln|x+1|-\frac1{2(x+1)}+C}$
+:::
+
+### 14m) $\displaystyle\int\frac{dx}{(x+1)(x^2+1)}$
+
+Escreva
+
+$$\frac1{(x+1)(x^2+1)}
+=\frac A{x+1}+\frac{Bx+C}{x^2+1}.$$
+
+Após multiplicar pelo denominador comum, a comparação dos coeficientes fornece $A=1/2$, $B=-1/2$ e $C=1/2$.
+
+$$I=\frac12\int\frac{dx}{x+1}
+-\frac12\int\frac{x\,dx}{x^2+1}
++\frac12\int\frac{dx}{x^2+1}.$$
+
+:::result{kind="answer"}
+$\boxed{\frac12\ln|x+1|-\frac14\ln(x^2+1)+\frac12\arctan x+C}$
+:::
+
+### 14n) $\displaystyle\int_1^{\sqrt3}\frac{3t^2+t+4}{t^3+t}\,dt$
+
+Fatore $t^3+t=t(t^2+1)$ e decomponha:
+
+$$\frac{3t^2+t+4}{t(t^2+1)}
+=\frac A t+\frac{Bt+C}{t^2+1}.$$
+
+Comparando coeficientes em
+$3t^2+t+4=A(t^2+1)+(Bt+C)t$, obtemos $A=4$, $B=-1$ e $C=1$.
+
+$$I=\left[4\ln t-\frac12\ln(t^2+1)+\arctan t\right]_1^{\sqrt3}.$$
+
+No extremo superior: $2\ln3-\ln2+\pi/3$. No inferior: $-\frac12\ln2+\pi/4$.
+
+:::result{kind="answer"}
+$\boxed{2\ln3-\frac12\ln2+\frac\pi{12}}$
+:::
+
+### 14p) $\displaystyle\int\frac{8x^2+8x+2}{4x^2+1}\,dx$
+
+Divida o numerador por $4x^2+1$:
+
+$$8x^2+8x+2=2(4x^2+1)+8x.$$
+
+Logo,
+
+$$I=\int\left(2+\frac{8x}{4x^2+1}\right)dx.$$
+
+Na segunda parcela, use $u=4x^2+1$, $du=8x\,dx$:
+
+:::result{kind="answer"}
+$\boxed{2x+\ln(4x^2+1)+C}$
+:::
+
+### 14q) $\displaystyle\int\frac{x^2+4x+1}{(x-1)(x+1)(x+3)}\,dx$
+
+Escreva
+
+$$\frac{x^2+4x+1}{(x-1)(x+1)(x+3)}
+=\frac A{x-1}+\frac B{x+1}+\frac C{x+3}.$$
+
+Substituindo as raízes:
+
+- $x=1$: $6=8A$, então $A=3/4$;
+- $x=-1$: $-2=-4B$, então $B=1/2$;
+- $x=-3$: $-2=8C$, então $C=-1/4$.
+
+:::result{kind="answer"}
+$\boxed{\frac34\ln|x-1|+\frac12\ln|x+1|-\frac14\ln|x+3|+C}$
+:::
+
+### 14r) $\displaystyle\int\frac{6x+7}{(x+2)^2}\,dx$
+
+Reescreva o numerador em função de $x+2$:
+
+$$6x+7=6(x+2)-5.$$
+
+Então,
+
+$$\frac{6x+7}{(x+2)^2}
+=\frac6{x+2}-\frac5{(x+2)^2}.$$
+
+:::result{kind="answer"}
+$\boxed{6\ln|x+2|+\frac5{x+2}+C}$
+:::
+
+### 14s) $\displaystyle\int\frac{2x^3-4x^2-x-3}{x^2-2x-3}\,dx$
+
+Primeiro divida os polinômios:
+
+$$2x^3-4x^2-x-3
+=2x(x^2-2x-3)+(5x-3).$$
+
+Fatore $x^2-2x-3=(x-3)(x+1)$ e decomponha
+
+$$\frac{5x-3}{(x-3)(x+1)}
+=\frac A{x-3}+\frac B{x+1}.$$
+
+Em $x=3$, $12=4A$, então $A=3$. Em $x=-1$, $-8=-4B$, então $B=2$.
+
+Assim, o integrando é $2x+3/(x-3)+2/(x+1)$.
+
+:::result{kind="answer"}
+$\boxed{x^2+3\ln|x-3|+2\ln|x+1|+C}$
+:::
+
+### 14t) $\displaystyle\int\frac{dx}{x(x^2-1)^2}$
+
+Fatore o denominador: $x(x-1)^2(x+1)^2$. A forma correta da decomposição inclui todos os termos dos fatores repetidos:
+
+$$\frac1{x(x-1)^2(x+1)^2}
+=\frac1x-\frac1{2(x-1)}+\frac1{4(x-1)^2}
+-\frac1{2(x+1)}-\frac1{4(x+1)^2}.$$
+
+A igualdade pode ser conferida multiplicando ambos os lados por $x(x-1)^2(x+1)^2$. Integre termo a termo:
+
+$$I=\ln|x|-\frac12\ln|x-1|-\frac12\ln|x+1|
+-\frac1{4(x-1)}+\frac1{4(x+1)}+C.$$
+
+:::result{kind="answer"}
+$\boxed{\ln|x|-\frac12\ln|x-1|-\frac12\ln|x+1|-\frac1{4(x-1)}+\frac1{4(x+1)}+C}$
+:::
+
 
 ## Integrais Impróprias {#improp}
 
