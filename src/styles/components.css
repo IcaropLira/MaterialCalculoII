@@ -183,3 +183,28 @@ details.toggle > summary:hover{ color:var(--gold); }
 @media (max-width:640px){ .question-card{ padding:18px 16px; } .question-card ol{ padding-left:24px; } }
 
 .empty-state{ padding:80px 24px; text-align:center; color:var(--muted); }
+
+/* ───────── figuras (SVG inline nas resoluções) ─────────
+   As cores vêm dos tokens, então a figura acompanha o tema claro/escuro. */
+.fig{ margin:26px 0; padding:18px 18px 12px; background:var(--surface); border:1px solid var(--line); border-radius:var(--radius-card); box-shadow:var(--shadow); max-width:640px; }
+.fig svg{ display:block; width:100%; height:auto; overflow:visible; }
+.fig figcaption{ font-size:13.5px; color:var(--muted); text-align:center; margin-top:8px; line-height:1.45; }
+.fig .ax{ stroke:var(--ink-soft); stroke-width:1.3; fill:none; }
+.fig .tick{ stroke:var(--ink-soft); stroke-width:1; }
+.fig .grid{ stroke:var(--line); stroke-width:.8; }
+.fig .tl{ fill:var(--muted); font:12px var(--font-body, Inter, sans-serif); }
+.fig .lbl{ fill:var(--ink); font:italic 14px var(--font-display, Georgia, serif); }
+.fig .lbl.c1t{ fill:var(--gold); } .fig .lbl.c2t{ fill:var(--teal); } .fig .lbl.c3t{ fill:var(--rose); }
+.fig .c1{ stroke:var(--gold); stroke-width:2.4; fill:none; }
+.fig .c2{ stroke:var(--teal); stroke-width:2.4; fill:none; }
+.fig .c3{ stroke:var(--rose); stroke-width:2; fill:none; }
+.fig .ghost{ stroke:var(--muted); stroke-width:1.3; fill:none; stroke-dasharray:5 4; opacity:.8; }
+.fig .eixo{ stroke:var(--rose); stroke-width:1.6; fill:none; stroke-dasharray:7 5; }
+.fig .fill1{ fill:var(--gold-soft); stroke:none; opacity:.85; }
+.fig .fill2{ fill:var(--teal-soft); stroke:none; opacity:.85; }
+.fig .strip{ fill:var(--rose-soft); stroke:var(--rose); stroke-width:1.2; }
+.fig .ring{ fill:none; stroke:var(--rose); stroke-width:1.4; }
+.fig .ringfill{ fill:var(--rose-soft); stroke:var(--rose); stroke-width:1.2; opacity:.9; }
+.fig .dot{ fill:var(--ink); }
+.fig .arrow{ stroke:var(--ink-soft); stroke-width:1.2; fill:none; marker-end:url(#arr); }
+.fig .arrowhead{ fill:var(--ink-soft); }

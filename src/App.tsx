@@ -30,6 +30,8 @@ export default function App() {
         <Route path="/topicos/:slug/exercicios" element={<TopicExercises />} />
         <Route path="/listas/:slug" element={<ListaStatement />} />
         <Route path="/listas/:slug/resolucoes" element={<ListaSolutions />} />
+        <Route path="/aulas/:slug" element={<ListaStatement kind="aulas" />} />
+        <Route path="/aulas/:slug/resolucoes" element={<ListaSolutions kind="aulas" />} />
         <Route path="/provas/:slug" element={<ProvaPage />} />
         <Route path="*" element={<NotFound />} />
       </Routes>

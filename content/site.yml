@@ -11,6 +11,7 @@ nav:
   - { label: "Início",  to: "/" }
   - { label: "Tópicos", to: "/#topicos" }
   - { label: "Listas",  to: "/#listas" }
+  - { label: "Aulas",   to: "/#aulas" }
   - { label: "Provas",  to: "/#provas" }
 
 home:
@@ -27,6 +28,10 @@ home:
     kicker: "prática organizada"
     title: "Listas de exercícios"
     text: "Listas completas para praticar as técnicas de integração, com resolução comentada e uma referência rápida para escolher o método."
+  aulas:
+    kicker: "resolvidas em sala"
+    title: "Aulas de exercícios"
+    text: "As questões das aulas de exercícios, cada uma com brainstorm teórico, figura da região, resolução passo a passo, conferência por outro caminho e resumo no final."
   provas:
     kicker: "treino para a avaliação"
     title: "Provas"

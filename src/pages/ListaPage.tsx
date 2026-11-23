@@ -5,7 +5,14 @@ import PageShell from '../components/PageShell';
 import Sidebar from '../components/Sidebar';
 import Hero from '../components/Hero';
 import { Md, MdInline } from '../lib/markdown';
-import { getLista, splitSections, plain } from '../lib/content';
+import { getAula, getLista, splitSections, plain, type Lista } from '../lib/content';
+
+/** Listas e aulas de exercícios compartilham as mesmas páginas; só muda a pasta, a rota e os textos. */
+export type Kind = 'listas' | 'aulas';
+const KINDS: Record<Kind, { get: (slug?: string) => Lista | undefined; home: string; back: string; noun: string; foot: string }> = {
+  listas: { get: getLista, home: '/#listas', back: 'voltar para listas', noun: 'listas', foot: 'Parte da série de listas de exercícios de Cálculo II.' },
+  aulas: { get: getAula, home: '/#aulas', back: 'voltar para aulas', noun: 'aulas', foot: 'Parte da série de aulas de exercícios de Cálculo II.' },
+};
 
 function splitQuestions(body: string) {
   const parts = body.split(/^### /m);
@@ -16,16 +23,17 @@ function splitQuestions(body: string) {
 }
 
 /** Enunciados: "## seção" > "### questão" (+ itens a), b)… em lista numerada). */
-export function ListaStatement() {
-  const l = getLista(useParams().slug);
+export function ListaStatement({ kind = 'listas' }: { kind?: Kind }) {
+  const K = KINDS[kind];
+  const l = K.get(useParams().slug);
   if (!l?.statement || l.status !== 'available') return <NotFound />;
   const doc = l.statement;
   const { intro, sections } = splitSections(doc.body);
-  const actions = l.solutions ? [{ label: 'Abrir resoluções', to: `/listas/${l.slug}/resolucoes`, primary: true }, { label: 'Voltar para listas', to: '/#listas' }] : [{ label: 'Voltar para listas', to: '/#listas' }];
+  const actions = l.solutions ? [{ label: 'Abrir resoluções', to: `/${kind}/${l.slug}/resolucoes`, primary: true }, { label: `Voltar para ${K.noun}`, to: K.home }] : [{ label: `Voltar para ${K.noun}`, to: K.home }];
   return (
-    <PageShell active="/#listas" title={String(doc.fm.heading ?? doc.fm.title)} related={{ title: l.title, links: l.solutions ? [{ label: 'Ver resoluções', to: `/listas/${l.slug}/resolucoes` }] : [] }}>
+    <PageShell active={K.home} title={String(doc.fm.heading ?? doc.fm.title)} related={{ title: l.title, links: l.solutions ? [{ label: 'Ver resoluções', to: `/${kind}/${l.slug}/resolucoes` }] : [] }}>
       <div className="shell">
-        <Sidebar sub="Enunciados para resolver" foot="Tente os exercícios antes de abrir as resoluções." back={{ to: '/#listas', label: 'voltar para listas' }}
+        <Sidebar sub="Enunciados para resolver" foot="Tente os exercícios antes de abrir as resoluções." back={{ to: K.home, label: K.back }}
           items={sections.map((s) => ({ id: s.id, label: s.toc }))} />
         <main>
           <Hero eyebrow={doc.fm.eyebrow} title={doc.fm.heading ?? doc.fm.title} lede={doc.fm.lede} actions={actions} />
@@ -50,18 +58,19 @@ export function ListaStatement() {
   );
 }
 
-export function ListaSolutions() {
-  const l = getLista(useParams().slug);
+export function ListaSolutions({ kind = 'listas' }: { kind?: Kind }) {
+  const K = KINDS[kind];
+  const l = K.get(useParams().slug);
   if (!l?.solutions || l.status !== 'available') return <NotFound />;
   return (
     <DocPage
       doc={l.solutions}
-      active="/#listas"
+      active={K.home}
       sub={`${l.title} — resolução comentada e tabela de fórmulas`}
-      foot="Parte da série de listas de exercícios de Cálculo II."
-      back={{ to: '/#listas', label: 'voltar para listas' }}
-      actions={l.statement ? [{ label: 'Abrir enunciados', to: `/listas/${l.slug}`, primary: true }, { label: 'Voltar para listas', to: '/#listas' }] : undefined}
-      related={{ title: l.title, links: l.statement ? [{ label: 'Ver enunciados', to: `/listas/${l.slug}` }] : [] }}
+      foot={K.foot}
+      back={{ to: K.home, label: K.back }}
+      actions={l.statement ? [{ label: 'Abrir enunciados', to: `/${kind}/${l.slug}`, primary: true }, { label: `Voltar para ${K.noun}`, to: K.home }] : undefined}
+      related={{ title: l.title, links: l.statement ? [{ label: 'Ver enunciados', to: `/${kind}/${l.slug}` }] : [] }}
     />
   );
 }

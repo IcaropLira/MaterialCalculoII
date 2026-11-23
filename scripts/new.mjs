@@ -4,6 +4,7 @@
 
     npm run novo -- topico  "Séries de potências"
     npm run novo -- lista   "Lista 02"
+    npm run novo -- aula    "Aula de Exercícios 03"
     npm run novo -- prova                       (próximo número automático)
 */
 import { existsSync, mkdirSync, readdirSync, writeFileSync } from 'node:fs';
@@ -84,11 +85,13 @@ Resolução comentada aqui: $\\dfrac{x^2}{2} + C$.
 
 Resolução: $x^2 + C$.
 `);
-} else if (kind === 'lista') {
-  if (!title) { console.error('Uso: npm run novo -- lista "Lista 02"'); process.exit(1); }
+} else if (kind === 'lista' || kind === 'aula') {
+  const folder = kind === 'aula' ? 'aulas' : 'listas';
+  if (!title) { console.error(`Uso: npm run novo -- ${kind} "${kind === 'aula' ? 'Aula de Exercícios 03' : 'Lista 02'}"`); process.exit(1); }
   const slug = slugify(title);
-  const num = pad(1 + readdirSync('content/listas').length);
-  out(`content/listas/${slug}/enunciado.md`, `---
+  mkdirSync(`content/${folder}`, { recursive: true });
+  const num = pad(1 + readdirSync(`content/${folder}`).length);
+  out(`content/${folder}/${slug}/enunciado.md`, `---
 title: "${title}"
 number: "${num}"
 summary: "Descrição curta da lista."
@@ -106,7 +109,7 @@ lede: "A lista organizada por assunto para você resolver no seu ritmo."
 1. $\\displaystyle \\int x e^x\\,dx$
 2. $\\displaystyle \\int x\\cos x\\,dx$
 `);
-  out(`content/listas/${slug}/resolucoes.md`, `---
+  out(`content/${folder}/${slug}/resolucoes.md`, `---
 title: "${title} resolvida"
 eyebrow: "cálculo ii · lista de exercícios"
 lede: "Resolução comentada, técnica por técnica."
