@@ -1,7 +1,7 @@
 import { Link } from 'react-router-dom';
 import PageShell from '../components/PageShell';
 import { MdInline, Md } from '../lib/markdown';
-import { listas, provas, site, topics } from '../lib/content';
+import { aulas, listas, provas, site, topics } from '../lib/content';
 
 function Head({ s }: { s: { kicker: string; title: string; text: string } }) {
   return (
@@ -94,6 +94,30 @@ export default function Home() {
             })}
           </div>
         </section>
+
+        {aulas.length > 0 && (
+          <section className="block" id="aulas">
+            <Head s={h.aulas ?? { kicker: 'resolvidas em sala', title: 'Aulas de exercícios', text: '' }} />
+            <div className="prova-grid">
+              {aulas.map((a) => {
+                const locked = a.status !== 'available';
+                return (
+                  <div key={a.slug} className={'prova-card' + (locked ? ' locked' : '')}>
+                    <div className="prova-top"><h3>{a.title}</h3><span className="prova-meta">{locked ? 'em breve' : `${a.itemsCount} questões`}</span></div>
+                    <div className="prova-tags">{a.tags.map((t) => <span key={t} className="prova-tag">{t}</span>)}</div>
+                    <p><MdInline>{a.summary}</MdInline></p>
+                    {locked ? <span className="badge-soon">em breve</span> : (
+                      <div className="topic-links">
+                        {a.statement && <Link to={`/aulas/${a.slug}`}>Ver questões</Link>}
+                        {a.solutions && <Link to={`/aulas/${a.slug}/resolucoes`}>Ver resoluções</Link>}
+                      </div>
+                    )}
+                  </div>
+                );
+              })}
+            </div>
+          </section>
+        )}
 
         <section className="block" id="provas">
           <Head s={h.provas} />

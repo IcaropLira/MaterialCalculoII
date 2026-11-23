@@ -18,6 +18,8 @@ content/
   topicos/<slug>/exercicios.md      → exercícios do tópico (opcional)
   listas/<slug>/enunciado.md        → enunciados de uma lista
   listas/<slug>/resolucoes.md       → resolução da lista (opcional)
+  aulas/<slug>/enunciado.md         → questões de uma aula de exercícios (mesmo formato das listas)
+  aulas/<slug>/resolucoes.md        → resolução detalhada da aula
   provas/prova-N.md                 → uma prova (enunciado + gabarito no mesmo arquivo)
 src/styles/tokens.css               → cores, fontes e medidas (tema claro e escuro)
 public/                             → logo e favicon
@@ -30,6 +32,7 @@ As páginas, os cards da home, a barra lateral, os contadores e as rotas são **
 ```bash
 npm run novo -- topico "Séries de potências"   # cria teoria.md + exercicios.md com exemplos
 npm run novo -- lista  "Lista 02"               # cria enunciado.md + resolucoes.md
+npm run novo -- aula   "Aula de Exercícios 03"  # idem, na seção "Aulas de exercícios"
 npm run novo -- prova                           # cria o próximo prova-N.md
 ```
 
@@ -112,6 +115,10 @@ Detalhes: o número do exemplo é automático (`::::example{n="A"}` força outro
 `:::tabular` (método tabular), `:::grid` (grade de fórmulas), `:::cheat` (resumo em cartões com `####`), `:::cta{label="…" href="/…"}` (chamada com botão),
 `:::next` (links para os próximos temas) e, no texto, `:conv[convergente]` / `:div[divergente]`.
 Quando uma caixinha tem outra dentro, use mais `:` na de fora (`::::example` … `::::`).
+
+### Figuras
+
+As resoluções aceitam SVG inline dentro de `<figure class="fig">…<figcaption>…</figcaption></figure>` (tudo numa linha, sem linhas em branco). Use as classes `.ax`, `.c1`/`.c2`/`.c3`, `.fill1`/`.fill2`, `.strip`, `.ring`, `.eixo`, `.lbl`, `.tl`, definidas em `components.css`: assim a figura segue o tema claro/escuro.
 
 Links internos começam com `/`: `[exercícios](/topicos/integracao-por-partes/exercicios)`.
 

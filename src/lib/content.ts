@@ -19,7 +19,7 @@ export interface SiteConfig {
   nav: { label: string; to: string }[];
   home: {
     eyebrow: string; title: string; lede: string; formula?: string; formulaLabel?: string;
-    topicos: Section3; listas: Section3; provas: Section3;
+    topicos: Section3; listas: Section3; provas: Section3; aulas?: Section3;
     como: { title: string; text: string }[];
   };
 }
@@ -230,25 +230,31 @@ export const topics: Topic[] = byPath(/\/topicos\/([^/]+)\/teoria\.md$/)
   })
   .sort((a, b) => num(a.number) - num(b.number) || a.slug.localeCompare(b.slug));
 
-// /content/listas/<slug>/enunciado.md + resolucoes.md
-export const listas: Lista[] = [...new Set(byPath(/\/listas\/([^/]+)\/[^/]+\.md$/).map((x) => x.m![1]!))]
-  .map((slug) => {
-    const statement = byPath(new RegExp(`/listas/${slug}/enunciado\\.md$`))[0]?.doc;
-    const solutions = byPath(new RegExp(`/listas/${slug}/resolucoes\\.md$`))[0]?.doc;
-    const fm = { ...(solutions?.fm ?? {}), ...(statement?.fm ?? {}) };
-    return {
-      slug,
-      title: fm.title ?? slug,
-      number: String(fm.number ?? ''),
-      summary: fm.summary ?? '',
-      tags: fm.tags ?? [],
-      status: status(fm.status),
-      itemsCount: String(fm.itemsCount ?? '130+'),
-      statement,
-      solutions,
-    } satisfies Lista;
-  })
-  .sort((a, b) => num(a.number) - num(b.number));
+// /content/<pasta>/<slug>/enunciado.md + resolucoes.md  (listas e aulas de exercícios usam o mesmo formato)
+function loadPairs(folder: string): Lista[] {
+  return [...new Set(byPath(new RegExp(`/${folder}/([^/]+)/[^/]+\\.md$`)).map((x) => x.m![1]!))]
+    .map((slug) => {
+      const statement = byPath(new RegExp(`/${folder}/${slug}/enunciado\\.md$`))[0]?.doc;
+      const solutions = byPath(new RegExp(`/${folder}/${slug}/resolucoes\\.md$`))[0]?.doc;
+      const fm = { ...(solutions?.fm ?? {}), ...(statement?.fm ?? {}) };
+      return {
+        slug,
+        title: fm.title ?? slug,
+        number: String(fm.number ?? ''),
+        summary: fm.summary ?? '',
+        tags: fm.tags ?? [],
+        status: status(fm.status),
+        itemsCount: String(fm.itemsCount ?? '130+'),
+        statement,
+        solutions,
+      } satisfies Lista;
+    })
+    .sort((a, b) => num(a.number) - num(b.number));
+}
+
+export const listas: Lista[] = loadPairs('listas');
+/** /content/aulas/<slug>/ — aulas de exercícios (enunciado + resolução detalhada). */
+export const aulas: Lista[] = loadPairs('aulas');
 
 // /content/provas/<slug>.md
 export const provas: Prova[] = byPath(/\/provas\/([^/]+)\.md$/)
@@ -266,4 +272,5 @@ export const provas: Prova[] = byPath(/\/provas\/([^/]+)\.md$/)
 
 export const getTopic = (slug?: string) => topics.find((t) => t.slug === slug);
 export const getLista = (slug?: string) => listas.find((l) => l.slug === slug);
+export const getAula = (slug?: string) => aulas.find((l) => l.slug === slug);
 export const getProva = (slug?: string) => provas.find((p) => p.slug === slug);
